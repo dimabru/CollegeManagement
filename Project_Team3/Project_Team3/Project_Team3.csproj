@@ -64,11 +64,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBase.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataBase.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DBconnect.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -90,17 +85,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="DataBase.xsc">
-      <DependentUpon>DataBase.xsd</DependentUpon>
-    </None>
-    <None Include="DataBase.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataBase.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataBase.xss">
-      <DependentUpon>DataBase.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
