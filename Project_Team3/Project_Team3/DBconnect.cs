@@ -52,6 +52,7 @@ namespace Project_Team3
 
         }
 
+        public SqlConnection getConnection() { return con; }
       
     }
 }
