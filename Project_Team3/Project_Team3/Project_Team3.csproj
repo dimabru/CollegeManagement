@@ -66,6 +66,12 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DBconnect.cs" />
+    <Compile Include="firstMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="firstMenu.Designer.cs">
+      <DependentUpon>firstMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="firstMenu.resx">
+      <DependentUpon>firstMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
