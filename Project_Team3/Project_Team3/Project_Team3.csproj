@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="isabelle.txt" />
+    <Content Include="JonathanTEST.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="'$(SQLDBExtensionsRefPath)' != ''" />
