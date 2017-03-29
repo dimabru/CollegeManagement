@@ -22,5 +22,23 @@ namespace Project_Team3.Menus___forms.AssociateSubMenus
             Form_associateMenu parent = (Form_associateMenu) this.Owner;
             parent.Show();
         }
+
+        private void clearNameButton_Click(object sender, EventArgs e)
+        {
+            eventNameTextBox.Text = "";
+        }
+
+        private void clearDescription_Click(object sender, EventArgs e)
+        {
+            eventDescriptionRichTextBox.Text = "";
+        }
+
+        private void createEventButton_Click(object sender, EventArgs e)
+        {
+
+            
+            MessageBox.Show("Event Created! (Not Really)");
+            this.Close();
+        }
     }
 }
