@@ -39,7 +39,7 @@
             // idRadioButton
             // 
             this.idRadioButton.AutoSize = true;
-            this.idRadioButton.Location = new System.Drawing.Point(73, 39);
+            this.idRadioButton.Location = new System.Drawing.Point(114, 41);
             this.idRadioButton.Name = "idRadioButton";
             this.idRadioButton.Size = new System.Drawing.Size(36, 17);
             this.idRadioButton.TabIndex = 0;
@@ -50,7 +50,7 @@
             // nameRadioButton
             // 
             this.nameRadioButton.AutoSize = true;
-            this.nameRadioButton.Location = new System.Drawing.Point(159, 39);
+            this.nameRadioButton.Location = new System.Drawing.Point(200, 41);
             this.nameRadioButton.Name = "nameRadioButton";
             this.nameRadioButton.Size = new System.Drawing.Size(53, 17);
             this.nameRadioButton.TabIndex = 1;
@@ -61,7 +61,7 @@
             // searchByLabel
             // 
             this.searchByLabel.AutoSize = true;
-            this.searchByLabel.Location = new System.Drawing.Point(107, 12);
+            this.searchByLabel.Location = new System.Drawing.Point(148, 14);
             this.searchByLabel.Name = "searchByLabel";
             this.searchByLabel.Size = new System.Drawing.Size(59, 13);
             this.searchByLabel.TabIndex = 2;
@@ -69,14 +69,14 @@
             // 
             // searchValueTextBox
             // 
-            this.searchValueTextBox.Location = new System.Drawing.Point(87, 75);
+            this.searchValueTextBox.Location = new System.Drawing.Point(128, 77);
             this.searchValueTextBox.Name = "searchValueTextBox";
             this.searchValueTextBox.Size = new System.Drawing.Size(100, 20);
             this.searchValueTextBox.TabIndex = 3;
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(87, 120);
+            this.searchButton.Location = new System.Drawing.Point(128, 122);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(100, 22);
             this.searchButton.TabIndex = 4;
@@ -85,7 +85,7 @@
             // 
             // searchProgressBar
             // 
-            this.searchProgressBar.Location = new System.Drawing.Point(52, 171);
+            this.searchProgressBar.Location = new System.Drawing.Point(93, 173);
             this.searchProgressBar.Name = "searchProgressBar";
             this.searchProgressBar.Size = new System.Drawing.Size(173, 23);
             this.searchProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
@@ -96,7 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(384, 261);
             this.Controls.Add(this.searchProgressBar);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.searchValueTextBox);
