@@ -20,6 +20,8 @@ namespace Project_Team3
             initializeConnection();
         }
 
+
+
         public void initializeConnection()
         {
             connetionString = "Server=tcp:sce2017b.database.windows.net,1433;Initial Catalog=Project3DB;Persist Security Info=False;User ID=sceproject;Password=2017Sce2017;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
@@ -58,6 +60,14 @@ namespace Project_Team3
         }
 
         public SqlConnection getConnection() { return con; }
-      
+
+
+        ~DBconnect()
+        {
+            if (ConnStatus() == true)
+            {
+                con.Close();
+            }
+        }
     }
 }
