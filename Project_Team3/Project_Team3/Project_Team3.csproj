@@ -175,6 +175,9 @@
     <EmbeddedResource Include="Menus - forms\AdminSubMenus\Form_adminManageAccountMenu.resx">
       <DependentUpon>Form_adminManageAccountMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\Form_associateMenu.mzn-IR.resx">
+      <DependentUpon>Form_associateMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\Form_associateMenu.resx">
       <DependentUpon>Form_associateMenu.cs</DependentUpon>
     </EmbeddedResource>

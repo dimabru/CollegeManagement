@@ -16,5 +16,26 @@ namespace Project_Team3.Menus___forms
         {
             InitializeComponent();
         }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void viewWeeklyPlanButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not Available");
+        }
+
+        private void defineNewEventButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not Available");
+
+        }
+
+        private void viewAllEventsButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not Available");
+        }
     }
 }

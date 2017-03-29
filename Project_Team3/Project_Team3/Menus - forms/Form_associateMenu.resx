@@ -117,4 +117,151 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="logoutButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>286, 12</value>
+  </data>
+  <data name="logoutButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="logoutButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="logoutButton.Text" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="&gt;&gt;logoutButton.Name" xml:space="preserve">
+    <value>logoutButton</value>
+  </data>
+  <data name="&gt;&gt;logoutButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;logoutButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;logoutButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="globalMessageLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="globalMessageLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 17</value>
+  </data>
+  <data name="globalMessageLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 13</value>
+  </data>
+  <data name="globalMessageLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="globalMessageLabel.Text" xml:space="preserve">
+    <value>The Glboal Message will be displayed here</value>
+  </data>
+  <data name="&gt;&gt;globalMessageLabel.Name" xml:space="preserve">
+    <value>globalMessageLabel</value>
+  </data>
+  <data name="&gt;&gt;globalMessageLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;globalMessageLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;globalMessageLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="viewWeeklyPlanButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 82</value>
+  </data>
+  <data name="viewWeeklyPlanButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 23</value>
+  </data>
+  <data name="viewWeeklyPlanButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="viewWeeklyPlanButton.Text" xml:space="preserve">
+    <value>View weekly plan</value>
+  </data>
+  <data name="&gt;&gt;viewWeeklyPlanButton.Name" xml:space="preserve">
+    <value>viewWeeklyPlanButton</value>
+  </data>
+  <data name="&gt;&gt;viewWeeklyPlanButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;viewWeeklyPlanButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;viewWeeklyPlanButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="defineNewEventButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 130</value>
+  </data>
+  <data name="defineNewEventButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 23</value>
+  </data>
+  <data name="defineNewEventButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="defineNewEventButton.Text" xml:space="preserve">
+    <value>Define a new Event</value>
+  </data>
+  <data name="&gt;&gt;defineNewEventButton.Name" xml:space="preserve">
+    <value>defineNewEventButton</value>
+  </data>
+  <data name="&gt;&gt;defineNewEventButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;defineNewEventButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;defineNewEventButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="viewAllEventsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 171</value>
+  </data>
+  <data name="viewAllEventsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 23</value>
+  </data>
+  <data name="viewAllEventsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="viewAllEventsButton.Text" xml:space="preserve">
+    <value>View All Events</value>
+  </data>
+  <data name="&gt;&gt;viewAllEventsButton.Name" xml:space="preserve">
+    <value>viewAllEventsButton</value>
+  </data>
+  <data name="&gt;&gt;viewAllEventsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;viewAllEventsButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;viewAllEventsButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>384, 261</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Form_associateMenu</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form_associateMenu</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
