@@ -1,6 +1,6 @@
 ﻿namespace Project_Team3
 {
-    partial class Form1
+    partial class Form_login
     {
         /// <summary>
         /// Required designer variable.

@@ -14,13 +14,13 @@ using System.Text.RegularExpressions;
 
 namespace Project_Team3
 {
-    public partial class Form1 : Form
+    public partial class Form_login : Form
     {
 
         private DBconnect db;
         private string username;
         private string password;
-        public Form1()
+        public Form_login()
         {
             InitializeComponent();
 

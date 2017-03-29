@@ -20,7 +20,7 @@ namespace Project_Team3
 
 
             //TEMP: Uncomment Relevant form to check your form works  [Jonathan Leon @29.3.17]
-            Application.Run(new Form1());
+            Application.Run(new Form_login());
 
 
 
