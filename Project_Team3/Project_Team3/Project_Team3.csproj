@@ -95,6 +95,12 @@
     <Compile Include="Menus - forms\AdminSubMenus\Form_adminManageAccountMenu.Designer.cs">
       <DependentUpon>Form_adminManageAccountMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus - forms\AssociateSubMenus\Form_associateDefineNewEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\AssociateSubMenus\Form_associateDefineNewEvent.Designer.cs">
+      <DependentUpon>Form_associateDefineNewEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menus - forms\Form_adminMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     <EmbeddedResource Include="Menus - forms\AdminSubMenus\Form_adminManageAccountMenu.resx">
       <DependentUpon>Form_adminManageAccountMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\AssociateSubMenus\Form_associateDefineNewEvent.resx">
+      <DependentUpon>Form_associateDefineNewEvent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\Form_associateMenu.mzn-IR.resx">
       <DependentUpon>Form_associateMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,7 +253,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\" />
-    <Folder Include="Menus - forms\AssociateSubMenus\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="'$(SQLDBExtensionsRefPath)' != ''" />

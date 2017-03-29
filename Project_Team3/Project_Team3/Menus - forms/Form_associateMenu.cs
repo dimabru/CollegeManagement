@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Project_Team3.Menus___forms.AssociateSubMenus;
 
 namespace Project_Team3.Menus___forms
 {
@@ -29,7 +30,11 @@ namespace Project_Team3.Menus___forms
 
         private void defineNewEventButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Not Available");
+            using (Form_associateDefineNewEvent defineNewEvent = new Form_associateDefineNewEvent())
+            {
+                this.Hide();
+                defineNewEvent.ShowDialog(this);
+            }
 
         }
 
