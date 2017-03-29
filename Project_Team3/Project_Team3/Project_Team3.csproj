@@ -136,6 +136,9 @@
     <EmbeddedResource Include="Form_secretaryMenu.resx">
       <DependentUpon>Form_secretaryMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_secretaryStudentSearch.resx">
+      <DependentUpon>Form_secretaryStudentSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_studentAssociationMenu.resx">
       <DependentUpon>Form_studentAssociationMenu.cs</DependentUpon>
     </EmbeddedResource>

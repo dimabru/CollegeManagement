@@ -39,7 +39,7 @@
             // 
             // logoutButton
             // 
-            this.logoutButton.Location = new System.Drawing.Point(194, 204);
+            this.logoutButton.Location = new System.Drawing.Point(211, 205);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(129, 23);
             this.logoutButton.TabIndex = 0;
@@ -49,7 +49,7 @@
             // globalMessage
             // 
             this.globalMessage.AutoSize = true;
-            this.globalMessage.Location = new System.Drawing.Point(70, 9);
+            this.globalMessage.Location = new System.Drawing.Point(87, 10);
             this.globalMessage.Name = "globalMessage";
             this.globalMessage.Size = new System.Drawing.Size(193, 13);
             this.globalMessage.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             // coursesReportButton
             // 
-            this.coursesReportButton.Location = new System.Drawing.Point(27, 114);
+            this.coursesReportButton.Location = new System.Drawing.Point(44, 115);
             this.coursesReportButton.Name = "coursesReportButton";
             this.coursesReportButton.Size = new System.Drawing.Size(118, 23);
             this.coursesReportButton.TabIndex = 3;
@@ -66,7 +66,7 @@
             // 
             // studentSearchButton
             // 
-            this.studentSearchButton.Location = new System.Drawing.Point(27, 156);
+            this.studentSearchButton.Location = new System.Drawing.Point(44, 157);
             this.studentSearchButton.Name = "studentSearchButton";
             this.studentSearchButton.Size = new System.Drawing.Size(118, 23);
             this.studentSearchButton.TabIndex = 4;
@@ -75,7 +75,7 @@
             // 
             // searchCourseButton
             // 
-            this.searchCourseButton.Location = new System.Drawing.Point(27, 204);
+            this.searchCourseButton.Location = new System.Drawing.Point(44, 205);
             this.searchCourseButton.Name = "searchCourseButton";
             this.searchCourseButton.Size = new System.Drawing.Size(118, 23);
             this.searchCourseButton.TabIndex = 5;
@@ -84,7 +84,7 @@
             // 
             // studentRequestsButton
             // 
-            this.studentRequestsButton.Location = new System.Drawing.Point(194, 114);
+            this.studentRequestsButton.Location = new System.Drawing.Point(211, 115);
             this.studentRequestsButton.Name = "studentRequestsButton";
             this.studentRequestsButton.Size = new System.Drawing.Size(129, 23);
             this.studentRequestsButton.TabIndex = 6;
@@ -93,7 +93,7 @@
             // 
             // associationEventsButton
             // 
-            this.associationEventsButton.Location = new System.Drawing.Point(194, 156);
+            this.associationEventsButton.Location = new System.Drawing.Point(211, 157);
             this.associationEventsButton.Name = "associationEventsButton";
             this.associationEventsButton.Size = new System.Drawing.Size(129, 23);
             this.associationEventsButton.TabIndex = 7;
@@ -104,7 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 267);
+            this.ClientSize = new System.Drawing.Size(384, 261);
             this.Controls.Add(this.associationEventsButton);
             this.Controls.Add(this.studentRequestsButton);
             this.Controls.Add(this.searchCourseButton);
