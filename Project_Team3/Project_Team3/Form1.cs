@@ -51,14 +51,14 @@ namespace Project_Team3
         {
             db = new DBconnect();
             db.OpenConn();
-            getInfo();
+            getAccessGroup();
             db.CloseConn(db.ConnStatus());
         }
-        private void getInfo() {
+        private string getAccessGroup() {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.Connection = db.getConnection();
-            cmd.CommandText = "SELECT ID FROM USERS WHERE USERNAME = @username and PASS = @password";
+            cmd.CommandText = "SELECT accessgroup FROM USERS WHERE USERNAME = @username and PASS = @password";
             cmd.Parameters.AddWithValue("username", username);
             cmd.Parameters.AddWithValue("password", password);
             SqlDataAdapter sda = new SqlDataAdapter();
@@ -68,12 +68,13 @@ namespace Project_Team3
             {
 
                 sda.Fill(ds, "Check");
-                MessageBox.Show("ID: " + Convert.ToInt32(ds.Tables[0].Rows[0].ItemArray[0].ToString()));
+                MessageBox.Show("Group: " + ds.Tables[0].Rows[0].ItemArray[0].ToString());
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Incorrect Data!");
             }
+            return ds.Tables[0].Rows[0].ItemArray[0].ToString();
         }
     }
 }
