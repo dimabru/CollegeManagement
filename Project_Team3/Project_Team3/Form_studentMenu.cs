@@ -19,7 +19,27 @@ namespace Project_Team3
 
         private void Form_studentMenu_Load(object sender, EventArgs e)
         {
+           
+        }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("UNDER CONSTRUCTION");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("UNDER CONSTRUCTION");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("UNDER CONSTRUCTION");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("UNDER CONSTRUCTION");
         }
     }
 }
