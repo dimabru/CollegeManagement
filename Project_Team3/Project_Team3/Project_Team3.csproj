@@ -77,24 +77,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_adminAccountsMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_adminAccountsMenu.Designer.cs">
-      <DependentUpon>Form_adminAccountsMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_adminCoursesMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_adminCoursesMenu.Designer.cs">
-      <DependentUpon>Form_adminCoursesMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_adminManageAccountsMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_adminManageAccountsMenu.Designer.cs">
-      <DependentUpon>Form_adminManageAccountsMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form_adminMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +88,18 @@
     </Compile>
     <Compile Include="Form_AssosicateMenu.Designer.cs">
       <DependentUpon>Form_AssosicateMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_secretaryMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_secretaryMenu.Designer.cs">
+      <DependentUpon>Form_secretaryMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_secretaryStudentSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_secretaryStudentSearch.Designer.cs">
+      <DependentUpon>Form_secretaryStudentSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_studentRequestMenu.cs">
       <SubType>Form</SubType>
@@ -136,8 +130,11 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_adminMenu.resx">
-      <DependentUpon>Form_adminMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Form_AssosicateMenu.resx">
+      <DependentUpon>Form_AssosicateMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_secretaryMenu.resx">
+      <DependentUpon>Form_secretaryMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_studentAssociationMenu.resx">
       <DependentUpon>Form_studentAssociationMenu.cs</DependentUpon>
