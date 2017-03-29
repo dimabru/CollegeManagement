@@ -25,31 +25,44 @@ namespace Project_Team3
 
         private void studentSearchButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form studentSearch = new Form_secretaryStudentSearch();
-            studentSearch.ShowDialog();
+            using (Form_secretaryStudentSearch studentSearch = new Form_secretaryStudentSearch())
+            {
+                this.Hide();
+                studentSearch.ShowDialog(this);
+            }
         }
 
         private void searchCourseButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form courseSearch = new Form_secretaryCourseSearch();
-            courseSearch.ShowDialog();
+            using (Form_secretaryCourseSearch courseSearch = new Form_secretaryCourseSearch())
+            {
+                this.Hide();
+                courseSearch.ShowDialog(this);
+            }
 
         }
 
         private void associationEventsButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form associationEvents = new Form_secretaryAssociationEvents();
-            associationEvents.ShowDialog();
+            using (Form_secretaryAssociationEvents associationEvents = new Form_secretaryAssociationEvents())
+            {
+                this.Hide();
+                associationEvents.ShowDialog(this);
+            }
         }
 
         private void studentRequestsButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form studentRequests = new Form_secretaryStudentRequests();
-            studentRequests.ShowDialog();
+            using (Form_secretaryStudentRequests studentRequests = new Form_secretaryStudentRequests())
+            {
+                this.Hide();
+                studentRequests.ShowDialog(this);
+            }
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

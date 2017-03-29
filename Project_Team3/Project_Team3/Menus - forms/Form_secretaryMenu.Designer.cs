@@ -46,6 +46,7 @@ namespace Project_Team3
             this.logoutButton.TabIndex = 0;
             this.logoutButton.Text = "Log out";
             this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // globalMessage
             // 

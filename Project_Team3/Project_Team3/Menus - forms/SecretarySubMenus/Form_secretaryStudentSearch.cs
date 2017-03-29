@@ -16,5 +16,18 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
         {
             InitializeComponent();
         }
+
+        private void Form_secretaryStudentSearch_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form_secretaryMenu parent = (Form_secretaryMenu)this.Owner;
+            parent.Show();
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            searchValueTextBox.Text = "";
+            MessageBox.Show("Student Details not available yet");
+
+        }
     }
 }

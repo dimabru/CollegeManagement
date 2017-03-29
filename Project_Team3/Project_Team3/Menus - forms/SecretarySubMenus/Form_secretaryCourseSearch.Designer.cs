@@ -91,6 +91,7 @@
             this.searchButton.TabIndex = 5;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // Form_secretaryCourseSearch
             // 
@@ -106,6 +107,7 @@
             this.Name = "Form_secretaryCourseSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course Search";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_secretaryCourseSearch_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

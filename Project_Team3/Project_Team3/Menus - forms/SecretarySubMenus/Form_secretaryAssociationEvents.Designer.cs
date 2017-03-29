@@ -28,24 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.eventsListBox = new System.Windows.Forms.ListBox();
             this.eventsLabel = new System.Windows.Forms.Label();
             this.eventDetailsButton = new System.Windows.Forms.Button();
+            this.eventsListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // eventsListBox
-            // 
-            this.eventsListBox.FormattingEnabled = true;
-            this.eventsListBox.Items.AddRange(new object[] {
-            "Bei\'t Habad Meeting",
-            "She Codes",
-            "Amir Benayoun Poetry Night",
-            "Careers Center Meeting"});
-            this.eventsListBox.Location = new System.Drawing.Point(47, 64);
-            this.eventsListBox.Name = "eventsListBox";
-            this.eventsListBox.Size = new System.Drawing.Size(208, 147);
-            this.eventsListBox.TabIndex = 0;
-            this.eventsListBox.UseWaitCursor = true;
             // 
             // eventsLabel
             // 
@@ -66,6 +52,21 @@
             this.eventDetailsButton.Text = "Get More Details";
             this.eventDetailsButton.UseVisualStyleBackColor = true;
             this.eventDetailsButton.UseWaitCursor = true;
+            this.eventDetailsButton.Click += new System.EventHandler(this.eventDetailsButton_Click);
+            // 
+            // eventsListBox
+            // 
+            this.eventsListBox.FormattingEnabled = true;
+            this.eventsListBox.Items.AddRange(new object[] {
+            "Bei\'t Habad Meeting",
+            "She Codes",
+            "Amir Benayoun Poetry Night",
+            "Careers Center Meeting"});
+            this.eventsListBox.Location = new System.Drawing.Point(47, 64);
+            this.eventsListBox.Name = "eventsListBox";
+            this.eventsListBox.Size = new System.Drawing.Size(208, 147);
+            this.eventsListBox.TabIndex = 0;
+            this.eventsListBox.UseWaitCursor = true;
             // 
             // Form_secretaryAssociationEvents
             // 
@@ -79,15 +80,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Association Events";
             this.UseWaitCursor = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_secretaryAssociationEvents_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox eventsListBox;
         private System.Windows.Forms.Label eventsLabel;
         private System.Windows.Forms.Button eventDetailsButton;
+        private System.Windows.Forms.ListBox eventsListBox;
     }
 }

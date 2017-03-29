@@ -43,6 +43,7 @@
             this.acceptRequestButton.TabIndex = 1;
             this.acceptRequestButton.Text = "Accept";
             this.acceptRequestButton.UseVisualStyleBackColor = true;
+            this.acceptRequestButton.Click += new System.EventHandler(this.acceptRequestButton_Click);
             // 
             // denyRequestButton
             // 
@@ -52,6 +53,7 @@
             this.denyRequestButton.TabIndex = 2;
             this.denyRequestButton.Text = "Deny";
             this.denyRequestButton.UseVisualStyleBackColor = true;
+            this.denyRequestButton.Click += new System.EventHandler(this.denyRequestButton_Click);
             // 
             // detailsRequestButton
             // 
@@ -61,6 +63,7 @@
             this.detailsRequestButton.TabIndex = 3;
             this.detailsRequestButton.Text = "Details";
             this.detailsRequestButton.UseVisualStyleBackColor = true;
+            this.detailsRequestButton.Click += new System.EventHandler(this.detailsRequestButton_Click);
             // 
             // studentRequestsLabel
             // 
@@ -97,6 +100,7 @@
             this.Name = "Form_secretaryStudentRequests";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Requests";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_secretaryStudentRequests_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
