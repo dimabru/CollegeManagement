@@ -31,7 +31,7 @@ namespace Project_Team3
             try
             {
                 con.Open();
-                MessageBox.Show ("Connection Open ! ");
+                //MessageBox.Show ("Connection Open ! ");
 
                 return true;
             }
@@ -42,7 +42,12 @@ namespace Project_Team3
             }
 
         }
-
+        public Boolean ConnStatus()
+        {
+            if (con == null || con.State == ConnectionState.Closed)
+                return false;
+            return true;
+        }
         public void CloseConn(Boolean ConnStatus)
         {
             if (ConnStatus == true)
