@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
-
+using System.Text.RegularExpressions;
 
 namespace Project_Team3
 {
@@ -51,7 +51,47 @@ namespace Project_Team3
         {
             db = new DBconnect();
             db.OpenConn();
-            getAccessGroup();
+            //getAccessGroup();
+            Boolean error = false;
+            switch (getAccessGroup())
+            {
+                case "Admin":
+                    //Admin admin = new Admin();
+                    this.Hide();
+                    Form admin_menu = new Form_adminMenu();
+                    admin_menu.ShowDialog();
+                    break;
+                case "Student":
+                    //Student student = new Student();
+                    this.Hide();
+                    Form student_menu = new Form_studentMenu();
+                    student_menu.ShowDialog();
+                    break;
+                case "Assosicate":
+                    //Assosicate assosicate = new Assosicate();
+                    this.Hide();
+                    Form assosicate_menu = new Form_AssosicateMenu();
+                    assosicate_menu.ShowDialog();
+                    break;
+                case "Secretary":
+                    //Secretary secretary = new Secretary();
+                    this.Hide();
+                    Form secretary_menu = new Form_secretaryMenu();
+                    secretary_menu.ShowDialog();
+                    break;
+                default:
+                    MessageBox.Show("Wrong access group!");
+                    error = true;
+                    break;
+            }
+            if (!error)
+            {
+                this.Show();
+                this.BringToFront();
+                this.textBox1.Clear();
+                this.textBox2.Clear();
+            }
+
             db.CloseConn(db.ConnStatus());
         }
         private string getAccessGroup() {
@@ -66,15 +106,15 @@ namespace Project_Team3
             sda.SelectCommand = cmd;
             try
             {
-
                 sda.Fill(ds, "Check");
                 MessageBox.Show("Group: " + ds.Tables[0].Rows[0].ItemArray[0].ToString());
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Incorrect Data!");
+                return null;
             }
-            return ds.Tables[0].Rows[0].ItemArray[0].ToString();
+            return Regex.Replace(ds.Tables[0].Rows[0].ItemArray[0].ToString(), @"\s+", "");
         }
     }
 }
