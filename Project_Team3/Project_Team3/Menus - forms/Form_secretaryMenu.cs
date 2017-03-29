@@ -44,5 +44,12 @@ namespace Project_Team3
             Form associationEvents = new Form_secretaryAssociationEvents();
             associationEvents.ShowDialog();
         }
+
+        private void studentRequestsButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form studentRequests = new Form_secretaryStudentRequests();
+            studentRequests.ShowDialog();
+        }
     }
 }

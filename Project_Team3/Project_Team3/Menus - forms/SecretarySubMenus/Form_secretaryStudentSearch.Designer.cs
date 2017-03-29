@@ -104,6 +104,7 @@
             this.Controls.Add(this.nameRadioButton);
             this.Controls.Add(this.idRadioButton);
             this.Name = "Form_secretaryStudentSearch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Search";
             this.ResumeLayout(false);
             this.PerformLayout();

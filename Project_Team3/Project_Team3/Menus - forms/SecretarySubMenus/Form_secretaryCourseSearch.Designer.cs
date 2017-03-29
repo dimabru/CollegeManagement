@@ -104,6 +104,7 @@
             this.Controls.Add(this.courseIDRadio);
             this.Controls.Add(this.searchProgressBar);
             this.Name = "Form_secretaryCourseSearch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course Search";
             this.ResumeLayout(false);
             this.PerformLayout();

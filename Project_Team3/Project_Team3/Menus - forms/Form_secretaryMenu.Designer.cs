@@ -94,6 +94,7 @@ namespace Project_Team3
             this.studentRequestsButton.TabIndex = 6;
             this.studentRequestsButton.Text = "Student Requests";
             this.studentRequestsButton.UseVisualStyleBackColor = true;
+            this.studentRequestsButton.Click += new System.EventHandler(this.studentRequestsButton_Click);
             // 
             // associationEventsButton
             // 
@@ -118,7 +119,7 @@ namespace Project_Team3
             this.Controls.Add(this.globalMessage);
             this.Controls.Add(this.logoutButton);
             this.Name = "Form_secretaryMenu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_secretaryMenu";
             this.ResumeLayout(false);
             this.PerformLayout();

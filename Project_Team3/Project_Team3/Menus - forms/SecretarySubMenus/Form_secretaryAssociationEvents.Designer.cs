@@ -45,6 +45,7 @@
             this.eventsListBox.Name = "eventsListBox";
             this.eventsListBox.Size = new System.Drawing.Size(208, 147);
             this.eventsListBox.TabIndex = 0;
+            this.eventsListBox.UseWaitCursor = true;
             // 
             // eventsLabel
             // 
@@ -54,6 +55,7 @@
             this.eventsLabel.Size = new System.Drawing.Size(142, 13);
             this.eventsLabel.TabIndex = 1;
             this.eventsLabel.Text = "Weekly Association Events: ";
+            this.eventsLabel.UseWaitCursor = true;
             // 
             // eventDetailsButton
             // 
@@ -63,6 +65,7 @@
             this.eventDetailsButton.TabIndex = 2;
             this.eventDetailsButton.Text = "Get More Details";
             this.eventDetailsButton.UseVisualStyleBackColor = true;
+            this.eventDetailsButton.UseWaitCursor = true;
             // 
             // Form_secretaryAssociationEvents
             // 
@@ -73,6 +76,7 @@
             this.Controls.Add(this.eventsLabel);
             this.Controls.Add(this.eventsListBox);
             this.Name = "Form_secretaryAssociationEvents";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Association Events";
             this.UseWaitCursor = true;
             this.ResumeLayout(false);
