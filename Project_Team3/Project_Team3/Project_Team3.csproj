@@ -119,6 +119,12 @@
     <Compile Include="Menus - forms\Form_secretaryMenu.Designer.cs">
       <DependentUpon>Form_secretaryMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryStudentRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryStudentRequests.Designer.cs">
+      <DependentUpon>Form_secretaryStudentRequests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryStudentSearch.cs">
       <SubType>Form</SubType>
     </Compile>
