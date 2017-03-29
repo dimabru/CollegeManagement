@@ -28,70 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchProgressBar = new System.Windows.Forms.ProgressBar();
+            this.courseIDRadio = new System.Windows.Forms.RadioButton();
+            this.courseNameRadio = new System.Windows.Forms.RadioButton();
+            this.searchByLabel = new System.Windows.Forms.Label();
+            this.courseValueTextBox = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // progressBar1
+            // searchProgressBar
             // 
-            this.progressBar1.Location = new System.Drawing.Point(89, 185);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(100, 23);
-            this.progressBar1.TabIndex = 0;
+            this.searchProgressBar.Location = new System.Drawing.Point(52, 185);
+            this.searchProgressBar.Name = "searchProgressBar";
+            this.searchProgressBar.Size = new System.Drawing.Size(180, 23);
+            this.searchProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.searchProgressBar.TabIndex = 0;
+            this.searchProgressBar.Value = 50;
             // 
-            // radioButton1
+            // courseIDRadio
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(79, 55);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.courseIDRadio.AutoSize = true;
+            this.courseIDRadio.Location = new System.Drawing.Point(52, 52);
+            this.courseIDRadio.Name = "courseIDRadio";
+            this.courseIDRadio.Size = new System.Drawing.Size(72, 17);
+            this.courseIDRadio.TabIndex = 1;
+            this.courseIDRadio.TabStop = true;
+            this.courseIDRadio.Text = "Course ID";
+            this.courseIDRadio.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // courseNameRadio
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(170, 55);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.courseNameRadio.AutoSize = true;
+            this.courseNameRadio.Location = new System.Drawing.Point(143, 52);
+            this.courseNameRadio.Name = "courseNameRadio";
+            this.courseNameRadio.Size = new System.Drawing.Size(89, 17);
+            this.courseNameRadio.TabIndex = 2;
+            this.courseNameRadio.TabStop = true;
+            this.courseNameRadio.Text = "Course Name";
+            this.courseNameRadio.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // searchByLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(117, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
+            this.searchByLabel.AutoSize = true;
+            this.searchByLabel.Location = new System.Drawing.Point(108, 13);
+            this.searchByLabel.Name = "searchByLabel";
+            this.searchByLabel.Size = new System.Drawing.Size(58, 13);
+            this.searchByLabel.TabIndex = 3;
+            this.searchByLabel.Text = "Search by:";
             // 
-            // textBox1
+            // courseValueTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(120, 100);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.courseValueTextBox.Location = new System.Drawing.Point(52, 96);
+            this.courseValueTextBox.Name = "courseValueTextBox";
+            this.courseValueTextBox.Size = new System.Drawing.Size(180, 20);
+            this.courseValueTextBox.TabIndex = 4;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(52, 131);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(180, 23);
+            this.searchButton.TabIndex = 5;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
             // 
             // Form_secretaryCourseSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.courseValueTextBox);
+            this.Controls.Add(this.searchByLabel);
+            this.Controls.Add(this.courseNameRadio);
+            this.Controls.Add(this.courseIDRadio);
+            this.Controls.Add(this.searchProgressBar);
             this.Name = "Form_secretaryCourseSearch";
-            this.Text = "Form_secretaryCourseSearch";
+            this.Text = "Course Search";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,10 +112,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ProgressBar searchProgressBar;
+        private System.Windows.Forms.RadioButton courseIDRadio;
+        private System.Windows.Forms.RadioButton courseNameRadio;
+        private System.Windows.Forms.Label searchByLabel;
+        private System.Windows.Forms.TextBox courseValueTextBox;
+        private System.Windows.Forms.Button searchButton;
     }
 }
