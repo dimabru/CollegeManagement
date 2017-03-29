@@ -101,10 +101,6 @@
     <Compile Include="Menus - forms\Form_adminMenu.Designer.cs">
       <DependentUpon>Form_adminMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menus - forms\Form_AssosicateMenu.cs" />
-    <Compile Include="Menus - forms\Form_AssosicateMenu.Designer.cs">
-      <DependentUpon>Form_AssosicateMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Menus - forms\Form_secretaryAssociationEvents.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,9 +153,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menus - forms\Form_AssosicateMenu.resx">
-      <DependentUpon>Form_AssosicateMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\Form_secretaryMenu.resx">
       <DependentUpon>Form_secretaryMenu.cs</DependentUpon>
