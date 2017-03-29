@@ -70,53 +70,89 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBconnect.cs" />
+    <Compile Include="DataBase\DBconnect.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_adminMenu.cs">
+    <Compile Include="Menus - forms\Form_adminAccountsMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_adminMenu.Designer.cs">
+    <Compile Include="Menus - forms\Form_adminAccountsMenu.Designer.cs">
+      <DependentUpon>Form_adminAccountsMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus - forms\Form_adminCoursesMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\Form_adminCoursesMenu.Designer.cs">
+      <DependentUpon>Form_adminCoursesMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus - forms\Form_adminManageAccountMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\Form_adminManageAccountMenu.Designer.cs">
+      <DependentUpon>Form_adminManageAccountMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus - forms\Form_adminMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\Form_adminMenu.Designer.cs">
       <DependentUpon>Form_adminMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_AssosicateMenu.cs">
+    <Compile Include="Menus - forms\Form_AssosicateMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_AssosicateMenu.Designer.cs">
+    <Compile Include="Menus - forms\Form_AssosicateMenu.Designer.cs">
       <DependentUpon>Form_AssosicateMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_secretaryMenu.cs">
+    <Compile Include="Menus - forms\Form_secretaryAssociationEvents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_secretaryMenu.Designer.cs">
+    <Compile Include="Menus - forms\Form_secretaryAssociationEvents.Designer.cs">
+      <DependentUpon>Form_secretaryAssociationEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus - forms\Form_secretaryCourseSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\Form_secretaryCourseSearch.Designer.cs">
+      <DependentUpon>Form_secretaryCourseSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus - forms\Form_secretaryMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\Form_secretaryMenu.Designer.cs">
       <DependentUpon>Form_secretaryMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_studentRequestMenu.cs">
+    <Compile Include="Menus - forms\Form_secretaryStudentSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_studentRequestMenu.Designer.cs">
+    <Compile Include="Menus - forms\Form_secretaryStudentSearch.Designer.cs">
+      <DependentUpon>Form_secretaryStudentSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus - forms\Form_studentRequestMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\Form_studentRequestMenu.Designer.cs">
       <DependentUpon>Form_studentRequestMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_studentCoursesMenu.cs">
+    <Compile Include="Menus - forms\Form_studentCoursesMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_studentCoursesMenu.Designer.cs">
+    <Compile Include="Menus - forms\Form_studentCoursesMenu.Designer.cs">
       <DependentUpon>Form_studentCoursesMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_studentAssociationMenu.cs">
+    <Compile Include="Menus - forms\Form_studentAssociationMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_studentAssociationMenu.Designer.cs">
+    <Compile Include="Menus - forms\Form_studentAssociationMenu.Designer.cs">
       <DependentUpon>Form_studentAssociationMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_studentMenu.cs">
+    <Compile Include="Menus - forms\Form_studentMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_studentMenu.Designer.cs">
+    <Compile Include="Menus - forms\Form_studentMenu.Designer.cs">
       <DependentUpon>Form_studentMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -124,19 +160,25 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_AssosicateMenu.resx">
+    <EmbeddedResource Include="Menus - forms\Form_AssosicateMenu.resx">
       <DependentUpon>Form_AssosicateMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_studentAssociationMenu.resx">
+    <EmbeddedResource Include="Menus - forms\Form_secretaryMenu.resx">
+      <DependentUpon>Form_secretaryMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\Form_secretaryStudentSearch.resx">
+      <DependentUpon>Form_secretaryStudentSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\Form_studentAssociationMenu.resx">
       <DependentUpon>Form_studentAssociationMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_studentCoursesMenu.resx">
+    <EmbeddedResource Include="Menus - forms\Form_studentCoursesMenu.resx">
       <DependentUpon>Form_studentCoursesMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_studentMenu.resx">
+    <EmbeddedResource Include="Menus - forms\Form_studentMenu.resx">
       <DependentUpon>Form_studentMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_studentRequestMenu.resx">
+    <EmbeddedResource Include="Menus - forms\Form_studentRequestMenu.resx">
       <DependentUpon>Form_studentRequestMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -172,6 +214,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="'$(SQLDBExtensionsRefPath)' != ''" />

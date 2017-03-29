@@ -1,6 +1,6 @@
-﻿namespace Project_Team3
+﻿namespace Project_Team3.Menus___forms
 {
-    partial class Form_secretaryMenu
+    partial class Form_adminManageAccountMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form_secretaryMenu";
+            this.Text = "Form1";
         }
 
         #endregion

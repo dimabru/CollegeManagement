@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project_Team3
+namespace Project_Team3.Menus___forms
 {
-    public partial class Form_adminMenu : Form
+    public partial class Form_adminAccountsMenu : Form
     {
-        public Form_adminMenu()
+        public Form_adminAccountsMenu()
         {
             InitializeComponent();
         }
