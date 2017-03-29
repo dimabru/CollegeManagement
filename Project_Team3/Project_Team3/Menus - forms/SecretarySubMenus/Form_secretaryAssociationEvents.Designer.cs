@@ -1,4 +1,4 @@
-﻿namespace Project_Team3.Menus___forms
+﻿namespace Project_Team3.Menus___forms.SecretarySubMenus
 {
     partial class Form_secretaryAssociationEvents
     {

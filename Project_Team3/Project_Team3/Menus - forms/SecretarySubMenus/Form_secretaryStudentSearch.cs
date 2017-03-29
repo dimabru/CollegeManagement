@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project_Team3.Menus___forms
+namespace Project_Team3.Menus___forms.SecretarySubMenus
 {
-    public partial class Form_secretaryAssociationEvents : Form
+    public partial class Form_secretaryStudentSearch : Form
     {
-        public Form_secretaryAssociationEvents()
+        public Form_secretaryStudentSearch()
         {
             InitializeComponent();
         }

@@ -1,4 +1,5 @@
-﻿namespace Project_Team3
+﻿
+namespace Project_Team3
 {
     partial class Form_secretaryMenu
     {
@@ -63,6 +64,7 @@
             this.coursesReportButton.TabIndex = 3;
             this.coursesReportButton.Text = "Courses Report";
             this.coursesReportButton.UseVisualStyleBackColor = true;
+            this.coursesReportButton.Click += new System.EventHandler(this.coursesReportButton_Click);
             // 
             // studentSearchButton
             // 
@@ -72,6 +74,7 @@
             this.studentSearchButton.TabIndex = 4;
             this.studentSearchButton.Text = "Search for a Student";
             this.studentSearchButton.UseVisualStyleBackColor = true;
+            this.studentSearchButton.Click += new System.EventHandler(this.studentSearchButton_Click);
             // 
             // searchCourseButton
             // 
@@ -81,6 +84,7 @@
             this.searchCourseButton.TabIndex = 5;
             this.searchCourseButton.Text = "Search for a course";
             this.searchCourseButton.UseVisualStyleBackColor = true;
+            this.searchCourseButton.Click += new System.EventHandler(this.searchCourseButton_Click);
             // 
             // studentRequestsButton
             // 
@@ -99,6 +103,7 @@
             this.associationEventsButton.TabIndex = 7;
             this.associationEventsButton.Text = "Association Events";
             this.associationEventsButton.UseVisualStyleBackColor = true;
+            this.associationEventsButton.Click += new System.EventHandler(this.associationEventsButton_Click);
             // 
             // Form_secretaryMenu
             // 

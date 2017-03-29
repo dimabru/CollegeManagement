@@ -101,16 +101,16 @@
     <Compile Include="Menus - forms\Form_adminMenu.Designer.cs">
       <DependentUpon>Form_adminMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menus - forms\Form_secretaryAssociationEvents.cs">
+    <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryAssociationEvents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menus - forms\Form_secretaryAssociationEvents.Designer.cs">
+    <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryAssociationEvents.Designer.cs">
       <DependentUpon>Form_secretaryAssociationEvents.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menus - forms\Form_secretaryCourseSearch.cs">
+    <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryCourseSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menus - forms\Form_secretaryCourseSearch.Designer.cs">
+    <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryCourseSearch.Designer.cs">
       <DependentUpon>Form_secretaryCourseSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Menus - forms\Form_secretaryMenu.cs">
@@ -119,10 +119,10 @@
     <Compile Include="Menus - forms\Form_secretaryMenu.Designer.cs">
       <DependentUpon>Form_secretaryMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menus - forms\Form_secretaryStudentSearch.cs">
+    <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryStudentSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menus - forms\Form_secretaryStudentSearch.Designer.cs">
+    <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryStudentSearch.Designer.cs">
       <DependentUpon>Form_secretaryStudentSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Menus - forms\Form_studentRequestMenu.cs">
@@ -163,16 +163,16 @@
     <EmbeddedResource Include="Menus - forms\Form_adminManageAccountMenu.resx">
       <DependentUpon>Form_adminManageAccountMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menus - forms\Form_secretaryAssociationEvents.resx">
+    <EmbeddedResource Include="Menus - forms\SecretarySubMenus\Form_secretaryAssociationEvents.resx">
       <DependentUpon>Form_secretaryAssociationEvents.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menus - forms\Form_secretaryCourseSearch.resx">
+    <EmbeddedResource Include="Menus - forms\SecretarySubMenus\Form_secretaryCourseSearch.resx">
       <DependentUpon>Form_secretaryCourseSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\Form_secretaryMenu.resx">
       <DependentUpon>Form_secretaryMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menus - forms\Form_secretaryStudentSearch.resx">
+    <EmbeddedResource Include="Menus - forms\SecretarySubMenus\Form_secretaryStudentSearch.resx">
       <DependentUpon>Form_secretaryStudentSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\Form_studentAssociationMenu.resx">
