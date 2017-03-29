@@ -61,13 +61,5 @@ namespace Project_Team3
 
         public SqlConnection getConnection() { return con; }
 
-
-        ~DBconnect()
-        {
-            if (ConnStatus() == true)
-            {
-                con.Close();
-            }
-        }
     }
 }
