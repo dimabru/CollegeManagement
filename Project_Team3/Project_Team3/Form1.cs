@@ -71,8 +71,8 @@ namespace Project_Team3
                 case "Assosicate":
                     //Assosicate assosicate = new Assosicate();
                     this.Hide();
-                    Form assosicate_menu = new Form_AssosicateMenu();
-                    assosicate_menu.ShowDialog();
+                    //Form assosicate_menu = new Form_AssosicateMenu();
+                    //assosicate_menu.ShowDialog();
                     break;
                 case "Secretary":
                     //Secretary secretary = new Secretary();
