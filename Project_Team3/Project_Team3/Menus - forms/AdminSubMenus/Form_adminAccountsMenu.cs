@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project_Team3.Menus___forms
+namespace Project_Team3.Menus___forms.AdminSubMenus
 {
-    public partial class Form_adminCoursesMenu : Form
+    public partial class Form_adminAccountsMenu : Form
     {
-        public Form_adminCoursesMenu()
+        public Form_adminAccountsMenu()
         {
             InitializeComponent();
         }
@@ -33,6 +33,11 @@ namespace Project_Team3.Menus___forms
         }
 
         private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("UNDER CONSTRUCTION");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
         }
