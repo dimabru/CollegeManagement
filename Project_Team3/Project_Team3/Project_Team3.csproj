@@ -160,6 +160,15 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\Form_adminAccountsMenu.resx">
+      <DependentUpon>Form_adminAccountsMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\Form_adminCoursesMenu.resx">
+      <DependentUpon>Form_adminCoursesMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\Form_adminManageAccountMenu.resx">
+      <DependentUpon>Form_adminManageAccountMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\Form_secretaryMenu.resx">
       <DependentUpon>Form_secretaryMenu.cs</DependentUpon>
     </EmbeddedResource>
