@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project_Team3
 {
-    public partial class Form_AssosicateMenu : Form
+    public partial class Form_adminAccountsMenu : Form
     {
-        public Form_AssosicateMenu()
+        public Form_adminAccountsMenu()
         {
             InitializeComponent();
         }

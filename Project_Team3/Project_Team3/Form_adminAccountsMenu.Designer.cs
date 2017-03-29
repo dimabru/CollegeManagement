@@ -1,6 +1,6 @@
 ﻿namespace Project_Team3
 {
-    partial class Form_AssosicateMenu
+    partial class Form_adminAccountsMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form_AssosicateMenu";
+            this.Text = "Form2";
         }
 
         #endregion
