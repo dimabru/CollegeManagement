@@ -29,17 +29,60 @@ namespace Project_Team3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            secretaryFirstMenu secForm = new secretaryFirstMenu();
-            if      (comboBox1.Text == "secretary")  { secForm.ShowDialog(); }
-            else if (comboBox1.Text == "professor")  { }
-            else if (comboBox1.Text == "instructor") { }
-            else if (comboBox1.Text == "Admin")      { }
+            secretaryLoginMenu  secretaryLoginForm  = new secretaryLoginMenu();
+            professorLoginMenu  professorLoginForm  = new professorLoginMenu();
+            instructorLoginMenu instructorLoginForm = new instructorLoginMenu();
+            adminLoginMenu      adminLoginForm      = new adminLoginMenu();
+            publicChecks checkIfUserExit = new publicChecks();
+
+            if(comboBox1.Text == "secretary")
+            {
+                this.Hide();
+                secretaryLoginForm.ShowDialog();
+                if (!checkIfUserExit.didUserExit())
+                {
+                    this.Show();
+                } 
+            }
+
+            else if (comboBox1.Text == "professor")
+            {
+                this.Hide();
+                professorLoginForm.ShowDialog();
+                if (!checkIfUserExit.didUserExit())
+                {
+                    this.Show();
+                }
+            }
+            else if (comboBox1.Text == "instructor")
+            {
+                this.Hide();
+                instructorLoginForm.ShowDialog();
+                if (!checkIfUserExit.didUserExit())
+                {
+                    this.Show();
+                }
+            }
+            else if (comboBox1.Text == "Admin")
+            {
+                this.Hide();
+                adminLoginForm.ShowDialog();
+                if (!checkIfUserExit.didUserExit())
+                {
+                    this.Show();
+                }
+            }
 
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
