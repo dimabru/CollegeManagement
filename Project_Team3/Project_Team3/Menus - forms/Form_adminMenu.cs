@@ -40,7 +40,10 @@ namespace Project_Team3
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            Form coursesMenu = new Form_adminCoursesMenu();
+            this.Hide();
+            coursesMenu.Show();
+            coursesMenu.BringToFront();
         }
 
         private void button4_Click(object sender, EventArgs e)

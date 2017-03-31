@@ -12,8 +12,9 @@ namespace Project_Team3
     class DBconnect
     {
 
-        private string connetionString = null;
+        private string connetionString = "Server=tcp:sce2017b.database.windows.net,1433;Initial Catalog=Project3DB;Persist Security Info=False;User ID=sceproject;Password=2017Sce2017;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         private SqlConnection con;
+
 
         public DBconnect() // ctor
         {
@@ -21,10 +22,9 @@ namespace Project_Team3
         }
 
 
-
+        public string ConnectionStringGet() { return connetionString; }
         public void initializeConnection()
         {
-            connetionString = "Server=tcp:sce2017b.database.windows.net,1433;Initial Catalog=Project3DB;Persist Security Info=False;User ID=sceproject;Password=2017Sce2017;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             con = new SqlConnection(connetionString);
         }
 
@@ -61,5 +61,20 @@ namespace Project_Team3
 
         public SqlConnection getConnection() { return con; }
 
+
+        public DataSet LoadAllTable(string tableName)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT * FROM " + tableName;
+
+            SqlDataAdapter sda = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+            sda.SelectCommand = cmd;
+            sda.Fill(ds, "Conn_DB");
+
+            return ds;
+        }
     }
 }
