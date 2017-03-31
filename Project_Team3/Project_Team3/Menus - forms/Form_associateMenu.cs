@@ -18,9 +18,14 @@ namespace Project_Team3.Menus___forms
             InitializeComponent();
         }
 
+        private void Form_associateMenu_Load(object sender, EventArgs e)
+        {
+            this.BringToFront();
+        }
+
         private void logoutButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.DialogResult = DialogResult.OK;
         }
 
         private void viewWeeklyPlanButton_Click(object sender, EventArgs e)
@@ -41,6 +46,17 @@ namespace Project_Team3.Menus___forms
         private void viewAllEventsButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Not Available");
+        }
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

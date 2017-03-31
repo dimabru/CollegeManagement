@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
 using System.Text.RegularExpressions;
+using Project_Team3.Menus___forms;
 
 
 namespace Project_Team3
@@ -29,8 +30,7 @@ namespace Project_Team3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            db = new DBconnect();
-            db.OpenConn();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -52,13 +52,12 @@ namespace Project_Team3
         {
             db = new DBconnect();
             db.OpenConn();
-            //getAccessGroup();
             Boolean error = false;
             switch (getAccessGroup())
             {
                 case "Admin":
                     //Admin admin = new Admin();
-                    this.Hide();
+                    Hide();
                     Form admin_menu = new Form_adminMenu();
                     admin_menu.ShowDialog();
                     break;
@@ -68,11 +67,13 @@ namespace Project_Team3
                     Form student_menu = new Form_studentMenu();
                     student_menu.ShowDialog();
                     break;
-                case "Assosicate":
+                  
+                case "Associate":
                     //Assosicate assosicate = new Assosicate();
                     this.Hide();
-                    //Form assosicate_menu = new Form_AssosicateMenu();
-                    //assosicate_menu.ShowDialog();
+                    Form associate_menu = new Form_associateMenu();
+                    associate_menu.BringToFront();
+                    associate_menu.Show();
                     break;
                 case "Secretary":
                     //Secretary secretary = new Secretary();
@@ -119,6 +120,11 @@ namespace Project_Team3
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

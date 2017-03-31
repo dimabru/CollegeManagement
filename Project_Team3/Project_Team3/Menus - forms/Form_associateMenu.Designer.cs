@@ -34,6 +34,9 @@
             this.viewWeeklyPlanButton = new System.Windows.Forms.Button();
             this.defineNewEventButton = new System.Windows.Forms.Button();
             this.viewAllEventsButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // logoutButton
@@ -69,17 +72,35 @@
             this.viewAllEventsButton.UseVisualStyleBackColor = true;
             this.viewAllEventsButton.Click += new System.EventHandler(this.viewAllEventsButton_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form_associateMenu
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.viewAllEventsButton);
             this.Controls.Add(this.defineNewEventButton);
             this.Controls.Add(this.viewWeeklyPlanButton);
             this.Controls.Add(this.globalMessageLabel);
             this.Controls.Add(this.logoutButton);
             this.Name = "Form_associateMenu";
+            this.Load += new System.EventHandler(this.Form_associateMenu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,5 +113,7 @@
         private System.Windows.Forms.Button viewWeeklyPlanButton;
         private System.Windows.Forms.Button defineNewEventButton;
         private System.Windows.Forms.Button viewAllEventsButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
