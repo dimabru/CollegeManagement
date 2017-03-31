@@ -44,6 +44,8 @@ namespace Project_Team3
             this.Hide();
             coursesMenu.Show();
             coursesMenu.BringToFront();
+
+
         }
 
         private void button4_Click(object sender, EventArgs e)
