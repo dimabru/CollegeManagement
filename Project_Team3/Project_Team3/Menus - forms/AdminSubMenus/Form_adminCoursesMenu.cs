@@ -83,7 +83,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             db.CloseConn(db.ConnStatus());      // close connection
 
 
-            ;
+            
         }
 
         private void button4_Click(object sender, EventArgs e)

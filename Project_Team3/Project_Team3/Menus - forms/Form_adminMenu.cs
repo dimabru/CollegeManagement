@@ -35,7 +35,11 @@ namespace Project_Team3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            this.Hide();
+            Form Account_Managment = new Form_adminAccountsMenu();
+            Account_Managment.BringToFront();
+            Account_Managment.Show();
+
         }
 
         private void button3_Click(object sender, EventArgs e)
