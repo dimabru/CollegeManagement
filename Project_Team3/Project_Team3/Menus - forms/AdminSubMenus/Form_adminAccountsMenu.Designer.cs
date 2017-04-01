@@ -108,6 +108,7 @@
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.Size = new System.Drawing.Size(563, 462);
             this.dataGrid.TabIndex = 7;
+            this.dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellContentClick);
             // 
             // Form_adminAccountsMenu
             // 

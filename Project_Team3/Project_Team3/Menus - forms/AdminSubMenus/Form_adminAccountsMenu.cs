@@ -20,7 +20,29 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            ////
+            //// Print all students in system
+            ////
+
+            DBconnect db = new DBconnect();
+            db.OpenConn();
+            //create data adapter
+            var dataAdapter = new SqlDataAdapter("select USers.ID,Users.username,Users.Pass,Users.UName,Users.SName,Student.Semester from Users join Student on Users.username = Student.username", db.ConnectionStringGet());
+            var commandBuilder = new SqlCommandBuilder(dataAdapter);
+            var ds = new DataSet();
+            //try to fill sataset with query result
+            try
+            {
+                dataAdapter.Fill(ds);
+                dataGrid.ReadOnly = true;
+                dataGrid.DataSource = ds.Tables[0];
+            }
+            catch (Exception _)
+            {
+                MessageBox.Show("Query not returned any data");
+            }
+
+            db.CloseConn(db.ConnStatus());      // close connection
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -86,6 +108,11 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
         private void button5_Click(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
+        }
+
+        private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
