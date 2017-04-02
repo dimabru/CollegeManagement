@@ -15,15 +15,15 @@ namespace Project_Team3
     {
         //panel counter;
         private int myPanelCounter = 0;
+        //list of panels;
         List<Panel> listPanel = new List<Panel>();
 
         public secretaryLoginMenu()
         {
             InitializeComponent();
-        }
 
-        private void secretaryFirstMenu_Load(object sender, EventArgs e)
-        {
+            //paint allert label in black and hide him;
+            label3.ForeColor = System.Drawing.Color.Black;
             label3.Hide();
 
             //adding the panels to the list;
@@ -35,7 +35,13 @@ namespace Project_Team3
             {
                 panelItem.Hide();
             }
+            //show the first panel
             listPanel[myPanelCounter].Show();
+        }
+
+        private void secretaryFirstMenu_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -45,11 +51,13 @@ namespace Project_Team3
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //close this window;
             this.Close();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //declare that the application is closed to avoid open new windows and making bug;
             publicChecks exitCheck = new publicChecks();
             exitCheck.setUserExit();
             Application.Exit();
@@ -75,12 +83,15 @@ namespace Project_Team3
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            //limit the text box to just 8 chrecters;
             textBox1.MaxLength = 8;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //instance of data base managment;
             updateUserDataBase check_user_instance = new updateUserDataBase();
+            //instance of cheking class;
             publicChecks check_id_if_numeric = new publicChecks();
 
             if (check_id_if_numeric.isNumeric(textBox1.Text))
@@ -90,8 +101,10 @@ namespace Project_Team3
 
                 try
                 {
+                    //check if user exist in the system;
                     if (check_user_instance.userExist(textBox2.Text, id, "Secretary"))
                     {
+                        //hide this panel to show the other;
                         label3.Hide();
                         listPanel[myPanelCounter].Hide();
                         //raise counter to next panel;
@@ -101,24 +114,28 @@ namespace Project_Team3
                     }
                     else
                     {
+                        //if lable 3 pop in previous case;
                         label3.Hide();
                         MessageBox.Show("the username or password is incorrect");
                     }
                 }
                 catch
                 {
+                    //if lable 3 pop in previous case;
                     label3.Hide();
                     MessageBox.Show("there was a problam with the conection");
                 }
             }
             else if (textBox1.Text == "")
             {
+                //show allert and paint it;
                 label3.Show();
                 label3.Text = "please enter values";
                 label3.ForeColor = System.Drawing.Color.Red;
             }
             else
             {
+                //show allert and paint it;
                 label3.Show();
                 label3.Text = "*there are illegal values";
                 label3.ForeColor = System.Drawing.Color.Red;
