@@ -218,7 +218,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "adminLoginMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "adminLoginMenu";
             this.Load += new System.EventHandler(this.adminLoginMenu_Load);
             this.groupBox1.ResumeLayout(false);

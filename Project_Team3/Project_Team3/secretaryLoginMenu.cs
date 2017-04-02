@@ -24,6 +24,7 @@ namespace Project_Team3
 
             //paint allert label in black and hide him;
             label3.ForeColor = System.Drawing.Color.Black;
+            //
             label3.Hide();
 
             //adding the panels to the list;
@@ -66,7 +67,7 @@ namespace Project_Team3
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             // Set the maximum length of text in the control to eight.
-            textBox2.MaxLength = 8;
+            textBox2.MaxLength = 10;
             // Assign the asterisk to be the password character.
             textBox2.PasswordChar = '*';
         }
@@ -84,7 +85,7 @@ namespace Project_Team3
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             //limit the text box to just 8 chrecters;
-            textBox1.MaxLength = 8;
+            textBox1.MaxLength = 10;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -111,6 +112,7 @@ namespace Project_Team3
                         myPanelCounter++;
                         //show secretary menu;
                         listPanel[myPanelCounter].Show();
+
                     }
                     else
                     {
@@ -143,6 +145,11 @@ namespace Project_Team3
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

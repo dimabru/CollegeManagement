@@ -127,6 +127,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "firstMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "firstMenu";
             this.Load += new System.EventHandler(this.firstMenu_Load);
             this.menuStrip1.ResumeLayout(false);
