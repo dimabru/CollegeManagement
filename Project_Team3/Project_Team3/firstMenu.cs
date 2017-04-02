@@ -29,10 +29,12 @@ namespace Project_Team3
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             secretaryLoginMenu  secretaryLoginForm  = new secretaryLoginMenu();
             professorLoginMenu  professorLoginForm  = new professorLoginMenu();
             instructorLoginMenu instructorLoginForm = new instructorLoginMenu();
             adminLoginMenu      adminLoginForm      = new adminLoginMenu();
+
             publicChecks checkIfUserExit = new publicChecks();
 
             if(comboBox1.Text == "secretary")

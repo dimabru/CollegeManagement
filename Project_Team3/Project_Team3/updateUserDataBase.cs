@@ -25,7 +25,7 @@ namespace Project_Team3
                 SqlDataReader dbr;
                 con.Open();
                 dbr = cmd.ExecuteReader();
-                int count = 0;
+                //int count = 0;
                 while (dbr.Read())
                 {
                     con.Close();

@@ -10,7 +10,7 @@ namespace Project_Team3
     {
         private static Boolean userExit = false;
 
-        public Boolean isNumeric(String StringToCheck)
+        public Boolean isNumeric(string StringToCheck)
         {
             int n;
             bool isNumeric = int.TryParse(StringToCheck, out n);
