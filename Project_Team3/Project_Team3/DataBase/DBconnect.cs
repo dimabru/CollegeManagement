@@ -76,5 +76,32 @@ namespace Project_Team3
 
             return ds;
         }
+
+
+
+        public DataSet generalSelect(string tableName, bool where,  string condition, List<string> a,string columns = "*")
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            SqlDataAdapter sda = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+
+
+            cmd.CommandText = "SELECT " + columns + " FROM " + tableName;
+            if (where) cmd.CommandText += " WHERE "+ condition;
+
+            for (int i =0; i < a.Count; i++)
+            {
+                cmd.Parameters.AddWithValue(i.ToString(), a[i]);
+
+            }
+            sda.SelectCommand = cmd;
+            sda.Fill(ds, "Conn_DB");
+
+            return ds;
+        }
+
+
     }
 }
