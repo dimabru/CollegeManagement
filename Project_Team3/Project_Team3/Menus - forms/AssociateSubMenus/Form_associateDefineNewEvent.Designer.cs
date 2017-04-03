@@ -36,9 +36,10 @@
             this.eventNameLabel = new System.Windows.Forms.Label();
             this.eventDescriptionLabel = new System.Windows.Forms.Label();
             this.startTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.endTimePicker = new System.Windows.Forms.DateTimePicker();
             this.startLabel = new System.Windows.Forms.Label();
             this.endLabel = new System.Windows.Forms.Label();
+            this.dayPickerListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // eventDescriptionRichTextBox
@@ -110,17 +111,17 @@
             this.startTimePicker.Location = new System.Drawing.Point(222, 42);
             this.startTimePicker.Name = "startTimePicker";
             this.startTimePicker.ShowUpDown = true;
-            this.startTimePicker.Size = new System.Drawing.Size(85, 20);
+            this.startTimePicker.Size = new System.Drawing.Size(35, 20);
             this.startTimePicker.TabIndex = 10;
             // 
-            // dateTimePicker1
+            // endTimePicker
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(222, 109);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(85, 20);
-            this.dateTimePicker1.TabIndex = 11;
+            this.endTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.endTimePicker.Location = new System.Drawing.Point(299, 42);
+            this.endTimePicker.Name = "endTimePicker";
+            this.endTimePicker.ShowUpDown = true;
+            this.endTimePicker.Size = new System.Drawing.Size(35, 20);
+            this.endTimePicker.TabIndex = 11;
             // 
             // startLabel
             // 
@@ -134,20 +135,36 @@
             // endLabel
             // 
             this.endLabel.AutoSize = true;
-            this.endLabel.Location = new System.Drawing.Point(219, 90);
+            this.endLabel.Location = new System.Drawing.Point(302, 23);
             this.endLabel.Name = "endLabel";
             this.endLabel.Size = new System.Drawing.Size(29, 13);
             this.endLabel.TabIndex = 13;
             this.endLabel.Text = "End:";
+            // 
+            // dayPickerListBox
+            // 
+            this.dayPickerListBox.FormattingEnabled = true;
+            this.dayPickerListBox.Items.AddRange(new object[] {
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"});
+            this.dayPickerListBox.Location = new System.Drawing.Point(222, 90);
+            this.dayPickerListBox.Name = "dayPickerListBox";
+            this.dayPickerListBox.Size = new System.Drawing.Size(65, 95);
+            this.dayPickerListBox.TabIndex = 14;
             // 
             // Form_associateDefineNewEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 261);
+            this.Controls.Add(this.dayPickerListBox);
             this.Controls.Add(this.endLabel);
             this.Controls.Add(this.startLabel);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.endTimePicker);
             this.Controls.Add(this.startTimePicker);
             this.Controls.Add(this.eventDescriptionLabel);
             this.Controls.Add(this.eventNameLabel);
@@ -175,8 +192,9 @@
         private System.Windows.Forms.Label eventNameLabel;
         private System.Windows.Forms.Label eventDescriptionLabel;
         private System.Windows.Forms.DateTimePicker startTimePicker;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker endTimePicker;
         private System.Windows.Forms.Label startLabel;
         private System.Windows.Forms.Label endLabel;
+        private System.Windows.Forms.ListBox dayPickerListBox;
     }
 }
