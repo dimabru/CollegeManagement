@@ -41,7 +41,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(11, 67);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(176, 37);
             this.button1.TabIndex = 1;
@@ -52,7 +52,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(11, 126);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(176, 37);
             this.button2.TabIndex = 2;
@@ -63,7 +63,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(11, 186);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(176, 37);
             this.button3.TabIndex = 3;
@@ -74,7 +74,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(11, 244);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(176, 37);
             this.button4.TabIndex = 4;
@@ -85,7 +85,7 @@
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(11, 299);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(176, 37);
             this.button5.TabIndex = 5;
@@ -109,6 +109,7 @@
             this.dataGrid.Size = new System.Drawing.Size(563, 462);
             this.dataGrid.TabIndex = 7;
             this.dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellContentClick);
+            this.dataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellDoubleClick);
             // 
             // Form_adminAccountsMenu
             // 
@@ -122,7 +123,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_adminAccountsMenu";
             this.Text = "Admin\'s accounts menu";
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();

@@ -114,5 +114,28 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
         {
 
         }
+
+        private void dataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var dataIndexNo = dataGrid.Rows[e.RowIndex].Index.ToString();
+            string cellValue1 = dataGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string cellValue2 = dataGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string cellValue3 = dataGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+            string cellValue4 = dataGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
+            string cellValue5 = dataGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
+            string cellValue6 = dataGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+
+
+            MessageBox.Show(
+                                         "\n ID: " +
+                 cellValue1.ToString() + "\n UserName: " +
+                 cellValue2.ToString() + "\n Password:  " +
+                 cellValue3.ToString() + "\n First name:  " +
+                 cellValue4.ToString() + "\n Second name:  " +
+                 cellValue5.ToString() + "\n Semester:  " +
+                 cellValue6.ToString());
+        }
+    
     }
 }
