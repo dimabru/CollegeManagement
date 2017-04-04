@@ -38,13 +38,13 @@ using System.Data.SqlClient;
         private void createEventButton_Click(object sender, EventArgs e)
         {
             int startHour = startTimePicker.Value.Hour ,endHour = endTimePicker.Value.Hour;
-            string day = dayPickerListBox.Text, eventName = eventNameTextBox.Text, eventDescription = eventNameTextBox.Text;
+            string day = dayPickerListBox.Text, eventName = eventNameTextBox.Text, eventDescription = eventDescriptionRichTextBox.Text;
 
             DBconnect db = new DBconnect();
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.Connection = db.getConnection();
-            cmd.CommandText = "INSERT into EVENT (EVENT_NAME,CREATOR_ID,EVENT_START,EVENT_END,EVENT_DAY,EVENT_DESCRIPTION) VALUES(@eventName,111,@startHour,@endHour,@day,@eventDescription)";
+            cmd.CommandText = "INSERT into EVENT (EVENT_NAME,CREATOR_USERNAME,EVENT_START,EVENT_END,EVENT_DAY,EVENT_DESC) VALUES(@eventName,'johnny',@startHour,@endHour,@day,@eventDescription)";
             cmd.Parameters.AddWithValue("eventName", eventName);
             cmd.Parameters.AddWithValue("startHour", startHour);
             cmd.Parameters.AddWithValue("endHour", endHour);
