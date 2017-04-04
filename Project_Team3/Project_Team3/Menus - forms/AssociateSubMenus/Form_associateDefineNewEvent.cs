@@ -44,11 +44,12 @@ using System.Data.SqlClient;
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.Connection = db.getConnection();
-            cmd.CommandText = "INSERT into EVENT VALUES(@eventName,5,6,@startHour,@endHour,@day)";
+            cmd.CommandText = "INSERT into EVENT (EVENT_NAME,CREATOR_ID,EVENT_START,EVENT_END,EVENT_DAY,EVENT_DESCRIPTION) VALUES(@eventName,111,@startHour,@endHour,@day,@eventDescription)";
             cmd.Parameters.AddWithValue("eventName", eventName);
             cmd.Parameters.AddWithValue("startHour", startHour);
             cmd.Parameters.AddWithValue("endHour", endHour);
             cmd.Parameters.AddWithValue("day", day);
+            cmd.Parameters.AddWithValue("eventDescription", eventDescription);
             db.OpenConn();
             if (db.ConnStatus()) 
             cmd.ExecuteNonQuery();
