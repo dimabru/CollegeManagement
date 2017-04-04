@@ -62,7 +62,13 @@ namespace Project_Team3
 
         private void logoutButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+        }
+
+        private void Form_secretaryMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form_login parent = (Form_login)this.Owner;
+            parent.Show();
         }
     }
 }

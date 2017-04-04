@@ -40,12 +40,12 @@ namespace Project_Team3
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            username = this.textBox1.Text;
+            username = this.userNameBox.Text;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            password = this.textBox2.Text;
+            password = this.passwordBox.Text;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -56,30 +56,36 @@ namespace Project_Team3
             switch (getAccessGroup())
             {
                 case "Admin":
-                    //Admin admin = new Admin();
-                    Hide();
-                    Form admin_menu = new Form_adminMenu();
-                    admin_menu.ShowDialog();
+                    this.Hide();
+                    using (Form_adminMenu admin_menu = new Form_adminMenu())
+                    {
+                        this.Hide();
+                        admin_menu.ShowDialog(this);
+                    }
                     break;
                 case "Student":
-                    //Student student = new Student();
                     this.Hide();
-                    Form student_menu = new Form_studentMenu();
-                    student_menu.ShowDialog();
-                    break;
-                  
+                    using (Form_studentMenu student_menu = new Form_studentMenu())
+                    {
+                        this.Hide();
+                        student_menu.ShowDialog(this);
+                    }
+                    break;            
                 case "Associate":
-                    //Assosicate assosicate = new Assosicate();
                     this.Hide();
-                    Form associate_menu = new Form_associateMenu();
-                    associate_menu.BringToFront();
-                    associate_menu.Show();
+                    using (Form_associateMenu associate_menu = new Form_associateMenu())
+                    {
+                        this.Hide();
+                        associate_menu.ShowDialog(this);
+                    }
                     break;
                 case "Secretary":
-                    //Secretary secretary = new Secretary();
                     this.Hide();
-                    Form secretary_menu = new Form_secretaryMenu();
-                    secretary_menu.ShowDialog();
+                    using (Form_secretaryMenu secretary_menu = new Form_secretaryMenu())
+                    {
+                        this.Hide();
+                        secretary_menu.ShowDialog(this);
+                    }
                     break;
                 default:
                     MessageBox.Show("Wrong access group!");
@@ -90,8 +96,8 @@ namespace Project_Team3
             {
                 this.Show();
                 this.BringToFront();
-                this.textBox1.Clear();
-                this.textBox2.Clear();
+                this.userNameBox.Clear();
+                this.passwordBox.Clear();
             }
 
             db.CloseConn(db.ConnStatus());
@@ -103,7 +109,7 @@ namespace Project_Team3
             cmd.CommandText = "SELECT accessgroup FROM USERS WHERE USERNAME = @username and PASS = @password";
             cmd.Parameters.AddWithValue("username", username);
             cmd.Parameters.AddWithValue("password", password);
-            SqlDataAdapter sda = new SqlDataAdapter();
+            /*SqlDataAdapter sda = new SqlDataAdapter();
             DataSet ds = new DataSet();
             sda.SelectCommand = cmd;
             try
@@ -115,7 +121,8 @@ namespace Project_Team3
             {
                 MessageBox.Show("Incorrect Data!");
                 return null;
-            }
+            }*/
+            DataSet ds = db.generalCommand(cmd);
             return Regex.Replace(ds.Tables[0].Rows[0].ItemArray[0].ToString(), @"\s+", "");
         }
 

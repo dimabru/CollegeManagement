@@ -41,8 +41,13 @@ namespace Project_Team3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("UNDER CONSTRUCTION");
-            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void Form_studentMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form_login parent = (Form_login)this.Owner;
+            parent.Show();
         }
     }
 }

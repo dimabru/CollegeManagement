@@ -184,6 +184,9 @@
     <EmbeddedResource Include="Menus - forms\AssociateSubMenus\Form_associateDefineNewEvent.resx">
       <DependentUpon>Form_associateDefineNewEvent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\Form_adminMenu.resx">
+      <DependentUpon>Form_adminMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\Form_associateMenu.mzn-IR.resx">
       <DependentUpon>Form_associateMenu.cs</DependentUpon>
     </EmbeddedResource>

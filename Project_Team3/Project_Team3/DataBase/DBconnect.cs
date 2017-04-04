@@ -101,7 +101,21 @@ namespace Project_Team3
 
             return ds;
         }
-
+        public DataSet generalCommand(SqlCommand cmd){
+            SqlDataAdapter sda = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+            sda.SelectCommand = cmd;
+            try
+            {
+                sda.Fill(ds, "Conn_DB");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Incorrect Data!");
+                return null;
+            }
+            return ds;
+    }
 
     }
 }

@@ -99,6 +99,7 @@
             this.Controls.Add(this.globalMessageLabel);
             this.Controls.Add(this.logoutButton);
             this.Name = "Form_associateMenu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_associateMenu_FormClosed);
             this.Load += new System.EventHandler(this.Form_associateMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

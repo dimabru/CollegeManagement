@@ -30,7 +30,7 @@ namespace Project_Team3
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -60,6 +60,12 @@ namespace Project_Team3
         private void button5_Click(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
+        }
+
+        private void Form_adminMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form_login parent = (Form_login)this.Owner;
+            parent.Show();
         }
     }
 }

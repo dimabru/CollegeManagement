@@ -122,6 +122,7 @@ namespace Project_Team3
             this.Name = "Form_secretaryMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_secretaryMenu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_secretaryMenu_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

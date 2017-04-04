@@ -25,7 +25,7 @@ namespace Project_Team3.Menus___forms
 
         private void logoutButton_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void viewWeeklyPlanButton_Click(object sender, EventArgs e)
@@ -57,6 +57,12 @@ namespace Project_Team3.Menus___forms
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form_associateMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form_login parent = (Form_login)this.Owner;
+            parent.Show();
         }
     }
 }
