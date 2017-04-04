@@ -14,6 +14,8 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
     public partial class Form_adminCoursesMenu : Form
     {
 
+        private DataSet allCourses;
+
         public Form_adminCoursesMenu()
         {
             InitializeComponent();
@@ -38,6 +40,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
                 dataAdapter.Fill(ds);
                 dataGrid.ReadOnly = true;
                 dataGrid.DataSource = ds.Tables[0];
+                allCourses = ds;
             }
             catch (Exception _)
             {
@@ -103,7 +106,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            MessageBox.Show(e.ToString());
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -114,6 +117,38 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
         private void dBconnectBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGrid_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void dataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var dataIndexNo = dataGrid.Rows[e.RowIndex].Index.ToString();
+            string cellValue1 = dataGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string cellValue2 = dataGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string cellValue3 = dataGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+            string cellValue4 = dataGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
+            string cellValue5 = dataGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
+            string cellValue6 = dataGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
+            string cellValue7 = dataGrid.Rows[e.RowIndex].Cells[6].Value.ToString();
+            string cellValue8 = dataGrid.Rows[e.RowIndex].Cells[7].Value.ToString();
+            string cellValue9 = dataGrid.Rows[e.RowIndex].Cells[8].Value.ToString();
+
+
+            MessageBox.Show(
+                                         "\n ID: " +
+                 cellValue1.ToString() + "\n Name: " +
+                 cellValue2.ToString() + "\n TeacherID:  " +
+                 cellValue3.ToString() + "\n MaxStudents:  " +
+                 cellValue4.ToString() + "\n Room#:  " +
+                 cellValue5.ToString() + "\n Course Day:  " +
+                 cellValue6.ToString() + "\n Start Hour:  " +
+                 cellValue7.ToString() + "\n End Hour:  " +
+                 cellValue8.ToString() + "\n Semester:  " +
+                 cellValue9.ToString());
         }
     }
 }
