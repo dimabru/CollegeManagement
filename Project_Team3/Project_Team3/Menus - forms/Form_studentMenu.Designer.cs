@@ -44,7 +44,7 @@
             // 
             this.LogoutStudent.BackColor = System.Drawing.Color.MistyRose;
             this.LogoutStudent.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.LogoutStudent.Location = new System.Drawing.Point(41, 372);
+            this.LogoutStudent.Location = new System.Drawing.Point(51, 439);
             this.LogoutStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LogoutStudent.Name = "LogoutStudent";
             this.LogoutStudent.Size = new System.Drawing.Size(235, 46);
@@ -57,7 +57,7 @@
             // 
             this.AssociationMenuButton.BackColor = System.Drawing.Color.MistyRose;
             this.AssociationMenuButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.AssociationMenuButton.Location = new System.Drawing.Point(41, 102);
+            this.AssociationMenuButton.Location = new System.Drawing.Point(51, 169);
             this.AssociationMenuButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AssociationMenuButton.Name = "AssociationMenuButton";
             this.AssociationMenuButton.Size = new System.Drawing.Size(235, 46);
@@ -70,7 +70,7 @@
             // 
             this.StudentRequestButton.BackColor = System.Drawing.Color.MistyRose;
             this.StudentRequestButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.StudentRequestButton.Location = new System.Drawing.Point(41, 164);
+            this.StudentRequestButton.Location = new System.Drawing.Point(51, 231);
             this.StudentRequestButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StudentRequestButton.Name = "StudentRequestButton";
             this.StudentRequestButton.Size = new System.Drawing.Size(235, 46);
@@ -83,7 +83,7 @@
             // 
             this.CoursesMenuButton.BackColor = System.Drawing.Color.MistyRose;
             this.CoursesMenuButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.CoursesMenuButton.Location = new System.Drawing.Point(41, 225);
+            this.CoursesMenuButton.Location = new System.Drawing.Point(51, 292);
             this.CoursesMenuButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CoursesMenuButton.Name = "CoursesMenuButton";
             this.CoursesMenuButton.Size = new System.Drawing.Size(235, 46);
@@ -99,7 +99,7 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.Location = new System.Drawing.Point(37, 12);
+            this.textBox1.Location = new System.Drawing.Point(47, 79);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(883, 22);
@@ -109,7 +109,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(323, 38);
+            this.pictureBox1.Location = new System.Drawing.Point(333, 105);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(968, 479);
@@ -122,7 +122,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1333, 530);
+            this.ClientSize = new System.Drawing.Size(1350, 750);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.CoursesMenuButton);

@@ -134,7 +134,7 @@ namespace Project_Team3
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1314, 656);
+            this.ClientSize = new System.Drawing.Size(1350, 750);
             this.Controls.Add(this.associationEventsButton);
             this.Controls.Add(this.studentRequestsButton);
             this.Controls.Add(this.searchCourseButton);
