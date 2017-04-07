@@ -32,17 +32,29 @@ namespace Project_Team3
 
         private void AssociationMenuButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            using (Form associationMenu = new Form_studentAssociationMenu())
+            {
+                this.Hide();
+                associationMenu.ShowDialog(this);
+            }
         }
 
         private void StudentRequestButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            using (Form studentRequestMenu = new Form_studentRequestMenu())
+            {
+                this.Hide();
+                studentRequestMenu.ShowDialog(this);
+            }
         }
 
         private void CoursesMenuButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            using (Form studentCoursesMenu = new Form_studentCoursesMenu())
+            {
+                this.Hide();
+                studentCoursesMenu.ShowDialog(this);
+            }
         }
 
         private void LogoutStudent_Click(object sender, EventArgs e)

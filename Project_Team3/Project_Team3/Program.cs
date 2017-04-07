@@ -26,7 +26,7 @@ namespace Project_Team3
 
             //Application.Run(new Form_secretaryMenu());
             //Application.Run(new Form_associateMenu());
-            //Application.Run(new Form_studentMenu());
+            Application.Run(new Form_studentMenu());
             //Application.Run(new Form_adminMenu());
         }
     }

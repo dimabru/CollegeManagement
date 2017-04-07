@@ -73,6 +73,7 @@
             this.Controls.Add(this.NewRequestButton);
             this.Name = "Form_studentRequestMenu";
             this.Text = "Student Request Menu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_studentRequestMenu_FormClosed);
             this.ResumeLayout(false);
 
         }

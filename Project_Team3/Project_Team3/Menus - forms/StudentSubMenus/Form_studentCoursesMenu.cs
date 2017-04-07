@@ -39,7 +39,13 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
 
         private void BackToLastCoursesMenu_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            this.Close();
+        }
+
+        private void Form_studentCoursesMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form_studentMenu parent = (Form_studentMenu)this.Owner;
+            parent.Show();
         }
     }
 }

@@ -85,6 +85,7 @@
             this.Controls.Add(this.AssociationInformationButton);
             this.Name = "Form_studentAssociationMenu";
             this.Text = "Student\'s Association Menu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_studentAssociationMenu_FormClosed);
             this.ResumeLayout(false);
 
         }
