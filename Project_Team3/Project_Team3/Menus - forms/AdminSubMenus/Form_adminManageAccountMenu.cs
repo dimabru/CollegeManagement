@@ -17,29 +17,40 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void addAccountClick(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void addAssociateClick(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
+
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void deleteStudentClick(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
+
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void deleteAssociateClick(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
+
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void BackClick(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            this.Close();
+        }
+
+        private void Form_adminManageAccountMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form_adminMenu parent = (Form_adminMenu)this.Owner;
+            parent.Show();
         }
     }
 }

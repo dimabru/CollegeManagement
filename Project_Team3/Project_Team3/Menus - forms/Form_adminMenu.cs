@@ -26,10 +26,11 @@ namespace Project_Team3
 
         private void manageAccountsButtonClick(object sender, EventArgs e)
         {
-            this.Hide();
-            Form Account_Managment = new Form_adminAccountsMenu();
-            Account_Managment.BringToFront();
-            Account_Managment.Show();
+            using (Form manageAccountsMenu = new Form_adminManageAccountMenu())
+            {
+                this.Hide();
+                manageAccountsMenu.ShowDialog(this);
+            }
 
         }
 
@@ -48,15 +49,20 @@ namespace Project_Team3
 
         private void coursesMenuButtonClick(object sender, EventArgs e)
         {
-            Form coursesMenu = new Form_adminCoursesMenu();
-            this.Hide();
-            coursesMenu.Show();
-            coursesMenu.BringToFront();
+            using (Form coursesMenu = new Form_adminCoursesMenu())
+            {
+                this.Hide();
+                coursesMenu.ShowDialog(this);
+            }
         }
 
         private void accountsMenuButtonClick(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            using (Form accountsMenu = new Form_adminAccountsMenu())
+            {
+                this.Hide();
+                accountsMenu.ShowDialog(this);
+            }
         }
 
         private void logoutButtonClick(object sender, EventArgs e)

@@ -21,10 +21,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             InitializeComponent();
         }
 
-        /**
-         * Print all courses from database
-         * */
-        private void button1_Click(object sender, EventArgs e)
+        private void ListCoursesClick(object sender, EventArgs e)
         {
 
             DBconnect db = new DBconnect();
@@ -48,16 +45,18 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             }
 
             db.CloseConn(db.ConnStatus());      // close connection
-       
+
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
+        private void watchInfoClick(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
         }
 
-        private void button3_Click(object sender, EventArgs e)
+
+
+        private void recieveAmountClick(object sender, EventArgs e)
         {
 
             DBconnect db = new DBconnect();
@@ -86,12 +85,13 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             db.CloseConn(db.ConnStatus());      // close connection
 
 
-            
+
         }
 
-        private void button4_Click(object sender, EventArgs e)
+
+        private void BackClick(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            this.Close();
         }
 
         private void Form_adminCoursesMenu_Load(object sender, EventArgs e)
@@ -99,11 +99,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+    
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             MessageBox.Show(e.ToString());
@@ -149,6 +145,12 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
                  cellValue7.ToString() + "\n End Hour:  " +
                  cellValue8.ToString() + "\n Semester:  " +
                  cellValue9.ToString());
+        }
+
+        private void Form_adminCoursesMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form_adminMenu parent = (Form_adminMenu)this.Owner;
+            parent.Show();
         }
     }
 }

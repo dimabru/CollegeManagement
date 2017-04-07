@@ -28,85 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.AddStudentAccount = new System.Windows.Forms.Button();
+            this.AddAssociateAccount = new System.Windows.Forms.Button();
+            this.DeleteStudentAccount = new System.Windows.Forms.Button();
+            this.DeleteAssociateAccount = new System.Windows.Forms.Button();
+            this.Back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // AddStudentAccount
             // 
-            this.button1.Location = new System.Drawing.Point(59, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(234, 46);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Add student account.";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.AddStudentAccount.Location = new System.Drawing.Point(44, 46);
+            this.AddStudentAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddStudentAccount.Name = "AddStudentAccount";
+            this.AddStudentAccount.Size = new System.Drawing.Size(176, 37);
+            this.AddStudentAccount.TabIndex = 3;
+            this.AddStudentAccount.Text = "Add student account.";
+            this.AddStudentAccount.UseVisualStyleBackColor = true;
+            this.AddStudentAccount.Click += new System.EventHandler(this.addAccountClick);
             // 
-            // button2
+            // AddAssociateAccount
             // 
-            this.button2.Location = new System.Drawing.Point(59, 127);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(234, 46);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Add associate account.";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.AddAssociateAccount.Location = new System.Drawing.Point(44, 103);
+            this.AddAssociateAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddAssociateAccount.Name = "AddAssociateAccount";
+            this.AddAssociateAccount.Size = new System.Drawing.Size(176, 37);
+            this.AddAssociateAccount.TabIndex = 4;
+            this.AddAssociateAccount.Text = "Add associate account.";
+            this.AddAssociateAccount.UseVisualStyleBackColor = true;
+            this.AddAssociateAccount.Click += new System.EventHandler(this.addAssociateClick);
             // 
-            // button3
+            // DeleteStudentAccount
             // 
-            this.button3.Location = new System.Drawing.Point(59, 201);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(234, 46);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Delete student account.";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.DeleteStudentAccount.Location = new System.Drawing.Point(44, 163);
+            this.DeleteStudentAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DeleteStudentAccount.Name = "DeleteStudentAccount";
+            this.DeleteStudentAccount.Size = new System.Drawing.Size(176, 37);
+            this.DeleteStudentAccount.TabIndex = 5;
+            this.DeleteStudentAccount.Text = "Delete student account.";
+            this.DeleteStudentAccount.UseVisualStyleBackColor = true;
+            this.DeleteStudentAccount.Click += new System.EventHandler(this.deleteStudentClick);
             // 
-            // button4
+            // DeleteAssociateAccount
             // 
-            this.button4.Location = new System.Drawing.Point(59, 271);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(234, 46);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Delete Associate account.";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.DeleteAssociateAccount.Location = new System.Drawing.Point(44, 220);
+            this.DeleteAssociateAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DeleteAssociateAccount.Name = "DeleteAssociateAccount";
+            this.DeleteAssociateAccount.Size = new System.Drawing.Size(176, 37);
+            this.DeleteAssociateAccount.TabIndex = 6;
+            this.DeleteAssociateAccount.Text = "Delete Associate account.";
+            this.DeleteAssociateAccount.UseVisualStyleBackColor = true;
+            this.DeleteAssociateAccount.Click += new System.EventHandler(this.deleteAssociateClick);
             // 
-            // button5
+            // Back
             // 
-            this.button5.Location = new System.Drawing.Point(59, 336);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(234, 46);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Back to last menu.";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.Back.Location = new System.Drawing.Point(44, 273);
+            this.Back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(176, 37);
+            this.Back.TabIndex = 7;
+            this.Back.Text = "Back to last menu.";
+            this.Back.UseVisualStyleBackColor = true;
+            this.Back.Click += new System.EventHandler(this.BackClick);
             // 
             // Form_adminManageAccountMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 440);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(266, 358);
+            this.Controls.Add(this.Back);
+            this.Controls.Add(this.DeleteAssociateAccount);
+            this.Controls.Add(this.DeleteStudentAccount);
+            this.Controls.Add(this.AddAssociateAccount);
+            this.Controls.Add(this.AddStudentAccount);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form_adminManageAccountMenu";
             this.Text = "Admin - Manage accounts";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_adminManageAccountMenu_FormClosed);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button AddStudentAccount;
+        private System.Windows.Forms.Button AddAssociateAccount;
+        private System.Windows.Forms.Button DeleteStudentAccount;
+        private System.Windows.Forms.Button DeleteAssociateAccount;
+        private System.Windows.Forms.Button Back;
     }
 }

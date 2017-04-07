@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.List_courses = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.watchInfo = new System.Windows.Forms.Button();
+            this.recieveAmount = new System.Windows.Forms.Button();
+            this.Back = new System.Windows.Forms.Button();
             this.dataGrid = new System.Windows.Forms.DataGridView();
             this.textBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
@@ -46,40 +46,40 @@
             this.List_courses.TabIndex = 2;
             this.List_courses.Text = "List of all courses.";
             this.List_courses.UseVisualStyleBackColor = true;
-            this.List_courses.Click += new System.EventHandler(this.button1_Click);
+            this.List_courses.Click += new System.EventHandler(this.ListCoursesClick);
             // 
-            // button2
+            // watchInfo
             // 
-            this.button2.Location = new System.Drawing.Point(11, 148);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(176, 37);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Watch course\'s info.";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.watchInfo.Location = new System.Drawing.Point(11, 148);
+            this.watchInfo.Margin = new System.Windows.Forms.Padding(2);
+            this.watchInfo.Name = "watchInfo";
+            this.watchInfo.Size = new System.Drawing.Size(176, 37);
+            this.watchInfo.TabIndex = 3;
+            this.watchInfo.Text = "Watch course\'s info.";
+            this.watchInfo.UseVisualStyleBackColor = true;
+            this.watchInfo.Click += new System.EventHandler(this.watchInfoClick);
             // 
-            // button3
+            // recieveAmount
             // 
-            this.button3.Location = new System.Drawing.Point(11, 210);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(176, 37);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Receive amount of courses.";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.recieveAmount.Location = new System.Drawing.Point(11, 210);
+            this.recieveAmount.Margin = new System.Windows.Forms.Padding(2);
+            this.recieveAmount.Name = "recieveAmount";
+            this.recieveAmount.Size = new System.Drawing.Size(176, 37);
+            this.recieveAmount.TabIndex = 4;
+            this.recieveAmount.Text = "Receive amount of courses.";
+            this.recieveAmount.UseVisualStyleBackColor = true;
+            this.recieveAmount.Click += new System.EventHandler(this.recieveAmountClick);
             // 
-            // button4
+            // Back
             // 
-            this.button4.Location = new System.Drawing.Point(11, 275);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(176, 37);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Back to last menu.";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.Back.Location = new System.Drawing.Point(11, 275);
+            this.Back.Margin = new System.Windows.Forms.Padding(2);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(176, 37);
+            this.Back.TabIndex = 5;
+            this.Back.Text = "Back to last menu.";
+            this.Back.UseVisualStyleBackColor = true;
+            this.Back.Click += new System.EventHandler(this.BackClick);
             // 
             // dataGrid
             // 
@@ -107,13 +107,15 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.dataGrid);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Back);
+            this.Controls.Add(this.recieveAmount);
+            this.Controls.Add(this.watchInfo);
             this.Controls.Add(this.List_courses);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_adminCoursesMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin\'s courses menu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_adminCoursesMenu_FormClosed);
             this.Load += new System.EventHandler(this.Form_adminCoursesMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.ResumeLayout(false);
@@ -124,9 +126,9 @@
         #endregion
 
         private System.Windows.Forms.Button List_courses;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button watchInfo;
+        private System.Windows.Forms.Button recieveAmount;
+        private System.Windows.Forms.Button Back;
         private System.Windows.Forms.DataGridView dataGrid;
         private System.Windows.Forms.TextBox textBox;
     }
