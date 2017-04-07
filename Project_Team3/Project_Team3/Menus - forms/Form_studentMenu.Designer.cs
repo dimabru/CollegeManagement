@@ -42,46 +42,54 @@
             // 
             // LogoutStudent
             // 
-            this.LogoutStudent.Location = new System.Drawing.Point(37, 372);
+            this.LogoutStudent.BackColor = System.Drawing.Color.MistyRose;
+            this.LogoutStudent.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.LogoutStudent.Location = new System.Drawing.Point(41, 372);
             this.LogoutStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LogoutStudent.Name = "LogoutStudent";
-            this.LogoutStudent.Size = new System.Drawing.Size(211, 42);
+            this.LogoutStudent.Size = new System.Drawing.Size(235, 46);
             this.LogoutStudent.TabIndex = 0;
             this.LogoutStudent.Text = "Logout";
-            this.LogoutStudent.UseVisualStyleBackColor = true;
+            this.LogoutStudent.UseVisualStyleBackColor = false;
             this.LogoutStudent.Click += new System.EventHandler(this.LogoutStudent_Click);
             // 
             // AssociationMenuButton
             // 
-            this.AssociationMenuButton.Location = new System.Drawing.Point(37, 102);
+            this.AssociationMenuButton.BackColor = System.Drawing.Color.MistyRose;
+            this.AssociationMenuButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.AssociationMenuButton.Location = new System.Drawing.Point(41, 102);
             this.AssociationMenuButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AssociationMenuButton.Name = "AssociationMenuButton";
-            this.AssociationMenuButton.Size = new System.Drawing.Size(211, 42);
+            this.AssociationMenuButton.Size = new System.Drawing.Size(235, 46);
             this.AssociationMenuButton.TabIndex = 2;
             this.AssociationMenuButton.Text = "Association menu";
-            this.AssociationMenuButton.UseVisualStyleBackColor = true;
+            this.AssociationMenuButton.UseVisualStyleBackColor = false;
             this.AssociationMenuButton.Click += new System.EventHandler(this.AssociationMenuButton_Click);
             // 
             // StudentRequestButton
             // 
-            this.StudentRequestButton.Location = new System.Drawing.Point(37, 164);
+            this.StudentRequestButton.BackColor = System.Drawing.Color.MistyRose;
+            this.StudentRequestButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.StudentRequestButton.Location = new System.Drawing.Point(41, 164);
             this.StudentRequestButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StudentRequestButton.Name = "StudentRequestButton";
-            this.StudentRequestButton.Size = new System.Drawing.Size(211, 42);
+            this.StudentRequestButton.Size = new System.Drawing.Size(235, 46);
             this.StudentRequestButton.TabIndex = 3;
             this.StudentRequestButton.Text = "Student request";
-            this.StudentRequestButton.UseVisualStyleBackColor = true;
+            this.StudentRequestButton.UseVisualStyleBackColor = false;
             this.StudentRequestButton.Click += new System.EventHandler(this.StudentRequestButton_Click);
             // 
             // CoursesMenuButton
             // 
-            this.CoursesMenuButton.Location = new System.Drawing.Point(37, 225);
+            this.CoursesMenuButton.BackColor = System.Drawing.Color.MistyRose;
+            this.CoursesMenuButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.CoursesMenuButton.Location = new System.Drawing.Point(41, 225);
             this.CoursesMenuButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CoursesMenuButton.Name = "CoursesMenuButton";
-            this.CoursesMenuButton.Size = new System.Drawing.Size(211, 42);
+            this.CoursesMenuButton.Size = new System.Drawing.Size(235, 46);
             this.CoursesMenuButton.TabIndex = 4;
             this.CoursesMenuButton.Text = "Courses menu";
-            this.CoursesMenuButton.UseVisualStyleBackColor = true;
+            this.CoursesMenuButton.UseVisualStyleBackColor = false;
             this.CoursesMenuButton.Click += new System.EventHandler(this.CoursesMenuButton_Click);
             // 
             // eventLog1
@@ -101,7 +109,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(331, 39);
+            this.pictureBox1.Location = new System.Drawing.Point(323, 38);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(968, 479);
@@ -112,6 +120,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1333, 530);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox1);
@@ -120,6 +130,7 @@
             this.Controls.Add(this.AssociationMenuButton);
             this.Controls.Add(this.LogoutStudent);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form_studentMenu";
             this.Text = "Student Menu";

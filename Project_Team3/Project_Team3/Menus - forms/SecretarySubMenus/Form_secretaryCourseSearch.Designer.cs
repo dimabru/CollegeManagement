@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_secretaryCourseSearch));
             this.searchProgressBar = new System.Windows.Forms.ProgressBar();
             this.courseIDRadio = new System.Windows.Forms.RadioButton();
             this.courseNameRadio = new System.Windows.Forms.RadioButton();
@@ -38,9 +39,10 @@
             // 
             // searchProgressBar
             // 
-            this.searchProgressBar.Location = new System.Drawing.Point(52, 185);
+            this.searchProgressBar.Location = new System.Drawing.Point(545, 345);
+            this.searchProgressBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.searchProgressBar.Name = "searchProgressBar";
-            this.searchProgressBar.Size = new System.Drawing.Size(180, 23);
+            this.searchProgressBar.Size = new System.Drawing.Size(240, 28);
             this.searchProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.searchProgressBar.TabIndex = 0;
             this.searchProgressBar.Value = 50;
@@ -48,62 +50,80 @@
             // courseIDRadio
             // 
             this.courseIDRadio.AutoSize = true;
-            this.courseIDRadio.Location = new System.Drawing.Point(52, 52);
+            this.courseIDRadio.BackColor = System.Drawing.Color.Transparent;
+            this.courseIDRadio.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.courseIDRadio.Location = new System.Drawing.Point(504, 178);
+            this.courseIDRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.courseIDRadio.Name = "courseIDRadio";
-            this.courseIDRadio.Size = new System.Drawing.Size(72, 17);
+            this.courseIDRadio.Size = new System.Drawing.Size(129, 28);
             this.courseIDRadio.TabIndex = 1;
             this.courseIDRadio.TabStop = true;
             this.courseIDRadio.Text = "Course ID";
-            this.courseIDRadio.UseVisualStyleBackColor = true;
+            this.courseIDRadio.UseVisualStyleBackColor = false;
             // 
             // courseNameRadio
             // 
             this.courseNameRadio.AutoSize = true;
-            this.courseNameRadio.Location = new System.Drawing.Point(143, 52);
+            this.courseNameRadio.BackColor = System.Drawing.Color.Transparent;
+            this.courseNameRadio.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.courseNameRadio.Location = new System.Drawing.Point(667, 178);
+            this.courseNameRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.courseNameRadio.Name = "courseNameRadio";
-            this.courseNameRadio.Size = new System.Drawing.Size(89, 17);
+            this.courseNameRadio.Size = new System.Drawing.Size(162, 28);
             this.courseNameRadio.TabIndex = 2;
             this.courseNameRadio.TabStop = true;
             this.courseNameRadio.Text = "Course Name";
-            this.courseNameRadio.UseVisualStyleBackColor = true;
+            this.courseNameRadio.UseVisualStyleBackColor = false;
             // 
             // searchByLabel
             // 
             this.searchByLabel.AutoSize = true;
-            this.searchByLabel.Location = new System.Drawing.Point(108, 13);
+            this.searchByLabel.BackColor = System.Drawing.Color.Transparent;
+            this.searchByLabel.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.searchByLabel.Location = new System.Drawing.Point(601, 132);
+            this.searchByLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.searchByLabel.Name = "searchByLabel";
-            this.searchByLabel.Size = new System.Drawing.Size(58, 13);
+            this.searchByLabel.Size = new System.Drawing.Size(120, 24);
             this.searchByLabel.TabIndex = 3;
             this.searchByLabel.Text = "Search by:";
             // 
             // courseValueTextBox
             // 
-            this.courseValueTextBox.Location = new System.Drawing.Point(52, 96);
+            this.courseValueTextBox.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.courseValueTextBox.Location = new System.Drawing.Point(545, 235);
+            this.courseValueTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.courseValueTextBox.Name = "courseValueTextBox";
-            this.courseValueTextBox.Size = new System.Drawing.Size(180, 20);
+            this.courseValueTextBox.Size = new System.Drawing.Size(239, 30);
             this.courseValueTextBox.TabIndex = 4;
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(52, 131);
+            this.searchButton.BackColor = System.Drawing.Color.MistyRose;
+            this.searchButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.searchButton.Location = new System.Drawing.Point(545, 278);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(180, 23);
+            this.searchButton.Size = new System.Drawing.Size(240, 28);
             this.searchButton.TabIndex = 5;
             this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // Form_secretaryCourseSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1332, 703);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.courseValueTextBox);
             this.Controls.Add(this.searchByLabel);
             this.Controls.Add(this.courseNameRadio);
             this.Controls.Add(this.courseIDRadio);
             this.Controls.Add(this.searchProgressBar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form_secretaryCourseSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course Search";

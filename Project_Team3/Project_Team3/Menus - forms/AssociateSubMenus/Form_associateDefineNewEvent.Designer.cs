@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_associateDefineNewEvent));
             this.eventDescriptionRichTextBox = new System.Windows.Forms.RichTextBox();
             this.eventNameTextBox = new System.Windows.Forms.TextBox();
             this.createEventButton = new System.Windows.Forms.Button();
@@ -44,45 +45,52 @@
             // 
             // eventDescriptionRichTextBox
             // 
-            this.eventDescriptionRichTextBox.Location = new System.Drawing.Point(60, 106);
+            this.eventDescriptionRichTextBox.Location = new System.Drawing.Point(477, 253);
+            this.eventDescriptionRichTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.eventDescriptionRichTextBox.Name = "eventDescriptionRichTextBox";
-            this.eventDescriptionRichTextBox.Size = new System.Drawing.Size(116, 96);
+            this.eventDescriptionRichTextBox.Size = new System.Drawing.Size(153, 117);
             this.eventDescriptionRichTextBox.TabIndex = 0;
             this.eventDescriptionRichTextBox.Text = "";
             // 
             // eventNameTextBox
             // 
-            this.eventNameTextBox.Location = new System.Drawing.Point(60, 42);
+            this.eventNameTextBox.Location = new System.Drawing.Point(477, 175);
+            this.eventNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.eventNameTextBox.Name = "eventNameTextBox";
-            this.eventNameTextBox.Size = new System.Drawing.Size(116, 20);
+            this.eventNameTextBox.Size = new System.Drawing.Size(153, 22);
             this.eventNameTextBox.TabIndex = 1;
             // 
             // createEventButton
             // 
-            this.createEventButton.Location = new System.Drawing.Point(60, 221);
+            this.createEventButton.BackColor = System.Drawing.Color.MistyRose;
+            this.createEventButton.Font = new System.Drawing.Font("David", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.createEventButton.Location = new System.Drawing.Point(477, 395);
+            this.createEventButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.createEventButton.Name = "createEventButton";
-            this.createEventButton.Size = new System.Drawing.Size(116, 23);
+            this.createEventButton.Size = new System.Drawing.Size(155, 28);
             this.createEventButton.TabIndex = 4;
             this.createEventButton.Text = "Create Event";
-            this.createEventButton.UseVisualStyleBackColor = true;
+            this.createEventButton.UseVisualStyleBackColor = false;
             this.createEventButton.Click += new System.EventHandler(this.createEventButton_Click);
             // 
             // clearNameButton
             // 
-            this.clearNameButton.BackColor = System.Drawing.Color.Red;
-            this.clearNameButton.Location = new System.Drawing.Point(32, 42);
+            this.clearNameButton.BackColor = System.Drawing.Color.Bisque;
+            this.clearNameButton.Location = new System.Drawing.Point(440, 175);
+            this.clearNameButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clearNameButton.Name = "clearNameButton";
-            this.clearNameButton.Size = new System.Drawing.Size(22, 21);
+            this.clearNameButton.Size = new System.Drawing.Size(29, 26);
             this.clearNameButton.TabIndex = 5;
             this.clearNameButton.UseVisualStyleBackColor = false;
             this.clearNameButton.Click += new System.EventHandler(this.clearNameButton_Click);
             // 
             // clearDescription
             // 
-            this.clearDescription.BackColor = System.Drawing.Color.Red;
-            this.clearDescription.Location = new System.Drawing.Point(32, 106);
+            this.clearDescription.BackColor = System.Drawing.Color.Bisque;
+            this.clearDescription.Location = new System.Drawing.Point(440, 253);
+            this.clearDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clearDescription.Name = "clearDescription";
-            this.clearDescription.Size = new System.Drawing.Size(22, 23);
+            this.clearDescription.Size = new System.Drawing.Size(29, 28);
             this.clearDescription.TabIndex = 6;
             this.clearDescription.UseVisualStyleBackColor = false;
             this.clearDescription.Click += new System.EventHandler(this.clearDescription_Click);
@@ -90,60 +98,67 @@
             // eventNameLabel
             // 
             this.eventNameLabel.AutoSize = true;
-            this.eventNameLabel.Location = new System.Drawing.Point(60, 23);
+            this.eventNameLabel.Location = new System.Drawing.Point(477, 151);
+            this.eventNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.eventNameLabel.Name = "eventNameLabel";
-            this.eventNameLabel.Size = new System.Drawing.Size(69, 13);
+            this.eventNameLabel.Size = new System.Drawing.Size(89, 17);
             this.eventNameLabel.TabIndex = 8;
             this.eventNameLabel.Text = "Event Name:";
             // 
             // eventDescriptionLabel
             // 
             this.eventDescriptionLabel.AutoSize = true;
-            this.eventDescriptionLabel.Location = new System.Drawing.Point(60, 90);
+            this.eventDescriptionLabel.Location = new System.Drawing.Point(477, 234);
+            this.eventDescriptionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.eventDescriptionLabel.Name = "eventDescriptionLabel";
-            this.eventDescriptionLabel.Size = new System.Drawing.Size(94, 13);
+            this.eventDescriptionLabel.Size = new System.Drawing.Size(123, 17);
             this.eventDescriptionLabel.TabIndex = 9;
             this.eventDescriptionLabel.Text = "Event Description:";
             // 
             // startTimePicker
             // 
             this.startTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.startTimePicker.Location = new System.Drawing.Point(222, 42);
+            this.startTimePicker.Location = new System.Drawing.Point(693, 175);
+            this.startTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.startTimePicker.Name = "startTimePicker";
             this.startTimePicker.ShowUpDown = true;
-            this.startTimePicker.Size = new System.Drawing.Size(35, 20);
+            this.startTimePicker.Size = new System.Drawing.Size(45, 22);
             this.startTimePicker.TabIndex = 10;
             // 
             // endTimePicker
             // 
             this.endTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.endTimePicker.Location = new System.Drawing.Point(299, 42);
+            this.endTimePicker.Location = new System.Drawing.Point(796, 175);
+            this.endTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.endTimePicker.Name = "endTimePicker";
             this.endTimePicker.ShowUpDown = true;
-            this.endTimePicker.Size = new System.Drawing.Size(35, 20);
+            this.endTimePicker.Size = new System.Drawing.Size(45, 22);
             this.endTimePicker.TabIndex = 11;
             // 
             // startLabel
             // 
             this.startLabel.AutoSize = true;
-            this.startLabel.Location = new System.Drawing.Point(219, 23);
+            this.startLabel.Location = new System.Drawing.Point(689, 151);
+            this.startLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.startLabel.Name = "startLabel";
-            this.startLabel.Size = new System.Drawing.Size(29, 13);
+            this.startLabel.Size = new System.Drawing.Size(38, 17);
             this.startLabel.TabIndex = 12;
             this.startLabel.Text = "Start";
             // 
             // endLabel
             // 
             this.endLabel.AutoSize = true;
-            this.endLabel.Location = new System.Drawing.Point(302, 23);
+            this.endLabel.Location = new System.Drawing.Point(800, 151);
+            this.endLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.endLabel.Name = "endLabel";
-            this.endLabel.Size = new System.Drawing.Size(29, 13);
+            this.endLabel.Size = new System.Drawing.Size(37, 17);
             this.endLabel.TabIndex = 13;
             this.endLabel.Text = "End:";
             // 
             // dayPickerListBox
             // 
             this.dayPickerListBox.FormattingEnabled = true;
+            this.dayPickerListBox.ItemHeight = 16;
             this.dayPickerListBox.Items.AddRange(new object[] {
             "Sunday",
             "Monday",
@@ -151,16 +166,19 @@
             "Wednesday",
             "Thursday",
             "Friday"});
-            this.dayPickerListBox.Location = new System.Drawing.Point(222, 90);
+            this.dayPickerListBox.Location = new System.Drawing.Point(693, 234);
+            this.dayPickerListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dayPickerListBox.Name = "dayPickerListBox";
-            this.dayPickerListBox.Size = new System.Drawing.Size(65, 95);
+            this.dayPickerListBox.Size = new System.Drawing.Size(85, 116);
             this.dayPickerListBox.TabIndex = 14;
             // 
             // Form_associateDefineNewEvent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 261);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1332, 703);
             this.Controls.Add(this.dayPickerListBox);
             this.Controls.Add(this.endLabel);
             this.Controls.Add(this.startLabel);
@@ -173,6 +191,8 @@
             this.Controls.Add(this.createEventButton);
             this.Controls.Add(this.eventNameTextBox);
             this.Controls.Add(this.eventDescriptionRichTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form_associateDefineNewEvent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_associateDefineNewEvent";

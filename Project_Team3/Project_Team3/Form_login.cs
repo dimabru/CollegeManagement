@@ -90,5 +90,15 @@ namespace Project_Team3
 
             db.CloseConn(db.ConnStatus());
         }
+
+        private void Form_login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -38,5 +38,10 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
             MessageBox.Show("Denying Request not available yet");
 
         }
+
+        private void Form_secretaryStudentRequests_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_secretaryStudentSearch));
             this.idRadioButton = new System.Windows.Forms.RadioButton();
             this.nameRadioButton = new System.Windows.Forms.RadioButton();
             this.searchByLabel = new System.Windows.Forms.Label();
@@ -39,71 +40,90 @@
             // idRadioButton
             // 
             this.idRadioButton.AutoSize = true;
-            this.idRadioButton.Location = new System.Drawing.Point(114, 41);
+            this.idRadioButton.BackColor = System.Drawing.Color.Transparent;
+            this.idRadioButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.idRadioButton.Location = new System.Drawing.Point(558, 181);
+            this.idRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.idRadioButton.Name = "idRadioButton";
-            this.idRadioButton.Size = new System.Drawing.Size(36, 17);
+            this.idRadioButton.Size = new System.Drawing.Size(57, 28);
             this.idRadioButton.TabIndex = 0;
             this.idRadioButton.TabStop = true;
             this.idRadioButton.Text = "ID";
-            this.idRadioButton.UseVisualStyleBackColor = true;
+            this.idRadioButton.UseVisualStyleBackColor = false;
             // 
             // nameRadioButton
             // 
             this.nameRadioButton.AutoSize = true;
-            this.nameRadioButton.Location = new System.Drawing.Point(200, 41);
+            this.nameRadioButton.BackColor = System.Drawing.Color.Transparent;
+            this.nameRadioButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.nameRadioButton.Location = new System.Drawing.Point(673, 181);
+            this.nameRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nameRadioButton.Name = "nameRadioButton";
-            this.nameRadioButton.Size = new System.Drawing.Size(53, 17);
+            this.nameRadioButton.Size = new System.Drawing.Size(91, 28);
             this.nameRadioButton.TabIndex = 1;
             this.nameRadioButton.TabStop = true;
             this.nameRadioButton.Text = "Name";
-            this.nameRadioButton.UseVisualStyleBackColor = true;
+            this.nameRadioButton.UseVisualStyleBackColor = false;
             // 
             // searchByLabel
             // 
             this.searchByLabel.AutoSize = true;
-            this.searchByLabel.Location = new System.Drawing.Point(148, 14);
+            this.searchByLabel.BackColor = System.Drawing.Color.Transparent;
+            this.searchByLabel.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.searchByLabel.Location = new System.Drawing.Point(587, 142);
+            this.searchByLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.searchByLabel.Name = "searchByLabel";
-            this.searchByLabel.Size = new System.Drawing.Size(59, 13);
+            this.searchByLabel.Size = new System.Drawing.Size(123, 24);
             this.searchByLabel.TabIndex = 2;
             this.searchByLabel.Text = "Search By:";
             // 
             // searchValueTextBox
             // 
-            this.searchValueTextBox.Location = new System.Drawing.Point(128, 77);
+            this.searchValueTextBox.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.searchValueTextBox.Location = new System.Drawing.Point(577, 226);
+            this.searchValueTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.searchValueTextBox.Name = "searchValueTextBox";
-            this.searchValueTextBox.Size = new System.Drawing.Size(100, 20);
+            this.searchValueTextBox.Size = new System.Drawing.Size(132, 30);
             this.searchValueTextBox.TabIndex = 3;
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(128, 122);
+            this.searchButton.BackColor = System.Drawing.Color.MistyRose;
+            this.searchButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.searchButton.Location = new System.Drawing.Point(577, 281);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(100, 22);
+            this.searchButton.Size = new System.Drawing.Size(133, 30);
             this.searchButton.TabIndex = 4;
             this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // searchProgressBar
             // 
-            this.searchProgressBar.Location = new System.Drawing.Point(93, 173);
+            this.searchProgressBar.Location = new System.Drawing.Point(530, 344);
+            this.searchProgressBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.searchProgressBar.Name = "searchProgressBar";
-            this.searchProgressBar.Size = new System.Drawing.Size(173, 23);
+            this.searchProgressBar.Size = new System.Drawing.Size(231, 28);
             this.searchProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.searchProgressBar.TabIndex = 5;
             this.searchProgressBar.Value = 50;
             // 
             // Form_secretaryStudentSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 261);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1332, 703);
             this.Controls.Add(this.searchProgressBar);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.searchValueTextBox);
             this.Controls.Add(this.searchByLabel);
             this.Controls.Add(this.nameRadioButton);
             this.Controls.Add(this.idRadioButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form_secretaryStudentSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Search";

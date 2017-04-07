@@ -41,40 +41,45 @@
             // 
             // logoutButton
             // 
+            this.logoutButton.BackColor = System.Drawing.Color.MistyRose;
             resources.ApplyResources(this.logoutButton, "logoutButton");
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.UseVisualStyleBackColor = false;
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // globalMessageLabel
             // 
             resources.ApplyResources(this.globalMessageLabel, "globalMessageLabel");
+            this.globalMessageLabel.BackColor = System.Drawing.Color.MistyRose;
             this.globalMessageLabel.Name = "globalMessageLabel";
             // 
             // viewWeeklyPlanButton
             // 
+            this.viewWeeklyPlanButton.BackColor = System.Drawing.Color.MistyRose;
             resources.ApplyResources(this.viewWeeklyPlanButton, "viewWeeklyPlanButton");
             this.viewWeeklyPlanButton.Name = "viewWeeklyPlanButton";
-            this.viewWeeklyPlanButton.UseVisualStyleBackColor = true;
+            this.viewWeeklyPlanButton.UseVisualStyleBackColor = false;
             this.viewWeeklyPlanButton.Click += new System.EventHandler(this.viewWeeklyPlanButton_Click);
             // 
             // defineNewEventButton
             // 
+            this.defineNewEventButton.BackColor = System.Drawing.Color.MistyRose;
             resources.ApplyResources(this.defineNewEventButton, "defineNewEventButton");
             this.defineNewEventButton.Name = "defineNewEventButton";
-            this.defineNewEventButton.UseVisualStyleBackColor = true;
+            this.defineNewEventButton.UseVisualStyleBackColor = false;
             this.defineNewEventButton.Click += new System.EventHandler(this.defineNewEventButton_Click);
             // 
             // viewAllEventsButton
             // 
+            this.viewAllEventsButton.BackColor = System.Drawing.Color.MistyRose;
             resources.ApplyResources(this.viewAllEventsButton, "viewAllEventsButton");
             this.viewAllEventsButton.Name = "viewAllEventsButton";
-            this.viewAllEventsButton.UseVisualStyleBackColor = true;
+            this.viewAllEventsButton.UseVisualStyleBackColor = false;
             this.viewAllEventsButton.Click += new System.EventHandler(this.viewAllEventsButton_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BackColor = System.Drawing.Color.MistyRose;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
@@ -83,6 +88,7 @@
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.MistyRose;
             this.label1.Name = "label1";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -98,6 +104,7 @@
             this.Controls.Add(this.viewWeeklyPlanButton);
             this.Controls.Add(this.globalMessageLabel);
             this.Controls.Add(this.logoutButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_associateMenu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_associateMenu_FormClosed);
             this.Load += new System.EventHandler(this.Form_associateMenu_Load);

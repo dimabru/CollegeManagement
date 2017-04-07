@@ -70,5 +70,10 @@ namespace Project_Team3
             Form_login parent = (Form_login)this.Owner;
             parent.Show();
         }
+
+        private void Form_secretaryMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
