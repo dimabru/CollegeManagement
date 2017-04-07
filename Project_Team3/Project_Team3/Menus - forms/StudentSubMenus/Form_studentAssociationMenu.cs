@@ -17,22 +17,22 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void AssociationInformationButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void RegisterEventsButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void UnregisterEventsButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void BackToLastAssMenu_Click(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
         }

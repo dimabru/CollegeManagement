@@ -17,17 +17,17 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void NewRequestButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ExistingRequestsButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void BackToLastReqMenu_Click(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
         }

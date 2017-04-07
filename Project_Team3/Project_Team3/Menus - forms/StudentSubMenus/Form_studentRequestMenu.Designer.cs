@@ -28,49 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.NewRequestButton = new System.Windows.Forms.Button();
+            this.ExistingRequestsButton = new System.Windows.Forms.Button();
+            this.BackToLastReqMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button3
+            // NewRequestButton
             // 
-            this.button3.Location = new System.Drawing.Point(51, 33);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(210, 42);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "New request";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.NewRequestButton.Location = new System.Drawing.Point(51, 33);
+            this.NewRequestButton.Name = "NewRequestButton";
+            this.NewRequestButton.Size = new System.Drawing.Size(210, 42);
+            this.NewRequestButton.TabIndex = 4;
+            this.NewRequestButton.Text = "New request";
+            this.NewRequestButton.UseVisualStyleBackColor = true;
+            this.NewRequestButton.Click += new System.EventHandler(this.NewRequestButton_Click);
             // 
-            // button1
+            // ExistingRequestsButton
             // 
-            this.button1.Location = new System.Drawing.Point(51, 100);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(210, 42);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Existing requests";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ExistingRequestsButton.Location = new System.Drawing.Point(51, 100);
+            this.ExistingRequestsButton.Name = "ExistingRequestsButton";
+            this.ExistingRequestsButton.Size = new System.Drawing.Size(210, 42);
+            this.ExistingRequestsButton.TabIndex = 5;
+            this.ExistingRequestsButton.Text = "Existing requests";
+            this.ExistingRequestsButton.UseVisualStyleBackColor = true;
+            this.ExistingRequestsButton.Click += new System.EventHandler(this.ExistingRequestsButton_Click);
             // 
-            // button2
+            // BackToLastReqMenu
             // 
-            this.button2.Location = new System.Drawing.Point(51, 173);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(210, 42);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Back to last menu";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.BackToLastReqMenu.Location = new System.Drawing.Point(51, 173);
+            this.BackToLastReqMenu.Name = "BackToLastReqMenu";
+            this.BackToLastReqMenu.Size = new System.Drawing.Size(210, 42);
+            this.BackToLastReqMenu.TabIndex = 6;
+            this.BackToLastReqMenu.Text = "Back to last menu";
+            this.BackToLastReqMenu.UseVisualStyleBackColor = true;
+            this.BackToLastReqMenu.Click += new System.EventHandler(this.BackToLastReqMenu_Click);
             // 
             // Form_studentRequestMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(314, 253);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.BackToLastReqMenu);
+            this.Controls.Add(this.ExistingRequestsButton);
+            this.Controls.Add(this.NewRequestButton);
             this.Name = "Form_studentRequestMenu";
             this.Text = "Student Request Menu";
             this.ResumeLayout(false);
@@ -79,8 +79,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button NewRequestButton;
+        private System.Windows.Forms.Button ExistingRequestsButton;
+        private System.Windows.Forms.Button BackToLastReqMenu;
     }
 }

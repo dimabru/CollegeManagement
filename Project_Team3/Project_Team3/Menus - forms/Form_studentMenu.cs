@@ -24,21 +24,6 @@ namespace Project_Team3
            
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("UNDER CONSTRUCTION");
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("UNDER CONSTRUCTION");
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void Form_studentMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             Form_login parent = (Form_login)this.Owner;
@@ -48,6 +33,21 @@ namespace Project_Team3
         private void AssociationMenuButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
+        }
+
+        private void StudentRequestButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("UNDER CONSTRUCTION");
+        }
+
+        private void CoursesMenuButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("UNDER CONSTRUCTION");
+        }
+
+        private void LogoutStudent_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

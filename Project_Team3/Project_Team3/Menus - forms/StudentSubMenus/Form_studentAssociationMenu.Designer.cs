@@ -28,61 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.AssociationInformationButton = new System.Windows.Forms.Button();
+            this.RegisterEventsButton = new System.Windows.Forms.Button();
+            this.UnregisterEventsButton = new System.Windows.Forms.Button();
+            this.BackToLastAssMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button3
+            // AssociationInformationButton
             // 
-            this.button3.Location = new System.Drawing.Point(62, 70);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(210, 42);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Association information";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.AssociationInformationButton.Location = new System.Drawing.Point(62, 70);
+            this.AssociationInformationButton.Name = "AssociationInformationButton";
+            this.AssociationInformationButton.Size = new System.Drawing.Size(210, 42);
+            this.AssociationInformationButton.TabIndex = 3;
+            this.AssociationInformationButton.Text = "Association information";
+            this.AssociationInformationButton.UseVisualStyleBackColor = true;
+            this.AssociationInformationButton.Click += new System.EventHandler(this.AssociationInformationButton_Click);
             // 
-            // button1
+            // RegisterEventsButton
             // 
-            this.button1.Location = new System.Drawing.Point(62, 146);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(210, 42);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Register to association events";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.RegisterEventsButton.Location = new System.Drawing.Point(62, 146);
+            this.RegisterEventsButton.Name = "RegisterEventsButton";
+            this.RegisterEventsButton.Size = new System.Drawing.Size(210, 42);
+            this.RegisterEventsButton.TabIndex = 4;
+            this.RegisterEventsButton.Text = "Register to association events";
+            this.RegisterEventsButton.UseVisualStyleBackColor = true;
+            this.RegisterEventsButton.Click += new System.EventHandler(this.RegisterEventsButton_Click);
             // 
-            // button2
+            // UnregisterEventsButton
             // 
-            this.button2.Location = new System.Drawing.Point(62, 222);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(210, 42);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Unregister association events";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.UnregisterEventsButton.Location = new System.Drawing.Point(62, 222);
+            this.UnregisterEventsButton.Name = "UnregisterEventsButton";
+            this.UnregisterEventsButton.Size = new System.Drawing.Size(210, 42);
+            this.UnregisterEventsButton.TabIndex = 5;
+            this.UnregisterEventsButton.Text = "Unregister association events";
+            this.UnregisterEventsButton.UseVisualStyleBackColor = true;
+            this.UnregisterEventsButton.Click += new System.EventHandler(this.UnregisterEventsButton_Click);
             // 
-            // button4
+            // BackToLastAssMenu
             // 
-            this.button4.Location = new System.Drawing.Point(62, 298);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(210, 42);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Back to last menu";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.BackToLastAssMenu.Location = new System.Drawing.Point(62, 298);
+            this.BackToLastAssMenu.Name = "BackToLastAssMenu";
+            this.BackToLastAssMenu.Size = new System.Drawing.Size(210, 42);
+            this.BackToLastAssMenu.TabIndex = 6;
+            this.BackToLastAssMenu.Text = "Back to last menu";
+            this.BackToLastAssMenu.UseVisualStyleBackColor = true;
+            this.BackToLastAssMenu.Click += new System.EventHandler(this.BackToLastAssMenu_Click);
             // 
             // Form_studentAssociationMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(345, 436);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.BackToLastAssMenu);
+            this.Controls.Add(this.UnregisterEventsButton);
+            this.Controls.Add(this.RegisterEventsButton);
+            this.Controls.Add(this.AssociationInformationButton);
             this.Name = "Form_studentAssociationMenu";
             this.Text = "Student\'s Association Menu";
             this.ResumeLayout(false);
@@ -91,9 +91,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button AssociationInformationButton;
+        private System.Windows.Forms.Button RegisterEventsButton;
+        private System.Windows.Forms.Button UnregisterEventsButton;
+        private System.Windows.Forms.Button BackToLastAssMenu;
     }
 }
