@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
@@ -14,7 +10,6 @@ namespace Project_Team3
 
         private string connetionString = "Server=tcp:sce2017b.database.windows.net,1433;Initial Catalog=Project3DB;Persist Security Info=False;User ID=sceproject;Password=2017Sce2017;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         private SqlConnection con;
-
 
         public DBconnect() // ctor
         {
@@ -33,8 +28,6 @@ namespace Project_Team3
             try
             {
                 con.Open();
-                //MessageBox.Show ("Connection Open ! ");
-
                 return true;
             }
             catch (Exception ex)
@@ -42,7 +35,6 @@ namespace Project_Team3
                 MessageBox.Show("Can not open connection ! ");
                 return false;
             }
-
         }
         public Boolean ConnStatus()
         {
@@ -56,11 +48,9 @@ namespace Project_Team3
             {
                 con.Close();
             }
-
         }
 
         public SqlConnection getConnection() { return con; }
-
 
         public DataSet LoadAllTable(string tableName)
         {
@@ -77,30 +67,6 @@ namespace Project_Team3
             return ds;
         }
 
-
-
-        public DataSet generalSelect(string tableName, bool where,  string condition, List<string> a,string columns = "*")
-        {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = con;
-            SqlDataAdapter sda = new SqlDataAdapter();
-            DataSet ds = new DataSet();
-
-
-            cmd.CommandText = "SELECT " + columns + " FROM " + tableName;
-            if (where) cmd.CommandText += " WHERE "+ condition;
-
-            for (int i =0; i < a.Count; i++)
-            {
-                cmd.Parameters.AddWithValue(i.ToString(), a[i]);
-
-            }
-            sda.SelectCommand = cmd;
-            sda.Fill(ds, "Conn_DB");
-
-            return ds;
-        }
         public DataSet generalCommand(SqlCommand cmd){
             SqlDataAdapter sda = new SqlDataAdapter();
             DataSet ds = new DataSet();
