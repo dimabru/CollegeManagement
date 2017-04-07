@@ -138,7 +138,13 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
         private void Back_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            this.Close();
+        }
+
+        private void Form_adminAccountsMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form_adminMenu parent = (Form_adminMenu)this.Owner;
+            parent.Show();
         }
     }
 }
