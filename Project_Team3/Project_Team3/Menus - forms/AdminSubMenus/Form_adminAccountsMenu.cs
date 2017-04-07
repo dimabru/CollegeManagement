@@ -18,7 +18,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void watchStudents_Click(object sender, EventArgs e)
         {
             ////
             //// Print all students in system
@@ -45,12 +45,13 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             db.CloseConn(db.ConnStatus());      // close connection
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void watchAssociates_Click(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
         }
 
-        private void button3_Click(object sender, EventArgs e)
+
+        private void getStudentsNumber_Click(object sender, EventArgs e)
         {
             DBconnect db = new DBconnect();
             db.OpenConn();
@@ -100,20 +101,18 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             db.CloseConn(db.ConnStatus());      // close connection
         }
 
-        private void button4_Click(object sender, EventArgs e)
+
+        private void getAssociatesNumberClick(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
         }
+
 
         private void button5_Click(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
         }
 
-        private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void dataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -136,6 +135,10 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
                  cellValue5.ToString() + "\n Semester:  " +
                  cellValue6.ToString());
         }
-    
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("UNDER CONSTRUCTION");
+        }
     }
 }
