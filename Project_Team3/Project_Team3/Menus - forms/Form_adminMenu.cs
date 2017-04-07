@@ -18,22 +18,13 @@ namespace Project_Team3
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form_adminMenu_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void manageAccountsButtonClick(object sender, EventArgs e)
         {
             this.Hide();
             Form Account_Managment = new Form_adminAccountsMenu();
@@ -42,30 +33,36 @@ namespace Project_Team3
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Form coursesMenu = new Form_adminCoursesMenu();
-            this.Hide();
-            coursesMenu.Show();
-            coursesMenu.BringToFront();
 
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void globalMessageButtonClick(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("UNDER CONSTRUCTION");
-        }
 
         private void Form_adminMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             Form_login parent = (Form_login)this.Owner;
             parent.Show();
+        }
+
+        private void coursesMenuButtonClick(object sender, EventArgs e)
+        {
+            Form coursesMenu = new Form_adminCoursesMenu();
+            this.Hide();
+            coursesMenu.Show();
+            coursesMenu.BringToFront();
+        }
+
+        private void accountsMenuButtonClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("UNDER CONSTRUCTION");
+        }
+
+        private void logoutButtonClick(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }
