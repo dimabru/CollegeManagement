@@ -48,7 +48,6 @@ namespace Project_Team3
             switch (getAccessGroup())
             {
                 case "Admin":
-                    this.Hide();
                     using (Form_adminMenu admin_menu = new Form_adminMenu())
                     {
                         this.Hide();
@@ -56,7 +55,6 @@ namespace Project_Team3
                     }
                     break;
                 case "Student":
-                    this.Hide();
                     using (Form_studentMenu student_menu = new Form_studentMenu())
                     {
                         this.Hide();
@@ -64,7 +62,6 @@ namespace Project_Team3
                     }
                     break;
                 case "Associate":
-                    this.Hide();
                     using (Form_associateMenu associate_menu = new Form_associateMenu())
                     {
                         this.Hide();
@@ -72,7 +69,6 @@ namespace Project_Team3
                     }
                     break;
                 case "Secretary":
-                    this.Hide();
                     using (Form_secretaryMenu secretary_menu = new Form_secretaryMenu())
                     {
                         this.Hide();
