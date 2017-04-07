@@ -29,11 +29,6 @@ namespace Project_Team3
             MessageBox.Show("UNDER CONSTRUCTION");
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("UNDER CONSTRUCTION");
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("UNDER CONSTRUCTION");
@@ -48,6 +43,11 @@ namespace Project_Team3
         {
             Form_login parent = (Form_login)this.Owner;
             parent.Show();
+        }
+
+        private void AssociationMenuButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("UNDER CONSTRUCTION");
         }
     }
 }
