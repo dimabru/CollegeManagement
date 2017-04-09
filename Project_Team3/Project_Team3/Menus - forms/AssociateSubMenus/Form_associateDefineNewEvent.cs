@@ -56,5 +56,10 @@ using System.Data.SqlClient;
 
             this.Close();
         }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

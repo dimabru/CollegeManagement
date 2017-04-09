@@ -98,7 +98,17 @@ namespace Project_Team3
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            // close application
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
         }
     }
 }
