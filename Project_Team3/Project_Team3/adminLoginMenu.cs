@@ -41,15 +41,15 @@ namespace Project_Team3
         private void button1_Click(object sender, EventArgs e)
         {
             //instance of data base managment;
-            updateUserDataBase check_user_instance = new updateUserDataBase();
+            dataBaseOperations check_user_instance = new dataBaseOperations();
             //instance of cheking class;
-            publicChecks check_id_if_numeric = new publicChecks();
+            publicChecksAndOperations check_id_if_numeric = new publicChecksAndOperations();
 
-            if (check_id_if_numeric.isNumeric(textBox1.Text))
+            if (check_id_if_numeric.isNumericUlong(textBox1.Text))
             {
                 //turn the string into int;
-                int id = Int32.Parse(textBox1.Text);
 
+                ulong id = Convert.ToUInt32(textBox1.Text, 10);
                 try
                 {
                     //check if user exist in the system;
@@ -120,7 +120,7 @@ namespace Project_Team3
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //declare that the application is closed to avoid open new windows and making bug;
-            publicChecks exitCheck = new publicChecks();
+            publicChecksAndOperations exitCheck = new publicChecksAndOperations();
             exitCheck.setUserExit();
             Application.Exit();
         }

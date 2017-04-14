@@ -27,13 +27,11 @@ namespace Project_Team3
 
             //adding the panels to the list;
             listPanel.Add(panel1);
-            listPanel.Add(panel2);
-
             //hide all panels;
-            foreach (Panel panelItem in listPanel)
-            {
-                panelItem.Hide();
-            }
+            //foreach (Panel panelItem in listPanel)
+            //{
+            //    panelItem.Hide();
+            //}
             //show the first panel
             listPanel[myPanelCounter].Show();
         }
@@ -68,30 +66,36 @@ namespace Project_Team3
             this.Close();
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             //instance of data base managment;
-            updateUserDataBase check_user_instance = new updateUserDataBase();
+            dataBaseOperations check_user_instance = new dataBaseOperations();
             //instance of cheking class;
-            publicChecks check_id_if_numeric = new publicChecks();
+            publicChecksAndOperations check_id_if_numeric = new publicChecksAndOperations();
 
-            if (check_id_if_numeric.isNumeric(textBox1.Text))
+            if (check_id_if_numeric.isNumericUlong(textBox1.Text))
             {
                 //turn the string into int;
-                int id = Int32.Parse(textBox1.Text);
+                ulong id = Convert.ToUInt32(textBox1.Text, 10);
 
                 try
                 {
                     //check if user exist in the system;
                     if (check_user_instance.userExist(textBox2.Text, id, "Professor"))
                     {
-                        //hide this panel to show the other;
-                        label3.Hide();
-                        listPanel[myPanelCounter].Hide();
-                        //raise counter to next panel;
-                        myPanelCounter++;
-                        //show secretary menu;
-                        listPanel[myPanelCounter].Show();
+                        //In perception i thing that its importent to pass 
+                        //user object for the next managing form
+                        //plese do it in all other form  
+
+                        //here i create new prof obj
+                        professor prof = new professor(id);
+                        //and then i pass it to the next form 
+                        //i'll catch it in the next form constractor
+                        professorMenu porfMen = new professorMenu(prof);
+                        
+                        this.Hide();
+                        porfMen.ShowDialog();
                     }
                     else
                     {
@@ -126,7 +130,7 @@ namespace Project_Team3
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //declare that the application is closed to avoid open new windows and making bug;
-            publicChecks closeCheck = new publicChecks();
+            publicChecksAndOperations closeCheck = new publicChecksAndOperations();
             closeCheck.setUserExit();
             Application.Exit();
         }

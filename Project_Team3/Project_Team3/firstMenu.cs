@@ -35,7 +35,7 @@ namespace Project_Team3
             instructorLoginMenu instructorLoginForm = new instructorLoginMenu();
             adminLoginMenu      adminLoginForm      = new adminLoginMenu();
 
-            publicChecks checkIfUserExit = new publicChecks();
+            publicChecksAndOperations checkIfUserExit = new publicChecksAndOperations();
 
             if(comboBox1.Text == "secretary")
             {
@@ -44,7 +44,7 @@ namespace Project_Team3
                 if (!checkIfUserExit.didUserExit())
                 {
                     this.Show();
-                } 
+                }
             }
 
             else if (comboBox1.Text == "professor")
