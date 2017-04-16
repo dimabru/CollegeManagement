@@ -72,76 +72,76 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="admin.cs" />
-    <Compile Include="adminLoginMenu.cs">
+    <Compile Include="Users\admin.cs" />
+    <Compile Include="GUI\adminLoginMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="adminLoginMenu.Designer.cs">
+    <Compile Include="GUI\adminLoginMenu.Designer.cs">
       <DependentUpon>adminLoginMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="enums.cs" />
-    <Compile Include="professor.cs" />
-    <Compile Include="professorMenu.cs">
+    <Compile Include="Courses\Room.cs" />
+    <Compile Include="Users\enums.cs" />
+    <Compile Include="Users\professor.cs" />
+    <Compile Include="GUI\professorMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="professorMenu.Designer.cs">
+    <Compile Include="GUI\professorMenu.Designer.cs">
       <DependentUpon>professorMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="publicChecksAndOperations.cs" />
-    <Compile Include="Class1.cs" />
-    <Compile Include="DBconnect.cs" />
-    <Compile Include="firstMenu.cs">
+    <Compile Include="GeneralChecks\publicChecksAndOperations.cs" />
+    <Compile Include="DataBase\DBconnect.cs" />
+    <Compile Include="GUI\firstMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="firstMenu.Designer.cs">
+    <Compile Include="GUI\firstMenu.Designer.cs">
       <DependentUpon>firstMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="instructorLoginMenu.cs">
+    <Compile Include="GUI\instructorLoginMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="instructorLoginMenu.Designer.cs">
+    <Compile Include="GUI\instructorLoginMenu.Designer.cs">
       <DependentUpon>instructorLoginMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="professorLoginMenu.cs">
+    <Compile Include="GUI\professorLoginMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="professorLoginMenu.Designer.cs">
+    <Compile Include="GUI\professorLoginMenu.Designer.cs">
       <DependentUpon>professorLoginMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="secretary.cs" />
-    <Compile Include="secretaryLoginMenu.cs">
+    <Compile Include="Users\secretary.cs" />
+    <Compile Include="GUI\secretaryLoginMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="secretaryLoginMenu.Designer.cs">
+    <Compile Include="GUI\secretaryLoginMenu.Designer.cs">
       <DependentUpon>secretaryLoginMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="dataBaseOperations.cs" />
-    <Compile Include="techingStaffConstraints.cs" />
-    <Compile Include="user.cs" />
-    <EmbeddedResource Include="adminLoginMenu.resx">
+    <Compile Include="DataBase\dataBaseOperations.cs" />
+    <Compile Include="Users\techingStaffConstraints.cs" />
+    <Compile Include="Users\user.cs" />
+    <EmbeddedResource Include="GUI\adminLoginMenu.resx">
       <DependentUpon>adminLoginMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="firstMenu.resx">
+    <EmbeddedResource Include="GUI\firstMenu.resx">
       <DependentUpon>firstMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="instructorLoginMenu.resx">
+    <EmbeddedResource Include="GUI\instructorLoginMenu.resx">
       <DependentUpon>instructorLoginMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="professorLoginMenu.resx">
+    <EmbeddedResource Include="GUI\professorLoginMenu.resx">
       <DependentUpon>professorLoginMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="professorMenu.resx">
+    <EmbeddedResource Include="GUI\professorMenu.resx">
       <DependentUpon>professorMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -154,7 +154,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="secretaryLoginMenu.resx">
+    <EmbeddedResource Include="GUI\secretaryLoginMenu.resx">
       <DependentUpon>secretaryLoginMenu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
