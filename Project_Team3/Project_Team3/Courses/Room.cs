@@ -21,6 +21,14 @@ namespace Project_Team3
             location = loc;
         }
 
+        public Room(Room r)
+        {
+            board = r.board;
+            projector = r.projector;
+            maxStudents = r.maxStudents;
+            location = r.location;
+        }
+
         public bool getBoard() { return board; }
         public bool getProjector() { return projector; }
         public int getMaxStudents() { return maxStudents; }
