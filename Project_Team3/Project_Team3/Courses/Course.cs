@@ -15,31 +15,26 @@ namespace Project_Team3.Courses
         // List of child courses after this course
         private Course[] prerequisite;
 
+        private bool hasLab;
         private Lab lab;
         private Lecture lecture;
-        private PracticeLesson practice;
+        private bool hasPracticeLesson;
+        private PracticeLesson practiceLesson;
 
         private String name;
         private int id;
         private float creditPoints;
         private bool isMandatory;
 
-        public Course(String n, int i, float credit, bool mand)
+        public Course(String n, int i, float credit, bool mand, bool hasPL, bool hasL)
         {
             name = n;
             id = i;
             creditPoints = credit;
+            isMandatory = mand;
+            hasPracticeLesson = hasPL;
+            hasLab = hasL;
         }
+
     }
 }
-
-
-/* Course:
- * int room_number
- * 
- * 
- * 
- * Room
- * int id
- * bool projector
- * 

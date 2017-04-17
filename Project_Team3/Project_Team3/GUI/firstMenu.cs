@@ -30,14 +30,14 @@ namespace Project_Team3
         private void button1_Click(object sender, EventArgs e)
         {
 
-            secretaryLoginMenu  secretaryLoginForm  = new secretaryLoginMenu();
-            professorLoginMenu  professorLoginForm  = new professorLoginMenu();
+            secretaryLoginMenu secretaryLoginForm = new secretaryLoginMenu();
+            professorLoginMenu professorLoginForm = new professorLoginMenu();
             instructorLoginMenu instructorLoginForm = new instructorLoginMenu();
-            adminLoginMenu      adminLoginForm      = new adminLoginMenu();
+            adminLoginMenu adminLoginForm = new adminLoginMenu();
 
             publicChecksAndOperations checkIfUserExit = new publicChecksAndOperations();
 
-            if(comboBox1.Text == "secretary")
+            if (comboBox1.Text == "secretary")
             {
                 this.Hide();
                 secretaryLoginForm.ShowDialog();
@@ -85,6 +85,18 @@ namespace Project_Team3
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("Password", typeof(string));
+            table.Columns.Add("Access Group", typeof(string));
+
+            table.Rows.Add(1, "Check", "CheckAccessGroup");
+
+            DataGridView userGrid = new DataGridView();
         }
     }
 }
