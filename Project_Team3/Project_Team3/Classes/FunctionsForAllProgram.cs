@@ -73,5 +73,36 @@ namespace Project_Team3.Classes
             return status;
 
         }
+
+        public bool ifIDinTable(int id,String tableName)
+        {
+            bool status = false;
+            DBconnect db;
+            db = new DBconnect();
+            db.OpenConn();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = db.getConnection();
+            cmd.CommandText = "SELECT * FROM "+tableName+" WHERE ID = @ID";
+            cmd.Parameters.AddWithValue("ID", id);
+            DataSet ds = db.generalCommand(cmd);
+
+            db.CloseConn(db.ConnStatus());
+            try
+            {
+                ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                status = true;
+
+            }
+            catch (System.IndexOutOfRangeException ex)
+            {
+                status = false;
+            }
+
+
+            return status;
+
+        }
     }
 }

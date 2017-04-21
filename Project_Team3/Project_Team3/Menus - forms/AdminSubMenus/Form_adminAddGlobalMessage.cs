@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Project_Team3.Classes;
 
 namespace Project_Team3.Menus___forms.AdminSubMenus
 {
@@ -71,15 +72,25 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
                 return;
             }
             String query = "DELETE FROM GlobalMEssages WHERE ID=" + id;
-            try
+            
+                FunctionsForAllProgram func = new FunctionsForAllProgram();
+            bool existCheck = func.ifIDinTable(id, "GlobalMessages");
+            if (existCheck)
             {
-               bool result =  db.executionQuery(query);
-                if(result)
-                    MessageBox.Show("Global message with id : " + id + " removed from database");
+                try
+                {
+                    bool result = db.executionQuery(query);
+                    if (result)
+                        MessageBox.Show("Global message with id : " + id + " removed from database");
+                }
+                catch
+                {
+                    MessageBox.Show("Cannot delete message with id : " + id);
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("Cannot delete message with id : " + id );
+                MessageBox.Show("Message with this id does not exists");
             }
         }
     }
