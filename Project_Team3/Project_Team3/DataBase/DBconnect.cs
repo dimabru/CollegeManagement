@@ -38,7 +38,7 @@ namespace Project_Team3
         }
         public Boolean ConnStatus()
         {
-            if (con == null || con.State == ConnectionState.Closed)
+            if (con == null || con.State == ConnectionState.Closed || con.State == ConnectionState.Broken)
                 return false;
             return true;
         }
@@ -77,7 +77,7 @@ namespace Project_Team3
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Incorrect Data!");
+                MessageBox.Show("Error: " + ex.Message);
                 return null;
             }
             return ds;
