@@ -27,10 +27,22 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             Classes.Student newStudent;
             Project_Team3.Classes.FunctionsForAllProgram funcs = new Classes.FunctionsForAllProgram();
             String username = this.username_box.Text;
-            bool userExists = funcs.ifUserInDatabase(username);
+            String id = this.id_box.Text;
+            int id_int=-1;
+            try
+            {
+                id_int = Convert.ToInt32(id);
+            }
+            catch
+            {
+                MessageBox.Show("Unsuccessfull convertion attempt string ID to Int or ID field is empty!");
+                return;
+            }
+
+            bool userExists = funcs.ifUserInDatabase(username) || funcs.ifUserIDinDatabase(id_int);
             if (userExists == false)
             {
-                String Name = this.firstname_box.Text, surename=this.secondName_box.Text, password = this.password_box.Text, id = this.id_box.Text;
+                String Name = this.firstname_box.Text, surename=this.secondName_box.Text, password = this.password_box.Text;
                 int semester;
                 try
                 {

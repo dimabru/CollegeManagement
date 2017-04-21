@@ -22,7 +22,6 @@ namespace Project_Team3.Classes
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.Connection = db.getConnection();
-            //cmd.CommandText = "SELECT ID FROM Users WHERE EXISTS(SELECT ID FROM USERS WHERE USERNAME = @username";
             cmd.CommandText = "SELECT ID FROM USERS WHERE USERNAME = @username";
             cmd.Parameters.AddWithValue("username", username);
             DataSet ds = db.generalCommand(cmd);
@@ -35,6 +34,37 @@ namespace Project_Team3.Classes
 
             }
             catch (System.IndexOutOfRangeException ex )
+            {
+                status = false;
+            }
+
+
+            return status;
+
+        }
+
+        public bool ifUserIDinDatabase(int id)
+        {
+            bool status = false;
+            DBconnect db;
+            db = new DBconnect();
+            db.OpenConn();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = db.getConnection();
+            cmd.CommandText = "SELECT username FROM USERS WHERE ID = @ID";
+            cmd.Parameters.AddWithValue("ID", id);
+            DataSet ds = db.generalCommand(cmd);
+
+            db.CloseConn(db.ConnStatus());
+            try
+            {
+                MessageBox.Show("User with this id already exists, and it's username : " + ds.Tables[0].Rows[0].ItemArray[0].ToString());
+                status = true;
+
+            }
+            catch (System.IndexOutOfRangeException ex)
             {
                 status = false;
             }
