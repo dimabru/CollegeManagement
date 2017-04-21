@@ -66,15 +66,10 @@ namespace Project_Team3
 
         /// <summary>
         /// delete all prof constrints from calss and from database;
-        /// note!!!!!!!!!!!!!!!! i dident check this function yet 
         /// </summary>
         public void deleteAllConstraints()
         {
-            //you can see how to use foreach here https://msdn.microsoft.com/en-us/library/ttw7t8t6.aspx
-            foreach (techingStaffConstraints constr in profconstraints)
-            {
-                profconstraints.Remove(constr);
-            }
+            profconstraints.Clear();
             dbo.deleteConstrints(this.getid());
         }
 
