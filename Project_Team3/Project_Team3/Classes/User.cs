@@ -9,16 +9,15 @@ namespace Project_Team3.Classes
     abstract class User
     {
 
-        private String username, name, surename, password;
-        private int ID;
+        private String username, name, surename, password,ID;
 
-        public User(int ID, String username, String name, String surename, String password)
+        public User(String ID, String username, String name, String surename, String password)
         {
             Username = username;
             Name = name;
             Surename = surename;
             Password = password;
-            ID1 = ID;
+            ID_setters = ID;
 
         }
         public string Username
@@ -73,7 +72,7 @@ namespace Project_Team3.Classes
             }
         }
 
-        public int ID1
+        public String ID_setters
         {
             get
             {

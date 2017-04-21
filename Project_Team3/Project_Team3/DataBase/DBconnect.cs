@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
-
+using Project_Team3.Classes;
 namespace Project_Team3
 {
     class DBconnect
@@ -83,5 +83,44 @@ namespace Project_Team3
             return ds;
     }
 
+        public bool executionQuery(String query)
+        {
+            try
+            {
+                OpenConn();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = con;
+                cmd.CommandText = query;
+
+                DataSet ds = generalCommand(cmd);
+
+                CloseConn(ConnStatus());
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool addStudentToDB(Student student)
+        {
+            String queryUsers = "insert into Users values(" + student.ID_setters + ",'" + student.Username + "','" + student.Password + "','Student','" + student.Name + "','" + student.Surename + "')";
+            String queryStudents = "insert into Student values('" + student.Username + "'," + student.Semester+")";
+            MessageBox.Show(queryUsers+"\n"+ queryStudents);
+
+            try
+            {
+                executionQuery(queryUsers);
+                executionQuery(queryStudents);
+                return true;
+            }
+            catch
+                {
+                return false;
+            }
+        }
     }
 }

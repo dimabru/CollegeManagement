@@ -19,6 +19,49 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
         private void Form_adminAddStudent_Load(object sender, EventArgs e)
         {
+        }
+
+        private void addStudentToDatabase_Click(object sender, EventArgs e)
+        {
+
+            Classes.Student newStudent;
+            Project_Team3.Classes.FunctionsForAllProgram funcs = new Classes.FunctionsForAllProgram();
+            String username = this.username_box.Text;
+            bool userExists = funcs.ifUserInDatabase(username);
+            if (userExists == false)
+            {
+                String Name = this.firstname_box.Text, surename=this.secondName_box.Text, password = this.password_box.Text, id = this.id_box.Text;
+                int semester;
+                try
+                {
+                    semester = Convert.ToInt32(this.semester_box.Text);
+                }
+                catch
+                {
+                    semester = 1;
+                }
+
+                newStudent = new Classes.Student(id, username, Name, surename, password, semester);
+                DBconnect db = new DBconnect();
+                try
+                {
+                    db.addStudentToDB(newStudent);
+                    MessageBox.Show("New Student been received to database!");
+                }
+                catch
+                {
+                    MessageBox.Show("Something went wrong, user not been added! \ncheck your database connection and fields correctness and try again!");
+                }
+            }
+        }
+
+        private void username_box_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

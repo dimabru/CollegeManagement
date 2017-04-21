@@ -20,7 +20,11 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
         private void addAccountClick(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            using (Form_adminAddStudent addStudentBox = new Form_adminAddStudent())
+            {
+                this.Hide();
+                addStudentBox.ShowDialog(this);
+            }
 
         }
 

@@ -146,5 +146,15 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             Form_adminMenu parent = (Form_adminMenu)this.Owner;
             parent.Show();
         }
+
+        private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Form_adminAccountsMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
