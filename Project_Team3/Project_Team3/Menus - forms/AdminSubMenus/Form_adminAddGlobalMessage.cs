@@ -50,5 +50,37 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             parent.Show();
             this.Hide();
         }
+
+        private void showAllMessages_button_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Temporary not working");
+        }
+
+        private void deleteMessageButton_Click(object sender, EventArgs e)
+        {
+            DBconnect db = new DBconnect();
+            int id;
+            try
+            {
+               id =  Convert.ToInt32(this.globalMessageId_box.Text);
+
+            }
+            catch
+            {
+                MessageBox.Show("Empty ID field or non-digit symbol been inputed.");
+                return;
+            }
+            String query = "DELETE FROM GlobalMEssages WHERE ID=" + id;
+            try
+            {
+               bool result =  db.executionQuery(query);
+                if(result)
+                    MessageBox.Show("Global message with id : " + id + " removed from database");
+            }
+            catch
+            {
+                MessageBox.Show("Cannot delete message with id : " + id );
+            }
+        }
     }
 }
