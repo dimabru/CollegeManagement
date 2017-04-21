@@ -16,5 +16,10 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
         {
             InitializeComponent();
         }
+
+        private void Form_adminAddStudent_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
