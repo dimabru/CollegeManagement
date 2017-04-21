@@ -49,7 +49,7 @@
             this.addStudentToDatabase.Location = new System.Drawing.Point(170, 407);
             this.addStudentToDatabase.Name = "addStudentToDatabase";
             this.addStudentToDatabase.Size = new System.Drawing.Size(117, 23);
-            this.addStudentToDatabase.TabIndex = 0;
+            this.addStudentToDatabase.TabIndex = 7;
             this.addStudentToDatabase.Text = "Add To database";
             this.addStudentToDatabase.UseVisualStyleBackColor = true;
             this.addStudentToDatabase.Click += new System.EventHandler(this.addStudentToDatabase_Click);
@@ -112,7 +112,7 @@
             this.firstname_box.Location = new System.Drawing.Point(122, 156);
             this.firstname_box.Name = "firstname_box";
             this.firstname_box.Size = new System.Drawing.Size(319, 20);
-            this.firstname_box.TabIndex = 7;
+            this.firstname_box.TabIndex = 3;
             // 
             // idLabel
             // 
@@ -128,28 +128,28 @@
             this.id_box.Location = new System.Drawing.Point(122, 78);
             this.id_box.Name = "id_box";
             this.id_box.Size = new System.Drawing.Size(319, 20);
-            this.id_box.TabIndex = 9;
+            this.id_box.TabIndex = 1;
             // 
             // secondName_box
             // 
             this.secondName_box.Location = new System.Drawing.Point(122, 199);
             this.secondName_box.Name = "secondName_box";
             this.secondName_box.Size = new System.Drawing.Size(319, 20);
-            this.secondName_box.TabIndex = 10;
+            this.secondName_box.TabIndex = 4;
             // 
             // password_box
             // 
             this.password_box.Location = new System.Drawing.Point(122, 246);
             this.password_box.Name = "password_box";
             this.password_box.Size = new System.Drawing.Size(319, 20);
-            this.password_box.TabIndex = 11;
+            this.password_box.TabIndex = 5;
             // 
             // semester_box
             // 
             this.semester_box.Location = new System.Drawing.Point(122, 297);
             this.semester_box.Name = "semester_box";
             this.semester_box.Size = new System.Drawing.Size(319, 20);
-            this.semester_box.TabIndex = 12;
+            this.semester_box.TabIndex = 6;
             // 
             // generalLabel
             // 
