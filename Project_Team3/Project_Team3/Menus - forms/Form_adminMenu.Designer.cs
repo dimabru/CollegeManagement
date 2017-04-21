@@ -41,10 +41,10 @@
             // 
             this.button1.BackColor = System.Drawing.Color.MistyRose;
             this.button1.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button1.Location = new System.Drawing.Point(541, 158);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(406, 128);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(235, 46);
+            this.button1.Size = new System.Drawing.Size(176, 37);
             this.button1.TabIndex = 0;
             this.button1.Text = "Manage accounts";
             this.button1.UseVisualStyleBackColor = false;
@@ -54,9 +54,10 @@
             // 
             this.label1.BackColor = System.Drawing.Color.MistyRose;
             this.label1.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(74, 82);
+            this.label1.Location = new System.Drawing.Point(56, 67);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 50);
+            this.label1.Size = new System.Drawing.Size(169, 41);
             this.label1.TabIndex = 1;
             this.label1.Text = "show global message";
             // 
@@ -64,10 +65,10 @@
             // 
             this.logoutButton.BackColor = System.Drawing.Color.MistyRose;
             this.logoutButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.logoutButton.Location = new System.Drawing.Point(541, 487);
-            this.logoutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.logoutButton.Location = new System.Drawing.Point(406, 396);
+            this.logoutButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(235, 46);
+            this.logoutButton.Size = new System.Drawing.Size(176, 37);
             this.logoutButton.TabIndex = 2;
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = false;
@@ -77,10 +78,10 @@
             // 
             this.coursesMenuButton.BackColor = System.Drawing.Color.MistyRose;
             this.coursesMenuButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.coursesMenuButton.Location = new System.Drawing.Point(541, 220);
-            this.coursesMenuButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.coursesMenuButton.Location = new System.Drawing.Point(406, 179);
+            this.coursesMenuButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.coursesMenuButton.Name = "coursesMenuButton";
-            this.coursesMenuButton.Size = new System.Drawing.Size(235, 46);
+            this.coursesMenuButton.Size = new System.Drawing.Size(176, 37);
             this.coursesMenuButton.TabIndex = 3;
             this.coursesMenuButton.Text = "Courses menu";
             this.coursesMenuButton.UseVisualStyleBackColor = false;
@@ -90,10 +91,10 @@
             // 
             this.accountsMenuButton.BackColor = System.Drawing.Color.MistyRose;
             this.accountsMenuButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.accountsMenuButton.Location = new System.Drawing.Point(541, 281);
-            this.accountsMenuButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.accountsMenuButton.Location = new System.Drawing.Point(406, 228);
+            this.accountsMenuButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.accountsMenuButton.Name = "accountsMenuButton";
-            this.accountsMenuButton.Size = new System.Drawing.Size(235, 46);
+            this.accountsMenuButton.Size = new System.Drawing.Size(176, 37);
             this.accountsMenuButton.TabIndex = 4;
             this.accountsMenuButton.Text = "Accounts menu";
             this.accountsMenuButton.UseVisualStyleBackColor = false;
@@ -103,22 +104,22 @@
             // 
             this.globalMessageButton.BackColor = System.Drawing.Color.MistyRose;
             this.globalMessageButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.globalMessageButton.Location = new System.Drawing.Point(541, 342);
-            this.globalMessageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.globalMessageButton.Location = new System.Drawing.Point(406, 278);
+            this.globalMessageButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.globalMessageButton.Name = "globalMessageButton";
-            this.globalMessageButton.Size = new System.Drawing.Size(235, 46);
+            this.globalMessageButton.Size = new System.Drawing.Size(176, 37);
             this.globalMessageButton.TabIndex = 5;
-            this.globalMessageButton.Text = "Global message";
+            this.globalMessageButton.Text = "Global messages";
             this.globalMessageButton.UseVisualStyleBackColor = false;
             this.globalMessageButton.Click += new System.EventHandler(this.globalMessageButtonClick);
             // 
             // Form_adminMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1350, 750);
+            this.ClientSize = new System.Drawing.Size(1012, 609);
             this.Controls.Add(this.globalMessageButton);
             this.Controls.Add(this.accountsMenuButton);
             this.Controls.Add(this.coursesMenuButton);
@@ -126,7 +127,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form_adminMenu";
             this.Text = "Admin Menu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_adminMenu_FormClosed);

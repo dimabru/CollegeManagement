@@ -137,5 +137,20 @@ namespace Project_Team3
                 return false;
             }
         }
+
+        public bool addGlobalMessageToDB(String message)
+        {
+            String queryUsers = "insert into GlobalMessages values('" + message + "')";
+
+            try
+            {
+                executionQuery(queryUsers);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

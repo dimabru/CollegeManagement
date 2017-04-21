@@ -37,7 +37,11 @@ namespace Project_Team3
 
         private void globalMessageButtonClick(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            using (Form newMessage = new Form_adminAddGlobalMessage())
+            {
+                this.Hide();
+                newMessage.ShowDialog(this);
+            }
         }
 
 

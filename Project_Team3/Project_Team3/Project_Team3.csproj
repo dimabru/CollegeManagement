@@ -92,6 +92,12 @@
     <Compile Include="Menus - forms\AdminSubMenus\Form_adminAddAssociate.Designer.cs">
       <DependentUpon>Form_adminAddAssociate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus - forms\AdminSubMenus\Form_adminAddGlobalMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\AdminSubMenus\Form_adminAddGlobalMessage.Designer.cs">
+      <DependentUpon>Form_adminAddGlobalMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menus - forms\AdminSubMenus\Form_adminAddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\AdminSubMenus\Form_adminAddAssociate.resx">
       <DependentUpon>Form_adminAddAssociate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\AdminSubMenus\Form_adminAddGlobalMessage.resx">
+      <DependentUpon>Form_adminAddGlobalMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\AdminSubMenus\Form_adminAddStudent.resx">
       <DependentUpon>Form_adminAddStudent.cs</DependentUpon>
