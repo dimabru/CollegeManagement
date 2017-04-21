@@ -105,6 +105,7 @@ namespace Project_Team3
             }
         }
 
+
         public bool addStudentToDB(Student student)
         {
             String queryUsers = "insert into Users values(" + student.ID_setters + ",'" + student.Username + "','" + student.Password + "','Student','" + student.Name + "','" + student.Surename + "')";
