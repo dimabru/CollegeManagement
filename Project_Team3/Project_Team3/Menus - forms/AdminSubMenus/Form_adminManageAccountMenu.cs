@@ -30,7 +30,11 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
         private void addAssociateClick(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            using (Form_adminAddAssociate addAssociate = new Form_adminAddAssociate())
+            {
+                this.Hide();
+                addAssociate.ShowDialog(this);
+            }
 
         }
 

@@ -86,6 +86,12 @@
     <Compile Include="Menus - forms\AdminSubMenus\Form_adminAccountsMenu.Designer.cs">
       <DependentUpon>Form_adminAccountsMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus - forms\AdminSubMenus\Form_adminAddAssociate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\AdminSubMenus\Form_adminAddAssociate.Designer.cs">
+      <DependentUpon>Form_adminAddAssociate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menus - forms\AdminSubMenus\Form_adminAddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\AdminSubMenus\Form_adminAccountsMenu.resx">
       <DependentUpon>Form_adminAccountsMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\AdminSubMenus\Form_adminAddAssociate.resx">
+      <DependentUpon>Form_adminAddAssociate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\AdminSubMenus\Form_adminAddStudent.resx">
       <DependentUpon>Form_adminAddStudent.cs</DependentUpon>

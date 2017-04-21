@@ -121,5 +121,20 @@ namespace Project_Team3
                 return false;
             }
         }
+
+        public bool addUserToDB(User user)
+        {
+            String queryUsers = "insert into Users values(" + user.ID_setters + ",'" + user.Username + "','" + user.Password + "','Associate','" + user.Name + "','" + user.Surename + "')";
+
+            try
+            {
+                executionQuery(queryUsers);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

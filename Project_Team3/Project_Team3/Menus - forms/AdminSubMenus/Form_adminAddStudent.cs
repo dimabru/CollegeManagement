@@ -63,7 +63,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
                 try
                 {
                     db.addStudentToDB(newStudent);
-                    MessageBox.Show("New Student been received to database!");
+                    MessageBox.Show("New Student been added to database!");
                 }
                 catch
                 {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_Team3.Classes
 {
-    abstract class User
+    class User
     {
 
         private String username, name, surename, password,ID;
