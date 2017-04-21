@@ -182,7 +182,7 @@
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.addStudentToDatabase);
             this.Name = "Form_adminAddStudent";
-            this.Text = "Form_adminAddStudent";
+            this.Text = "Add Student to College from Admin menu";
             this.Load += new System.EventHandler(this.Form_adminAddStudent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
