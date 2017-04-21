@@ -109,7 +109,6 @@ namespace Project_Team3
         {
             String queryUsers = "insert into Users values(" + student.ID_setters + ",'" + student.Username + "','" + student.Password + "','Student','" + student.Name + "','" + student.Surename + "')";
             String queryStudents = "insert into Student values('" + student.Username + "'," + student.Semester+")";
-            MessageBox.Show(queryUsers+"\n"+ queryStudents);
 
             try
             {

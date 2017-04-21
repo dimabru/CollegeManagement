@@ -35,6 +35,11 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
                 try
                 {
                     semester = Convert.ToInt32(this.semester_box.Text);
+                    if (semester < 0 || semester > 8)
+                    {
+                        MessageBox.Show("Semester value must been 1-8, default value 1 been setted");
+                        semester = 1;
+                    }
                 }
                 catch
                 {
