@@ -27,11 +27,14 @@ namespace Project_Team3
             this.prof = prof;
             //change this form size 
             //see also: https://msdn.microsoft.com/en-us/library/ms229606(v=vs.110).aspx 
-            this.Size = new System.Drawing.Size(950, 450);
+            this.Size = new System.Drawing.Size(760, 460);
 
             //set position in the center;
             //see also: https://msdn.microsoft.com/en-us/library/system.windows.forms.form.startposition(v=vs.110).aspx
             this.StartPosition = FormStartPosition.CenterScreen;
+
+            //set the item in the combo boxes
+            setComboBoxes();
         }
 
         private void professorMenu_Load(object sender, EventArgs e)
@@ -39,12 +42,6 @@ namespace Project_Team3
 
         }
 
-        private void manageConstraintsButton(object sender, EventArgs e)
-        {
-            //more infromation here: https://msdn.microsoft.com/en-us/library/system.windows.forms.tabcontrol.selecttab(v=vs.110).aspx
-            //show the constriants tab
-            tabControl1.SelectTab(constraintsPage);
-        }
 
         private void watch_your_constraints(object sender, EventArgs e)
         {
@@ -96,6 +93,17 @@ namespace Project_Team3
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void setComboBoxes()
+        {
+            //learn more form here https://social.msdn.microsoft.com/Forums/windows/en-US/c7a82a6a-763e-424b-84e0-496caa9cfb4d/how-add-a-item-to-combobox?forum=winforms
+            comboBox1.Items.Add("comboBox1");
         }
     }
 }
