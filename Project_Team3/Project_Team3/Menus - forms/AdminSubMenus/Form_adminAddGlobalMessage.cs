@@ -54,7 +54,8 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
         private void showAllMessages_button_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Temporary not working");
+            Form viewAllMessages = new Form_adminSeeAllGlobalMessages();
+            viewAllMessages.Show();
         }
 
         private void deleteMessageButton_Click(object sender, EventArgs e)
