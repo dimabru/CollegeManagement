@@ -104,5 +104,31 @@ namespace Project_Team3.Classes
             return status;
 
         }
+
+        public Student studentFromDB(DBconnect db, String username, String password)
+        {
+            Student newStudent = null;
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = db.getConnection();
+            cmd.CommandText = "select USers.ID,Users.Pass,Users.UName,Users.SName,Student.Semester from Users join Student on Users.username = Student.username WHERE USERNAME = @username and PASS = @password";
+            cmd.Parameters.AddWithValue("username", username);
+            cmd.Parameters.AddWithValue("password", password);
+
+            try
+            {
+                DataSet ds = db.generalCommand(cmd);
+                String id = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                String firstName = ds.Tables[0].Rows[0].ItemArray[1].ToString();
+                String secondName = ds.Tables[0].Rows[0].ItemArray[2].ToString();
+                int semester = Convert.ToInt32(ds.Tables[0].Rows[0].ItemArray[3].ToString());
+                newStudent = new Student(id, username, firstName, secondName, password, semester);
+            }
+            catch
+            {
+                MessageBox.Show("problem with data filing from database");
+            }
+            return newStudent;
+        }
     }
 }

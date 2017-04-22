@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using Project_Team3.Menus___forms;
+using Project_Team3.Classes;
 
 
 namespace Project_Team3
@@ -40,11 +41,12 @@ namespace Project_Team3
             password = this.passwordBox.Text;
         }
 
-        private void loginButton_click(object sender, EventArgs e)
+        public void loginButton_click(object sender, EventArgs e)
         {
             db = new DBconnect();
             db.OpenConn();
             Boolean error = false;
+
             switch (getAccessGroup())
             {
                 case "Admin":
@@ -55,10 +57,13 @@ namespace Project_Team3
                     }
                     break;
                 case "Student":
+                    FunctionsForAllProgram funcs = new FunctionsForAllProgram();
+                    Student studentObject = funcs.studentFromDB(db, this.userNameBox.Text, this.passwordBox.Text);
                     using (Form_studentMenu student_menu = new Form_studentMenu())
                     {
                         this.Hide();
-                        student_menu.ShowDialog(this);
+                        student_menu.StudentProfile = studentObject;
+                        student_menu.Show(this);
                     }
                     break;
                 case "Associate":
@@ -96,6 +101,8 @@ namespace Project_Team3
 
         }
 
+        
+
         private void ExitButton_Click(object sender, EventArgs e)
         {
             // close application
@@ -110,5 +117,7 @@ namespace Project_Team3
                 System.Environment.Exit(1);
             }
         }
+
+        
     }
 }

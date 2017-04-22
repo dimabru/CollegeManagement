@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_Team3.Classes
 {
-    class User
+    internal class User
     {
 
         private String username, name, surename, password,ID;
