@@ -8,27 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Project_Team3.Menus___forms.StudentSubMenus;
-using Project_Team3.Classes;
+
 
 namespace Project_Team3
 {
-    public partial class Form_studentMenu: Form 
+    public partial class Form_studentMenu : Form
     {
-        private Student studentProfile;
-
-        internal Student StudentProfile
-        {
-            get
-            {
-                return studentProfile;
-            }
-
-            set
-            {
-                studentProfile = value;
-            }
-        }
-
         public Form_studentMenu()
         {
             InitializeComponent();

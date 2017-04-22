@@ -170,12 +170,6 @@
     <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryStudentSearch.Designer.cs">
       <DependentUpon>Form_secretaryStudentSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menus - forms\StudentSubMenus\Form_studentAddNewRequest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menus - forms\StudentSubMenus\Form_studentAddNewRequest.Designer.cs">
-      <DependentUpon>Form_studentAddNewRequest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Menus - forms\StudentSubMenus\Form_studentRequestMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,9 +246,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\SecretarySubMenus\Form_secretaryStudentSearch.resx">
       <DependentUpon>Form_secretaryStudentSearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menus - forms\StudentSubMenus\Form_studentAddNewRequest.resx">
-      <DependentUpon>Form_studentAddNewRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\StudentSubMenus\Form_studentAssociationMenu.resx">
       <DependentUpon>Form_studentAssociationMenu.cs</DependentUpon>

@@ -152,21 +152,5 @@ namespace Project_Team3
                 return false;
             }
         }
-
-        public bool addStudentRequest(String message,Student student)
-        {
-            String query = "insert into StudentRequest values("+ student.Username + ","+message+ "')";
-            
-
-            try
-            {
-                executionQuery(query);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
     }
 }
