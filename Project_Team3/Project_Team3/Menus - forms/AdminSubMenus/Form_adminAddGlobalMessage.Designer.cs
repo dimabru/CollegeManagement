@@ -123,7 +123,7 @@
             this.showAllMessages_button.Name = "showAllMessages_button";
             this.showAllMessages_button.Size = new System.Drawing.Size(110, 23);
             this.showAllMessages_button.TabIndex = 8;
-            this.showAllMessages_button.Text = "Show Messages";
+            this.showAllMessages_button.Text = "Show All Messages";
             this.showAllMessages_button.UseVisualStyleBackColor = true;
             this.showAllMessages_button.Click += new System.EventHandler(this.showAllMessages_button_Click);
             // 

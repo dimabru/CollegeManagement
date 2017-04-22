@@ -116,6 +116,12 @@
     <Compile Include="Menus - forms\AdminSubMenus\Form_adminManageAccountMenu.Designer.cs">
       <DependentUpon>Form_adminManageAccountMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus - forms\AdminSubMenus\Form_adminSeeAllGlobalMessages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\AdminSubMenus\Form_adminSeeAllGlobalMessages.Designer.cs">
+      <DependentUpon>Form_adminSeeAllGlobalMessages.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menus - forms\AssociateSubMenus\Form_associateDefineNewEvent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\AdminSubMenus\Form_adminManageAccountMenu.resx">
       <DependentUpon>Form_adminManageAccountMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\AdminSubMenus\Form_adminSeeAllGlobalMessages.resx">
+      <DependentUpon>Form_adminSeeAllGlobalMessages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\AssociateSubMenus\Form_associateDefineNewEvent.resx">
       <DependentUpon>Form_associateDefineNewEvent.cs</DependentUpon>
