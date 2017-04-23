@@ -12,11 +12,6 @@ namespace Project_Team3
 {
     public partial class professorLoginMenu : Form
     {
-        //panel counter;
-        private int myPanelCounter = 0;
-        //list of panels;
-        List<Panel> listPanel = new List<Panel>();
-
         public professorLoginMenu()
         {
             InitializeComponent();
@@ -25,15 +20,7 @@ namespace Project_Team3
             label3.ForeColor = System.Drawing.Color.Black;
             label3.Hide();
 
-            //adding the panels to the list;
-            listPanel.Add(panel1);
-            //hide all panels;
-            //foreach (Panel panelItem in listPanel)
-            //{
-            //    panelItem.Hide();
-            //}
-            //show the first panel
-            listPanel[myPanelCounter].Show();
+            panel1.Show();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -92,7 +79,7 @@ namespace Project_Team3
                         professor prof = new professor(id);
                         //and then i pass it to the next form 
                         //i'll catch it in the next form constractor
-                        professorMenu porfMen = new professorMenu(prof);
+                        teachingStaffMenu porfMen = new teachingStaffMenu(prof);
                         
                         this.Hide();
                         porfMen.ShowDialog();

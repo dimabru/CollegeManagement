@@ -86,12 +86,13 @@
     </Compile>
     <Compile Include="Courses\Room.cs" />
     <Compile Include="Users\enums.cs" />
+    <Compile Include="Users\instructor.cs" />
     <Compile Include="Users\professor.cs" />
-    <Compile Include="GUI\professorMenu.cs">
+    <Compile Include="GUI\teachingStaffMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\professorMenu.Designer.cs">
-      <DependentUpon>professorMenu.cs</DependentUpon>
+    <Compile Include="GUI\teachingStaffMenu.Designer.cs">
+      <DependentUpon>teachingStaffMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="GeneralChecks\publicChecksAndOperations.cs" />
     <Compile Include="DataBase\DBconnect.cs" />
@@ -146,8 +147,8 @@
     <EmbeddedResource Include="GUI\professorLoginMenu.resx">
       <DependentUpon>professorLoginMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\professorMenu.resx">
-      <DependentUpon>professorMenu.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\teachingStaffMenu.resx">
+      <DependentUpon>teachingStaffMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

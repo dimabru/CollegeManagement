@@ -10,21 +10,35 @@ using System.Windows.Forms;
 
 namespace Project_Team3
 {
-    public partial class professorMenu : Form
+    public partial class teachingStaffMenu : Form
     {
         professor prof;
-        private List<techingStaffConstraints> prof_constraints_List = new List<techingStaffConstraints>();
+        instructor inst;
+        userType theUserWeGot;
+
+        private List<techingStaffConstraints> constraints_List = new List<techingStaffConstraints>();
         publicChecksAndOperations opration = new publicChecksAndOperations();
 
-
-        //for page display;
-        private static int constraintsPage = 0; 
-
-        public professorMenu(professor prof)
+        public teachingStaffMenu(user someUser)
         {
             InitializeComponent();
-            //make reperance to the object we get
-            this.prof = prof;
+
+            //learn more about downcasting here http://stackoverflow.com/questions/1524197/downcast-and-upcast
+
+            if (someUser is professor)
+            {
+                //make reperance to the object we get
+                this.prof = (professor)someUser;
+                theUserWeGot = userType.professor;
+            }
+
+            if (someUser is instructor)
+            {
+                //make reperance to the object we get
+                this.inst = (instructor)someUser;
+                theUserWeGot = userType.Instructor;
+            }
+
             //change this form size 
             //see also: https://msdn.microsoft.com/en-us/library/ms229606(v=vs.110).aspx 
             this.Size = new System.Drawing.Size(760, 460);
@@ -47,8 +61,17 @@ namespace Project_Team3
         
         private void watch_your_constraints(object sender, EventArgs e)
         {
+            //with enum we can know the type of user we have to customize the menu for him
+            if (theUserWeGot == userType.professor)
+            {
+                constraints_List = prof.getConstraintsList();
+            }
 
-            prof_constraints_List = prof.getConstraintsList();
+            if (theUserWeGot == userType.Instructor)
+            {
+                constraints_List = inst.getConstraintsList();
+            }
+
 
             //learn more about data table here: https://msdn.microsoft.com/en-us/library/system.data.datatable(v=vs.110).aspx
             //and here in the bottom you can find examples for data grid: https://msdn.microsoft.com/en-us/library/system.windows.forms.datagrid(v=vs.110).aspx
@@ -62,13 +85,13 @@ namespace Project_Team3
             string conv2 = "";
             string conv3 = "";
 
-            for (int i = 0; i < prof_constraints_List.Count; i++)
+            for (int i = 0; i < constraints_List.Count; i++)
             {
                 //i made this function static and i think we should do it for all the function in "publicChecksAnd Operations"
                 //but we have to remember to replace all the places we create an instance
-                conv1 = publicChecksAndOperations.hourConvertFromIntToString(prof_constraints_List[i].getStart);
-                conv2 = publicChecksAndOperations.hourConvertFromIntToString(prof_constraints_List[i].getEnds);
-                conv3 = publicChecksAndOperations.dayConvert(prof_constraints_List[i].getDay);
+                conv1 = publicChecksAndOperations.hourConvertFromIntToString(constraints_List[i].getStart);
+                conv2 = publicChecksAndOperations.hourConvertFromIntToString(constraints_List[i].getEnds);
+                conv3 = publicChecksAndOperations.dayConvert(constraints_List[i].getDay);
                 
                 tempTable.Rows.Add(conv1,conv2,conv3);
             }
@@ -80,7 +103,16 @@ namespace Project_Team3
 
         public void clearMyConstraints(object sender, EventArgs e)
         {
-            prof.deleteAllConstraints();
+            //with enum we can know the type of user we have to customize the menu for him
+            if (theUserWeGot == userType.professor)
+            {
+                prof.deleteAllConstraints();
+            }
+
+            if (theUserWeGot == userType.Instructor)
+            {
+                inst.deleteAllConstraints();
+            }
         }
 
         private void addConstraintsButton(object sender, EventArgs e)
@@ -124,7 +156,17 @@ namespace Project_Team3
             char toTrim2 = ':';
             string start = comboBox2.Text.Trim(toTrim1).Trim(toTrim2);
             string end = comboBox3.Text.Trim(toTrim1).Trim(toTrim2);
-            prof.insertConstrints(Convert.ToInt32(start), Convert.ToInt32(end), conv1);
+
+            //with enum we can know the type of user we have to customize the menu for him
+            if (theUserWeGot == userType.professor)
+            {
+                prof.insertConstrints(Convert.ToInt32(start), Convert.ToInt32(end), conv1);
+            }
+
+            if (theUserWeGot == userType.Instructor)
+            {
+                inst.insertConstrints(Convert.ToInt32(start), Convert.ToInt32(end), conv1);
+            }
             panel1.Hide();
         }
 

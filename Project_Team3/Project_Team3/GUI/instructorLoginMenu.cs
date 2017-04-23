@@ -12,11 +12,6 @@ namespace Project_Team3
 {
     public partial class instructorLoginMenu : Form
     {
-        //panel counter;
-        private int myPanelCounter = 0;
-        //list of panels;
-        List<Panel> listPanel = new List<Panel>();
-
         public instructorLoginMenu()
         {
             InitializeComponent();
@@ -25,17 +20,8 @@ namespace Project_Team3
             label3.ForeColor = System.Drawing.Color.Black;
             label3.Hide();
 
-            //adding the panels to the list;
-            listPanel.Add(panel1);
-            listPanel.Add(panel2);
-
-            //hide all panels;
-            foreach (Panel panelItem in listPanel)
-            {
-                panelItem.Hide();
-            }
             //show the first panel
-            listPanel[myPanelCounter].Show();
+            panel1.Show();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -63,11 +49,20 @@ namespace Project_Team3
                     {
                         //hide this panel to show the other;
                         label3.Hide();
-                        listPanel[myPanelCounter].Hide();
-                        //raise counter to next panel;
-                        myPanelCounter++;
-                        //show secretary menu;
-                        listPanel[myPanelCounter].Show();
+
+                        //In perception i thing that its importent to pass 
+                        //user object for the next managing form
+                        //plese do it in all other form  
+
+                        //here i create new prof obj
+                        professor prof = new professor(id);
+                        //and then i pass it to the next form 
+                        //i'll catch it in the next form constractor
+                        teachingStaffMenu instrfMen = new teachingStaffMenu(prof);
+
+                        this.Hide();
+                        instrfMen.ShowDialog();
+
                     }
                     else
                     {

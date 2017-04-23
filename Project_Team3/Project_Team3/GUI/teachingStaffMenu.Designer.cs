@@ -1,6 +1,6 @@
 ﻿namespace Project_Team3
 {
-    partial class professorMenu
+    partial class teachingStaffMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -264,7 +264,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.enter_constraints_to_user_and_database);
             // 
-            // professorMenu
+            // teachingStaffMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -275,8 +275,8 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "professorMenu";
-            this.Text = "professorMenu";
+            this.Name = "teachingStaffMenu";
+            this.Text = "teachingStaffMenu";
             this.Load += new System.EventHandler(this.professorMenu_Load);
             this.Click += new System.EventHandler(this.addConstraintsButton);
             this.menuStrip1.ResumeLayout(false);
