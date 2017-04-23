@@ -35,6 +35,8 @@ namespace Project_Team3
 
             //set the item in the combo boxes
             setComboBoxes();
+
+
         }
 
         private void professorMenu_Load(object sender, EventArgs e)
@@ -100,10 +102,69 @@ namespace Project_Team3
 
         }
 
+        /// <summary>
+        /// initialize all comboBox items
+        /// </summary>
         private void setComboBoxes()
         {
             //learn more form here https://social.msdn.microsoft.com/Forums/windows/en-US/c7a82a6a-763e-424b-84e0-496caa9cfb4d/how-add-a-item-to-combobox?forum=winforms
-            comboBox1.Items.Add("comboBox1");
+            comboBox1.Items.Add("Sunday");
+            comboBox1.Items.Add("Monday");
+            comboBox1.Items.Add("Tuesday");
+            comboBox1.Items.Add("Wednesday");
+            comboBox1.Items.Add("Thursday");
+            comboBox1.Items.Add("Friday");
+            comboBox1.Items.Add("Saturday");
+
+            comboBox2.Items.Add("00:00");
+            comboBox2.Items.Add("01:00");
+            comboBox2.Items.Add("02:00");
+            comboBox2.Items.Add("03:00");
+            comboBox2.Items.Add("04:00");
+            comboBox2.Items.Add("05:00");
+            comboBox2.Items.Add("06:00");
+            comboBox2.Items.Add("07:00");
+            comboBox2.Items.Add("08:00");
+            comboBox2.Items.Add("09:00");
+            comboBox2.Items.Add("10:00");
+            comboBox2.Items.Add("11:00");
+            comboBox2.Items.Add("12:00");
+            comboBox2.Items.Add("13:00");
+            comboBox2.Items.Add("14:00");
+            comboBox2.Items.Add("15:00");
+            comboBox2.Items.Add("16:00");
+            comboBox2.Items.Add("17:00");
+            comboBox2.Items.Add("18:00");
+            comboBox2.Items.Add("19:00");
+            comboBox2.Items.Add("20:00");
+            comboBox2.Items.Add("21:00");
+            comboBox2.Items.Add("22:00");
+            comboBox2.Items.Add("23:00");
+
+            comboBox3.Items.Add("00:00");
+            comboBox3.Items.Add("01:00");
+            comboBox3.Items.Add("02:00");
+            comboBox3.Items.Add("03:00");
+            comboBox3.Items.Add("04:00");
+            comboBox3.Items.Add("05:00");
+            comboBox3.Items.Add("06:00");
+            comboBox3.Items.Add("07:00");
+            comboBox3.Items.Add("08:00");
+            comboBox3.Items.Add("09:00");
+            comboBox3.Items.Add("10:00");
+            comboBox3.Items.Add("11:00");
+            comboBox3.Items.Add("12:00");
+            comboBox3.Items.Add("13:00");
+            comboBox3.Items.Add("14:00");
+            comboBox3.Items.Add("15:00");
+            comboBox3.Items.Add("16:00");
+            comboBox3.Items.Add("17:00");
+            comboBox3.Items.Add("18:00");
+            comboBox3.Items.Add("19:00");
+            comboBox3.Items.Add("20:00");
+            comboBox3.Items.Add("21:00");
+            comboBox3.Items.Add("22:00");
+            comboBox3.Items.Add("23:00");
         }
     }
 }
