@@ -15,7 +15,7 @@ namespace Project_Team3
         /// </summary>
         /// <param name="day"></param>
         /// <returns></returns>
-        public string dayConvert(int day)
+        public static string dayConvert(int day)
         {
             switch (day)
             {
@@ -39,12 +39,42 @@ namespace Project_Team3
         }
 
         /// <summary>
+        /// this method converts the day in string to date in int 
+        /// for example sunday is 1
+        /// </summary>
+        /// <param name="Sday">string that represent day</param>
+        /// <returns></returns>
+        public static int convDayToInt(string Sday)
+        {
+            switch (Sday)
+            {
+                case "Sunday":
+                    return 1;
+                case "Monday":
+                    return 2;
+                case "Tuesday":
+                    return 3;
+                case "Wednesday":
+                    return 4;
+                case "Thursday":
+                    return 5;
+                case "Friday":
+                    return 6;
+                case "Saturday":
+                    return 7;
+                default:
+                    return 0;
+            }
+        }
+
+
+        /// <summary>
         /// that meant to convert the simple int hour from database to 
         /// readble known pattern
         /// </summary>
         /// <param name="hour"></param>
         /// <returns></returns>
-        public string hourConvert(int hour)
+        public static string hourConvertFromIntToString(int hour)
         {
             switch(hour)
             {

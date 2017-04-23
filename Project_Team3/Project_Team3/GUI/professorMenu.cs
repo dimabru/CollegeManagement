@@ -36,15 +36,15 @@ namespace Project_Team3
             //set the item in the combo boxes
             setComboBoxes();
 
-
+            //hide constraints panel;
+            panel1.Hide();
         }
 
         private void professorMenu_Load(object sender, EventArgs e)
         {
 
         }
-
-
+        
         private void watch_your_constraints(object sender, EventArgs e)
         {
 
@@ -62,13 +62,14 @@ namespace Project_Team3
             string conv2 = "";
             string conv3 = "";
 
-
             for (int i = 0; i < prof_constraints_List.Count; i++)
             {
-                conv1 = opration.hourConvert(prof_constraints_List[i].getStart);
-                conv2 = opration.hourConvert(prof_constraints_List[i].getEnds);
-                conv3 = opration.dayConvert(prof_constraints_List[i].getEnds);
-
+                //i made this function static and i think we should do it for all the function in "publicChecksAnd Operations"
+                //but we have to remember to replace all the places we create an instance
+                conv1 = publicChecksAndOperations.hourConvertFromIntToString(prof_constraints_List[i].getStart);
+                conv2 = publicChecksAndOperations.hourConvertFromIntToString(prof_constraints_List[i].getEnds);
+                conv3 = publicChecksAndOperations.dayConvert(prof_constraints_List[i].getDay);
+                
                 tempTable.Rows.Add(conv1,conv2,conv3);
             }
             
@@ -84,7 +85,7 @@ namespace Project_Team3
 
         private void addConstraintsButton(object sender, EventArgs e)
         {
-            prof.insertConstrints(1, 1, 1);
+            panel1.Show();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -103,6 +104,32 @@ namespace Project_Team3
         }
 
         /// <summary>
+        /// enter the constraints to user constaraints list and to database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void enter_constraints_to_user_and_database(object sender, EventArgs e)
+        {
+            //learn more about trim here: https://msdn.microsoft.com/en-us/library/kxbw3kwc(v=vs.110).aspx
+
+            if (comboBox1.Text == "" || comboBox2.Text == "" || comboBox3.Text == "")
+            {
+                MessageBox.Show("you have to enter constraint");
+                panel1.Hide();
+                return;
+            }
+
+            int conv1 = publicChecksAndOperations.convDayToInt(comboBox1.Text);
+            char toTrim1 = '0';
+            char toTrim2 = ':';
+            string start = comboBox2.Text.Trim(toTrim1).Trim(toTrim2);
+            string end = comboBox3.Text.Trim(toTrim1).Trim(toTrim2);
+            prof.insertConstrints(Convert.ToInt32(start), Convert.ToInt32(end), conv1);
+            panel1.Hide();
+        }
+
+
+        /// <summary>
         /// initialize all comboBox items
         /// </summary>
         private void setComboBoxes()
@@ -116,13 +143,6 @@ namespace Project_Team3
             comboBox1.Items.Add("Friday");
             comboBox1.Items.Add("Saturday");
 
-            comboBox2.Items.Add("00:00");
-            comboBox2.Items.Add("01:00");
-            comboBox2.Items.Add("02:00");
-            comboBox2.Items.Add("03:00");
-            comboBox2.Items.Add("04:00");
-            comboBox2.Items.Add("05:00");
-            comboBox2.Items.Add("06:00");
             comboBox2.Items.Add("07:00");
             comboBox2.Items.Add("08:00");
             comboBox2.Items.Add("09:00");
@@ -141,13 +161,6 @@ namespace Project_Team3
             comboBox2.Items.Add("22:00");
             comboBox2.Items.Add("23:00");
 
-            comboBox3.Items.Add("00:00");
-            comboBox3.Items.Add("01:00");
-            comboBox3.Items.Add("02:00");
-            comboBox3.Items.Add("03:00");
-            comboBox3.Items.Add("04:00");
-            comboBox3.Items.Add("05:00");
-            comboBox3.Items.Add("06:00");
             comboBox3.Items.Add("07:00");
             comboBox3.Items.Add("08:00");
             comboBox3.Items.Add("09:00");
