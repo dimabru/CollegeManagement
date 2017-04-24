@@ -13,6 +13,7 @@ namespace Project_Team3.GUI
     public partial class adminMenu : Form
     {
         admin ad;
+        dataBaseOperations dbo = new dataBaseOperations();
 
         //font size
         //learn more here: https://msdn.microsoft.com/en-us/library/system.drawing.font.size(v=vs.110).aspx
@@ -32,15 +33,56 @@ namespace Project_Team3.GUI
             //see also: https://msdn.microsoft.com/en-us/library/system.windows.forms.form.startposition(v=vs.110).aspx
             this.StartPosition = FormStartPosition.CenterScreen;
 
+            //set pages
             set_account_Management();
 
-            set_add_user();
+            set_add_user_and_user_details();
+
+            set_delete_user();
         }
 
         /// <summary>
-        /// set the page add user;
+        /// set the page add user delete user
         /// </summary>
-        public void set_add_user()
+        public void set_delete_user()
+        {
+
+            comboBox_access_group_delete.Items.Add("Secretary");
+            comboBox_access_group_delete.Items.Add("Instructor");
+            comboBox_access_group_delete.Items.Add("Professor");
+        }
+
+        private void button_delete_this_user(object sender, EventArgs e)
+        {
+            if (textBox_id_delete.Text == "" || comboBox_access_group_delete.Text == "")
+            {
+                MessageBox.Show("you have to fill all fields");
+                return;
+            }
+            try
+            {
+                ulong deletUserId = publicChecksAndOperations.convertToUlong(textBox_id_delete.Text);
+                if (comboBox_access_group_delete.Text != ad.getUserAccessGroup(deletUserId))
+                {
+                    MessageBox.Show("you have wrong with the access group");
+                    return;
+                }
+                string message_for_message_box = "you deleted " + dbo.getUserNameById(deletUserId);
+                ad.deleteUserById(deletUserId);
+                MessageBox.Show(message_for_message_box);
+                textBox_id_delete.Text = "";
+                comboBox_access_group_delete.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// set the page add user and user details;
+        /// </summary>
+        public void set_add_user_and_user_details()
         {
             numOfSecretaryLabelConst.Font = new Font(lastNameLabel.Font.Name, fSize, lastNameLabel.Font.Style, lastNameLabel.Font.Unit);
             numOfSecretaryLabelDinamic.Font = new Font(lastNameLabel.Font.Name, fSize, lastNameLabel.Font.Style, lastNameLabel.Font.Unit);
@@ -56,6 +98,18 @@ namespace Project_Team3.GUI
             comboBox_access_group.Items.Add("Secretary");
             comboBox_access_group.Items.Add("Instructor");
             comboBox_access_group.Items.Add("Professor");
+        }
+
+        /// <summary>
+        /// refrash the numbers in user detail page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button_refresh_user_details_Click(object sender, EventArgs e)
+        {
+            numOfSecretaryLabelDinamic.Text = ad.how_many_from_this_type("Secretary").ToString();
+            amount_of_instructors_lable_dinamic.Text = ad.how_many_from_this_type("Instructor").ToString();
+            amount_of_professors_lable_dinamic.Text = ad.how_many_from_this_type("Professor").ToString();
         }
 
         private void set_account_Management()
@@ -117,6 +171,13 @@ namespace Project_Team3.GUI
 
             ad.set_new_user(publicChecksAndOperations.convertToUlong(id), name, lname, password, accessGroup);
             MessageBox.Show("the user was successfully created");
+
+
+            textBox_first_name.Text = "";
+            textBox_id.Text = "";
+            textBox_last_name.Text = "";
+            textBox_password.Text = "";
+            comboBox_access_group.Text = "";
         }
     }
 }

@@ -40,6 +40,31 @@ namespace Project_Team3
             }
         }
 
+        /// <summary>
+        /// delete user by id
+        /// </summary>
+        /// <param name="id"></param>
+        public void deleteUser(ulong id)
+        {
+            try
+            {
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand sqlCommand = new SqlCommand("delete from dbo.Users where ID = '" + id + "'", con);
+                con.Open();
+                sqlCommand.ExecuteNonQuery();
+            }
+
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
 
         /// <summary>
         /// this function get 4 argumments
@@ -185,7 +210,43 @@ namespace Project_Team3
                     //to_return = (dbr["PASS"].ToString());
                 }
                 con.Close();
-                return "" + to_return.Trim();
+                return to_return.Trim();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        /// <summary>
+        /// return the user access group by his id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public string getUserAccessGroupById(ulong id)
+        {
+            try
+            {
+                string to_return = "";
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.Users where Id = '" + id + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+
+                while (dbr.Read())
+                {
+                    to_return = dbr.GetValue(3).ToString();
+                    //to_return = (dbr["ACCESSGROUP"].ToString());
+                }
+                con.Close();
+                return to_return.Trim();
             }
             catch
             {
@@ -208,7 +269,7 @@ namespace Project_Team3
             {
                 string to_return = "";
                 String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
-                String query = "select * from dbo.Users where Id = '" + id + "'";
+                String query = "select * from dbo.Users where ID = '" + id + "'";
                 SqlConnection con = new SqlConnection(str);
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataReader dbr;
@@ -218,7 +279,7 @@ namespace Project_Team3
                 while (dbr.Read())
                 {
                     to_return = dbr.GetValue(1).ToString();
-                    //to_return = (dbr["PASS"].ToString());
+                    //to_return = (dbr["USERNAME"].ToString());
                 }
                 con.Close();
                 return to_return.Trim();
@@ -255,7 +316,7 @@ namespace Project_Team3
                 while (dbr.Read())
                 {
                     to_return = dbr.GetValue(5).ToString();
-                    //to_return = (dbr["PASS"].ToString());
+                    //to_return = (dbr["SNAME"].ToString());
                 }
                 con.Close();
                 return "" + to_return.Trim();

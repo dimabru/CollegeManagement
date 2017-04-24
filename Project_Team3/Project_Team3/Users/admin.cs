@@ -41,6 +41,32 @@ namespace Project_Team3
         }
 
         /// <summary>
+        /// delete user by his id
+        /// </summary>
+        /// <param name="id"></param>
+        public void deleteUserById(ulong id)
+        {
+            try
+            {
+                dbo.deleteUser(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// return the user access group
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public string getUserAccessGroup(ulong id)
+        {
+            return dbo.getUserAccessGroupById(id);
+        }
+
+        /// <summary>
         /// set new user in data base
         /// </summary>
         /// <param name="id"></param>

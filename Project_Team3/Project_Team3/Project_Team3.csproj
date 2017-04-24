@@ -209,6 +209,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />
+    <Content Include="Resources\delete_user.jpg" />
+    <Content Include="Resources\password.jepg.ico" />
+    <Content Include="Resources\users.jpg" />
     <Content Include="Resources\user_add.png" />
   </ItemGroup>
   <ItemGroup />
