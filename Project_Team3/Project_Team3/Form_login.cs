@@ -8,12 +8,26 @@ using Project_Team3.Menus___forms;
 
 namespace Project_Team3
 {
+
     public partial class Form_login : Form
     {
-
         private DBconnect db;
         private string username;
         private string password;
+
+        public string Username
+        {
+            get
+            {
+                return username;
+            }
+
+            set
+            {
+                username = value;
+            }
+        }
+
         public Form_login()
         {
             InitializeComponent();
@@ -23,7 +37,7 @@ namespace Project_Team3
             cmd.CommandType = CommandType.Text;
             cmd.Connection = db.getConnection();
             cmd.CommandText = "SELECT accessgroup FROM USERS WHERE USERNAME = @username and PASS = @password";
-            cmd.Parameters.AddWithValue("username", username);
+            cmd.Parameters.AddWithValue("username", Username);
             cmd.Parameters.AddWithValue("password", password);
 
             try
@@ -40,7 +54,7 @@ namespace Project_Team3
 
         private void userName_Text(object sender, EventArgs e)
         {
-            username = this.userNameBox.Text;
+            Username = this.userNameBox.Text;
         }
 
         private void password_Text(object sender, EventArgs e)
@@ -131,6 +145,17 @@ namespace Project_Team3
             {
                 // Console app
                 System.Environment.Exit(1);
+            }
+        }
+
+        private void passwordBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                if (!passwordBox.AcceptsReturn)
+                {
+                    button2.PerformClick();
+                }
             }
         }
     }
