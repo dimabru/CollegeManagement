@@ -72,11 +72,18 @@ namespace Project_Team3
         }
 
 
+        /// 
+        /// REQUEST MENU
+        /// 
+
         private void NewRequestButton_Click(object sender, EventArgs e)
         {
+
+            this.IsMdiContainer = true;
             Form_studentAddRequest addRequest = new Form_studentAddRequest();
+
+            addRequest.MdiParent = this;
             addRequest.setUsername(username);
-            Owner.Hide();
             addRequest.Show();
         }
 

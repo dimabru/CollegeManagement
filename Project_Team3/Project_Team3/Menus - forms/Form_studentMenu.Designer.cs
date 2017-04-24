@@ -45,6 +45,12 @@
             this.watchMyCoursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeCourseTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.sunday_box = new System.Windows.Forms.ListBox();
+            this.monday_box = new System.Windows.Forms.ListBox();
+            this.tuesday_box = new System.Windows.Forms.ListBox();
+            this.wednesday_box = new System.Windows.Forms.ListBox();
+            this.thursday_box = new System.Windows.Forms.ListBox();
+            this.friday_box = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
@@ -181,6 +187,56 @@
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
+            // sunday_box
+            // 
+            this.sunday_box.FormattingEnabled = true;
+            this.sunday_box.Items.AddRange(new object[] {
+            "8:00 - 12:00 - חדווא 1"});
+            this.sunday_box.Location = new System.Drawing.Point(61, 106);
+            this.sunday_box.Name = "sunday_box";
+            this.sunday_box.Size = new System.Drawing.Size(156, 498);
+            this.sunday_box.TabIndex = 8;
+            // 
+            // monday_box
+            // 
+            this.monday_box.FormattingEnabled = true;
+            this.monday_box.Location = new System.Drawing.Point(224, 106);
+            this.monday_box.Name = "monday_box";
+            this.monday_box.Size = new System.Drawing.Size(152, 498);
+            this.monday_box.TabIndex = 9;
+            // 
+            // tuesday_box
+            // 
+            this.tuesday_box.FormattingEnabled = true;
+            this.tuesday_box.Location = new System.Drawing.Point(383, 106);
+            this.tuesday_box.Name = "tuesday_box";
+            this.tuesday_box.Size = new System.Drawing.Size(154, 498);
+            this.tuesday_box.TabIndex = 10;
+            // 
+            // wednesday_box
+            // 
+            this.wednesday_box.FormattingEnabled = true;
+            this.wednesday_box.Location = new System.Drawing.Point(542, 106);
+            this.wednesday_box.Name = "wednesday_box";
+            this.wednesday_box.Size = new System.Drawing.Size(151, 498);
+            this.wednesday_box.TabIndex = 11;
+            // 
+            // thursday_box
+            // 
+            this.thursday_box.FormattingEnabled = true;
+            this.thursday_box.Location = new System.Drawing.Point(699, 106);
+            this.thursday_box.Name = "thursday_box";
+            this.thursday_box.Size = new System.Drawing.Size(151, 498);
+            this.thursday_box.TabIndex = 12;
+            // 
+            // friday_box
+            // 
+            this.friday_box.FormattingEnabled = true;
+            this.friday_box.Location = new System.Drawing.Point(856, 106);
+            this.friday_box.Name = "friday_box";
+            this.friday_box.Size = new System.Drawing.Size(156, 498);
+            this.friday_box.TabIndex = 13;
+            // 
             // Form_studentMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,6 +244,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1012, 609);
+            this.Controls.Add(this.friday_box);
+            this.Controls.Add(this.thursday_box);
+            this.Controls.Add(this.wednesday_box);
+            this.Controls.Add(this.tuesday_box);
+            this.Controls.Add(this.monday_box);
+            this.Controls.Add(this.sunday_box);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.LogoutStudent);
             this.Controls.Add(this.menuStrip);
@@ -226,5 +288,11 @@
         private System.Windows.Forms.ToolStripMenuItem watchMyCoursesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeCourseTimeToolStripMenuItem;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.ListBox friday_box;
+        private System.Windows.Forms.ListBox thursday_box;
+        private System.Windows.Forms.ListBox wednesday_box;
+        private System.Windows.Forms.ListBox tuesday_box;
+        private System.Windows.Forms.ListBox monday_box;
+        private System.Windows.Forms.ListBox sunday_box;
     }
 }
