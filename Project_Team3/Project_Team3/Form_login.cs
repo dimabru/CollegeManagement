@@ -26,8 +26,16 @@ namespace Project_Team3
             cmd.Parameters.AddWithValue("username", username);
             cmd.Parameters.AddWithValue("password", password);
 
-            DataSet ds = db.generalCommand(cmd);
-            return Regex.Replace(ds.Tables[0].Rows[0].ItemArray[0].ToString(), @"\s+", "");
+            try
+            {
+                DataSet ds = db.generalCommand(cmd);
+                return Regex.Replace(ds.Tables[0].Rows[0].ItemArray[0].ToString(), @"\s+", "");
+            }
+            catch
+            {
+                return "Not_exists";
+            }
+            
         }
 
         private void userName_Text(object sender, EventArgs e)
@@ -97,6 +105,21 @@ namespace Project_Team3
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
+        {
+            // close application
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
+        }
+
+        private void Form_login_FormClosed(object sender, FormClosedEventArgs e)
         {
             // close application
             if (System.Windows.Forms.Application.MessageLoop)
