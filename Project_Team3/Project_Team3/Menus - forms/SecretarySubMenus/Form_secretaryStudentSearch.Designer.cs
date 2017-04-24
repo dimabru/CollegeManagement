@@ -34,7 +34,6 @@
             this.searchByLabel = new System.Windows.Forms.Label();
             this.searchValueTextBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
-            this.searchProgressBar = new System.Windows.Forms.ProgressBar();
             this.studentsResultListBox = new System.Windows.Forms.ListBox();
             this.backButton = new System.Windows.Forms.Button();
             this.addStudentToCourseButton = new System.Windows.Forms.Button();
@@ -97,15 +96,6 @@
             this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
-            // searchProgressBar
-            // 
-            this.searchProgressBar.Location = new System.Drawing.Point(398, 280);
-            this.searchProgressBar.Name = "searchProgressBar";
-            this.searchProgressBar.Size = new System.Drawing.Size(173, 23);
-            this.searchProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.searchProgressBar.TabIndex = 5;
-            this.searchProgressBar.Value = 50;
-            // 
             // studentsResultListBox
             // 
             this.studentsResultListBox.FormattingEnabled = true;
@@ -143,7 +133,6 @@
             this.Controls.Add(this.addStudentToCourseButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.studentsResultListBox);
-            this.Controls.Add(this.searchProgressBar);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.searchValueTextBox);
             this.Controls.Add(this.searchByLabel);
@@ -166,7 +155,6 @@
         private System.Windows.Forms.Label searchByLabel;
         private System.Windows.Forms.TextBox searchValueTextBox;
         private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.ProgressBar searchProgressBar;
         private System.Windows.Forms.ListBox studentsResultListBox;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button addStudentToCourseButton;
