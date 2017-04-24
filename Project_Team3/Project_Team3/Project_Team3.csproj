@@ -244,6 +244,12 @@
     <EmbeddedResource Include="Menus - forms\Form_secretaryMenu.resx">
       <DependentUpon>Form_secretaryMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\SecretarySubMenus\Form_secretaryManageCourse.resx">
+      <DependentUpon>Form_secretaryManageCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\SecretarySubMenus\Form_secretaryManageStudent.resx">
+      <DependentUpon>Form_secretaryManageStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\SecretarySubMenus\Form_secretaryStudentRequests.resx">
       <DependentUpon>Form_secretaryStudentRequests.cs</DependentUpon>
     </EmbeddedResource>
