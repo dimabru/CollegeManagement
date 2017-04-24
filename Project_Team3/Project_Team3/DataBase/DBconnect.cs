@@ -72,7 +72,7 @@ namespace Project_Team3
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
-            cmd.CommandText = "SELECT * FROM " + tableName+" where "+where;
+            cmd.CommandText = "SELECT * FROM " + tableName+" "+where;
 
             SqlDataAdapter sda = new SqlDataAdapter();
             DataSet ds = new DataSet();

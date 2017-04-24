@@ -79,6 +79,7 @@ namespace Project_Team3
                 case "Student":
                     using (Form_studentMenu student_menu = new Form_studentMenu())
                     {
+                        student_menu.setUsername(Username);
                         this.Hide();
                         student_menu.ShowDialog(this);
                     }

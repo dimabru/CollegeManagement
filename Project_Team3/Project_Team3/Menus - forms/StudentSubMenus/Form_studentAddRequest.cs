@@ -12,6 +12,13 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
 {
     public partial class Form_studentAddRequest : Form
     {
+
+        private String username;
+
+        public void setUsername(String username)
+        {
+            this.username = username;
+        }
         public Form_studentAddRequest()
         {
             InitializeComponent();
@@ -25,7 +32,7 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
         private void Form_studentAddRequest_Load(object sender, EventArgs e)
         {
             DBconnect db = new DBconnect();
-            DataSet ds = db.LoadTableWithRule("users","accessgroup='Secretary'");
+            DataSet ds = db.LoadTableWithRule("users","WHERE accessgroup='Secretary'");
             secretaryChooseList.DataSource = ds.Tables[0];
             secretaryChooseList.ValueMember = "Uname";
             secretaryChooseList.DisplayMember = "Uname";
@@ -38,10 +45,11 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
             DBconnect db = new DBconnect();
             try
             {
-                db.executionQuery("insert into StudentRequests values('TEST_STUDENT','" + messageBody + "','New request','" + secretaryName + "')");
+                db.executionQuery("insert into StudentRequests values('"+ username+"', '" + messageBody + "','New request','" + secretaryName + "')");
                 MessageBox.Show("Request message : \n\n"+messageBody+"\n\nBeen save in system and assigned to Secretary :"+secretaryName);
             }
             catch { }
         }
+
     }
 }

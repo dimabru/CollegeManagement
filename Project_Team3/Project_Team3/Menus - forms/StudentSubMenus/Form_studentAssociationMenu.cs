@@ -12,6 +12,8 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
 {
     public partial class Form_studentAssociationMenu : Form
     {
+       
+
         public Form_studentAssociationMenu()
         {
             InitializeComponent();
@@ -41,6 +43,11 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
         {
             Form_studentMenu parent = (Form_studentMenu)this.Owner;
             parent.Show();
+        }
+
+        private void Form_studentAssociationMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

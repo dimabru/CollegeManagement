@@ -38,9 +38,10 @@
             // 
             this.NewRequestButton.BackColor = System.Drawing.Color.MistyRose;
             this.NewRequestButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.NewRequestButton.Location = new System.Drawing.Point(548, 97);
+            this.NewRequestButton.Location = new System.Drawing.Point(411, 79);
+            this.NewRequestButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NewRequestButton.Name = "NewRequestButton";
-            this.NewRequestButton.Size = new System.Drawing.Size(235, 46);
+            this.NewRequestButton.Size = new System.Drawing.Size(176, 37);
             this.NewRequestButton.TabIndex = 4;
             this.NewRequestButton.Text = "New request";
             this.NewRequestButton.UseVisualStyleBackColor = false;
@@ -50,9 +51,10 @@
             // 
             this.ExistingRequestsButton.BackColor = System.Drawing.Color.MistyRose;
             this.ExistingRequestsButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.ExistingRequestsButton.Location = new System.Drawing.Point(548, 164);
+            this.ExistingRequestsButton.Location = new System.Drawing.Point(411, 133);
+            this.ExistingRequestsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ExistingRequestsButton.Name = "ExistingRequestsButton";
-            this.ExistingRequestsButton.Size = new System.Drawing.Size(235, 46);
+            this.ExistingRequestsButton.Size = new System.Drawing.Size(176, 37);
             this.ExistingRequestsButton.TabIndex = 5;
             this.ExistingRequestsButton.Text = "Existing requests";
             this.ExistingRequestsButton.UseVisualStyleBackColor = false;
@@ -62,9 +64,10 @@
             // 
             this.BackToLastReqMenu.BackColor = System.Drawing.Color.MistyRose;
             this.BackToLastReqMenu.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.BackToLastReqMenu.Location = new System.Drawing.Point(548, 284);
+            this.BackToLastReqMenu.Location = new System.Drawing.Point(411, 231);
+            this.BackToLastReqMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BackToLastReqMenu.Name = "BackToLastReqMenu";
-            this.BackToLastReqMenu.Size = new System.Drawing.Size(235, 46);
+            this.BackToLastReqMenu.Size = new System.Drawing.Size(176, 37);
             this.BackToLastReqMenu.TabIndex = 6;
             this.BackToLastReqMenu.Text = "Back to last menu";
             this.BackToLastReqMenu.UseVisualStyleBackColor = false;
@@ -72,18 +75,20 @@
             // 
             // Form_studentRequestMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1350, 750);
+            this.ClientSize = new System.Drawing.Size(1012, 609);
             this.Controls.Add(this.BackToLastReqMenu);
             this.Controls.Add(this.ExistingRequestsButton);
             this.Controls.Add(this.NewRequestButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form_studentRequestMenu";
             this.Text = "Student Request Menu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_studentRequestMenu_FormClosed);
+            this.Load += new System.EventHandler(this.Form_studentRequestMenu_Load);
             this.ResumeLayout(false);
 
         }

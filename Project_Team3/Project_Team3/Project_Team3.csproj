@@ -305,13 +305,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Image1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\schedule-header.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\flat-calendar-icon-800x566.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="'$(SQLDBExtensionsRefPath)' != ''" />

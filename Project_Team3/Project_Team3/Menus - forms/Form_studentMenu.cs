@@ -14,9 +14,15 @@ namespace Project_Team3
 {
     public partial class Form_studentMenu : Form
     {
+       private String username;
         public Form_studentMenu()
         {
+            
             InitializeComponent();
+        }
+        public void setUsername(String username)
+        {
+            this.username = username;
         }
 
         private void Form_studentMenu_Load(object sender, EventArgs e)
@@ -41,9 +47,10 @@ namespace Project_Team3
 
         private void StudentRequestButton_Click(object sender, EventArgs e)
         {
-            using (Form studentRequestMenu = new Form_studentRequestMenu())
+            using (Form_studentRequestMenu studentRequestMenu = new Form_studentRequestMenu())
             {
                 this.Hide();
+                studentRequestMenu.setUsername(username);
                 studentRequestMenu.ShowDialog(this);
             }
         }

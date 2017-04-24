@@ -12,6 +12,12 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
 {
     public partial class Form_studentRequestMenu : Form
     {
+        private String username;
+
+        public void setUsername(String username)
+        {
+            this.username = username;
+        }
         public Form_studentRequestMenu()
         {
             InitializeComponent();
@@ -20,6 +26,7 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
         private void NewRequestButton_Click(object sender, EventArgs e)
         {
             Form_studentAddRequest addRequest = new Form_studentAddRequest();
+            addRequest.setUsername(username);
             Owner.Owner.Hide();
             Owner.Hide();
             addRequest.Show();
@@ -39,6 +46,11 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
         {
             Form_studentMenu parent = (Form_studentMenu)this.Owner;
             parent.Show();
+        }
+
+        private void Form_studentRequestMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
