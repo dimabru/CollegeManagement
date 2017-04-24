@@ -16,6 +16,10 @@ namespace Project_Team3
         instructor inst;
         userType theUserWeGot;
 
+        //font size
+        //learn more here: https://msdn.microsoft.com/en-us/library/system.drawing.font.size(v=vs.110).aspx
+        const float fSize = 12.0F;
+
         private List<techingStaffConstraints> constraints_List = new List<techingStaffConstraints>();
         publicChecksAndOperations opration = new publicChecksAndOperations();
 
@@ -50,8 +54,21 @@ namespace Project_Team3
             //set the item in the combo boxes
             setComboBoxes();
 
+            set_account_Management();
+
             //hide constraints panel;
             panel1.Hide();
+        }
+
+        private void set_account_Management()
+        {
+            //here you can learn how to set fonts: https://msdn.microsoft.com/en-us/library/system.drawing.font.size(v=vs.110).aspx
+            nameLable.Text = "name:";
+            lastNameLabel.Text = "lastNameLabel:";
+
+
+            lastNameLabel.Font = new Font(lastNameLabel.Font.Name, fSize, lastNameLabel.Font.Style, lastNameLabel.Font.Unit);
+            nameLable.Font = new Font(nameLable.Font.Name, fSize, nameLable.Font.Style, nameLable.Font.Unit);
         }
 
         private void professorMenu_Load(object sender, EventArgs e)
@@ -171,6 +188,47 @@ namespace Project_Team3
         }
 
 
+        private void changeMyPassbutton_Click(object sender, EventArgs e)
+        {
+            if (oldPassTextBox.Text == "" || newPassTextBox.Text == "" || confPassTextBox.Text == "")
+            {
+                MessageBox.Show("you have to fill all fields");
+                return;
+            }
+            if (newPassTextBox.Text != confPassTextBox.Text)
+            {
+                MessageBox.Show("Password does not match the confirm password.");
+                return;
+            }
+
+            //with enum we can know the type of user we have to customize the menu for him
+            if (theUserWeGot == userType.professor)
+            {
+                if (oldPassTextBox.Text ==  prof.getPassword())
+                {
+                    prof.changePassword(newPassTextBox.Text);
+                    MessageBox.Show("the password has changed");
+                    return;
+                }
+                MessageBox.Show("the old password is not correct");
+                return;
+            }
+
+            //change the password
+            if (theUserWeGot == userType.Instructor)
+            {
+                if (oldPassTextBox.Text == inst.getPassword())
+                {
+                    inst.changePassword(newPassTextBox.Text);
+                    MessageBox.Show("the password has changed");
+                    return;
+                }
+                MessageBox.Show("the old password is not correct");
+                return;
+            }
+        }
+
+
         /// <summary>
         /// initialize all comboBox items
         /// </summary>
@@ -221,5 +279,7 @@ namespace Project_Team3
             comboBox3.Items.Add("22:00");
             comboBox3.Items.Add("23:00");
         }
+
+
     }
 }

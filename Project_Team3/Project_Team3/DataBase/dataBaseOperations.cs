@@ -78,11 +78,6 @@ namespace Project_Team3
             }
         }
 
-
-
-
-
-
         /// <summary>
         /// this function return 1d arry 
         /// to parse it you need to divide every 4 item to one constraints
@@ -126,6 +121,69 @@ namespace Project_Team3
             }
         }
 
+        /// <summary>
+        /// return the password of the user by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public string getUserPasswordById(ulong id)
+        {
+            try
+            {
+                string to_return = "";
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.Users where Id = '" + id + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+
+                while (dbr.Read())
+                {
+                    to_return = dbr.GetValue(2).ToString();
+                    //to_return = (dbr["PASS"].ToString());
+                }
+                con.Close();
+                return "" + to_return.Trim();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+        /// <summary>
+        /// update the user password in data base
+        /// </summary>
+        /// <param name="password"></param>
+        /// <param name="id"></param>
+        public void updateUserPassword(String password, ulong id)
+        {
+            try
+            {
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                string query = "UPDATE dbo.Users SET ID = " + id + ", PASS = " + password + "WHERE ID = " + id;
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand sqlCommand = new SqlCommand(query, con);
+                con.Open();
+                sqlCommand.ExecuteNonQuery();
+            }
+
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
         public Boolean userExist(String password, ulong id,String userType)
         {

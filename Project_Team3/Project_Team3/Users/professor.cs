@@ -47,9 +47,8 @@ namespace Project_Team3
         /// this constructor set the id and update the user filds from the data base;
         /// </summary>
         /// <param name="id"></param>
-        public professor(ulong id)
+        public professor(ulong id) : base(id)
         {
-            this.setid(id);
             int[] toSaveConstraints = dbo.getConstraints(this.getid());
             try
             {
