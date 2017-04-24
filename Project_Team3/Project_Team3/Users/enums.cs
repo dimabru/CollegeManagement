@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace Project_Team3
 {
+    /// <summary>
+    /// dont touch the order;
+    /// i use it in admin menu
+    /// </summary>
     public enum userType
     {
         Secretary,
-        Admin,
         Instructor,
-        professor
+        Professor,
+        Admin
     }
 }

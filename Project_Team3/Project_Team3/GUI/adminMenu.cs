@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Project_Team3.GUI
 {
@@ -27,7 +28,7 @@ namespace Project_Team3.GUI
 
             //change this form size 
             //see also: https://msdn.microsoft.com/en-us/library/ms229606(v=vs.110).aspx 
-            this.Size = new System.Drawing.Size(760, 460);
+            this.Size = new System.Drawing.Size(800, 460);
 
             //set position in the center;
             //see also: https://msdn.microsoft.com/en-us/library/system.windows.forms.form.startposition(v=vs.110).aspx
@@ -98,6 +99,66 @@ namespace Project_Team3.GUI
             comboBox_access_group.Items.Add("Secretary");
             comboBox_access_group.Items.Add("Instructor");
             comboBox_access_group.Items.Add("Professor");
+
+
+            //set all staff in table
+            set_data_gerid();
+
+        }
+
+        public void set_data_gerid()
+        {
+            //learn more about data table here: https://msdn.microsoft.com/en-us/library/system.data.datatable(v=vs.110).aspx
+            //and here in the bottom you can find examples for data grid: https://msdn.microsoft.com/en-us/library/system.windows.forms.datagrid(v=vs.110).aspx
+
+            DataTable tempTable = new DataTable();
+            tempTable.Columns.Add("id", typeof(string));
+            tempTable.Columns.Add("name", typeof(string));
+            tempTable.Columns.Add("last name", typeof(string));
+            tempTable.Columns.Add("type", typeof(string));
+
+            string id = "";
+            string name = "";
+            string last_name = "";
+
+            //learn more about enum here: https://msdn.microsoft.com/en-us/library/cc138362.aspx
+            //set the first user;
+            string type;
+            for (int i = 0; i < 3; i++)
+            {
+                type = Enum.GetName(typeof(userType), i);
+
+                try
+                {
+                    String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                    String query = "select * from dbo.Users where ACCESSGROUP = '" + type + "'";
+                    SqlConnection con = new SqlConnection(str);
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    SqlDataReader dbr;
+                    con.Open();
+                    dbr = cmd.ExecuteReader();
+
+                    while (dbr.Read())
+                    {
+                        //here im getting all the fields of the users
+                        id = dbr.GetValue(0).ToString();
+                        id.Trim();
+                        name = dbr.GetValue(1).ToString();
+                        name.Trim();
+                        last_name = dbr.GetValue(5).ToString();
+                        last_name.Trim();
+
+                        tempTable.Rows.Add(id, name, last_name, type);
+                    }
+                    con.Close();
+                }
+                catch
+                {
+                    throw;
+                }
+            }
+            //insert everything to the datagrid;
+            dataGridView1.DataSource = tempTable;
         }
 
         /// <summary>
@@ -110,6 +171,9 @@ namespace Project_Team3.GUI
             numOfSecretaryLabelDinamic.Text = ad.how_many_from_this_type("Secretary").ToString();
             amount_of_instructors_lable_dinamic.Text = ad.how_many_from_this_type("Instructor").ToString();
             amount_of_professors_lable_dinamic.Text = ad.how_many_from_this_type("Professor").ToString();
+
+            //set data gerid;
+            set_data_gerid();
         }
 
         private void set_account_Management()

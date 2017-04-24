@@ -33,7 +33,7 @@ namespace Project_Team3
             {
                 //make reperance to the object we get
                 this.prof = (professor)someUser;
-                theUserWeGot = userType.professor;
+                theUserWeGot = userType.Professor;
             }
 
             if (someUser is instructor)
@@ -67,7 +67,7 @@ namespace Project_Team3
             lastNameLabel.Text = "last name:";
 
             //with enum we can know the type of user we have to customize the menu for him
-            if (theUserWeGot == userType.professor)
+            if (theUserWeGot == userType.Professor)
             {
                 lNameLable.Text = prof.getUserLastName;
                 UnameLable.Text = prof.getUserName;
@@ -91,7 +91,7 @@ namespace Project_Team3
         private void watch_your_constraints(object sender, EventArgs e)
         {
             //with enum we can know the type of user we have to customize the menu for him
-            if (theUserWeGot == userType.professor)
+            if (theUserWeGot == userType.Professor)
             {
                 constraints_List = prof.getConstraintsList();
             }
@@ -133,7 +133,7 @@ namespace Project_Team3
         public void clearMyConstraints(object sender, EventArgs e)
         {
             //with enum we can know the type of user we have to customize the menu for him
-            if (theUserWeGot == userType.professor)
+            if (theUserWeGot == userType.Professor)
             {
                 prof.deleteAllConstraints();
             }
@@ -187,7 +187,7 @@ namespace Project_Team3
             string end = comboBox3.Text.Trim(toTrim1).Trim(toTrim2);
 
             //with enum we can know the type of user we have to customize the menu for him
-            if (theUserWeGot == userType.professor)
+            if (theUserWeGot == userType.Professor)
             {
                 prof.insertConstrints(Convert.ToInt32(start), Convert.ToInt32(end), conv1);
             }
@@ -214,7 +214,7 @@ namespace Project_Team3
             }
 
             //with enum we can know the type of user we have to customize the menu for him
-            if (theUserWeGot == userType.professor)
+            if (theUserWeGot == userType.Professor)
             {
                 if (oldPassTextBox.Text ==  prof.getPassword())
                 {

@@ -258,6 +258,11 @@ namespace Project_Team3
             }
         }
 
+
+
+
+
+
         /// <summary>
         /// return the user name from the database by id
         /// </summary>
@@ -446,7 +451,6 @@ namespace Project_Team3
         public void initialize_Data_Base_Connection()
         {
             connetionString = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
-            //connetionString = "Server=tcp:sce2017b.database.windows.net,1433;Initial Catalog=Project3DB;Persist Security Info=False;User ID=sceproject;Password=2017Sce2017;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             con = new SqlConnection(connetionString);
         }
 
