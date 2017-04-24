@@ -7,14 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Project_Team3.Classes;
 
 namespace Project_Team3.Menus___forms.SecretarySubMenus
 {
     public partial class Form_secretaryManageStudent : Form
     {
-        public Form_secretaryManageStudent()
+        private Student student;
+
+        public Form_secretaryManageStudent(Student student)
         {
+            this.student = student;
+            MessageBox.Show(student.Username);
             InitializeComponent();
+            
+        }
+
+        private void Form_secretaryManageStudent_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form_secretaryStudentSearch parent = (Form_secretaryStudentSearch)this.Owner;
+            parent.clearSearchResults();
+            parent.Show();
         }
     }
 }

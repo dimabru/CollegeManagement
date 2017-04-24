@@ -36,7 +36,7 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.studentsResultListBox = new System.Windows.Forms.ListBox();
             this.backButton = new System.Windows.Forms.Button();
-            this.addStudentToCourseButton = new System.Windows.Forms.Button();
+            this.manageCourseButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // idRadioButton
@@ -114,14 +114,15 @@
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
-            // addStudentToCourseButton
+            // manageCourseButton
             // 
-            this.addStudentToCourseButton.Location = new System.Drawing.Point(572, 390);
-            this.addStudentToCourseButton.Name = "addStudentToCourseButton";
-            this.addStudentToCourseButton.Size = new System.Drawing.Size(112, 33);
-            this.addStudentToCourseButton.TabIndex = 8;
-            this.addStudentToCourseButton.Text = "Add to course";
-            this.addStudentToCourseButton.UseVisualStyleBackColor = true;
+            this.manageCourseButton.Location = new System.Drawing.Point(572, 390);
+            this.manageCourseButton.Name = "manageCourseButton";
+            this.manageCourseButton.Size = new System.Drawing.Size(112, 33);
+            this.manageCourseButton.TabIndex = 8;
+            this.manageCourseButton.Text = "Manage Courses";
+            this.manageCourseButton.UseVisualStyleBackColor = true;
+            this.manageCourseButton.Click += new System.EventHandler(this.manageCourseButton_Click);
             // 
             // Form_secretaryStudentSearch
             // 
@@ -130,7 +131,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1012, 609);
-            this.Controls.Add(this.addStudentToCourseButton);
+            this.Controls.Add(this.manageCourseButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.studentsResultListBox);
             this.Controls.Add(this.searchButton);
@@ -157,6 +158,6 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.ListBox studentsResultListBox;
         private System.Windows.Forms.Button backButton;
-        private System.Windows.Forms.Button addStudentToCourseButton;
+        private System.Windows.Forms.Button manageCourseButton;
     }
 }

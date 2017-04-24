@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(736, 517);
             this.Name = "Form_secretaryManageStudent";
             this.Text = "Form_secretaryManageStudent";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_secretaryManageStudent_FormClosed);
             this.ResumeLayout(false);
 
         }

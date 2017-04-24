@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Project_Team3.Classes;
 
 namespace Project_Team3.Menus___forms.SecretarySubMenus
 {
@@ -15,6 +16,7 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
     {
         DBconnect connection ;
         SqlCommand command;
+        private Student selectedStudent;
 
         public Form_secretaryStudentSearch()
         {
@@ -29,15 +31,22 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
             parent.Show();
         }
 
+        public void clearSearchResults()
+        {
+            studentsResultListBox.Items.Clear();
+
+        }
+
         private void updateResults(DataSet ds)
         {
             //TODO DRISHA
-            studentsResultListBox.Items.Clear();
+            clearSearchResults();
             try
             {
-                foreach (DataRow Student in ds.Tables[0].Rows)
+                foreach (DataRow student in ds.Tables[0].Rows)
                 {
-                    studentsResultListBox.Items.Add("Username: " + Student[0].ToString() + "\nFirstname: " + Student[1].ToString() + "\nLastname: " + Student[2].ToString());
+                    Student currentStudent = new Student(student[0].ToString(), student[1].ToString(), student[2].ToString(), student[3].ToString(), student[4].ToString(), Convert.ToInt32(student[5]));
+                    studentsResultListBox.Items.Add(currentStudent);
                 }
             }
             catch (Exception ex)
@@ -49,9 +58,8 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
         private void searchByName(string name)
         {
             //TODO DRISHA
-            command.CommandText = "SELECT Users.username , Users.UName , Users.SName from Users JOIN Student ON Users.username = Student.username WHERE Users.UName = @name ";
+            command.CommandText = "SELECT Users.ID, Users.username, Users.UName, Users.SName, Users.pass, Student.Semester from Users JOIN Student ON Users.username = Student.username WHERE Users.UName = @name ";
             command.Parameters.AddWithValue("name", name);
-
             DataSet ds = connection.generalCommand(command);
             updateResults(ds);
         }
@@ -59,7 +67,7 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
         private void searchByID(string id)
         {
             //TODO DRISHA
-            command.CommandText = "SELECT Users.username , Users.UName , Users.SName from Users JOIN Student ON Users.username = Student.username WHERE Users.id = @id ";
+            command.CommandText = "SELECT Users.ID, Users.username, Users.UName, Users.SName, Users.pass, Student.Semester from Users JOIN Student ON Users.username = Student.username WHERE Users.id = @id ";
             command.Parameters.AddWithValue("id", id);
 
             DataSet ds = connection.generalCommand(command);
@@ -102,6 +110,17 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
         {
             this.Close();
 
+        }
+
+        private void manageCourseButton_Click(object sender, EventArgs e)
+        {
+            if (studentsResultListBox.SelectedItem == null) { MessageBox.Show("No Student selected!"); return; }
+            selectedStudent =(Student)studentsResultListBox.SelectedItem;
+            using (Form_secretaryManageStudent manageStudentCourses = new Form_secretaryManageStudent(selectedStudent)) 
+            {
+                this.Hide();
+                manageStudentCourses.ShowDialog(this);
+            }
         }
     }
 }
