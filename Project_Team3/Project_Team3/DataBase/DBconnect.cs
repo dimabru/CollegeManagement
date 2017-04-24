@@ -67,6 +67,21 @@ namespace Project_Team3
             return ds;
         }
 
+        public DataSet LoadTableWithRule(string tableName, String where)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT * FROM " + tableName+" where "+where;
+
+            SqlDataAdapter sda = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+            sda.SelectCommand = cmd;
+            sda.Fill(ds, "Conn_DB");
+
+            return ds;
+        }
+
         public DataSet generalCommand(SqlCommand cmd){
             SqlDataAdapter sda = new SqlDataAdapter();
             DataSet ds = new DataSet();

@@ -19,7 +19,10 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
 
         private void NewRequestButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            Form_studentAddRequest addRequest = new Form_studentAddRequest();
+            Owner.Owner.Hide();
+            Owner.Hide();
+            addRequest.Show();
         }
 
         private void ExistingRequestsButton_Click(object sender, EventArgs e)
