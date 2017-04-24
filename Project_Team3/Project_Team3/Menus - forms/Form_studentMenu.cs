@@ -14,15 +14,23 @@ namespace Project_Team3
 {
     public partial class Form_studentMenu : Form
     {
+       private String username;
         public Form_studentMenu()
         {
+            
             InitializeComponent();
+        }
+        public void setUsername(String username)
+        {
+            this.username = username;
         }
 
         private void Form_studentMenu_Load(object sender, EventArgs e)
         {
            
         }
+
+
 
         private void Form_studentMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -32,34 +40,92 @@ namespace Project_Team3
 
         private void AssociationMenuButton_Click(object sender, EventArgs e)
         {
-            using (Form associationMenu = new Form_studentAssociationMenu())
-            {
-                this.Hide();
-                associationMenu.ShowDialog(this);
-            }
+
         }
 
         private void StudentRequestButton_Click(object sender, EventArgs e)
         {
-            using (Form studentRequestMenu = new Form_studentRequestMenu())
+            this.IsMdiContainer = true;
+            using (Form_studentAddRequest studentRequestMenu = new Form_studentAddRequest())
             {
                 this.Hide();
-                studentRequestMenu.ShowDialog(this);
+
+                studentRequestMenu.MdiParent = this;
+                studentRequestMenu.setUsername(username);
+                studentRequestMenu.Show();
             }
         }
 
         private void CoursesMenuButton_Click(object sender, EventArgs e)
         {
-            using (Form studentCoursesMenu = new Form_studentCoursesMenu())
-            {
-                this.Hide();
-                studentCoursesMenu.ShowDialog(this);
-            }
+
         }
 
         private void LogoutStudent_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void studentRequestsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void NewRequestButton_Click(object sender, EventArgs e)
+        {
+            Form_studentAddRequest addRequest = new Form_studentAddRequest();
+            addRequest.setUsername(username);
+            Owner.Hide();
+            addRequest.Show();
+        }
+
+
+        private void ExistingRequestsButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("UNDER CONSTRUCTION");
+        }
+
+        ///    ASSSOCIATION MENU
+        ///
+        ///
+        private void AssociationInformationButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("UNDER CONSTRUCTION");
+        }
+
+        private void RegisterEventsButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("UNDER CONSTRUCTION");
+        }
+
+        private void UnregisterEventsButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("UNDER CONSTRUCTION");
+        }
+
+        ///
+        ///     COURSES MENU
+        ///
+
+        private void MandatoryCoursesListButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("UNDER CONSTRUCTION");
+        }
+
+        private void WatchCoursesButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("UNDER CONSTRUCTION");
+        }
+
+        private void ChangeCourseTimeButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("UNDER CONSTRUCTION");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

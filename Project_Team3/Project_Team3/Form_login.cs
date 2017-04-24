@@ -8,12 +8,26 @@ using Project_Team3.Menus___forms;
 
 namespace Project_Team3
 {
+
     public partial class Form_login : Form
     {
-
         private DBconnect db;
         private string username;
         private string password;
+
+        public string Username
+        {
+            get
+            {
+                return username;
+            }
+
+            set
+            {
+                username = value;
+            }
+        }
+
         public Form_login()
         {
             InitializeComponent();
@@ -23,16 +37,24 @@ namespace Project_Team3
             cmd.CommandType = CommandType.Text;
             cmd.Connection = db.getConnection();
             cmd.CommandText = "SELECT accessgroup FROM USERS WHERE USERNAME = @username and PASS = @password";
-            cmd.Parameters.AddWithValue("username", username);
+            cmd.Parameters.AddWithValue("username", Username);
             cmd.Parameters.AddWithValue("password", password);
 
-            DataSet ds = db.generalCommand(cmd);
-            return Regex.Replace(ds.Tables[0].Rows[0].ItemArray[0].ToString(), @"\s+", "");
+            try
+            {
+                DataSet ds = db.generalCommand(cmd);
+                return Regex.Replace(ds.Tables[0].Rows[0].ItemArray[0].ToString(), @"\s+", "");
+            }
+            catch
+            {
+                return "Not_exists";
+            }
+            
         }
 
         private void userName_Text(object sender, EventArgs e)
         {
-            username = this.userNameBox.Text;
+            Username = this.userNameBox.Text;
         }
 
         private void password_Text(object sender, EventArgs e)
@@ -57,6 +79,7 @@ namespace Project_Team3
                 case "Student":
                     using (Form_studentMenu student_menu = new Form_studentMenu())
                     {
+                        student_menu.setUsername(Username);
                         this.Hide();
                         student_menu.ShowDialog(this);
                     }
@@ -98,7 +121,43 @@ namespace Project_Team3
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            // close application
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
+        }
+
+        private void Form_login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // close application
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
+        }
+
+        private void passwordBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                if (!passwordBox.AcceptsReturn)
+                {
+                    button2.PerformClick();
+                }
+            }
         }
     }
 }

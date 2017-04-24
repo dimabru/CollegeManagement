@@ -37,7 +37,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
                 dataGrid.ReadOnly = true;
                 dataGrid.DataSource = ds.Tables[0];
             }
-            catch (Exception _)
+            catch (Exception)
             {
                 MessageBox.Show("Query not returned any data");
             }
@@ -74,7 +74,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
                 textBox.Text += "There are total of " + Courses_amount.ToString() + " Students in system";
             }
-            catch (Exception _)
+            catch (Exception)
             {
                 MessageBox.Show("There is problem with your querry, check it!");
             }
@@ -93,7 +93,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
                 dataGrid.ReadOnly = true;
                 dataGrid.DataSource = ds2.Tables[0];
             }
-            catch (Exception _)
+            catch (Exception)
             {
                 MessageBox.Show("Query not returned any data");
             }
@@ -145,6 +145,16 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
         {
             Form_adminMenu parent = (Form_adminMenu)this.Owner;
             parent.Show();
+        }
+
+        private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Form_adminAccountsMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
