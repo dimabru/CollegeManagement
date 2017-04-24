@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_studentAddRequest));
             this.messageLAbel = new System.Windows.Forms.Label();
             this.messageBox = new System.Windows.Forms.TextBox();
             this.secretaryChooseList = new System.Windows.Forms.ComboBox();
@@ -47,6 +48,7 @@
             // 
             // messageBox
             // 
+            this.messageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.messageBox.Location = new System.Drawing.Point(17, 78);
             this.messageBox.Multiline = true;
             this.messageBox.Name = "messageBox";
@@ -92,8 +94,9 @@
             this.Controls.Add(this.secretaryChooseList);
             this.Controls.Add(this.messageBox);
             this.Controls.Add(this.messageLAbel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_studentAddRequest";
-            this.Text = "New student request form";
+            this.Text = "Schedule System : Add new student request";
             this.Load += new System.EventHandler(this.Form_studentAddRequest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
