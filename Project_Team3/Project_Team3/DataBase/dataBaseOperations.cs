@@ -30,7 +30,7 @@ namespace Project_Team3
                 sqlCommand.ExecuteNonQuery();
             }
 
-            catch (Exception exception)
+            catch 
             {
                 throw;
             }
@@ -68,7 +68,7 @@ namespace Project_Team3
                 sqlCommand.ExecuteNonQuery();
             }
 
-            catch (Exception exception)
+            catch 
             {
                 throw;
             }
@@ -77,6 +77,46 @@ namespace Project_Team3
                 con.Close();
             }
         }
+
+        /// <summary>
+        /// set new uer in data base
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="lastName"></param>
+        /// <param name="pass"></param>
+        /// <param name="accessGroup"></param>
+        public void setNewUser(ulong id, string name, string lastName ,string pass, string accessGroup)
+        {
+            try
+            {
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand sqlCommand = new SqlCommand("INSERT INTO dbo.Users(ID,USERNAME,PASS,ACCESSGROUP,UNAME,SNAME) VALUES(@ID,@USERNAME,@PASS,@ACCESSGROUP,@UNAME,@SNAME)", con);
+
+                //the "" + ulong ment to fit the data base type;
+                //you can see here other option to convert https://msdn.microsoft.com/en-us/library/2wfez910(v=vs.110).aspx
+                sqlCommand.Parameters.AddWithValue("@ID", "" + id);
+                sqlCommand.Parameters.AddWithValue("@USERNAME", "" + name);
+                sqlCommand.Parameters.AddWithValue("@PASS", "" + pass);
+                sqlCommand.Parameters.AddWithValue("@ACCESSGROUP", "" + accessGroup);
+                sqlCommand.Parameters.AddWithValue("@UNAME", "" + name);
+                sqlCommand.Parameters.AddWithValue("@SNAME", "" + lastName);
+                
+                con.Open();
+                sqlCommand.ExecuteNonQuery();
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
 
         /// <summary>
         /// this function return 1d arry 
@@ -230,7 +270,11 @@ namespace Project_Team3
             }
         }
 
-
+        /// <summary>
+        /// return how many users in this access group
+        /// </summary>
+        /// <param name="access_group"></param>
+        /// <returns></returns>
         public int how_many_from_this_type(string access_group)
         {
             try
@@ -352,7 +396,7 @@ namespace Project_Team3
                 con.Open();                
                 return true;
             }
-            catch (Exception ex)
+            catch 
             {
                 return false;
             }

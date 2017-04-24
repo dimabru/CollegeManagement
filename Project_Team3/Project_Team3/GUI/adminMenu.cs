@@ -34,16 +34,28 @@ namespace Project_Team3.GUI
 
             set_account_Management();
 
-            setUserManagement();
+            set_add_user();
         }
 
-        public void setUserManagement()
+        /// <summary>
+        /// set the page add user;
+        /// </summary>
+        public void set_add_user()
         {
             numOfSecretaryLabelConst.Font = new Font(lastNameLabel.Font.Name, fSize, lastNameLabel.Font.Style, lastNameLabel.Font.Unit);
             numOfSecretaryLabelDinamic.Font = new Font(lastNameLabel.Font.Name, fSize, lastNameLabel.Font.Style, lastNameLabel.Font.Unit);
+            amount_of_instructors_lable_const.Font = new Font(lastNameLabel.Font.Name, fSize, lastNameLabel.Font.Style, lastNameLabel.Font.Unit);
+            amount_of_instructors_lable_dinamic.Font = new Font(lastNameLabel.Font.Name, fSize, lastNameLabel.Font.Style, lastNameLabel.Font.Unit);
+            amount_of_professors_lable_const.Font = new Font(lastNameLabel.Font.Name, fSize, lastNameLabel.Font.Style, lastNameLabel.Font.Unit);
+            amount_of_professors_lable_dinamic.Font = new Font(lastNameLabel.Font.Name, fSize, lastNameLabel.Font.Style, lastNameLabel.Font.Unit);
 
             numOfSecretaryLabelDinamic.Text = ad.how_many_from_this_type("Secretary").ToString();
+            amount_of_instructors_lable_dinamic.Text = ad.how_many_from_this_type("Instructor").ToString();
+            amount_of_professors_lable_dinamic.Text = ad.how_many_from_this_type("Professor").ToString();
 
+            comboBox_access_group.Items.Add("Secretary");
+            comboBox_access_group.Items.Add("Instructor");
+            comboBox_access_group.Items.Add("Professor");
         }
 
         private void set_account_Management()
@@ -82,6 +94,29 @@ namespace Project_Team3.GUI
             }
             MessageBox.Show("the old password is not correct");
             return;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button_add_new_user_Click(object sender, EventArgs e)
+        {
+            if(textBox_first_name.Text == "" || textBox_id.Text == "" || textBox_last_name.Text == "" || textBox_password.Text == "")
+            {
+                MessageBox.Show("you have to fill all fields");
+                return;
+            }
+
+            string name = textBox_first_name.Text;
+            string lname = textBox_last_name.Text;
+            string id = textBox_id.Text;
+            string password = textBox_password.Text;
+            string accessGroup = comboBox_access_group.Text;
+
+            ad.set_new_user(publicChecksAndOperations.convertToUlong(id), name, lname, password, accessGroup);
+            MessageBox.Show("the user was successfully created");
         }
     }
 }

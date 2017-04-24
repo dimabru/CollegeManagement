@@ -209,6 +209,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />
+    <Content Include="Resources\user_add.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

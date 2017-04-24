@@ -19,7 +19,6 @@ namespace Project_Team3
 
         public user()
         {
-            int i = 0;
             this.password = dbo.getUserPasswordById(id);
         }
 
@@ -84,7 +83,7 @@ namespace Project_Team3
         {
             if(cAo.isNumericUlong(idcheck))
             {
-                this.id = cAo.convertToUlong(idcheck);
+                this.id = publicChecksAndOperations.convertToUlong(idcheck);
                 return true;
             }
             return false;

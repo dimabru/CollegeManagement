@@ -173,7 +173,7 @@ namespace Project_Team3
         /// <param name="toConv">
         /// </param>
         /// <returns></returns>
-        public ulong convertToUlong(string toConv)
+        public static ulong convertToUlong(string toConv)
         {
             return Convert.ToUInt32(toConv, 10);
         }

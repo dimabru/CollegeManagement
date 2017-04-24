@@ -40,39 +40,27 @@ namespace Project_Team3
 
         }
 
+        /// <summary>
+        /// set new user in data base
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="lastName"></param>
+        /// <param name="pass"></param>
+        /// <param name="accessGroup"></param>
+        public void set_new_user(ulong id, string name, string lastName, string pass, string accessGroup)
+        {
+            dbo.setNewUser(id,name,lastName,pass,accessGroup);
+        }
 
+        /// <summary>
+        /// this function get number of user from data base and return it
+        /// </summary>
+        /// <param name="accessGroup"></param>
+        /// <returns></returns>
         public int how_many_from_this_type(string accessGroup)
         {
             return dbo.how_many_from_this_type(accessGroup);
         }
-
-        /// <summary>
-        /// to add new user to the database
-        /// </summary>
-        /// <param name="userType"></param>
-        /// <param name="id"></param>
-        /// <param name="username"></param>
-        /// <param name="name"></param>
-        /// <param name="password"></param>
-        /// <param name="accessGroup"></param>
-        /// <returns></returns>
-        public user addUser(userType userType,ulong id,string username,string name,string password,string accessGroup)
-        {
-            switch (userType)
-            {
-                case userType.Admin:
-                    admin a = new admin(id,username,name,password,accessGroup);
-                    return a;
-                case userType.Secretary:
-                    secretary s = new secretary();
-                    return s;
-                case userType.professor:
-                    break;
-                case userType.Instructor:
-                    break;
-            }
-            return null;
-        }
-
     }
 }
