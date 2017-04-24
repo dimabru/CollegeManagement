@@ -9,6 +9,7 @@ namespace Project_Team3
 {
     public abstract class user
     {
+        private string Lname;
         private string name;
         private ulong id;
         private string password;
@@ -26,7 +27,17 @@ namespace Project_Team3
         {
             this.id = id;
             this.password = dbo.getUserPasswordById(id);
+            this.Lname = dbo.getUserLastNameById(id);
+            this.name = dbo.getUserNameById(id);
         }
+
+        public user(ulong id,string name,string pass)
+        {
+
+        }
+
+        public string getUserName { get { return this.name; } }
+        public string getUserLastName { get { return this.Lname; } }
 
         /// <summary>
         /// change the user password

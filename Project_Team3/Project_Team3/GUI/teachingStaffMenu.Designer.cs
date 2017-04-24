@@ -48,28 +48,28 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.nameLable = new System.Windows.Forms.Label();
-            this.UnameLable = new System.Windows.Forms.Label();
-            this.lastNameLabel = new System.Windows.Forms.Label();
-            this.lNameLable = new System.Windows.Forms.Label();
-            this.changeMyPassbutton = new System.Windows.Forms.Button();
-            this.oldPassTextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.newPassTextBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.confPassTextBox = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.confPassTextBox = new System.Windows.Forms.TextBox();
+            this.newPassTextBox = new System.Windows.Forms.TextBox();
+            this.oldPassTextBox = new System.Windows.Forms.TextBox();
+            this.changeMyPassbutton = new System.Windows.Forms.Button();
+            this.lNameLable = new System.Windows.Forms.Label();
+            this.UnameLable = new System.Windows.Forms.Label();
+            this.lastNameLabel = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nameLable = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -95,7 +95,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "exit";
             // 
             // helpToolStripMenuItem
@@ -270,6 +270,28 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.watch_your_constraints);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.dataGridView2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(718, 312);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "my schedule";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(7, 7);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(705, 299);
+            this.dataGridView2.TabIndex = 0;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.confPassTextBox);
@@ -292,45 +314,26 @@
             this.tabPage2.Text = "account management";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // nameLable
+            // confPassTextBox
             // 
-            this.nameLable.AutoSize = true;
-            this.nameLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.nameLable.Location = new System.Drawing.Point(5, 14);
-            this.nameLable.Name = "nameLable";
-            this.nameLable.Size = new System.Drawing.Size(53, 20);
-            this.nameLable.TabIndex = 0;
-            this.nameLable.Text = "name:";
+            this.confPassTextBox.Location = new System.Drawing.Point(478, 168);
+            this.confPassTextBox.Name = "confPassTextBox";
+            this.confPassTextBox.Size = new System.Drawing.Size(175, 20);
+            this.confPassTextBox.TabIndex = 3;
             // 
-            // UnameLable
+            // newPassTextBox
             // 
-            this.UnameLable.AutoSize = true;
-            this.UnameLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.UnameLable.Location = new System.Drawing.Point(16, 49);
-            this.UnameLable.Name = "UnameLable";
-            this.UnameLable.Size = new System.Drawing.Size(51, 20);
-            this.UnameLable.TabIndex = 1;
-            this.UnameLable.Text = "label5";
+            this.newPassTextBox.Location = new System.Drawing.Point(478, 110);
+            this.newPassTextBox.Name = "newPassTextBox";
+            this.newPassTextBox.Size = new System.Drawing.Size(175, 20);
+            this.newPassTextBox.TabIndex = 3;
             // 
-            // lastNameLabel
+            // oldPassTextBox
             // 
-            this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lastNameLabel.Location = new System.Drawing.Point(5, 87);
-            this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(119, 20);
-            this.lastNameLabel.TabIndex = 0;
-            this.lastNameLabel.Text = "lastNameLabel:";
-            // 
-            // lNameLable
-            // 
-            this.lNameLable.AutoSize = true;
-            this.lNameLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lNameLable.Location = new System.Drawing.Point(16, 122);
-            this.lNameLable.Name = "lNameLable";
-            this.lNameLable.Size = new System.Drawing.Size(51, 20);
-            this.lNameLable.TabIndex = 1;
-            this.lNameLable.Text = "label5";
+            this.oldPassTextBox.Location = new System.Drawing.Point(478, 54);
+            this.oldPassTextBox.Name = "oldPassTextBox";
+            this.oldPassTextBox.Size = new System.Drawing.Size(175, 20);
+            this.oldPassTextBox.TabIndex = 3;
             // 
             // changeMyPassbutton
             // 
@@ -342,39 +345,35 @@
             this.changeMyPassbutton.UseVisualStyleBackColor = true;
             this.changeMyPassbutton.Click += new System.EventHandler(this.changeMyPassbutton_Click);
             // 
-            // oldPassTextBox
+            // lNameLable
             // 
-            this.oldPassTextBox.Location = new System.Drawing.Point(478, 54);
-            this.oldPassTextBox.Name = "oldPassTextBox";
-            this.oldPassTextBox.Size = new System.Drawing.Size(175, 20);
-            this.oldPassTextBox.TabIndex = 3;
+            this.lNameLable.AutoSize = true;
+            this.lNameLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.lNameLable.Location = new System.Drawing.Point(20, 145);
+            this.lNameLable.Name = "lNameLable";
+            this.lNameLable.Size = new System.Drawing.Size(51, 20);
+            this.lNameLable.TabIndex = 1;
+            this.lNameLable.Text = "label5";
             // 
-            // label4
+            // UnameLable
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label4.Location = new System.Drawing.Point(474, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "old password:";
+            this.UnameLable.AutoSize = true;
+            this.UnameLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.UnameLable.Location = new System.Drawing.Point(20, 64);
+            this.UnameLable.Name = "UnameLable";
+            this.UnameLable.Size = new System.Drawing.Size(51, 20);
+            this.UnameLable.TabIndex = 1;
+            this.UnameLable.Text = "label5";
             // 
-            // label6
+            // lastNameLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label6.Location = new System.Drawing.Point(474, 87);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "new password:";
-            // 
-            // newPassTextBox
-            // 
-            this.newPassTextBox.Location = new System.Drawing.Point(478, 110);
-            this.newPassTextBox.Name = "newPassTextBox";
-            this.newPassTextBox.Size = new System.Drawing.Size(175, 20);
-            this.newPassTextBox.TabIndex = 3;
+            this.lastNameLabel.AutoSize = true;
+            this.lastNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.lastNameLabel.Location = new System.Drawing.Point(20, 108);
+            this.lastNameLabel.Name = "lastNameLabel";
+            this.lastNameLabel.Size = new System.Drawing.Size(119, 20);
+            this.lastNameLabel.TabIndex = 0;
+            this.lastNameLabel.Text = "lastNameLabel:";
             // 
             // label7
             // 
@@ -386,34 +385,35 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "confirm new password:";
             // 
-            // confPassTextBox
+            // label6
             // 
-            this.confPassTextBox.Location = new System.Drawing.Point(478, 168);
-            this.confPassTextBox.Name = "confPassTextBox";
-            this.confPassTextBox.Size = new System.Drawing.Size(175, 20);
-            this.confPassTextBox.TabIndex = 3;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label6.Location = new System.Drawing.Point(474, 87);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "new password:";
             // 
-            // tabPage3
+            // label4
             // 
-            this.tabPage3.Controls.Add(this.dataGridView2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(718, 312);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "my schedule";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label4.Location = new System.Drawing.Point(474, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "old password:";
             // 
-            // dataGridView2
+            // nameLable
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(7, 7);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(705, 299);
-            this.dataGridView2.TabIndex = 0;
+            this.nameLable.AutoSize = true;
+            this.nameLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.nameLable.Location = new System.Drawing.Point(18, 31);
+            this.nameLable.Name = "nameLable";
+            this.nameLable.Size = new System.Drawing.Size(53, 20);
+            this.nameLable.TabIndex = 0;
+            this.nameLable.Text = "name:";
             // 
             // teachingStaffMenu
             // 
@@ -437,10 +437,10 @@
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -64,8 +64,20 @@ namespace Project_Team3
         {
             //here you can learn how to set fonts: https://msdn.microsoft.com/en-us/library/system.drawing.font.size(v=vs.110).aspx
             nameLable.Text = "name:";
-            lastNameLabel.Text = "lastNameLabel:";
+            lastNameLabel.Text = "last name:";
 
+            //with enum we can know the type of user we have to customize the menu for him
+            if (theUserWeGot == userType.professor)
+            {
+                lNameLable.Text = prof.getUserLastName;
+                UnameLable.Text = prof.getUserName;
+            }
+
+            if (theUserWeGot == userType.Instructor)
+            {
+                lNameLable.Text = inst.getUserLastName;
+                UnameLable.Text = inst.getUserName;
+            }
 
             lastNameLabel.Font = new Font(lastNameLabel.Font.Name, fSize, lastNameLabel.Font.Style, lastNameLabel.Font.Unit);
             nameLable.Font = new Font(nameLable.Font.Name, fSize, nameLable.Font.Style, nameLable.Font.Unit);
@@ -280,6 +292,9 @@ namespace Project_Team3
             comboBox3.Items.Add("23:00");
         }
 
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

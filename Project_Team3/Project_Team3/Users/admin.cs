@@ -11,18 +11,43 @@ namespace Project_Team3
     //it's important that the all users be public 
     public class admin : user
     {
+        dataBaseOperations dbo = new dataBaseOperations();
+
         public admin()
         {
 
         }
 
-        public admin(ulong id, string username, string name, string password, string accessGroup)
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="username"></param>
+        /// <param name="name"></param>
+        /// <param name="password"></param>
+        /// <param name="accessGroup"></param>
+        public admin(ulong id, string username, string name, string password, string accessGroup):base(id,name,password)
         {
 
         }
 
         /// <summary>
-        /// in spting 3 this is come to set new user;
+        /// constructor
+        /// </summary>
+        /// <param name="id"></param>
+        public admin(ulong id):base(id)
+        {
+
+        }
+
+
+        public int how_many_from_this_type(string accessGroup)
+        {
+            return dbo.how_many_from_this_type(accessGroup);
+        }
+
+        /// <summary>
+        /// to add new user to the database
         /// </summary>
         /// <param name="userType"></param>
         /// <param name="id"></param>

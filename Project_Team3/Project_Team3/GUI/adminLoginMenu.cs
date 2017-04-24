@@ -7,16 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Project_Team3.GUI; 
 
 namespace Project_Team3
 {
     public partial class adminLoginMenu : Form
     {
-        //panel counter;
-        private int myPanelCounter = 0;
-        //list of panels;
-        List<Panel> listPanel = new List<Panel>();
-
         public adminLoginMenu()
         {
             InitializeComponent();
@@ -24,18 +20,6 @@ namespace Project_Team3
             //paint allert label in black and hide him;
             label3.ForeColor = System.Drawing.Color.Black;
             label3.Hide();
-
-            //adding the panels to the list;
-            listPanel.Add(panel1);
-            listPanel.Add(panel2);
-
-            //hide all panels;
-            foreach (Panel panelItem in listPanel)
-            {
-                panelItem.Hide();
-            }
-            //show the first panel
-            listPanel[myPanelCounter].Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,11 +41,19 @@ namespace Project_Team3
                     {
                         //hide this panel to show the other;
                         label3.Hide();
-                        listPanel[myPanelCounter].Hide();
-                        //raise counter to next panel;
-                        myPanelCounter++;
-                        //show secretary menu;
-                        listPanel[myPanelCounter].Show();
+
+                        //In perception i thing that its importent to pass 
+                        //user object for the next managing form
+                        //plese do it in all other form  
+
+                        //here i create new admin obj
+                        admin adminInstance = new admin(id);
+                        //and then i pass it to the next form 
+                        //i'll catch it in the next form constractor
+                        adminMenu adMenu = new adminMenu(adminInstance);
+
+                        this.Hide();
+                        adMenu.ShowDialog();
                     }
                     else
                     {

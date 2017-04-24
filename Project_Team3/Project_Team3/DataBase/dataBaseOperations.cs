@@ -157,18 +157,122 @@ namespace Project_Team3
             }
         }
 
+        /// <summary>
+        /// return the user name from the database by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public string getUserNameById(ulong id)
+        {
+            try
+            {
+                string to_return = "";
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.Users where Id = '" + id + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+
+                while (dbr.Read())
+                {
+                    to_return = dbr.GetValue(1).ToString();
+                    //to_return = (dbr["PASS"].ToString());
+                }
+                con.Close();
+                return to_return.Trim();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+        /// <summary>
+        /// return the last name of the user from the database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public string getUserLastNameById(ulong id)
+        {
+            try
+            {
+                string to_return = "";
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.Users where Id = '" + id + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+
+                while (dbr.Read())
+                {
+                    to_return = dbr.GetValue(5).ToString();
+                    //to_return = (dbr["PASS"].ToString());
+                }
+                con.Close();
+                return "" + to_return.Trim();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+        public int how_many_from_this_type(string access_group)
+        {
+            try
+            {
+                int counter = 0;
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from Users where ACCESSGROUP = '" + access_group + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+                //int count = 0;
+                while (dbr.Read())
+                    {
+                        counter++;
+                    }
+                con.Close();
+                return counter;
+            }
+            catch
+            {
+                con.Close();
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
         /// <summary>
         /// update the user password in data base
         /// </summary>
         /// <param name="password"></param>
         /// <param name="id"></param>
-        public void updateUserPassword(String password, ulong id)
+        public void updateUserPassword(string password, ulong id)
         {
             try
             {
-                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
-                string query = "UPDATE dbo.Users SET ID = " + id + ", PASS = " + password + "WHERE ID = " + id;
+                string str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                string query = "UPDATE dbo.Users SET ID = " + id + ", PASS = " + "'" + password + "'" + "WHERE ID = " + id;
                 SqlConnection con = new SqlConnection(str);
                 SqlCommand sqlCommand = new SqlCommand(query, con);
                 con.Open();
