@@ -39,7 +39,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
                 dataGrid.DataSource = ds.Tables[0];
                 allCourses = ds;
             }
-            catch (Exception _)
+            catch (Exception)
             {
                 MessageBox.Show("Query not returned any data");
             }
@@ -77,7 +77,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
                 textBox.Text += "There are total of " + Courses_amount.ToString() + " courses in system";
             }
-            catch (Exception _)
+            catch (Exception)
             {
                 MessageBox.Show("There is problem with your querry, check it!");
             }

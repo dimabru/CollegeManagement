@@ -46,7 +46,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
                 viewAllMessages_grid.ReadOnly = true;
                 viewAllMessages_grid.DataSource = dataSet.Tables[0];
             }
-            catch (Exception _)
+            catch (Exception)
             {
                 MessageBox.Show("Query not returned any data");
             }

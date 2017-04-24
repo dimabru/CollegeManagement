@@ -33,7 +33,7 @@ namespace Project_Team3.Classes
                 status = true;
 
             }
-            catch (System.IndexOutOfRangeException ex )
+            catch (System.IndexOutOfRangeException)
             {
                 status = false;
             }
@@ -64,7 +64,7 @@ namespace Project_Team3.Classes
                 status = true;
 
             }
-            catch (System.IndexOutOfRangeException ex)
+            catch (System.IndexOutOfRangeException)
             {
                 status = false;
             }
@@ -95,7 +95,7 @@ namespace Project_Team3.Classes
                 status = true;
 
             }
-            catch (System.IndexOutOfRangeException ex)
+            catch (System.IndexOutOfRangeException)
             {
                 status = false;
             }

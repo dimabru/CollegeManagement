@@ -30,7 +30,7 @@ namespace Project_Team3
                 con.Open();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Can not open connection ! ");
                 return false;
