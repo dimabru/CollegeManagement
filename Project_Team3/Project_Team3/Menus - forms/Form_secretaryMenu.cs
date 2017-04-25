@@ -16,7 +16,6 @@ namespace Project_Team3
     {
         private DBconnect dbcon;
 
-
         public Form_secretaryMenu()
         {
             InitializeComponent();
