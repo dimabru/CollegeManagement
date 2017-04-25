@@ -29,6 +29,12 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             String username = this.username_box.Text;
             String id = this.id_box.Text;
             int id_int=-1;
+            
+            if (checkFields() == false)
+            {
+                return;
+            }
+
             try
             {
                 id_int = Convert.ToInt32(id);
@@ -40,7 +46,8 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             }
 
             bool userExists = funcs.ifUserInDatabase(username) || funcs.ifUserIDinDatabase(id_int);
-            if (userExists == false)
+
+            if (userExists == false )
             {
                 String Name = this.firstname_box.Text, surename=this.secondName_box.Text, password = this.password_box.Text;
                 int semester;
@@ -49,8 +56,8 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
                     semester = Convert.ToInt32(this.semester_box.Text);
                     if (semester < 0 || semester > 8)
                     {
-                        MessageBox.Show("Semester value must been 1-8, default value 1 been setted");
-                        semester = 1;
+                        MessageBox.Show("Semester value must been 1-8");
+                        return;
                     }
                 }
                 catch
@@ -80,6 +87,41 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private bool checkFields()
+        {
+            if (string.IsNullOrWhiteSpace(id_box.Text))
+            {
+                MessageBox.Show("ID field can not be empty!");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(username_box.Text))
+            {
+                MessageBox.Show("Username field can not be empty!");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(firstname_box.Text))
+            {
+                MessageBox.Show("First name field can not be empty!");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(secondName_box.Text))
+            {
+                MessageBox.Show("Second name field can not be empty!");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(password_box.Text))
+            {
+                MessageBox.Show("Password field can not be empty!");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(semester_box.Text))
+            {
+                MessageBox.Show("Semester field can not be empty!");
+                return false;
+            }
+            return true;
         }
     }
 }

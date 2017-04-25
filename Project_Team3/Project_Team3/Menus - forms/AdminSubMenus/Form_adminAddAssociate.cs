@@ -89,6 +89,13 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             String username = this.username_box.Text;
             String id = this.id_box.Text;
             int id_int = -1;
+
+
+            if (checkFields() == false)
+            {
+                return;
+            }
+
             try
             {
                 id_int = Convert.ToInt32(id);
@@ -121,6 +128,37 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
         private void Form_adminAddAssociate_Load(object sender, EventArgs e)
         {
 
+        }
+
+
+        private bool checkFields()
+        {
+            if (string.IsNullOrWhiteSpace(id_box.Text))
+            {
+                MessageBox.Show("ID field can not be empty!");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(username_box.Text))
+            {
+                MessageBox.Show("Username field can not be empty!");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(firstname_box.Text))
+            {
+                MessageBox.Show("First name field can not be empty!");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(secondName_box.Text))
+            {
+                MessageBox.Show("Second name field can not be empty!");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(password_box.Text))
+            {
+                MessageBox.Show("Password field can not be empty!");
+                return false;
+            }
+            return true;
         }
     }
 }
