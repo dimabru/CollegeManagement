@@ -85,6 +85,7 @@ namespace Project_Team3
         public DataSet generalCommand(SqlCommand cmd){
             SqlDataAdapter sda = new SqlDataAdapter();
             DataSet ds = new DataSet();
+            cmd.Connection = this.getConnection(); //Remove this line from ALL Queries that use it
             sda.SelectCommand = cmd;
             try
             {

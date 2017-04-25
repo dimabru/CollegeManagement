@@ -8,14 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Project_Team3.Menus___forms.SecretarySubMenus;
+using System.Data.SqlClient;
 
 namespace Project_Team3
 {
     public partial class Form_secretaryMenu : Form
     {
+        private DBconnect dbcon;
+
+
         public Form_secretaryMenu()
         {
             InitializeComponent();
+            dbcon = new DBconnect();
+            updateGlobalMessage();
+        }
+
+        private void updateGlobalMessage()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM GlobalMessages WHERE ID = ( SELECT MAX(ID) FROM GlobalMessages)";
+            cmd.CommandType = CommandType.Text;
+
+            DataSet ds = dbcon.generalCommand(cmd);
+            globalMessage.Text = ds.Tables[0].Rows[0].ItemArray[1].ToString();
         }
 
         private void coursesReportButton_Click(object sender, EventArgs e)
