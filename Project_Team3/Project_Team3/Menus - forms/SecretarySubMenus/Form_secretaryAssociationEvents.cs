@@ -28,5 +28,9 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
             MessageBox.Show("Event Details not Available yet.");
         }
 
+        private void backToLastMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -32,6 +32,7 @@
             this.eventsLabel = new System.Windows.Forms.Label();
             this.eventDetailsButton = new System.Windows.Forms.Button();
             this.eventsListBox = new System.Windows.Forms.ListBox();
+            this.backToLastMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // eventsLabel
@@ -51,7 +52,7 @@
             this.eventDetailsButton.BackColor = System.Drawing.Color.MistyRose;
             this.eventDetailsButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.eventDetailsButton.Location = new System.Drawing.Point(723, 209);
-            this.eventDetailsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.eventDetailsButton.Margin = new System.Windows.Forms.Padding(4);
             this.eventDetailsButton.Name = "eventDetailsButton";
             this.eventDetailsButton.Size = new System.Drawing.Size(125, 181);
             this.eventDetailsButton.TabIndex = 2;
@@ -71,11 +72,23 @@
             "Amir Benayoun Poetry Night",
             "Careers Center Meeting"});
             this.eventsListBox.Location = new System.Drawing.Point(405, 209);
-            this.eventsListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.eventsListBox.Margin = new System.Windows.Forms.Padding(4);
             this.eventsListBox.Name = "eventsListBox";
             this.eventsListBox.Size = new System.Drawing.Size(276, 164);
             this.eventsListBox.TabIndex = 0;
             this.eventsListBox.UseWaitCursor = true;
+            // 
+            // backToLastMenu
+            // 
+            this.backToLastMenu.BackColor = System.Drawing.Color.MistyRose;
+            this.backToLastMenu.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.backToLastMenu.Location = new System.Drawing.Point(433, 431);
+            this.backToLastMenu.Name = "backToLastMenu";
+            this.backToLastMenu.Size = new System.Drawing.Size(222, 37);
+            this.backToLastMenu.TabIndex = 3;
+            this.backToLastMenu.Text = "Back to last menu";
+            this.backToLastMenu.UseVisualStyleBackColor = false;
+            this.backToLastMenu.Click += new System.EventHandler(this.backToLastMenu_Click);
             // 
             // Form_secretaryAssociationEvents
             // 
@@ -84,11 +97,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1350, 750);
+            this.Controls.Add(this.backToLastMenu);
             this.Controls.Add(this.eventDetailsButton);
             this.Controls.Add(this.eventsLabel);
             this.Controls.Add(this.eventsListBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_secretaryAssociationEvents";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Association Events";
@@ -103,5 +117,6 @@
         private System.Windows.Forms.Label eventsLabel;
         private System.Windows.Forms.Button eventDetailsButton;
         private System.Windows.Forms.ListBox eventsListBox;
+        private System.Windows.Forms.Button backToLastMenu;
     }
 }
