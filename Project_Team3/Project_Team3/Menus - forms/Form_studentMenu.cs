@@ -8,18 +8,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Project_Team3.Menus___forms.StudentSubMenus;
-
+using System.Data.SqlClient;
 
 namespace Project_Team3
 {
     public partial class Form_studentMenu : Form
     {
-       private String username;
+        private DBconnect dbcon;
+        private String username;
+
         public Form_studentMenu()
-        {
-            
+        {    
             InitializeComponent();
+            dbcon = new DBconnect();
+            updateGlobalMessage();
         }
+
+        private void updateGlobalMessage()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM GlobalMessages WHERE ID = ( SELECT MAX(ID) FROM GlobalMessages)";
+            cmd.CommandType = CommandType.Text;
+
+            DataSet ds = dbcon.generalCommand(cmd);
+            textBox1.Text = ds.Tables[0].Rows[0].ItemArray[1].ToString();
+        }
+
         public void setUsername(String username)
         {
             this.username = username;
