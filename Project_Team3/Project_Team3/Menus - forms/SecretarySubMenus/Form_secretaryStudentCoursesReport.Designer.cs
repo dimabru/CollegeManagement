@@ -111,16 +111,17 @@
             this.Header_label.AutoSize = true;
             this.Header_label.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Header_label.Enabled = false;
-            this.Header_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Header_label.Font = new System.Drawing.Font("David", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.Header_label.ForeColor = System.Drawing.Color.Black;
             this.Header_label.Location = new System.Drawing.Point(131, 63);
             this.Header_label.Name = "Header_label";
-            this.Header_label.Size = new System.Drawing.Size(190, 25);
+            this.Header_label.Size = new System.Drawing.Size(205, 27);
             this.Header_label.TabIndex = 1;
             this.Header_label.Text = "Student courses:";
             // 
             // GoBackButton
             // 
+            this.GoBackButton.Font = new System.Drawing.Font("David", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.GoBackButton.Location = new System.Drawing.Point(429, 488);
             this.GoBackButton.Name = "GoBackButton";
             this.GoBackButton.Size = new System.Drawing.Size(109, 41);

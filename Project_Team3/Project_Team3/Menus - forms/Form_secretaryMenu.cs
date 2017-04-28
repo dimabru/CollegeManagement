@@ -35,7 +35,11 @@ namespace Project_Team3
 
         private void coursesReportButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Courses Reports are not available yet");
+            using (Form_secretaryCoursesReport coursesreport = new Form_secretaryCoursesReport())
+            {
+                this.Hide();
+                coursesreport.ShowDialog(this);
+            }
         }
 
         private void studentSearchButton_Click(object sender, EventArgs e)
