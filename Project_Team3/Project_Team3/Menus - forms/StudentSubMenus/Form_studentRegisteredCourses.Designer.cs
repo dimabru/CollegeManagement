@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CoursesGridView = new System.Windows.Forms.DataGridView();
             this.GoBackButton = new System.Windows.Forms.Button();
             this.Header_label = new System.Windows.Forms.Label();
@@ -40,19 +40,19 @@
             this.CoursesGridView.AllowUserToAddRows = false;
             this.CoursesGridView.AllowUserToDeleteRows = false;
             this.CoursesGridView.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CoursesGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CoursesGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.CoursesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CoursesGridView.Location = new System.Drawing.Point(158, 120);
+            this.CoursesGridView.Location = new System.Drawing.Point(111, 105);
             this.CoursesGridView.Name = "CoursesGridView";
             this.CoursesGridView.ReadOnly = true;
-            this.CoursesGridView.Size = new System.Drawing.Size(677, 324);
+            this.CoursesGridView.Size = new System.Drawing.Size(772, 346);
             this.CoursesGridView.TabIndex = 0;
             // 
             // GoBackButton
@@ -68,10 +68,10 @@
             // Header_label
             // 
             this.Header_label.AutoSize = true;
-            this.Header_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Header_label.Location = new System.Drawing.Point(369, 62);
+            this.Header_label.Font = new System.Drawing.Font("David", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Header_label.Location = new System.Drawing.Point(365, 52);
             this.Header_label.Name = "Header_label";
-            this.Header_label.Size = new System.Drawing.Size(227, 25);
+            this.Header_label.Size = new System.Drawing.Size(246, 27);
             this.Header_label.TabIndex = 2;
             this.Header_label.Text = "Registered Courses:";
             // 
@@ -84,8 +84,7 @@
             this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.CoursesGridView);
             this.Name = "Form_studentRegisteredCourses";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Student Registered Courses";
+            this.Text = "Registered Courses";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_studentRegisteredCourses_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.CoursesGridView)).EndInit();
             this.ResumeLayout(false);

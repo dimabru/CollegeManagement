@@ -131,7 +131,12 @@ namespace Project_Team3
 
         private void MandatoryCoursesListButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            //MessageBox.Show("UNDER CONSTRUCTION");
+            using (Form_studentRequiredCourses studentReqCourses = new Form_studentRequiredCourses(username))
+            {
+                this.Hide();
+                studentReqCourses.ShowDialog(this);
+            }
         }
 
         private void WatchCoursesButton_Click(object sender, EventArgs e)

@@ -215,6 +215,12 @@
     <Compile Include="Menus - forms\StudentSubMenus\Form_studentRegisteredCourses.Designer.cs">
       <DependentUpon>Form_studentRegisteredCourses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus - forms\StudentSubMenus\Form_studentRequiredCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\StudentSubMenus\Form_studentRequiredCourses.Designer.cs">
+      <DependentUpon>Form_studentRequiredCourses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form_login.resx">
@@ -288,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\StudentSubMenus\Form_studentRegisteredCourses.resx">
       <DependentUpon>Form_studentRegisteredCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\StudentSubMenus\Form_studentRequiredCourses.resx">
+      <DependentUpon>Form_studentRequiredCourses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

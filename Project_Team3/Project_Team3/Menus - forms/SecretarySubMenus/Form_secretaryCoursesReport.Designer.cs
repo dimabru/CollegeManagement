@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GoBackButton = new System.Windows.Forms.Button();
             this.Header_label = new System.Windows.Forms.Label();
             this.CoursesGridView = new System.Windows.Forms.DataGridView();
@@ -38,9 +38,9 @@
             // GoBackButton
             // 
             this.GoBackButton.Font = new System.Drawing.Font("David", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.GoBackButton.Location = new System.Drawing.Point(446, 461);
+            this.GoBackButton.Location = new System.Drawing.Point(429, 468);
             this.GoBackButton.Name = "GoBackButton";
-            this.GoBackButton.Size = new System.Drawing.Size(99, 37);
+            this.GoBackButton.Size = new System.Drawing.Size(123, 54);
             this.GoBackButton.TabIndex = 1;
             this.GoBackButton.Text = "Go Back";
             this.GoBackButton.UseVisualStyleBackColor = true;
@@ -49,10 +49,10 @@
             // Header_label
             // 
             this.Header_label.AutoSize = true;
-            this.Header_label.Font = new System.Drawing.Font("David", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Header_label.Location = new System.Drawing.Point(417, 36);
+            this.Header_label.Font = new System.Drawing.Font("David", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Header_label.Location = new System.Drawing.Point(385, 33);
             this.Header_label.Name = "Header_label";
-            this.Header_label.Size = new System.Drawing.Size(157, 20);
+            this.Header_label.Size = new System.Drawing.Size(203, 27);
             this.Header_label.TabIndex = 2;
             this.Header_label.Text = "Courses Report:";
             // 
@@ -63,15 +63,15 @@
             this.CoursesGridView.AllowUserToResizeRows = false;
             this.CoursesGridView.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.CoursesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.CoursesGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.CoursesGridView.Location = new System.Drawing.Point(65, 73);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CoursesGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            this.CoursesGridView.Location = new System.Drawing.Point(66, 79);
             this.CoursesGridView.Name = "CoursesGridView";
             this.CoursesGridView.ReadOnly = true;
             this.CoursesGridView.Size = new System.Drawing.Size(858, 359);
