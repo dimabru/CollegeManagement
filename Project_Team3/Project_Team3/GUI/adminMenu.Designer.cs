@@ -31,12 +31,28 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminMenu));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button_refresh_user_details = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.amount_of_instructors_lable_dinamic = new System.Windows.Forms.Label();
             this.amount_of_instructors_lable_const = new System.Windows.Forms.Label();
             this.amount_of_professors_lable_dinamic = new System.Windows.Forms.Label();
             this.numOfSecretaryLabelDinamic = new System.Windows.Forms.Label();
             this.amount_of_professors_lable_const = new System.Windows.Forms.Label();
             this.numOfSecretaryLabelConst = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.confPassTextBox = new System.Windows.Forms.TextBox();
+            this.newPassTextBox = new System.Windows.Forms.TextBox();
+            this.oldPassTextBox = new System.Windows.Forms.TextBox();
+            this.changeMyPassbutton = new System.Windows.Forms.Button();
+            this.lNameLable = new System.Windows.Forms.Label();
+            this.UnameLable = new System.Windows.Forms.Label();
+            this.lastNameLabel = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nameLable = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button_add_new_user = new System.Windows.Forms.Button();
@@ -50,46 +66,30 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.confPassTextBox = new System.Windows.Forms.TextBox();
-            this.newPassTextBox = new System.Windows.Forms.TextBox();
-            this.oldPassTextBox = new System.Windows.Forms.TextBox();
-            this.changeMyPassbutton = new System.Windows.Forms.Button();
-            this.lNameLable = new System.Windows.Forms.Label();
-            this.UnameLable = new System.Windows.Forms.Label();
-            this.lastNameLabel = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.nameLable = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label_access_group_delete = new System.Windows.Forms.Label();
+            this.comboBox_access_group_delete = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox_id_delete = new System.Windows.Forms.TextBox();
+            this.label_id_delete = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label_id_delete = new System.Windows.Forms.Label();
-            this.textBox_id_delete = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox_access_group_delete = new System.Windows.Forms.ComboBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label_access_group_delete = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.button_refresh_user_details = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -122,6 +122,37 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "users details";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(323, 6);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(433, 303);
+            this.dataGridView1.TabIndex = 13;
+            // 
+            // button_refresh_user_details
+            // 
+            this.button_refresh_user_details.Location = new System.Drawing.Point(6, 250);
+            this.button_refresh_user_details.Name = "button_refresh_user_details";
+            this.button_refresh_user_details.Size = new System.Drawing.Size(147, 59);
+            this.button_refresh_user_details.TabIndex = 12;
+            this.button_refresh_user_details.Text = "refresh users details";
+            this.button_refresh_user_details.UseVisualStyleBackColor = true;
+            this.button_refresh_user_details.Click += new System.EventHandler(this.button_refresh_user_details_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(205, 6);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(112, 107);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 1;
+            this.pictureBox4.TabStop = false;
             // 
             // amount_of_instructors_lable_dinamic
             // 
@@ -182,6 +213,139 @@
             this.numOfSecretaryLabelConst.Size = new System.Drawing.Size(162, 20);
             this.numOfSecretaryLabelConst.TabIndex = 0;
             this.numOfSecretaryLabelConst.Text = "amount of secretarys:";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.pictureBox2);
+            this.tabPage2.Controls.Add(this.confPassTextBox);
+            this.tabPage2.Controls.Add(this.newPassTextBox);
+            this.tabPage2.Controls.Add(this.oldPassTextBox);
+            this.tabPage2.Controls.Add(this.changeMyPassbutton);
+            this.tabPage2.Controls.Add(this.lNameLable);
+            this.tabPage2.Controls.Add(this.UnameLable);
+            this.tabPage2.Controls.Add(this.lastNameLabel);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.nameLable);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(764, 316);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "account management";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(189, 29);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(265, 253);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
+            // confPassTextBox
+            // 
+            this.confPassTextBox.Location = new System.Drawing.Point(513, 166);
+            this.confPassTextBox.Name = "confPassTextBox";
+            this.confPassTextBox.Size = new System.Drawing.Size(175, 20);
+            this.confPassTextBox.TabIndex = 12;
+            // 
+            // newPassTextBox
+            // 
+            this.newPassTextBox.Location = new System.Drawing.Point(513, 108);
+            this.newPassTextBox.Name = "newPassTextBox";
+            this.newPassTextBox.Size = new System.Drawing.Size(175, 20);
+            this.newPassTextBox.TabIndex = 13;
+            // 
+            // oldPassTextBox
+            // 
+            this.oldPassTextBox.Location = new System.Drawing.Point(513, 52);
+            this.oldPassTextBox.Name = "oldPassTextBox";
+            this.oldPassTextBox.Size = new System.Drawing.Size(175, 20);
+            this.oldPassTextBox.TabIndex = 14;
+            // 
+            // changeMyPassbutton
+            // 
+            this.changeMyPassbutton.Location = new System.Drawing.Point(513, 223);
+            this.changeMyPassbutton.Name = "changeMyPassbutton";
+            this.changeMyPassbutton.Size = new System.Drawing.Size(147, 59);
+            this.changeMyPassbutton.TabIndex = 11;
+            this.changeMyPassbutton.Text = "change My Password";
+            this.changeMyPassbutton.UseVisualStyleBackColor = true;
+            this.changeMyPassbutton.Click += new System.EventHandler(this.changeMyPassbutton_Click);
+            // 
+            // lNameLable
+            // 
+            this.lNameLable.AutoSize = true;
+            this.lNameLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.lNameLable.Location = new System.Drawing.Point(51, 120);
+            this.lNameLable.Name = "lNameLable";
+            this.lNameLable.Size = new System.Drawing.Size(51, 20);
+            this.lNameLable.TabIndex = 9;
+            this.lNameLable.Text = "label5";
+            // 
+            // UnameLable
+            // 
+            this.UnameLable.AutoSize = true;
+            this.UnameLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.UnameLable.Location = new System.Drawing.Point(51, 47);
+            this.UnameLable.Name = "UnameLable";
+            this.UnameLable.Size = new System.Drawing.Size(51, 20);
+            this.UnameLable.TabIndex = 10;
+            this.UnameLable.Text = "label5";
+            // 
+            // lastNameLabel
+            // 
+            this.lastNameLabel.AutoSize = true;
+            this.lastNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.lastNameLabel.Location = new System.Drawing.Point(40, 85);
+            this.lastNameLabel.Name = "lastNameLabel";
+            this.lastNameLabel.Size = new System.Drawing.Size(119, 20);
+            this.lastNameLabel.TabIndex = 4;
+            this.lastNameLabel.Text = "lastNameLabel:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label7.Location = new System.Drawing.Point(509, 143);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(170, 20);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "confirm new password:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label6.Location = new System.Drawing.Point(509, 85);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 20);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "new password:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label4.Location = new System.Drawing.Point(509, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 20);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "old password:";
+            // 
+            // nameLable
+            // 
+            this.nameLable.AutoSize = true;
+            this.nameLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.nameLable.Location = new System.Drawing.Point(40, 12);
+            this.nameLable.Name = "nameLable";
+            this.nameLable.Size = new System.Drawing.Size(53, 20);
+            this.nameLable.TabIndex = 8;
+            this.nameLable.Text = "name:";
             // 
             // tabPage3
             // 
@@ -311,128 +475,76 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "first name:";
             // 
-            // tabPage2
+            // tabPage4
             // 
-            this.tabPage2.Controls.Add(this.pictureBox2);
-            this.tabPage2.Controls.Add(this.confPassTextBox);
-            this.tabPage2.Controls.Add(this.newPassTextBox);
-            this.tabPage2.Controls.Add(this.oldPassTextBox);
-            this.tabPage2.Controls.Add(this.changeMyPassbutton);
-            this.tabPage2.Controls.Add(this.lNameLable);
-            this.tabPage2.Controls.Add(this.UnameLable);
-            this.tabPage2.Controls.Add(this.lastNameLabel);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.nameLable);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(764, 316);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "account management";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage4.Controls.Add(this.pictureBox3);
+            this.tabPage4.Controls.Add(this.label_access_group_delete);
+            this.tabPage4.Controls.Add(this.comboBox_access_group_delete);
+            this.tabPage4.Controls.Add(this.button1);
+            this.tabPage4.Controls.Add(this.textBox_id_delete);
+            this.tabPage4.Controls.Add(this.label_id_delete);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(764, 316);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "delete user";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // confPassTextBox
+            // pictureBox3
             // 
-            this.confPassTextBox.Location = new System.Drawing.Point(513, 166);
-            this.confPassTextBox.Name = "confPassTextBox";
-            this.confPassTextBox.Size = new System.Drawing.Size(175, 20);
-            this.confPassTextBox.TabIndex = 12;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(362, 6);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(311, 304);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 18;
+            this.pictureBox3.TabStop = false;
             // 
-            // newPassTextBox
+            // label_access_group_delete
             // 
-            this.newPassTextBox.Location = new System.Drawing.Point(513, 108);
-            this.newPassTextBox.Name = "newPassTextBox";
-            this.newPassTextBox.Size = new System.Drawing.Size(175, 20);
-            this.newPassTextBox.TabIndex = 13;
+            this.label_access_group_delete.AutoSize = true;
+            this.label_access_group_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label_access_group_delete.Location = new System.Drawing.Point(95, 72);
+            this.label_access_group_delete.Name = "label_access_group_delete";
+            this.label_access_group_delete.Size = new System.Drawing.Size(108, 20);
+            this.label_access_group_delete.TabIndex = 17;
+            this.label_access_group_delete.Text = "access group:";
             // 
-            // oldPassTextBox
+            // comboBox_access_group_delete
             // 
-            this.oldPassTextBox.Location = new System.Drawing.Point(513, 52);
-            this.oldPassTextBox.Name = "oldPassTextBox";
-            this.oldPassTextBox.Size = new System.Drawing.Size(175, 20);
-            this.oldPassTextBox.TabIndex = 14;
+            this.comboBox_access_group_delete.FormattingEnabled = true;
+            this.comboBox_access_group_delete.Location = new System.Drawing.Point(99, 95);
+            this.comboBox_access_group_delete.Name = "comboBox_access_group_delete";
+            this.comboBox_access_group_delete.Size = new System.Drawing.Size(147, 21);
+            this.comboBox_access_group_delete.TabIndex = 16;
             // 
-            // changeMyPassbutton
+            // button1
             // 
-            this.changeMyPassbutton.Location = new System.Drawing.Point(513, 223);
-            this.changeMyPassbutton.Name = "changeMyPassbutton";
-            this.changeMyPassbutton.Size = new System.Drawing.Size(147, 59);
-            this.changeMyPassbutton.TabIndex = 11;
-            this.changeMyPassbutton.Text = "change My Password";
-            this.changeMyPassbutton.UseVisualStyleBackColor = true;
-            this.changeMyPassbutton.Click += new System.EventHandler(this.changeMyPassbutton_Click);
+            this.button1.Location = new System.Drawing.Point(102, 267);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(147, 43);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "delete this user";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button_delete_this_user);
             // 
-            // lNameLable
+            // textBox_id_delete
             // 
-            this.lNameLable.AutoSize = true;
-            this.lNameLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lNameLable.Location = new System.Drawing.Point(51, 120);
-            this.lNameLable.Name = "lNameLable";
-            this.lNameLable.Size = new System.Drawing.Size(51, 20);
-            this.lNameLable.TabIndex = 9;
-            this.lNameLable.Text = "label5";
+            this.textBox_id_delete.Location = new System.Drawing.Point(99, 49);
+            this.textBox_id_delete.Name = "textBox_id_delete";
+            this.textBox_id_delete.Size = new System.Drawing.Size(147, 20);
+            this.textBox_id_delete.TabIndex = 14;
             // 
-            // UnameLable
+            // label_id_delete
             // 
-            this.UnameLable.AutoSize = true;
-            this.UnameLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.UnameLable.Location = new System.Drawing.Point(51, 47);
-            this.UnameLable.Name = "UnameLable";
-            this.UnameLable.Size = new System.Drawing.Size(51, 20);
-            this.UnameLable.TabIndex = 10;
-            this.UnameLable.Text = "label5";
-            // 
-            // lastNameLabel
-            // 
-            this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lastNameLabel.Location = new System.Drawing.Point(40, 85);
-            this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(119, 20);
-            this.lastNameLabel.TabIndex = 4;
-            this.lastNameLabel.Text = "lastNameLabel:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label7.Location = new System.Drawing.Point(509, 143);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(170, 20);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "confirm new password:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label6.Location = new System.Drawing.Point(509, 85);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 20);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "new password:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label4.Location = new System.Drawing.Point(509, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "old password:";
-            // 
-            // nameLable
-            // 
-            this.nameLable.AutoSize = true;
-            this.nameLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.nameLable.Location = new System.Drawing.Point(40, 12);
-            this.nameLable.Name = "nameLable";
-            this.nameLable.Size = new System.Drawing.Size(53, 20);
-            this.nameLable.TabIndex = 8;
-            this.nameLable.Text = "name:";
+            this.label_id_delete.AutoSize = true;
+            this.label_id_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label_id_delete.Location = new System.Drawing.Point(95, 21);
+            this.label_id_delete.Name = "label_id_delete";
+            this.label_id_delete.Size = new System.Drawing.Size(25, 20);
+            this.label_id_delete.TabIndex = 13;
+            this.label_id_delete.Text = "id:";
             // 
             // menuStrip1
             // 
@@ -485,118 +597,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(189, 29);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(265, 253);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label_id_delete
-            // 
-            this.label_id_delete.AutoSize = true;
-            this.label_id_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label_id_delete.Location = new System.Drawing.Point(95, 21);
-            this.label_id_delete.Name = "label_id_delete";
-            this.label_id_delete.Size = new System.Drawing.Size(25, 20);
-            this.label_id_delete.TabIndex = 13;
-            this.label_id_delete.Text = "id:";
-            // 
-            // textBox_id_delete
-            // 
-            this.textBox_id_delete.Location = new System.Drawing.Point(99, 49);
-            this.textBox_id_delete.Name = "textBox_id_delete";
-            this.textBox_id_delete.Size = new System.Drawing.Size(147, 20);
-            this.textBox_id_delete.TabIndex = 14;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(102, 267);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 43);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "delete this user";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button_delete_this_user);
-            // 
-            // comboBox_access_group_delete
-            // 
-            this.comboBox_access_group_delete.FormattingEnabled = true;
-            this.comboBox_access_group_delete.Location = new System.Drawing.Point(99, 95);
-            this.comboBox_access_group_delete.Name = "comboBox_access_group_delete";
-            this.comboBox_access_group_delete.Size = new System.Drawing.Size(147, 21);
-            this.comboBox_access_group_delete.TabIndex = 16;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.pictureBox3);
-            this.tabPage4.Controls.Add(this.label_access_group_delete);
-            this.tabPage4.Controls.Add(this.comboBox_access_group_delete);
-            this.tabPage4.Controls.Add(this.button1);
-            this.tabPage4.Controls.Add(this.textBox_id_delete);
-            this.tabPage4.Controls.Add(this.label_id_delete);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(764, 316);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "delete user";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // label_access_group_delete
-            // 
-            this.label_access_group_delete.AutoSize = true;
-            this.label_access_group_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label_access_group_delete.Location = new System.Drawing.Point(95, 72);
-            this.label_access_group_delete.Name = "label_access_group_delete";
-            this.label_access_group_delete.Size = new System.Drawing.Size(108, 20);
-            this.label_access_group_delete.TabIndex = 17;
-            this.label_access_group_delete.Text = "access group:";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(362, 6);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(311, 304);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 18;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(205, 6);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(112, 107);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 1;
-            this.pictureBox4.TabStop = false;
-            // 
-            // button_refresh_user_details
-            // 
-            this.button_refresh_user_details.Location = new System.Drawing.Point(6, 250);
-            this.button_refresh_user_details.Name = "button_refresh_user_details";
-            this.button_refresh_user_details.Size = new System.Drawing.Size(147, 59);
-            this.button_refresh_user_details.TabIndex = 12;
-            this.button_refresh_user_details.Text = "refresh users details";
-            this.button_refresh_user_details.UseVisualStyleBackColor = true;
-            this.button_refresh_user_details.Click += new System.EventHandler(this.button_refresh_user_details_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(323, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(433, 303);
-            this.dataGridView1.TabIndex = 13;
-            // 
             // adminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -610,19 +610,19 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -58,7 +58,16 @@ namespace Project_Team3
 
             //hide constraints panel;
             panel1.Hide();
+
+            //build schedule
+            build_schedule();
         }
+
+        private void build_schedule()
+        {
+
+        }
+
 
         private void set_account_Management()
         {
@@ -293,6 +302,11 @@ namespace Project_Team3
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
