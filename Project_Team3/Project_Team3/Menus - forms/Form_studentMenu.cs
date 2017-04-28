@@ -136,7 +136,11 @@ namespace Project_Team3
 
         private void WatchCoursesButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            using (Form_studentRegisteredCourses studentRegCourses = new Form_studentRegisteredCourses(username))
+            {
+                this.Hide();
+                studentRegCourses.ShowDialog(this);
+            }
         }
 
         private void ChangeCourseTimeButton_Click(object sender, EventArgs e)
