@@ -173,6 +173,12 @@
     <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryManageStudent.Designer.cs">
       <DependentUpon>Form_secretaryManageStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryStudentCoursesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryStudentCoursesReport.Designer.cs">
+      <DependentUpon>Form_secretaryStudentCoursesReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryStudentRequests.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\SecretarySubMenus\Form_secretaryManageStudent.resx">
       <DependentUpon>Form_secretaryManageStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\SecretarySubMenus\Form_secretaryStudentCoursesReport.resx">
+      <DependentUpon>Form_secretaryStudentCoursesReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\SecretarySubMenus\Form_secretaryStudentRequests.resx">
       <DependentUpon>Form_secretaryStudentRequests.cs</DependentUpon>

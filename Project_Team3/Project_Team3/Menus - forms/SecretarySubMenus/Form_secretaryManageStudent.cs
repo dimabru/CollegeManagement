@@ -29,5 +29,14 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
             parent.clearSearchResults();
             parent.Show();
         }
+
+        private void CoursesReport_Click(object sender, EventArgs e)
+        {
+            using (Form_secretaryStudentCoursesReport manageStudentCourses = new Form_secretaryStudentCoursesReport(student))
+            {
+                this.Hide();
+                manageStudentCourses.ShowDialog(this);
+            }
+        }
     }
 }
