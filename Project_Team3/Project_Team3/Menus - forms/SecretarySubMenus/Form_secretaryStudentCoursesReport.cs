@@ -22,6 +22,7 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
         {
             this.student = student;
             InitializeComponent();
+            Header_label.Text = student.Name + " Courses:";   
             Init();
             UpdateListView();
         }
@@ -62,6 +63,11 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
         {
             Form_secretaryManageStudent parent = (Form_secretaryManageStudent)this.Owner;
             parent.Show();
+        }
+
+        private void GoBackClick(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
