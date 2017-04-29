@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Course.cs" />
     <Compile Include="Classes\FunctionsForAllProgram.cs" />
     <Compile Include="Classes\Student.cs" />
     <Compile Include="Classes\User.cs" />
