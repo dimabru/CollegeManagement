@@ -36,6 +36,7 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.coursesResultsListBox = new System.Windows.Forms.ListBox();
             this.backButton = new System.Windows.Forms.Button();
+            this.CourseInfoButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // courseIDRadio
@@ -113,6 +114,16 @@
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+            // CourseInfoButton
+            // 
+            this.CourseInfoButton.Location = new System.Drawing.Point(630, 377);
+            this.CourseInfoButton.Name = "CourseInfoButton";
+            this.CourseInfoButton.Size = new System.Drawing.Size(112, 33);
+            this.CourseInfoButton.TabIndex = 8;
+            this.CourseInfoButton.Text = "Course Information";
+            this.CourseInfoButton.UseVisualStyleBackColor = true;
+            this.CourseInfoButton.Click += new System.EventHandler(this.CourseInfoButton_Click);
+            // 
             // Form_secretaryCourseSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -120,6 +131,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1012, 609);
+            this.Controls.Add(this.CourseInfoButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.coursesResultsListBox);
             this.Controls.Add(this.searchButton);
@@ -145,5 +157,6 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.ListBox coursesResultsListBox;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button CourseInfoButton;
     }
 }

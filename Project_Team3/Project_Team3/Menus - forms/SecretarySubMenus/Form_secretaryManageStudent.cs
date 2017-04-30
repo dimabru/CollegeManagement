@@ -18,7 +18,6 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
         public Form_secretaryManageStudent(Student student)
         {
             this.student = student;
-            MessageBox.Show(student.Username);
             InitializeComponent();
             
         }

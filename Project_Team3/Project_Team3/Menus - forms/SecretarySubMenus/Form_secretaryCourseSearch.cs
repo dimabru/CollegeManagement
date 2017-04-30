@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Project_Team3.Classes;
 
 namespace Project_Team3.Menus___forms.SecretarySubMenus
 {
@@ -15,7 +16,7 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
     {
         DBconnect connection;
         SqlCommand command;
-
+        private Course selectedCourse;
         public Form_secretaryCourseSearch()
         {
             InitializeComponent();
@@ -27,6 +28,11 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
             Form_secretaryMenu parent = (Form_secretaryMenu)this.Owner;
             parent.Show();
         }
+        public void clearSearchResults()
+        {
+            coursesResultsListBox.Items.Clear();
+
+        }
 
         private void updateResults(DataSet ds)
         {
@@ -36,7 +42,11 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
             {
                 foreach (DataRow course in ds.Tables[0].Rows)
                 {
-                    coursesResultsListBox.Items.Add(course[0].ToString());
+                    Course currentCourse = new Course(Convert.ToInt32(course[0]), course[1].ToString(),
+                        Convert.ToInt32(course[2]), Convert.ToInt32(course[3]), course[4].ToString(),
+                        course[5].ToString(), Convert.ToInt32(course[6]), Convert.ToInt32(course[7]),
+                        Convert.ToInt32(course[8]), course[9].ToString());
+                    coursesResultsListBox.Items.Add(currentCourse);
                 }
             }
             catch (Exception ex)
@@ -48,7 +58,7 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
         private void searchByName(string name)
         {
             //TODO DRISHA
-            command.CommandText = "SELECT Course.Course_Name FROM Course WHERE Course.Course_Name = @name";
+            command.CommandText = "SELECT * FROM Course WHERE Course.Course_Name = @name";
             command.Parameters.AddWithValue("name", name);
 
             DataSet ds = connection.generalCommand(command);
@@ -58,7 +68,7 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
         private void searchByID(string id)
         {
             //TODO DRISHA
-            command.CommandText = "SELECT Course.Course_Name FROM Course WHERE Course.Course_ID = @id";
+            command.CommandText = "SELECT * FROM Course WHERE Course.Course_ID = @id";
             command.Parameters.AddWithValue("id", id);
 
             DataSet ds = connection.generalCommand(command);
@@ -99,6 +109,17 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CourseInfoButton_Click(object sender, EventArgs e)
+        {
+            if (coursesResultsListBox.SelectedItem == null) { MessageBox.Show("No Student selected!"); return; }
+            selectedCourse = (Course)coursesResultsListBox.SelectedItem;
+            using (Form_secretaryCourseInfo CourseInfo = new Form_secretaryCourseInfo(selectedCourse))
+            {
+                this.Hide();
+                CourseInfo.ShowDialog(this);
+            }
         }
     }
 }

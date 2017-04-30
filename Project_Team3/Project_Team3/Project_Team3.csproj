@@ -150,6 +150,12 @@
     <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryAssociationEvents.Designer.cs">
       <DependentUpon>Form_secretaryAssociationEvents.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryCourseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryCourseInfo.Designer.cs">
+      <DependentUpon>Form_secretaryCourseInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryCourseSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\SecretarySubMenus\Form_secretaryAssociationEvents.resx">
       <DependentUpon>Form_secretaryAssociationEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\SecretarySubMenus\Form_secretaryCourseInfo.resx">
+      <DependentUpon>Form_secretaryCourseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\SecretarySubMenus\Form_secretaryCourseSearch.resx">
       <DependentUpon>Form_secretaryCourseSearch.cs</DependentUpon>
