@@ -46,7 +46,7 @@ namespace Project_Team3
 
             //change this form size 
             //see also: https://msdn.microsoft.com/en-us/library/ms229606(v=vs.110).aspx 
-            this.Size = new System.Drawing.Size(760, 460);
+            this.Size = new System.Drawing.Size(1000, 550);
 
             //set position in the center;
             //see also: https://msdn.microsoft.com/en-us/library/system.windows.forms.form.startposition(v=vs.110).aspx
@@ -106,6 +106,7 @@ namespace Project_Team3
             tempTable.Rows.Add("17:00", typeof(string));
             tempTable.Rows.Add("18:00", typeof(string));
             tempTable.Rows.Add("19:00", typeof(string));
+            
             string day = "";
             string start = "";
             string end = "";
@@ -137,9 +138,10 @@ namespace Project_Team3
                      
                     tempTable.Rows[i][j] = " ";
                 }
-
+          
             dataGridView2.DataSource = tempTable;
- 
+            dataGridView2.RowHeadersVisible = false;
+
         }
 
         private void set_account_Management()
