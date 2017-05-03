@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_Team3.Courses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,10 +20,20 @@ namespace Project_Team3.GUI
             this.Size = new System.Drawing.Size(760, 460);
 
 
-        }
+            
+            /*foreach (int id in cList)
+            {
+                comboBox3.Items.Add(string(id) + " " + getCourse(id).getName());
+            }*/
 
+        }
+        //Constraints tab
         string changedBoxProf;
         string changedBoxInst;
+
+        //Manage Courses tab
+        string changedBoxCourseList;
+        //List<int> cList = getCourseList();
 
         private void checkConstraintStatus(object sender, EventArgs e)
         {
@@ -70,6 +81,56 @@ namespace Project_Team3.GUI
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void courseList(object sender, EventArgs e)
+        {
+            changedBoxCourseList = comboBox3.Text;
+        }
+
+        private void courseInfo(object sender, EventArgs e)
+        {
+            if (changedBoxCourseList == null) MessageBox.Show("No course selected");
+            else
+            {
+                string info = "undefined";
+                string[] words = changedBoxCourseList.Split();
+                int id = Int32.Parse(words[0]);
+                Course select;
+                //Course select = getCourse(id);
+                /*
+                info = "ID: ";
+                info += select.getID().ToString() + "\n";
+
+                info += "Name: ";
+                info += select.getName() + "\n";
+
+                info += "Teacher ID: ";
+                info += select.getTeacherID().ToString() + "\n";
+
+                info += "Max Students: ";
+                info += select.getMaxStudents().ToString() + "\n";
+
+                info += "Room: ";
+                info += select.getRoom() + "\n";
+
+                info += "Day: ";
+                info += select.getDay() + "\n";
+
+                info += "Start Time: ";
+                info += select.getStart().ToString() + "\n";
+
+                info += "End Time: ";
+                info += select.getEnd().ToString() + "\n";
+
+                info += "Semester: ";
+                info += select.getSemester().ToString() + "\n";
+
+                info += "Credit Points: ";
+                info += select.getCreditPoints().ToString() + "\n";
+                */
+                MessageBox.Show(info);
+            }
         }
     }
 }

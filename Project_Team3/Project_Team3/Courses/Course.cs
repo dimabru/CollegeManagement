@@ -39,5 +39,25 @@ namespace Project_Team3.Courses
             semester = SEMESTER;
             creditPoints = CREDITPOINTS;
         }
-    }
+
+        public string getName() { return name; }
+
+        public int getID() { return id; }
+
+        public ulong getTeacherID() { return teacherID; }
+
+        public int getMaxStudents() { return maxStudents; }
+
+        public string getRoom() { return room; }
+
+        public string getDay() { return day; }
+
+        public int getStart() { return start; }
+
+        public int getEnd() { return end; }
+
+        public int getSemester() { return semester; }
+
+        public float getCreditPoints() { return creditPoints; }
+    } 
 }
