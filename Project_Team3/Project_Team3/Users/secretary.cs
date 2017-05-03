@@ -9,9 +9,9 @@ namespace Project_Team3
     //it's important that the all users be public
     public class secretary : user
     {
-        public secretary()
+        public secretary(ulong id) : base(id)
         {
-            //Commit test
+            
         }
 
 

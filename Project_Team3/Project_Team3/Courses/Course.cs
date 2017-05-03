@@ -9,32 +9,35 @@ namespace Project_Team3.Courses
     class Course
     {
 
-        // List of courses that are mandatory for this course
-        private Course[] parents;
+        int id;
+        string name;
+        ulong teacherID;
+        int maxStudents;
+        string room;
+        string day;
+        int start;
+        int end;
+        int semester;
+        float creditPoints;
 
-        // List of child courses after this course
-        private Course[] prerequisite;
-
-        private bool hasLab;
-        private Lab lab;
-        private Lecture lecture;
-        private bool hasPracticeLesson;
-        private PracticeLesson practiceLesson;
-
-        private String name;
-        private int id;
-        private float creditPoints;
-        private bool isMandatory;
-
-        public Course(String n, int i, float credit, bool mand, bool hasPL, bool hasL)
+        public Course(int ID)
         {
-            name = n;
-            id = i;
-            creditPoints = credit;
-            isMandatory = mand;
-            hasPracticeLesson = hasPL;
-            hasLab = hasL;
+            ID = id;
+            name = "undefined";
         }
 
+        public Course(int ID, string NAME, ulong TEACHERID, int MAXSTUDENTS, string ROOM, string DAY, int START, int END, int SEMESTER, float CREDITPOINTS)
+        {
+            id = ID;
+            name = NAME;
+            teacherID = TEACHERID;
+            maxStudents = MAXSTUDENTS;
+            room = ROOM;
+            day = DAY;
+            start = START;
+            end = END;
+            semester = SEMESTER;
+            creditPoints = CREDITPOINTS;
+        }
     }
 }

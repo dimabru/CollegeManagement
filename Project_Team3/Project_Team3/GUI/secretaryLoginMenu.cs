@@ -8,16 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Project_Team3.GUI;
+
 
 namespace Project_Team3
 {
     public partial class secretaryLoginMenu : Form
     {
-        //panel counter;
-        private int myPanelCounter = 0;
-        //list of panels;
-        List<Panel> listPanel = new List<Panel>();
-
         public secretaryLoginMenu()
         {
             InitializeComponent();
@@ -27,17 +24,6 @@ namespace Project_Team3
             //
             label3.Hide();
 
-            //adding the panels to the list;
-            listPanel.Add(panel1);
-            listPanel.Add(panel2);
-
-            //hide all panels;
-            foreach (Panel panelItem in listPanel)
-            {
-                panelItem.Hide();
-            }
-            //show the first panel
-            listPanel[myPanelCounter].Show();
         }
 
         private void secretaryFirstMenu_Load(object sender, EventArgs e)
@@ -107,12 +93,12 @@ namespace Project_Team3
                     {
                         //hide this panel to show the other;
                         label3.Hide();
-                        listPanel[myPanelCounter].Hide();
-                        //raise counter to next panel;
-                        myPanelCounter++;
-                        //show secretary menu;
-                        listPanel[myPanelCounter].Show();
 
+                        this.Hide();
+                        secretary sec = new secretary(id);
+                        secretaryMenu secMenu = new secretaryMenu(sec);
+                        secMenu.ShowDialog();
+                            
                     }
                     else
                     {
