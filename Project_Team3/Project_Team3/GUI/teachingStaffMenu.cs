@@ -358,10 +358,5 @@ namespace Project_Team3
         {
 
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
