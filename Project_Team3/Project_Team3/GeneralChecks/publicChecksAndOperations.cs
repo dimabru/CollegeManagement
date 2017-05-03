@@ -130,39 +130,60 @@ namespace Project_Team3
                     return null;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>convert simple int hour from database to 
+        /// readble known pattern (will be used in create datatable i build schedule (of prof/inst)
+        /// <param name="hour"></param>
+        /// <returns></returns>
         public static int hourConvertFromStringToInt(string hour)
         {
             switch (hour)
             {
                 case "08:00":
+                case "800":
                     return 1;
                 case "09:00":
+                case "900":
                     return 2;
                 case "10:00":
+                case "1000":
                     return 3;
                 case "11:00":
+                case "1100":
                     return 4;
                 case "12:00":
+                case "1200":
                     return 5;
                 case "13:00":
+                case "1300":
                     return 6;
                 case "14:00":
+                case "1400":
                     return 7;
                 case "15:00":
+                case "1500":
                     return 8;
                 case "16:00":
+                case "1600":
                     return 9;
                 case "17:00":
+                case "1700":
                     return 10;
                 case "18:00":
+                case "1800":
                     return 11;
                 case "19:00":
+                case "1900":
                     return 12;
             
                 default:
                     return 0;
             }
         }
+        
+
+
         /// <summary>
         /// this function cheack if the string is unsigned long int;
         /// </summary>
@@ -221,4 +242,6 @@ namespace Project_Team3
         }
 
     }
+
+
 }

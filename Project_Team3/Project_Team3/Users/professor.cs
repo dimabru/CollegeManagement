@@ -42,6 +42,10 @@ namespace Project_Team3
         {
             return profconstraints;
         }
+        /// <summary>
+        /// return list of courses
+        /// </summary>
+        /// <returns></returns>
         public List<string> getCoursesList()
         {
             return profcourses;
@@ -66,8 +70,6 @@ namespace Project_Team3
                     profcourses.Add(toSaveCourses[i]);
                 }
             }
-
-
             catch
             {
                 MessageBox.Show("there was a problem with loading professor\n please check it with your admin");

@@ -64,11 +64,27 @@ namespace Project_Team3
             build_schedule(someUser);
         }
 
+        //build schedule to professor or instructor
         private void build_schedule(user someUser)
         {
-            courses_List = prof.getCoursesList();
+
+            if (someUser is professor)
+            {
+                //make reperance to the object we get
+                this.prof = (professor)someUser;
+                courses_List = this.prof.getCoursesList();
+            }
+
+            if (someUser is instructor)
+            {
+                //make reperance to the object we get
+                this.inst = (instructor)someUser;
+                courses_List = this.inst.getCoursesList();
+            }
 
 
+
+            //build DataTable 
             DataTable tempTable = new DataTable();
             tempTable.Columns.Add(" ", typeof(string));
             tempTable.Columns.Add("Sunday", typeof(string));
@@ -86,27 +102,36 @@ namespace Project_Team3
             tempTable.Rows.Add("13:00", typeof(string));
             tempTable.Rows.Add("14:00", typeof(string));
             tempTable.Rows.Add("15:00", typeof(string));
+            tempTable.Rows.Add("16:00", typeof(string));
+            tempTable.Rows.Add("17:00", typeof(string));
+            tempTable.Rows.Add("18:00", typeof(string));
+            tempTable.Rows.Add("19:00", typeof(string));
             string day = "";
             string start = "";
             string end = "";
-
+            string room = "";
+            //enter lectures to DataTable
             for (int i = 0; i < courses_List.Count; i++)
             {
-
-                day = dataOp.getTimesByName(courses_List[i], 5);
-                start = dataOp.getTimesByName(courses_List[i], 6);
-                start = "08:00";
-                end = dataOp.getTimesByName(courses_List[i], 7);
-                end = "12:00";
-               
+                //get the attributes of the lecture from DB
+                day = dataOp.getAttrByName(courses_List[i], 5);
+                start = dataOp.getAttrByName(courses_List[i], 6);
+                end = dataOp.getAttrByName(courses_List[i], 7);
+                room = dataOp.getAttrByName(courses_List[i], 4);
+                //convert to location in DataTable
                 int location_x = publicChecksAndOperations.convDayToInt(day);
-                int location_y = publicChecksAndOperations.hourConvertFromStringToInt(start);
+                int location_y_s = publicChecksAndOperations.hourConvertFromStringToInt(start);
+                int location_y_e = publicChecksAndOperations.hourConvertFromStringToInt(end);
+                tempTable.Rows[location_y_s][location_x] = courses_List[i]+ " ( " +room+ " )";
+                for(i=location_y_s+1; i<(location_y_e- location_y_s); i++)
+                {
+                    tempTable.Rows[i][location_x] = "Continued lecture" + " ( " + room + " )";
 
-                tempTable.Rows[location_x][location_y] = courses_List[i];   
+                }
             }
-  
-            for (int i=0;i<9;i++)
-                for(int j=1;j<6;j++)
+            //define empty value in cells which dont have lecture 
+            for (int i=0; i<13; i++)
+                for(int j=1; j<6; j++)
                 {
                     if (tempTable.Rows[i][j] == null || tempTable.Rows[i][j].Equals("System.String") || string.IsNullOrEmpty(tempTable.Rows[i][j].ToString()))
                      

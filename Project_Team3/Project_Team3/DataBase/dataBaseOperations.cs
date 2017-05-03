@@ -258,11 +258,6 @@ namespace Project_Team3
             }
         }
 
-
-
-
-
-
         /// <summary>
         /// return the user name from the database by id
         /// </summary>
@@ -335,7 +330,80 @@ namespace Project_Team3
                 con.Close();
             }
         }
-       
+
+        /// <summary>//
+        /// return an array of the names of the courses according id of teacher
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public string[] getCoursesByTId(ulong id)
+        {
+            try
+            {
+                int counter = 0;
+                string[] arrToReturn = { "" };
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.Course where COURSE_ID = '" + id + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+
+                while (dbr.Read())
+                {
+                    int w = (int)dbr.GetValue(2);
+                    ulong res = Convert.ToUInt64(w);
+                    if (id == res)
+                    { // Resize the array.
+                        Array.Resize(ref arrToReturn, counter + 1);
+                        arrToReturn[counter++] = dbr.GetValue(1).ToString();
+                    }
+                }
+                con.Close();
+                return arrToReturn;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        /// <summary>//
+        /// return an attribute value of the course according the id (location) of the attribute in DB
+        /// </summary>
+        /// <param name="name",param name="i"></param>
+        /// <returns></returns>
+        public string getAttrByName(string name, int i)
+        {
+            try
+            {
+
+                string ToReturn = "";
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.Course where COURSE_NAME = '" + name + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+
+                while (dbr.Read())
+                {
+                    if (name.Equals(dbr.GetValue(1)))
+                    {
+
+                        ToReturn = dbr.GetValue(i).ToString();
+                    }
+                }
+                con.Close();
+                return ToReturn;
+            }
+            catch
+            {
+                throw;
+            }
+        }
 
 
         /// <summary>
@@ -430,80 +498,7 @@ namespace Project_Team3
         }
 
 
-        /// <summary>//
-        /// return an array of the names of the courses according id of teacher
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public string[] getCoursesByTId(ulong id)
-        {
-            try
-            {
-                int counter = 0;
-                string[] arrToReturn = { "" };
-                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
-                String query = "select * from dbo.Course where COURSE_ID = '" + id + "'";
-                SqlConnection con = new SqlConnection(str);
-                SqlCommand cmd = new SqlCommand(query, con);
-                SqlDataReader dbr;
-                con.Open();
-                dbr = cmd.ExecuteReader();
-
-                while (dbr.Read())
-                {
-                    int w =(int) dbr.GetValue(2);
-                    ulong res = Convert.ToUInt64(w);
-                    if (id ==res)
-                    { // Resize the array.
-                        Array.Resize(ref arrToReturn, counter + 1);
-                        arrToReturn[counter++] = dbr.GetValue(1).ToString();
-                    }
-                }
-                con.Close();
-                return arrToReturn;
-            }
-            catch
-            {
-                throw;
-            }
-        }
-
-        /// <summary>//
-        /// return an array of the names of the courses according id of teacher
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public string getTimesByName(string name,int i)
-        {
-            try
-            {
-               
-                string ToReturn = "" ;
-                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
-                String query = "select * from dbo.Course where COURSE_NAME = '" + name + "'";
-                SqlConnection con = new SqlConnection(str);
-                SqlCommand cmd = new SqlCommand(query, con);
-                SqlDataReader dbr;
-                con.Open();
-                dbr = cmd.ExecuteReader();
-
-                while (dbr.Read())
-                {
-                    if (name.Equals(dbr.GetValue(1)))
-                    { 
-                       
-                        ToReturn = dbr.GetValue(i).ToString();
-                    }
-                }
-                con.Close();
-                return ToReturn;
-            }
-            catch
-            {
-                throw;
-            }
-        }
-
+       
 
 
 
