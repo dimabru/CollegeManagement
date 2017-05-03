@@ -21,8 +21,9 @@ namespace Project_Team3
         const float fSize = 12.0F;
 
         private List<techingStaffConstraints> constraints_List = new List<techingStaffConstraints>();
+        private List<string> courses_List = new List<string>();
         publicChecksAndOperations opration = new publicChecksAndOperations();
-
+        dataBaseOperations dataOp = new dataBaseOperations();
         public teachingStaffMenu(user someUser)
         {
             InitializeComponent();
@@ -60,14 +61,61 @@ namespace Project_Team3
             panel1.Hide();
 
             //build schedule
-            build_schedule();
+            build_schedule(someUser);
         }
 
-        private void build_schedule()
+        private void build_schedule(user someUser)
         {
+            courses_List = prof.getCoursesList();
 
+
+            DataTable tempTable = new DataTable();
+            tempTable.Columns.Add(" ", typeof(string));
+            tempTable.Columns.Add("Sunday", typeof(string));
+            tempTable.Columns.Add("Monday", typeof(string));
+            tempTable.Columns.Add("Tuesday", typeof(string));
+            tempTable.Columns.Add("Wednesday", typeof(string));
+            tempTable.Columns.Add("Thursday", typeof(string));
+            tempTable.Columns.Add("Friday", typeof(string));
+            tempTable.Rows.Add("07:00", typeof(string));
+            tempTable.Rows.Add("08:00", typeof(string));
+            tempTable.Rows.Add("09:00", typeof(string));
+            tempTable.Rows.Add("10:00", typeof(string));
+            tempTable.Rows.Add("11:00", typeof(string));
+            tempTable.Rows.Add("12:00", typeof(string));
+            tempTable.Rows.Add("13:00", typeof(string));
+            tempTable.Rows.Add("14:00", typeof(string));
+            tempTable.Rows.Add("15:00", typeof(string));
+            string day = "";
+            string start = "";
+            string end = "";
+
+            for (int i = 0; i < courses_List.Count; i++)
+            {
+
+                day = dataOp.getTimesByName(courses_List[i], 5);
+                start = dataOp.getTimesByName(courses_List[i], 6);
+                start = "08:00";
+                end = dataOp.getTimesByName(courses_List[i], 7);
+                end = "12:00";
+               
+                int location_x = publicChecksAndOperations.convDayToInt(day);
+                int location_y = publicChecksAndOperations.hourConvertFromStringToInt(start);
+
+                tempTable.Rows[location_x][location_y] = courses_List[i];   
+            }
+  
+            for (int i=0;i<9;i++)
+                for(int j=1;j<6;j++)
+                {
+                    if (tempTable.Rows[i][j] == null || tempTable.Rows[i][j].Equals("System.String") || string.IsNullOrEmpty(tempTable.Rows[i][j].ToString()))
+                     
+                    tempTable.Rows[i][j] = " ";
+                }
+
+            dataGridView2.DataSource = tempTable;
+ 
         }
-
 
         private void set_account_Management()
         {
