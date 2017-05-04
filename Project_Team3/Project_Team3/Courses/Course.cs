@@ -40,6 +40,11 @@ namespace Project_Team3.Courses
             creditPoints = CREDITPOINTS;
         }
 
+        public void setId(int newId)
+        {
+            id = newId;
+        }
+
         public string getName() { return name; }
 
         public int getID() { return id; }

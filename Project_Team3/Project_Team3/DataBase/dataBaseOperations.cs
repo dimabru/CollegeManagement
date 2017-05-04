@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using Project_Team3.Courses;
 
 namespace Project_Team3
 {
@@ -406,6 +407,127 @@ namespace Project_Team3
         }
 
 
+        public static Boolean courseExist(int id)
+        {
+            try
+            {
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.Course where COURSE_ID = " + id;
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+                //int count = 0;
+                while (dbr.Read())
+                {
+                    con.Close();
+                    return true;
+                }
+                con.Close();
+                return false;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+        }
+
+
+        public static bool addCourse(Course course)
+        {
+            try
+            {
+                if (courseExist(course.getID()))
+                {
+                    return false;
+                }
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand sqlCommand = new SqlCommand("INSERT INTO dbo.Course(COURSE_ID,COURSE_NAME,TEACHER_ID,MAX_STUDENTS,ROOM_NUMBER,COURSE_DAY,START_HOUR,END_HOUR,COURSE_SEMESTER,Track,Points) VALUES(@COURSE_ID,@COURSE_NAME,@TEACHER_ID,@MAX_STUDENTS,@ROOM_NUMBER,@COURSE_DAY,@START_HOUR,@END_HOUR,@COURSE_SEMESTER,@Track,@Points)", con);
+
+                //the "" + ulong ment to fit the data base type;
+                //you can see here other option to convert https://msdn.microsoft.com/en-us/library/2wfez910(v=vs.110).aspx
+                sqlCommand.Parameters.AddWithValue("@COURSE_ID",""+ course.getID());
+                sqlCommand.Parameters.AddWithValue("@COURSE_NAME", "" + course.getName());
+                sqlCommand.Parameters.AddWithValue("@TEACHER_ID",""+ course.getTeacherID());
+                sqlCommand.Parameters.AddWithValue("@MAX_STUDENTS",""+ course.getMaxStudents());
+                sqlCommand.Parameters.AddWithValue("@ROOM_NUMBER", "" + course.getRoom());
+                sqlCommand.Parameters.AddWithValue("@COURSE_DAY", "" + course.getDay());
+                sqlCommand.Parameters.AddWithValue("@START_HOUR",""+ course.getStart());
+                sqlCommand.Parameters.AddWithValue("@END_HOUR",""+ course.getStart());
+                sqlCommand.Parameters.AddWithValue("@COURSE_SEMESTER",""+ course.getSemester());
+                sqlCommand.Parameters.AddWithValue("@Track", "");
+                sqlCommand.Parameters.AddWithValue("@Points",""+ course.getCreditPoints());
+
+                con.Open();
+                sqlCommand.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static Course getCourse(int id)
+        {
+            try
+            {
+                int ID = id;
+                string NAME = "";
+                ulong TEACHERID = 0;
+                int MAXSTUDENTS = 0;
+                string ROOM = "";
+                string DAY = "";
+                int START = 0;
+                int END = 0;
+                int SEMESTER = 0;
+                float CREDITPOINTS = 0;
+                
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.Course where COURSE_ID = '" + id + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+
+                while (dbr.Read())
+                {
+                    if (id.Equals(dbr.GetValue(0)))
+                    {
+                        NAME = dbr.GetValue(1).ToString();
+                        TEACHERID = publicChecksAndOperations.convertToUlong(dbr.GetValue(2).ToString());
+                        MAXSTUDENTS = (int)dbr.GetValue(3);
+                        ROOM = dbr.GetValue(4).ToString();
+                        DAY = dbr.GetValue(5).ToString();
+                        START = (int)dbr.GetValue(6);
+                        END = (int)dbr.GetValue(7);
+                        SEMESTER = (int)dbr.GetValue(8);
+                        string check = dbr.GetValue(10).ToString();
+                        if(check != "")
+                        {
+                            CREDITPOINTS = float.Parse(check);
+                        }
+                    }
+                }
+                con.Close();
+                if(NAME == "" && TEACHERID == 0 && MAXSTUDENTS == 0 && ROOM == "" && DAY == "" && START == 0 && END == 0 && SEMESTER == 0 && CREDITPOINTS == 0)
+                {
+                    return null;
+                }
+                return new Course(ID,NAME, TEACHERID, MAXSTUDENTS, ROOM, DAY, START, END, SEMESTER, CREDITPOINTS);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        
         /// <summary>
         /// return how many users in this access group
         /// </summary>
@@ -466,6 +588,83 @@ namespace Project_Team3
             finally
             {
                 con.Close();
+            }
+        }
+
+        public static bool setConstraintStatusInst(bool status)
+        {
+            return setConstraintStatusProf(status,2);
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="status"></param>
+        /// <param name="iORp">instructor or professor</param>
+        /// <returns></returns>
+        public static bool setConstraintStatusProf(bool status,int iORp = 1)
+        {
+            int set_constraints = 1;
+            if (status)
+            {
+                set_constraints = 1;
+            }
+            else
+            {
+                set_constraints = 0;
+            }
+
+            try
+            {
+                string str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                string query = "UPDATE dbo.GLOBAL_OPERATION SET ENTER_CONSTRAINTS = " + set_constraints  + "WHERE ID = " + iORp;
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand sqlCommand = new SqlCommand(query, con);
+                con.Open();
+                sqlCommand.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
+        }
+
+        public static bool getConstraintStatusInst()
+        {
+            return getConstraintStatusProf(2);
+        }
+
+        public static bool getConstraintStatusProf(int id = 1)
+        {
+            try
+            {
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from GLOBAL_OPERATION where id = '" + id + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+                //int count = 0;
+                while (dbr.Read())
+                {
+                    int w = (int)dbr.GetValue(1);
+                    if(w == 1)
+                    {
+                        con.Close();
+                        return true;
+                    }
+                    
+                }
+                con.Close();
+                return false;
+            }
+            catch (Exception e)
+            {
+                throw e;
             }
         }
 
