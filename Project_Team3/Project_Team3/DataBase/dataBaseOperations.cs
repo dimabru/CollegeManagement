@@ -407,6 +407,97 @@ namespace Project_Team3
         }
 
 
+        public static Room getRoom(string room)
+        {
+            try
+            {
+                string roomNumber = room;
+                int maxStudent = 0;
+
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.Room where room_number = '" + room + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+
+                while (dbr.Read())
+                {
+                    if (room.Equals(dbr.GetValue(0)))
+                    {
+                        maxStudent = (int)dbr.GetValue(1);
+                    }
+                }
+                con.Close();
+                if (maxStudent == 0)
+                {
+                    return null;
+                }
+                return new Room(roomNumber, maxStudent);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public static bool roomExist(string Rname)
+        {
+            try
+            {
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.Room where room_number = " + "'" + Rname + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+
+                while (dbr.Read())
+                {
+                    con.Close();
+                    return true;
+                }
+                con.Close();
+                return false;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+        }
+
+        public static bool addRoom(Room room)
+        {
+            try
+            {
+                if (roomExist(room.getRoomNumber()))
+                {
+                    return false;
+                }
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand sqlCommand = new SqlCommand("INSERT INTO dbo.Room(room_number,max_student) VALUES(@room_number,@max_student)", con);
+
+                //the "" + ulong ment to fit the data base type;
+                //you can see here other option to convert https://msdn.microsoft.com/en-us/library/2wfez910(v=vs.110).aspx
+                sqlCommand.Parameters.AddWithValue("@room_number", "" + room.getRoomNumber());
+                sqlCommand.Parameters.AddWithValue("@max_student", "" + room.getMaxStudent());
+
+                con.Open();
+                sqlCommand.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public static Boolean courseExist(int id)
         {
             try
@@ -433,7 +524,6 @@ namespace Project_Team3
             }
 
         }
-
 
         public static bool addCourse(Course course)
         {

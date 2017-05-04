@@ -16,9 +16,6 @@ namespace Project_Team3
         public firstMenu()
         {
             InitializeComponent();
-            Course c = dataBaseOperations.getCourse(1);
-            c.setId(5);
-            dataBaseOperations.addCourse(c);
         }
 
         private void firstMenu_Load(object sender, EventArgs e)
