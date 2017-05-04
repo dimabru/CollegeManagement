@@ -187,6 +187,59 @@ namespace Project_Team3
             }
         }
 
+
+        public static List<ulong> getProfessorIdList()
+        {
+            try
+            {
+                List<ulong> idList = new List<ulong>();
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.Users where ACCESSGROUP = '" + "Professor" + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+
+                con.Open();
+                dbr = cmd.ExecuteReader();
+                while (dbr.Read())
+                {
+                    idList.Add(publicChecksAndOperations.convertToUlong(dbr.GetValue(0).ToString()));
+                }
+                con.Close();
+                return idList;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public static List<ulong> getInstructorIdList()
+        {
+            try
+            {
+                List<ulong> idList = new List<ulong>();
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.Users where ACCESSGROUP = '" + "Instructor" + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+
+                con.Open();
+                dbr = cmd.ExecuteReader();
+                while (dbr.Read())
+                {
+                    idList.Add(publicChecksAndOperations.convertToUlong(dbr.GetValue(0).ToString()));
+                }
+                con.Close();
+                return idList;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         /// <summary>
         /// return the password of the user by id
         /// </summary>
@@ -785,45 +838,6 @@ namespace Project_Team3
             }
             
         }
-
-
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         ///////////////////////////////////////////////////////////////////////////////////////
         /// <summary>//change the summary- reut
