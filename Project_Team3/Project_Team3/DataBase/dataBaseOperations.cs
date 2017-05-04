@@ -258,11 +258,6 @@ namespace Project_Team3
             }
         }
 
-
-
-
-
-
         /// <summary>
         /// return the user name from the database by id
         /// </summary>
@@ -335,6 +330,81 @@ namespace Project_Team3
                 con.Close();
             }
         }
+
+        /// <summary>//
+        /// return an array of the names of the courses according id of teacher
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public string[] getCoursesByTId(ulong id)
+        {
+            try
+            {
+                int counter = 0;
+                string[] arrToReturn = { "" };
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.Course where COURSE_ID = '" + id + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+
+                while (dbr.Read())
+                {
+                    int w = (int)dbr.GetValue(2);
+                    ulong res = Convert.ToUInt64(w);
+                    if (id == res)
+                    { // Resize the array.
+                        Array.Resize(ref arrToReturn, counter + 1);
+                        arrToReturn[counter++] = dbr.GetValue(1).ToString();
+                    }
+                }
+                con.Close();
+                return arrToReturn;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        /// <summary>//
+        /// return an attribute value of the course according the id (location) of the attribute in DB
+        /// </summary>
+        /// <param name="name",param name="i"></param>
+        /// <returns></returns>
+        public string getAttrByName(string name, int i)
+        {
+            try
+            {
+
+                string ToReturn = "";
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.Course where COURSE_NAME = '" + name + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+
+                while (dbr.Read())
+                {
+                    if (name.Equals(dbr.GetValue(1)))
+                    {
+
+                        ToReturn = dbr.GetValue(i).ToString();
+                    }
+                }
+                con.Close();
+                return ToReturn;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
 
         /// <summary>
         /// return how many users in this access group
@@ -427,6 +497,123 @@ namespace Project_Team3
             
         }
 
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>//change the summary- reut
+        /// return the day of the course according id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public string getCourseDayById(int id, int i)
+        {
+            try
+            {
+                string to_return = "";
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.Course where COURSE_ID = '" + id + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+
+                while (dbr.Read())
+                {
+                    to_return = dbr.GetValue(i).ToString();
+                    //to_return = (dbr["SNAME"].ToString());
+                }
+                con.Close();
+                return "" + to_return.Trim();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public int[] getnumofCourses(ulong id)
+        {
+            try
+            {
+                int counter = 0;
+                int[] arrToReturn = { 0 };
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.constraints where Id = '" + id + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+                while (dbr.Read())
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        // Resize the array.
+                        Array.Resize(ref arrToReturn, counter + 1);
+                        arrToReturn[counter++] = Convert.ToInt32(dbr.GetString(i));
+                    }
+                }
+                con.Close();
+                return arrToReturn;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+
+        /// <summary>
+        /// /////////////////////////////////////////////////////////////////////////////////////////
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <param name="password"></param>
+        /// <param name="id"></param>
+        /// <param name="userType"></param>
+        /// <returns></returns>
+
         public Boolean signPerson(String Name,String password,int id,String userType)
         {
             try
@@ -479,4 +666,6 @@ namespace Project_Team3
 
         public SqlConnection getConnection() { return con; }
     }
+
+
 }

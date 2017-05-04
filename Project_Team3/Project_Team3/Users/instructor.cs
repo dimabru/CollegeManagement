@@ -10,7 +10,7 @@ namespace Project_Team3
     public class instructor : user
     {
         private List<techingStaffConstraints> instrconstraints = new List<techingStaffConstraints>();
-
+        private List<string> instrcourses = new List<string>();
         /// <summary>
         /// use this object to communicate with database;
         /// </summary>
@@ -41,7 +41,14 @@ namespace Project_Team3
         {
             return instrconstraints;
         }
-
+        /// <summary>
+        /// return List of courses
+        /// </summary>
+        /// <returns></returns>
+        public List<string> getCoursesList()
+        {
+            return instrcourses;
+        }
         /// <summary>
         /// this constructor set the id and update the user filds from the data base;
         /// </summary>
@@ -49,11 +56,16 @@ namespace Project_Team3
         public instructor(ulong id) : base(id)
         {
             int[] toSaveConstraints = dbo.getConstraints(this.getid());
+            string[] toSaveCourses = dbo.getCoursesByTId(this.getid());
             try
             {
                 for (int i = 4; i <= toSaveConstraints.Length; i += 4)
                 {
                     instrconstraints.Add(new techingStaffConstraints(toSaveConstraints[i - 3], toSaveConstraints[i - 2], toSaveConstraints[i - 1]));
+                }
+                for (int i = 0; i < toSaveCourses.Length; i++)
+                {
+                    instrcourses.Add(toSaveCourses[i]);
                 }
             }
             catch

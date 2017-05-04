@@ -87,16 +87,5 @@ namespace Project_Team3
             Application.Exit();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            DataTable table = new DataTable();
-            table.Columns.Add("ID", typeof(int));
-            table.Columns.Add("Password", typeof(string));
-            table.Columns.Add("Access Group", typeof(string));
-
-            table.Rows.Add(1, "Check", "CheckAccessGroup");
-
-            DataGridView userGrid = new DataGridView();
-        }
     }
 }

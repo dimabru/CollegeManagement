@@ -73,15 +73,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Courses\Course.cs" />
-    <Compile Include="Courses\Lab.cs" />
-    <Compile Include="Courses\Lecture.cs" />
-    <Compile Include="Courses\PracticeLesson.cs" />
-    <Compile Include="Courses\ScheduledClass.cs" />
+    <Compile Include="Courses\Room.cs" />
     <Compile Include="GUI\adminMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\adminMenu.Designer.cs">
       <DependentUpon>adminMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\secretaryMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\secretaryMenu.Designer.cs">
+      <DependentUpon>secretaryMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Users\admin.cs" />
     <Compile Include="GUI\adminLoginMenu.cs">
@@ -90,7 +93,6 @@
     <Compile Include="GUI\adminLoginMenu.Designer.cs">
       <DependentUpon>adminLoginMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Courses\Room.cs" />
     <Compile Include="Users\enums.cs" />
     <Compile Include="Users\instructor.cs" />
     <Compile Include="Users\professor.cs" />
@@ -156,6 +158,9 @@
     <EmbeddedResource Include="GUI\professorLoginMenu.resx">
       <DependentUpon>professorLoginMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\secretaryMenu.resx">
+      <DependentUpon>secretaryMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\teachingStaffMenu.resx">
       <DependentUpon>teachingStaffMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +214,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />
+    <Content Include="Resources\constrains icon.jpg" />
+    <None Include="Resources\constrains icon1.jpg" />
     <Content Include="Resources\delete_user.jpg" />
     <Content Include="Resources\password.jepg.ico" />
     <Content Include="Resources\schedule.jpg" />
