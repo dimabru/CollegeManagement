@@ -30,9 +30,9 @@ namespace Project_Team3
                 sqlCommand.ExecuteNonQuery();
             }
 
-            catch 
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally
             {
