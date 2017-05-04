@@ -143,7 +143,6 @@ namespace Project_Team3
             }
         }
 
-
         /// <summary>
         /// this function return 1d arry 
         /// to parse it you need to divide every 4 item to one constraints
@@ -187,7 +186,6 @@ namespace Project_Team3
             }
         }
 
-
         public static List<ulong> getProfessorIdList()
         {
             try
@@ -208,7 +206,7 @@ namespace Project_Team3
                 con.Close();
                 return idList;
             }
-            catch
+            catch (Exception e)
             {
                 throw;
             }
@@ -221,6 +219,58 @@ namespace Project_Team3
                 List<ulong> idList = new List<ulong>();
                 String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
                 String query = "select * from dbo.Users where ACCESSGROUP = '" + "Instructor" + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+
+                con.Open();
+                dbr = cmd.ExecuteReader();
+                while (dbr.Read())
+                {
+                    idList.Add(publicChecksAndOperations.convertToUlong(dbr.GetValue(0).ToString()));
+                }
+                con.Close();
+                return idList;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public static List<ulong> getCourseIdList()
+        {
+            try
+            {
+                List<ulong> idList = new List<ulong>();
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.Course";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+
+                con.Open();
+                dbr = cmd.ExecuteReader();
+                while (dbr.Read())
+                {
+                    idList.Add(publicChecksAndOperations.convertToUlong(dbr.GetValue(0).ToString()));
+                }
+                con.Close();
+                return idList;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public static List<ulong> getRoomIdList()
+        {
+            try
+            {
+                List<ulong> idList = new List<ulong>();
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.Room";
                 SqlConnection con = new SqlConnection(str);
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataReader dbr;
