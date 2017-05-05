@@ -43,6 +43,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -211,6 +212,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button5);
             this.tabPage3.Controls.Add(this.button4);
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.comboBox3);
@@ -222,6 +224,16 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Manage Courses";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(421, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(80, 28);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "Remove";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -278,7 +290,6 @@
             this.roomInfo.TabIndex = 14;
             this.roomInfo.Text = "Get Info";
             this.roomInfo.UseVisualStyleBackColor = true;
-            this.roomInfo.Click += new System.EventHandler(this.roomInfo_Click);
             // 
             // comboBox4
             // 
@@ -348,5 +359,6 @@
         private System.Windows.Forms.Button roomInfo;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button5;
     }
 }

@@ -784,7 +784,7 @@ namespace Project_Team3
             }
         }
 
-        public bool setConstraintStatusInst(bool status)
+        public static bool setConstraintStatusInst(bool status)
         {
             return setConstraintStatusProf(status,2);
         }
@@ -795,7 +795,7 @@ namespace Project_Team3
         /// <param name="status"></param>
         /// <param name="iORp">instructor or professor</param>
         /// <returns></returns>
-        public bool setConstraintStatusProf(bool status,int iORp = 1)
+        public static bool setConstraintStatusProf(bool status,int iORp = 1)
         {
             int set_constraints = 1;
             if (status)
@@ -825,12 +825,12 @@ namespace Project_Team3
             
         }
 
-        public bool getConstraintStatusInst()
+        public static bool getConstraintStatusInst()
         {
             return getConstraintStatusProf(2);
         }
 
-        public bool getConstraintStatusProf(int id = 1)
+        public static bool getConstraintStatusProf(int id = 1)
         {
             try
             {

@@ -14,7 +14,6 @@ namespace Project_Team3.GUI
     public partial class secretaryMenu : Form
     {
 
-        dataBaseOperations db = new dataBaseOperations();
         public secretaryMenu(secretary sec)
         {
             InitializeComponent();
@@ -43,8 +42,8 @@ namespace Project_Team3.GUI
         private void checkConstraintStatus(object sender, EventArgs e)
         {
             bool statusProf = true, statusInst = true;
-            statusProf = db.getConstraintStatusProf();
-            statusInst = db.getConstraintStatusInst();
+            statusProf = dataBaseOperations.getConstraintStatusProf();
+            statusInst = dataBaseOperations.getConstraintStatusInst();
             string strProf = "Close", strInst = "Close";
             if (statusProf) strProf = "Open";
             if (statusInst) strInst = "Open";
@@ -61,8 +60,8 @@ namespace Project_Team3.GUI
             if (changedBoxProf == null) MessageBox.Show("Must select value first");
             else
             {
-                if (changedBoxProf == "Open") db.setConstraintStatusProf(true);
-                else db.setConstraintStatusProf(false);
+                if (changedBoxProf == "Open") dataBaseOperations.setConstraintStatusProf(true);
+                else dataBaseOperations.setConstraintStatusProf(false);
             }
             comboBox1.Text = "";
         }
@@ -77,8 +76,8 @@ namespace Project_Team3.GUI
             if (changedBoxInst == null) MessageBox.Show("Must select value first");
             else
             {
-                if (changedBoxInst == "Open") db.setConstraintStatusInst(true);
-                else db.setConstraintStatusInst(false);
+                if (changedBoxInst == "Open") dataBaseOperations.setConstraintStatusInst(true);
+                else dataBaseOperations.setConstraintStatusInst(false);
             }
             comboBox2.Text = "";
         }
@@ -136,11 +135,6 @@ namespace Project_Team3.GUI
         private void roomList(object sender, EventArgs e)
         {
             changedBoxRoomList = comboBox4.Text;
-        }
-
-        private void roomInfo_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }
