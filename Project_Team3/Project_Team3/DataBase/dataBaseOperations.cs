@@ -41,6 +41,51 @@ namespace Project_Team3
             }
         }
 
+        public static bool removeCourse(int id)
+        {
+            if (!(courseExist(id)))
+            {
+                return false;
+            }
+            try
+            {
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand sqlCommand = new SqlCommand("delete from dbo.Course where COURSE_ID = '" + id + "'", con);
+                con.Open();
+                sqlCommand.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static bool removeRoom(string name)
+        {
+            if (!(roomExist(name)))
+            {
+                return false;
+            }
+            try
+            {
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand sqlCommand = new SqlCommand("delete from dbo.Room where room_number = '" + name + "'", con);
+                con.Open();
+                sqlCommand.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
         /// <summary>
         /// delete user by id
         /// </summary>
