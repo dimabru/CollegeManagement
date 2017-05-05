@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(secretaryMenu));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,28 +43,18 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.confPassTextBox = new System.Windows.Forms.TextBox();
-            this.newPassTextBox = new System.Windows.Forms.TextBox();
-            this.oldPassTextBox = new System.Windows.Forms.TextBox();
-            this.changeMyPassbutton = new System.Windows.Forms.Button();
-            this.lNameLable = new System.Windows.Forms.Label();
-            this.UnameLable = new System.Windows.Forms.Label();
-            this.lastNameLabel = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.roomInfo = new System.Windows.Forms.Button();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.nameLable = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -234,6 +223,17 @@
             this.tabPage3.Text = "Manage Courses";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(335, 1);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(80, 28);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "Get Info";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.courseInfo);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -251,165 +251,55 @@
             this.comboBox3.Location = new System.Drawing.Point(133, 4);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(160, 24);
+            this.comboBox3.Size = new System.Drawing.Size(195, 24);
             this.comboBox3.TabIndex = 9;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.courseList);
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.pictureBox1);
-            this.tabPage2.Controls.Add(this.confPassTextBox);
-            this.tabPage2.Controls.Add(this.newPassTextBox);
-            this.tabPage2.Controls.Add(this.oldPassTextBox);
-            this.tabPage2.Controls.Add(this.changeMyPassbutton);
-            this.tabPage2.Controls.Add(this.lNameLable);
-            this.tabPage2.Controls.Add(this.UnameLable);
-            this.tabPage2.Controls.Add(this.lastNameLabel);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.roomInfo);
+            this.tabPage2.Controls.Add(this.comboBox4);
             this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.nameLable);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Size = new System.Drawing.Size(960, 387);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "account management";
+            this.tabPage2.Text = "Manage Rooms";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // roomInfo
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(239, 38);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(344, 304);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.roomInfo.Location = new System.Drawing.Point(343, 2);
+            this.roomInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.roomInfo.Name = "roomInfo";
+            this.roomInfo.Size = new System.Drawing.Size(81, 25);
+            this.roomInfo.TabIndex = 14;
+            this.roomInfo.Text = "Get Info";
+            this.roomInfo.UseVisualStyleBackColor = true;
+            this.roomInfo.Click += new System.EventHandler(this.roomInfo_Click);
             // 
-            // confPassTextBox
+            // comboBox4
             // 
-            this.confPassTextBox.Location = new System.Drawing.Point(637, 207);
-            this.confPassTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.confPassTextBox.Name = "confPassTextBox";
-            this.confPassTextBox.Size = new System.Drawing.Size(232, 22);
-            this.confPassTextBox.TabIndex = 3;
-            // 
-            // newPassTextBox
-            // 
-            this.newPassTextBox.Location = new System.Drawing.Point(637, 135);
-            this.newPassTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.newPassTextBox.Name = "newPassTextBox";
-            this.newPassTextBox.Size = new System.Drawing.Size(232, 22);
-            this.newPassTextBox.TabIndex = 3;
-            // 
-            // oldPassTextBox
-            // 
-            this.oldPassTextBox.Location = new System.Drawing.Point(637, 66);
-            this.oldPassTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.oldPassTextBox.Name = "oldPassTextBox";
-            this.oldPassTextBox.Size = new System.Drawing.Size(232, 22);
-            this.oldPassTextBox.TabIndex = 3;
-            // 
-            // changeMyPassbutton
-            // 
-            this.changeMyPassbutton.Location = new System.Drawing.Point(637, 270);
-            this.changeMyPassbutton.Margin = new System.Windows.Forms.Padding(4);
-            this.changeMyPassbutton.Name = "changeMyPassbutton";
-            this.changeMyPassbutton.Size = new System.Drawing.Size(196, 73);
-            this.changeMyPassbutton.TabIndex = 2;
-            this.changeMyPassbutton.Text = "change My Password";
-            this.changeMyPassbutton.UseVisualStyleBackColor = true;
-            // 
-            // lNameLable
-            // 
-            this.lNameLable.AutoSize = true;
-            this.lNameLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lNameLable.Location = new System.Drawing.Point(27, 178);
-            this.lNameLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lNameLable.Name = "lNameLable";
-            this.lNameLable.Size = new System.Drawing.Size(64, 25);
-            this.lNameLable.TabIndex = 1;
-            this.lNameLable.Text = "label5";
-            // 
-            // UnameLable
-            // 
-            this.UnameLable.AutoSize = true;
-            this.UnameLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.UnameLable.Location = new System.Drawing.Point(27, 79);
-            this.UnameLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.UnameLable.Name = "UnameLable";
-            this.UnameLable.Size = new System.Drawing.Size(64, 25);
-            this.UnameLable.TabIndex = 1;
-            this.UnameLable.Text = "label5";
-            // 
-            // lastNameLabel
-            // 
-            this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lastNameLabel.Location = new System.Drawing.Point(27, 133);
-            this.lastNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(148, 25);
-            this.lastNameLabel.TabIndex = 0;
-            this.lastNameLabel.Text = "lastNameLabel:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label7.Location = new System.Drawing.Point(632, 178);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(211, 25);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "confirm new password:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label6.Location = new System.Drawing.Point(632, 107);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(143, 25);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "new password:";
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(119, 3);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(217, 24);
+            this.comboBox4.TabIndex = 13;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.courseList);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label4.Location = new System.Drawing.Point(632, 38);
+            this.label4.Location = new System.Drawing.Point(7, 2);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 25);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "old password:";
-            // 
-            // nameLable
-            // 
-            this.nameLable.AutoSize = true;
-            this.nameLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.nameLable.Location = new System.Drawing.Point(24, 38);
-            this.nameLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.nameLable.Name = "nameLable";
-            this.nameLable.Size = new System.Drawing.Size(67, 25);
-            this.nameLable.TabIndex = 0;
-            this.nameLable.Text = "name:";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(311, 0);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 28);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Get Info";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.courseInfo);
+            this.label4.Size = new System.Drawing.Size(104, 25);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Room List:";
             // 
             // secretaryMenu
             // 
@@ -429,7 +319,6 @@
             this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -447,18 +336,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox confPassTextBox;
-        private System.Windows.Forms.TextBox newPassTextBox;
-        private System.Windows.Forms.TextBox oldPassTextBox;
-        private System.Windows.Forms.Button changeMyPassbutton;
-        private System.Windows.Forms.Label lNameLable;
-        private System.Windows.Forms.Label UnameLable;
-        private System.Windows.Forms.Label lastNameLabel;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label nameLable;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
@@ -468,5 +345,8 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button roomInfo;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label4;
     }
 }

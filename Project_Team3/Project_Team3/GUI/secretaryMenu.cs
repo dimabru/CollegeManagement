@@ -13,6 +13,8 @@ namespace Project_Team3.GUI
 {
     public partial class secretaryMenu : Form
     {
+
+        dataBaseOperations db = new dataBaseOperations();
         public secretaryMenu(secretary sec)
         {
             InitializeComponent();
@@ -23,7 +25,7 @@ namespace Project_Team3.GUI
             
             /*foreach (int id in cList)
             {
-                comboBox3.Items.Add(string(id) + " " + getCourse(id).getName());
+                comboBox3.Items.Add(id + " " + db.getCourse(id).getName());
             }*/
 
         }
@@ -33,19 +35,20 @@ namespace Project_Team3.GUI
 
         //Manage Courses tab
         string changedBoxCourseList;
-        //List<int> cList = getCourseList();
+        //List<int> cList = db.getCourseList();
+
+        //Manage Rooms tab
+        string changedBoxRoomList;
 
         private void checkConstraintStatus(object sender, EventArgs e)
         {
             bool statusProf = true, statusInst = true;
-            //statusProf = getConstraintStatusProf();
-            //statusInst = getConstraintStatusInst();
-            MessageBox.Show("Professor: " + statusProf + "\nInstructor: " + statusInst + "\n");
-        }
-
-        private void changeConstraintStatus(object sender, EventArgs e)
-        {
-            
+            statusProf = db.getConstraintStatusProf();
+            statusInst = db.getConstraintStatusInst();
+            string strProf = "Close", strInst = "Close";
+            if (statusProf) strProf = "Open";
+            if (statusInst) strInst = "Open";
+            MessageBox.Show("Professor: " + strProf + "\nInstructor: " + strInst + "\n");
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -58,9 +61,10 @@ namespace Project_Team3.GUI
             if (changedBoxProf == null) MessageBox.Show("Must select value first");
             else
             {
-                //if (changedBoxProf == "Open") setConstraintStatusProf(true);
-                //else setConstraintStatusProf(false);
+                if (changedBoxProf == "Open") db.setConstraintStatusProf(true);
+                else db.setConstraintStatusProf(false);
             }
+            comboBox1.Text = "";
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -73,14 +77,10 @@ namespace Project_Team3.GUI
             if (changedBoxInst == null) MessageBox.Show("Must select value first");
             else
             {
-                //if (changedBoxInst == "Open") setConstraintStatusInst(true);
-                //else setConstraintStatusInst(false);
+                if (changedBoxInst == "Open") db.setConstraintStatusInst(true);
+                else db.setConstraintStatusInst(false);
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            comboBox2.Text = "";
         }
 
         private void courseList(object sender, EventArgs e)
@@ -131,6 +131,16 @@ namespace Project_Team3.GUI
                 */
                 MessageBox.Show(info);
             }
+        }
+
+        private void roomList(object sender, EventArgs e)
+        {
+            changedBoxRoomList = comboBox4.Text;
+        }
+
+        private void roomInfo_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
