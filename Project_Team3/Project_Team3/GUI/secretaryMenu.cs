@@ -22,10 +22,10 @@ namespace Project_Team3.GUI
 
 
             
-            /*foreach (int id in cList)
+            foreach (int id in cList)
             {
-                comboBox3.Items.Add(id + " " + db.getCourse(id).getName());
-            }*/
+                comboBox3.Items.Add(id + " " + dataBaseOperations.getCourse(id).getName());
+            }
 
         }
         //Constraints tab
@@ -33,8 +33,21 @@ namespace Project_Team3.GUI
         string changedBoxInst;
 
         //Manage Courses tab
+        //Course Info
         string changedBoxCourseList;
-        //List<int> cList = db.getCourseList();
+        List<int> cList = dataBaseOperations.getCourseIdList();
+        //Add Course
+        string newCourseName;
+        int? newCourseId;
+        ulong? newCourseTeacherId;
+        string changedBoxCourseType;
+        int? newCourseMaxStudents;
+        string changedBoxRoom;
+        string changedBoxDay;
+        string changedBoxStartTime;
+        string changedBoxEndTime;
+        string changedBoxSemester;
+        float? newCourseCreditPoints;
 
         //Manage Rooms tab
         string changedBoxRoomList;
@@ -95,9 +108,8 @@ namespace Project_Team3.GUI
                 string info = "undefined";
                 string[] words = changedBoxCourseList.Split();
                 int id = Int32.Parse(words[0]);
-                Course select;
-                //Course select = getCourse(id);
-                /*
+                Course select = dataBaseOperations.getCourse(id);
+                
                 info = "ID: ";
                 info += select.getID().ToString() + "\n";
 
@@ -127,7 +139,7 @@ namespace Project_Team3.GUI
 
                 info += "Credit Points: ";
                 info += select.getCreditPoints().ToString() + "\n";
-                */
+                
                 MessageBox.Show(info);
             }
         }
@@ -135,6 +147,167 @@ namespace Project_Team3.GUI
         private void roomList(object sender, EventArgs e)
         {
             changedBoxRoomList = comboBox4.Text;
+        }
+
+        private void courseType_TextChanged(object sender, EventArgs e)
+        {
+            changedBoxCourseType = courseType.Text;
+        }
+
+        private void addCourseName(object sender, EventArgs e)
+        {
+            newCourseName = courseName.Text;
+        }
+
+        private void courseID_TextChanged(object sender, EventArgs e)
+        {
+            int check;
+            if (Int32.TryParse(courseID.Text, out check)) newCourseId = new int?(check);
+        }
+
+        private void teacherId_TextChanged(object sender, EventArgs e)
+        {
+            int check;
+            if (Int32.TryParse(teacherId.Text, out check)) newCourseTeacherId = publicChecksAndOperations.convertToUlong(teacherId.Text);
+        }
+
+        private void maxStudents_TextChanged(object sender, EventArgs e)
+        {
+            int check;
+            if (Int32.TryParse(maxStudents.Text, out check)) newCourseMaxStudents = new int?(check);
+        }
+
+        private void room_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changedBoxRoom = room.Text;
+        }
+
+        private void day_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changedBoxDay = day.Text;
+        }
+
+        private void startTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changedBoxStartTime = startTime.Text;
+        }
+
+        private void endTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changedBoxEndTime = endTime.Text;
+        }
+
+        private void semester_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changedBoxSemester = semester.Text;
+        }
+
+        private void creditPoints_TextChanged(object sender, EventArgs e)
+        {
+            float check;
+            if (float.TryParse(creditPoints.Text, out check)) newCourseCreditPoints = new float?(check);
+        }
+
+        private void submitNewCourse_Click(object sender, EventArgs e)
+        {
+            bool isCorrect = true;
+
+            //check if all data filled correctly
+            if (newCourseName == null) { MessageBox.Show("Error: invalid name"); isCorrect = false; }
+            else if (newCourseId == null) { MessageBox.Show("Error: invalid course ID"); isCorrect = false; }
+            else if (newCourseTeacherId == null) { MessageBox.Show("Error: invalid teacher ID"); isCorrect = false; }
+            else if (changedBoxCourseType == null) { MessageBox.Show("Error: invalid course type"); isCorrect = false; }
+            else if (newCourseMaxStudents == null) { MessageBox.Show("Error: invalid max students"); isCorrect = false; }
+            else if (changedBoxRoom == null) { MessageBox.Show("Error: invalid room"); isCorrect = false; }
+            else if (changedBoxDay == null) { MessageBox.Show("Error: invalid day"); isCorrect = false; }
+            else if (changedBoxStartTime == null) { MessageBox.Show("Error: invalid start time"); isCorrect = false; }
+            else if (changedBoxEndTime == null) { MessageBox.Show("Error: invalid end time"); isCorrect = false; }
+            else if (changedBoxSemester == null) { MessageBox.Show("Error: invalid semester"); isCorrect = false; }
+            else if (newCourseCreditPoints == null) { MessageBox.Show("Error: invalid credit points"); isCorrect = false; }
+
+            if (!isCorrect) return;
+
+            //check if course already exist
+            Course isExist = dataBaseOperations.getCourse(newCourseId.Value);
+            if (isExist != null) { MessageBox.Show("Error: The current Course ID already exist"); return; }
+
+            //check if teacher exists and fits type of course
+            if (changedBoxCourseType == "Lecture")
+            {
+                List<ulong> profList = dataBaseOperations.getProfessorIdList();
+                isCorrect = false;
+                foreach (ulong value in profList)
+                {
+                    if (value == newCourseTeacherId)
+                    {
+                        isCorrect = true;
+                        break;
+                    }
+                }
+            }
+
+            else if (changedBoxCourseType == "Practice Lesson")
+            {
+                List<ulong> instList = dataBaseOperations.getInstructorIdList();
+                isCorrect = false;
+                foreach (ulong value in instList)
+                {
+                    if (value == newCourseTeacherId)
+                    {
+                        isCorrect = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!isCorrect) MessageBox.Show("Error: No such teacher");
+
+            //check for positive numbers
+            if (newCourseMaxStudents <= 0) { MessageBox.Show("Error: Max students must be a positive number"); return; }
+            if (newCourseCreditPoints<= 0) { MessageBox.Show("Error: Credit points must be a positive number"); return; }
+
+            //check if start and end set correctly
+            if (!correctStartEnd(changedBoxStartTime, changedBoxEndTime))
+            {
+                MessageBox.Show("Error: End time must be larger than start time");
+                return;
+            }
+
+        }
+
+        private bool correctStartEnd(string start, string end)
+        {
+            int istart, iend;
+            istart = Int32.Parse(start.Split(':')[0]);
+            iend = Int32.Parse(end.Split(':')[0]);
+            if (iend <= istart) return false;
+            return true;
+        }
+
+         private void cleanFields()
+        {
+            courseName.Text = "";
+            courseID.Text = "";
+            teacherId.Text = "";
+            courseType.Text = "";
+            maxStudents.Text = "";
+            room.Text = "";
+            day.Text = "";
+            startTime.Text = "";
+            endTime.Text = "";
+            semester.Text = "";
+            creditPoints.Text = "";
+            newCourseName = null;
+            newCourseId = null;
+            newCourseTeacherId = null;
+            changedBoxCourseType = null;
+            newCourseMaxStudents = null;
+            changedBoxRoom = null;
+            changedBoxDay = null;
+            changedBoxStartTime = null;
+            changedBoxEndTime = null;
+            changedBoxSemester = null;
+            newCourseCreditPoints = null;
         }
     }
 }

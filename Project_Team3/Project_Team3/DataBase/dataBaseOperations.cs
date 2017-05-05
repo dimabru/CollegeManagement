@@ -283,11 +283,11 @@ namespace Project_Team3
             }
         }
 
-        public static List<ulong> getCourseIdList()
+        public static List<int> getCourseIdList()
         {
             try
             {
-                List<ulong> idList = new List<ulong>();
+                List<int> idList = new List<int>();
                 String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
                 String query = "select * from dbo.Course";
                 SqlConnection con = new SqlConnection(str);
@@ -298,7 +298,7 @@ namespace Project_Team3
                 dbr = cmd.ExecuteReader();
                 while (dbr.Read())
                 {
-                    idList.Add(publicChecksAndOperations.convertToUlong(dbr.GetValue(0).ToString()));
+                    idList.Add(Int32.Parse(dbr.GetValue(0).ToString()));
                 }
                 con.Close();
                 return idList;
@@ -309,11 +309,11 @@ namespace Project_Team3
             }
         }
 
-        public static List<ulong> getRoomIdList()
+        public static List<string> getRoomIdList()
         {
             try
             {
-                List<ulong> idList = new List<ulong>();
+                List<string> idList = new List<string>();
                 String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
                 String query = "select * from dbo.Room";
                 SqlConnection con = new SqlConnection(str);
@@ -324,7 +324,7 @@ namespace Project_Team3
                 dbr = cmd.ExecuteReader();
                 while (dbr.Read())
                 {
-                    idList.Add(publicChecksAndOperations.convertToUlong(dbr.GetValue(0).ToString()));
+                    idList.Add(dbr.GetValue(0).ToString());
                 }
                 con.Close();
                 return idList;
@@ -711,7 +711,7 @@ namespace Project_Team3
             }
         }
 
-        public Course getCourse(int id)
+        public static Course getCourse(int id)
         {
             try
             {
