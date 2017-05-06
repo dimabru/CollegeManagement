@@ -84,6 +84,18 @@
     <Compile Include="Form_login.Designer.cs">
       <DependentUpon>Form_login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus - forms\AdminSubMenus\adminRemoveAssociate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\AdminSubMenus\adminRemoveAssociate.Designer.cs">
+      <DependentUpon>adminRemoveAssociate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus - forms\AdminSubMenus\adminRemoveStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\AdminSubMenus\adminRemoveStudent.Designer.cs">
+      <DependentUpon>adminRemoveStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menus - forms\AdminSubMenus\Form_adminAccountsMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +244,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form_login.resx">
       <DependentUpon>Form_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\AdminSubMenus\adminRemoveAssociate.resx">
+      <DependentUpon>adminRemoveAssociate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\AdminSubMenus\adminRemoveStudent.resx">
+      <DependentUpon>adminRemoveStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\AdminSubMenus\Form_adminAccountsMenu.resx">
       <DependentUpon>Form_adminAccountsMenu.cs</DependentUpon>
