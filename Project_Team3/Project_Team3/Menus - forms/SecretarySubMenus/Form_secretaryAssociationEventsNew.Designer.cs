@@ -31,6 +31,7 @@
             this.associationEventsGrid = new System.Windows.Forms.DataGridView();
             this.RefreshData = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
+            this.instructionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.associationEventsGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,11 +65,21 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // instructionLabel
+            // 
+            this.instructionLabel.AutoSize = true;
+            this.instructionLabel.Location = new System.Drawing.Point(270, 62);
+            this.instructionLabel.Name = "instructionLabel";
+            this.instructionLabel.Size = new System.Drawing.Size(351, 17);
+            this.instructionLabel.TabIndex = 3;
+            this.instructionLabel.Text = "Click on the event you\'re interested in for more details.";
+            // 
             // Form_secretaryAssociationEventsNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(909, 631);
+            this.Controls.Add(this.instructionLabel);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.RefreshData);
             this.Controls.Add(this.associationEventsGrid);
@@ -78,6 +89,7 @@
             this.Load += new System.EventHandler(this.Form_secretaryAssociationEventsNew_Load);
             ((System.ComponentModel.ISupportInitialize)(this.associationEventsGrid)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -86,5 +98,6 @@
         private System.Windows.Forms.DataGridView associationEventsGrid;
         private System.Windows.Forms.Button RefreshData;
         private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.Label instructionLabel;
     }
 }
