@@ -436,8 +436,6 @@
             // 
             this.room.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.room.FormattingEnabled = true;
-            this.room.Items.AddRange(new object[] {
-            "test"});
             this.room.Location = new System.Drawing.Point(148, 287);
             this.room.Margin = new System.Windows.Forms.Padding(4);
             this.room.Name = "room";

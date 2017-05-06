@@ -27,6 +27,11 @@ namespace Project_Team3.GUI
                 comboBox3.Items.Add(id + " " + dataBaseOperations.getCourse(id).getName());
             }
 
+            foreach (string r in rList)
+            {
+                room.Items.Add(dataBaseOperations.getRoom(r).getRoomNumber());
+            }
+
         }
         //Constraints tab
         string changedBoxProf;
@@ -36,6 +41,7 @@ namespace Project_Team3.GUI
         //Course Info
         string changedBoxCourseList;
         List<int> cList = dataBaseOperations.getCourseIdList();
+
         //Add Course
         string newCourseName;
         int? newCourseId;
@@ -48,6 +54,9 @@ namespace Project_Team3.GUI
         string changedBoxEndTime;
         string changedBoxSemester;
         float? newCourseCreditPoints;
+
+        //Room info
+        List<string> rList = dataBaseOperations.getRoomIdList();
 
         //Manage Rooms tab
         string changedBoxRoomList;
@@ -273,6 +282,39 @@ namespace Project_Team3.GUI
                 return;
             }
 
+            Course course = new Course(newCourseId.Value, newCourseName, newCourseTeacherId.Value, newCourseMaxStudents.Value, changedBoxRoom, changedBoxDay,
+                Int32.Parse(changedBoxStartTime.Split(':')[0]), Int32.Parse(changedBoxEndTime.Split(':')[0]), Int32.Parse(changedBoxSemester), 
+                newCourseCreditPoints.Value);
+
+            if(!correctTimeForClass(course))
+            {
+                MessageBox.Show("Error: There already is a class at that time in that room");
+                return;
+            }
+
+        }
+
+        private bool correctTimeForClass(Course course)
+        {
+            foreach (int c in cList)
+            {
+                Course check = dataBaseOperations.getCourse(c);
+                if (check.getDay() == course.getDay())
+                {
+                    if (!checkDifferentTime(check.getStart(),check.getEnd(),course.getStart(),course.getEnd()))
+                    {
+                        if (check.getRoom() == course.getRoom()) return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        private bool checkDifferentTime(int start1, int end1, int start2, int end2)
+        {
+            if (start2 >= start1 && start2 < end1) return false;
+            if (end2 > start1 && end2 <= end1) return false;
+            return true;
         }
 
         private bool correctStartEnd(string start, string end)
