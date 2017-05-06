@@ -43,6 +43,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.confirm = new System.Windows.Forms.Button();
+            this.comboBoxRemove = new System.Windows.Forms.ComboBox();
             this.submitNewCourse = new System.Windows.Forms.Button();
             this.creditPoints = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -66,16 +68,25 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.remove = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.submitRoom = new System.Windows.Forms.Button();
+            this.roomMaxStudents = new System.Windows.Forms.TextBox();
+            this.roomNumber = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.roomInfo = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBoxRoom = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -237,6 +248,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.confirm);
+            this.tabPage3.Controls.Add(this.comboBoxRemove);
             this.tabPage3.Controls.Add(this.submitNewCourse);
             this.tabPage3.Controls.Add(this.creditPoints);
             this.tabPage3.Controls.Add(this.label16);
@@ -260,7 +273,7 @@
             this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.label5);
-            this.tabPage3.Controls.Add(this.button5);
+            this.tabPage3.Controls.Add(this.remove);
             this.tabPage3.Controls.Add(this.button4);
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.comboBox3);
@@ -273,6 +286,33 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Manage Courses";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // confirm
+            // 
+            this.confirm.Location = new System.Drawing.Point(716, 0);
+            this.confirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.confirm.Name = "confirm";
+            this.confirm.Size = new System.Drawing.Size(86, 29);
+            this.confirm.TabIndex = 40;
+            this.confirm.Text = "Confirm";
+            this.confirm.UseVisualStyleBackColor = true;
+            this.confirm.Visible = false;
+            this.confirm.Click += new System.EventHandler(this.confirm_Click);
+            // 
+            // comboBoxRemove
+            // 
+            this.comboBoxRemove.FormattingEnabled = true;
+            this.comboBoxRemove.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.comboBoxRemove.Location = new System.Drawing.Point(514, 4);
+            this.comboBoxRemove.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxRemove.Name = "comboBoxRemove";
+            this.comboBoxRemove.Size = new System.Drawing.Size(195, 24);
+            this.comboBoxRemove.TabIndex = 39;
+            this.comboBoxRemove.Text = "Are you sure?";
+            this.comboBoxRemove.Visible = false;
+            this.comboBoxRemove.SelectedIndexChanged += new System.EventHandler(this.comboBoxRemove_SelectedIndexChanged);
             // 
             // submitNewCourse
             // 
@@ -561,15 +601,16 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Add Course";
             // 
-            // button5
+            // remove
             // 
-            this.button5.Location = new System.Drawing.Point(421, 0);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(86, 29);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "Remove";
-            this.button5.UseVisualStyleBackColor = true;
+            this.remove.Location = new System.Drawing.Point(421, 0);
+            this.remove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.remove.Name = "remove";
+            this.remove.Size = new System.Drawing.Size(86, 29);
+            this.remove.TabIndex = 13;
+            this.remove.Text = "Remove";
+            this.remove.UseVisualStyleBackColor = true;
+            this.remove.Click += new System.EventHandler(this.remove_Click);
             // 
             // button4
             // 
@@ -595,6 +636,7 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(133, 4);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
@@ -616,8 +658,17 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.roomInfo);
+            this.tabPage2.Controls.Add(this.button6);
             this.tabPage2.Controls.Add(this.comboBox4);
+            this.tabPage2.Controls.Add(this.button5);
+            this.tabPage2.Controls.Add(this.submitRoom);
+            this.tabPage2.Controls.Add(this.roomMaxStudents);
+            this.tabPage2.Controls.Add(this.roomNumber);
+            this.tabPage2.Controls.Add(this.label20);
+            this.tabPage2.Controls.Add(this.label19);
+            this.tabPage2.Controls.Add(this.label18);
+            this.tabPage2.Controls.Add(this.roomInfo);
+            this.tabPage2.Controls.Add(this.comboBoxRoom);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -628,6 +679,70 @@
             this.tabPage2.Text = "Manage Rooms";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // submitRoom
+            // 
+            this.submitRoom.Location = new System.Drawing.Point(158, 280);
+            this.submitRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.submitRoom.Name = "submitRoom";
+            this.submitRoom.Size = new System.Drawing.Size(232, 47);
+            this.submitRoom.TabIndex = 24;
+            this.submitRoom.Text = "Submit";
+            this.submitRoom.UseVisualStyleBackColor = true;
+            this.submitRoom.Click += new System.EventHandler(this.submitRoom_Click);
+            // 
+            // roomMaxStudents
+            // 
+            this.roomMaxStudents.Location = new System.Drawing.Point(158, 194);
+            this.roomMaxStudents.Margin = new System.Windows.Forms.Padding(4);
+            this.roomMaxStudents.Name = "roomMaxStudents";
+            this.roomMaxStudents.Size = new System.Drawing.Size(232, 22);
+            this.roomMaxStudents.TabIndex = 23;
+            this.roomMaxStudents.TextChanged += new System.EventHandler(this.roomMaxStudents_TextChanged);
+            // 
+            // roomNumber
+            // 
+            this.roomNumber.Location = new System.Drawing.Point(158, 134);
+            this.roomNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.roomNumber.Name = "roomNumber";
+            this.roomNumber.Size = new System.Drawing.Size(232, 22);
+            this.roomNumber.TabIndex = 22;
+            this.roomNumber.TextChanged += new System.EventHandler(this.roomNumber_TextChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label20.Location = new System.Drawing.Point(11, 190);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(139, 25);
+            this.label20.TabIndex = 17;
+            this.label20.Text = "Max Students:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label19.Location = new System.Drawing.Point(7, 131);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(143, 25);
+            this.label19.TabIndex = 16;
+            this.label19.Text = "Room Number:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.DarkGray;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label18.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label18.Location = new System.Drawing.Point(7, 73);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(104, 25);
+            this.label18.TabIndex = 15;
+            this.label18.Text = "Add Room";
+            // 
             // roomInfo
             // 
             this.roomInfo.Location = new System.Drawing.Point(343, 2);
@@ -637,16 +752,18 @@
             this.roomInfo.TabIndex = 14;
             this.roomInfo.Text = "Get Info";
             this.roomInfo.UseVisualStyleBackColor = true;
+            this.roomInfo.Click += new System.EventHandler(this.roomInfo_Click);
             // 
-            // comboBox4
+            // comboBoxRoom
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(119, 3);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(217, 24);
-            this.comboBox4.TabIndex = 13;
-            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.courseList);
+            this.comboBoxRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRoom.FormattingEnabled = true;
+            this.comboBoxRoom.Location = new System.Drawing.Point(119, 3);
+            this.comboBoxRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxRoom.Name = "comboBoxRoom";
+            this.comboBoxRoom.Size = new System.Drawing.Size(217, 24);
+            this.comboBoxRoom.TabIndex = 13;
+            this.comboBoxRoom.SelectedIndexChanged += new System.EventHandler(this.comboBoxRoom_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -669,6 +786,40 @@
             this.label10.Size = new System.Drawing.Size(139, 25);
             this.label10.TabIndex = 23;
             this.label10.Text = "Max Students:";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(440, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(81, 25);
+            this.button5.TabIndex = 25;
+            this.button5.Text = "Remove";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.comboBox4.Location = new System.Drawing.Point(528, 3);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(195, 24);
+            this.comboBox4.TabIndex = 40;
+            this.comboBox4.Text = "Are you sure?";
+            this.comboBox4.Visible = false;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(730, 2);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(81, 25);
+            this.button6.TabIndex = 41;
+            this.button6.Text = "Confirm";
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // secretaryMenu
             // 
@@ -712,7 +863,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button roomInfo;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBoxRoom;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TabPage tabPage3;
@@ -739,10 +890,21 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button remove;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button confirm;
+        private System.Windows.Forms.ComboBox comboBoxRemove;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button submitRoom;
+        private System.Windows.Forms.TextBox roomMaxStudents;
+        private System.Windows.Forms.TextBox roomNumber;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Button button5;
     }
 }

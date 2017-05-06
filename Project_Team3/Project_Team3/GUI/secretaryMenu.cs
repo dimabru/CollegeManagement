@@ -24,12 +24,14 @@ namespace Project_Team3.GUI
             
             foreach (int id in cList)
             {
+                string name = dataBaseOperations.getCourse(id).getName().Split('_')[0];
                 comboBox3.Items.Add(id + " " + dataBaseOperations.getCourse(id).getName());
             }
 
             foreach (string r in rList)
             {
                 room.Items.Add(dataBaseOperations.getRoom(r).getRoomNumber());
+                comboBoxRoom.Items.Add(dataBaseOperations.getRoom(r).getRoomNumber());
             }
 
         }
@@ -55,11 +57,16 @@ namespace Project_Team3.GUI
         string changedBoxSemester;
         float? newCourseCreditPoints;
 
+        //Add Room
+        string changedBoxRoomList;
+        string newRoomName;
+        int? newRoomMaxStudents;
+
         //Room info
         List<string> rList = dataBaseOperations.getRoomIdList();
 
-        //Manage Rooms tab
-        string changedBoxRoomList;
+        //Remove Course
+        string changedBoxRemove;
 
         private void checkConstraintStatus(object sender, EventArgs e)
         {
@@ -151,11 +158,6 @@ namespace Project_Team3.GUI
                 
                 MessageBox.Show(info);
             }
-        }
-
-        private void roomList(object sender, EventArgs e)
-        {
-            changedBoxRoomList = comboBox4.Text;
         }
 
         private void courseType_TextChanged(object sender, EventArgs e)
@@ -292,6 +294,10 @@ namespace Project_Team3.GUI
                 return;
             }
 
+            dataBaseOperations.addCourse(course);
+            cleanFields();
+            comboBox3.Items.Add(course.getID() + " " + dataBaseOperations.getCourse(course.getID()).getName());
+
         }
 
         private bool correctTimeForClass(Course course)
@@ -350,6 +356,93 @@ namespace Project_Team3.GUI
             changedBoxEndTime = null;
             changedBoxSemester = null;
             newCourseCreditPoints = null;
+        }
+
+        private void remove_Click(object sender, EventArgs e)
+        {
+            comboBoxRemove.Visible = true;
+            confirm.Visible = true;
+        }
+
+        private void confirm_Click(object sender, EventArgs e)
+        {
+            if (changedBoxRemove == null) MessageBox.Show("Error: Must select Yes or No");
+            else if (changedBoxRemove == "No")
+            {
+                comboBoxRemove.Visible = false;
+                confirm.Visible = false;
+            }
+            else if (changedBoxRemove == "Yes")
+            {
+                dataBaseOperations.removeCourse(Int32.Parse(changedBoxCourseList.Split()[0]));
+                comboBox3.Items.Remove(changedBoxCourseList);
+                comboBoxRemove.Visible = false;
+                confirm.Visible = false;
+            }
+
+            else MessageBox.Show("Error: Must select Yes or No");
+        }
+
+        private void comboBoxRemove_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changedBoxRemove = comboBoxRemove.Text;
+        }
+
+        private void comboBoxRoom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changedBoxRoomList = comboBoxRoom.Text;
+        }
+
+        private void roomNumber_TextChanged(object sender, EventArgs e)
+        {
+            newRoomName = roomNumber.Text;
+        }
+
+        private void roomMaxStudents_TextChanged(object sender, EventArgs e)
+        {
+            int check;
+            if (Int32.TryParse(roomMaxStudents.Text, out check)) newRoomMaxStudents = check;
+        }
+
+        private void submitRoom_Click(object sender, EventArgs e)
+        {
+            if (newRoomMaxStudents == null || newRoomName == null)
+            {
+                MessageBox.Show("Error: Not all fields are filled correctly");
+                return;
+            }
+
+            Room r = new Room(newRoomName, newRoomMaxStudents.Value);
+            room.Items.Add(r.getRoomNumber());
+            comboBoxRoom.Items.Add(r.getRoomNumber());
+            cleanRFields();
+        }
+
+        private void roomInfo_Click(object sender, EventArgs e)
+        {
+            string info;
+            Room r = dataBaseOperations.getRoom(changedBoxRoomList);
+            if (r == null)
+            {
+                MessageBox.Show("Error: Must select a room");
+                return;
+            }
+
+            info = "Room Number: ";
+            info += r.getRoomNumber() + "\n";
+
+            info += "Max Students: ";
+            info += r.getMaxStudent();
+
+            MessageBox.Show(info);
+        }
+
+        private void cleanRFields()
+        {
+            roomMaxStudents.Text = "";
+            roomNumber.Text = "";
+            newRoomMaxStudents = null;
+            newRoomName = null;
         }
     }
 }
