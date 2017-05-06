@@ -694,7 +694,7 @@ namespace Project_Team3
                 sqlCommand.Parameters.AddWithValue("@ROOM_NUMBER", "" + course.getRoom());
                 sqlCommand.Parameters.AddWithValue("@COURSE_DAY", "" + course.getDay());
                 sqlCommand.Parameters.AddWithValue("@START_HOUR",""+ course.getStart());
-                sqlCommand.Parameters.AddWithValue("@END_HOUR",""+ course.getStart());
+                sqlCommand.Parameters.AddWithValue("@END_HOUR",""+ course.getEnd());
                 sqlCommand.Parameters.AddWithValue("@COURSE_SEMESTER",""+ course.getSemester());
                 sqlCommand.Parameters.AddWithValue("@Track", "");
                 sqlCommand.Parameters.AddWithValue("@Points",""+ course.getCreditPoints());
@@ -758,7 +758,7 @@ namespace Project_Team3
                 {
                     return null;
                 }
-                return new Course(ID,NAME, TEACHERID, MAXSTUDENTS, ROOM, DAY, START, END, SEMESTER, CREDITPOINTS);
+                return new Course(ID, NAME, TEACHERID, MAXSTUDENTS, ROOM, DAY, START, END, SEMESTER, CREDITPOINTS);
             }
             catch (Exception e)
             {

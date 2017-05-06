@@ -20,12 +20,12 @@ namespace Project_Team3.GUI
 
             this.Size = new System.Drawing.Size(760, 460);
 
-
+            this.sec = sec;
             
             foreach (int id in cList)
             {
                 string name = dataBaseOperations.getCourse(id).getName().Split('_')[0];
-                comboBox3.Items.Add(id + " " + dataBaseOperations.getCourse(id).getName());
+                comboBox3.Items.Add(id + " " + name);
             }
 
             foreach (string r in rList)
@@ -34,7 +34,12 @@ namespace Project_Team3.GUI
                 comboBoxRoom.Items.Add(dataBaseOperations.getRoom(r).getRoomNumber());
             }
 
+            FirstNameLabel.Text = sec.getUserName;
+            LastNameLabel.Text = sec.getUserLastName;
+
         }
+        secretary sec;
+
         //Constraints tab
         string changedBoxProf;
         string changedBoxInst;
@@ -61,6 +66,9 @@ namespace Project_Team3.GUI
         string changedBoxRoomList;
         string newRoomName;
         int? newRoomMaxStudents;
+
+        //Remove Room
+        string changedBoxRemoveR;
 
         //Room info
         List<string> rList = dataBaseOperations.getRoomIdList();
@@ -130,10 +138,13 @@ namespace Project_Team3.GUI
                 info += select.getID().ToString() + "\n";
 
                 info += "Name: ";
-                info += select.getName() + "\n";
+                info += select.getName().Split('_')[0] + "\n";
 
                 info += "Teacher ID: ";
                 info += select.getTeacherID().ToString() + "\n";
+
+                info += "Course Type: ";
+                info += select.getName().Split('_')[1] + "\n";
 
                 info += "Max Students: ";
                 info += select.getMaxStudents().ToString() + "\n";
@@ -284,7 +295,25 @@ namespace Project_Team3.GUI
                 return;
             }
 
-            Course course = new Course(newCourseId.Value, newCourseName, newCourseTeacherId.Value, newCourseMaxStudents.Value, changedBoxRoom, changedBoxDay,
+            string name = newCourseName + "_" + changedBoxCourseType + "_";
+            bool found = false;
+            foreach (int id in cList)
+            {
+                if (dataBaseOperations.getCourse(id).getName().Split('_')[0] == newCourseName)
+                {
+                    if (dataBaseOperations.getCourse(id).getName().Split('_')[2] == "A") name += "B";
+                    else name += "A";
+                    found = true;
+                    continue;
+                }
+
+                if (found && dataBaseOperations.getCourse(id).getName().Split('_')[0] == newCourseName)
+                {
+                    MessageBox.Show("Error: There can only be up to 2 different times for a course");
+                }
+            }
+
+            Course course = new Course(newCourseId.Value, name, newCourseTeacherId.Value, newCourseMaxStudents.Value, changedBoxRoom, changedBoxDay,
                 Int32.Parse(changedBoxStartTime.Split(':')[0]), Int32.Parse(changedBoxEndTime.Split(':')[0]), Int32.Parse(changedBoxSemester), 
                 newCourseCreditPoints.Value);
 
@@ -294,10 +323,18 @@ namespace Project_Team3.GUI
                 return;
             }
 
+            //check if max students in room is at least as large as course's
+            if (newCourseMaxStudents > dataBaseOperations.getRoom(changedBoxRoom).getMaxStudent())
+            {
+                MessageBox.Show("Error: The room's max student limit does not match the limit of the course. Must select a bigger room");
+                return;
+            }
+
             dataBaseOperations.addCourse(course);
             cleanFields();
             comboBox3.Items.Add(course.getID() + " " + dataBaseOperations.getCourse(course.getID()).getName());
-
+            MessageBox.Show("End value: " + course.getEnd().ToString() + "\nFrom the DB: " + dataBaseOperations.getCourse(course.getID()).getEnd());
+            
         }
 
         private bool correctTimeForClass(Course course)
@@ -309,7 +346,7 @@ namespace Project_Team3.GUI
                 {
                     if (!checkDifferentTime(check.getStart(),check.getEnd(),course.getStart(),course.getEnd()))
                     {
-                        if (check.getRoom() == course.getRoom()) return false;
+                        if (check.getRoom() == course.getRoom() && check.getSemester() == course.getSemester()) return false;
                     }
                 }
             }
@@ -348,13 +385,7 @@ namespace Project_Team3.GUI
             newCourseName = null;
             newCourseId = null;
             newCourseTeacherId = null;
-            changedBoxCourseType = null;
             newCourseMaxStudents = null;
-            changedBoxRoom = null;
-            changedBoxDay = null;
-            changedBoxStartTime = null;
-            changedBoxEndTime = null;
-            changedBoxSemester = null;
             newCourseCreditPoints = null;
         }
 
@@ -413,6 +444,7 @@ namespace Project_Team3.GUI
             }
 
             Room r = new Room(newRoomName, newRoomMaxStudents.Value);
+            dataBaseOperations.addRoom(r);
             room.Items.Add(r.getRoomNumber());
             comboBoxRoom.Items.Add(r.getRoomNumber());
             cleanRFields();
@@ -443,6 +475,98 @@ namespace Project_Team3.GUI
             roomNumber.Text = "";
             newRoomMaxStudents = null;
             newRoomName = null;
+        }
+
+        private void removeR_Click(object sender, EventArgs e)
+        {
+            foreach (int id in cList)
+            {
+                if (dataBaseOperations.getCourse(id).getRoom() == changedBoxRoomList)
+                {
+                    MessageBox.Show("Error: Unable to delete room. First remove all courses assigned to room");
+                    return;
+                }
+            }
+            comboBoxRemoveR.Visible = true;
+            confirmR.Visible = true;
+        }
+
+        private void comboBoxRemoveR_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changedBoxRemoveR = comboBoxRemoveR.Text;
+        }
+
+        private void confirmR_Click(object sender, EventArgs e)
+        {
+            if (changedBoxRemoveR == null || (changedBoxRemoveR != "Yes" && changedBoxRemoveR != "No"))
+            {
+                MessageBox.Show("Error: Must select Yes or No");
+                return;
+            }
+
+            if (changedBoxRemoveR == "No")
+            {
+                comboBoxRemoveR.Visible = false;
+                confirmR.Visible = false;
+            }
+            else
+            {
+                comboBoxRemoveR.Visible = false;
+                confirmR.Visible = false;
+                dataBaseOperations.removeRoom(changedBoxRoomList);
+                comboBoxRoom.Items.Remove(changedBoxRoomList);
+                room.Items.Remove(changedBoxRoomList);
+            }
+        }
+
+        private void oldPassTextBox_TextChanged(object sender, EventArgs e)
+        {
+            oldPassTextBox.PasswordChar = '*';
+        }
+
+        private void newPassChange_TextChanged(object sender, EventArgs e)
+        {
+            newPassChange.PasswordChar = '*';
+        }
+
+        private void newPassConfirm_TextChanged(object sender, EventArgs e)
+        {
+            newPassConfirm.PasswordChar = '*';
+        }
+
+        private void changeMyPassbutton_Click(object sender, EventArgs e)
+        {
+            if (newPassConfirm.Text == "" || newPassChange.Text == "" || oldPassTextBox.Text == "")
+            {
+                MessageBox.Show("Error: Must fill all fields");
+                return;
+            }
+
+            if (newPassChange.Text != newPassConfirm.Text)
+            {
+                MessageBox.Show("Error: Passwords doesn't match");
+                return;
+            }
+
+            if (oldPassTextBox.Text != sec.getPassword())
+            {
+                MessageBox.Show("Error: Incorrect old password");
+                return;
+            }
+
+            if (newPassChange.Text == oldPassTextBox.Text)
+            {
+                MessageBox.Show("Error: New password must be different than old password");
+                return;
+            }
+
+            dataBaseOperations db = new dataBaseOperations();
+            db.updateUserPassword(newPassChange.Text, sec.getid());
+            MessageBox.Show("Password changed succesfully");
+            oldPassTextBox.Text = "";
+            newPassChange.Text = "";
+            newPassConfirm.Text = "";
+            return;
         }
     }
 }

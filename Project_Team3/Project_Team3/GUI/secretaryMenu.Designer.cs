@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(secretaryMenu));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,6 +75,9 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.confirmR = new System.Windows.Forms.Button();
+            this.comboBoxRemoveR = new System.Windows.Forms.ComboBox();
+            this.removeR = new System.Windows.Forms.Button();
             this.submitRoom = new System.Windows.Forms.Button();
             this.roomMaxStudents = new System.Windows.Forms.TextBox();
             this.roomNumber = new System.Windows.Forms.TextBox();
@@ -83,15 +87,27 @@
             this.roomInfo = new System.Windows.Forms.Button();
             this.comboBoxRoom = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.changeMyPassbutton = new System.Windows.Forms.Button();
+            this.newPassChange = new System.Windows.Forms.TextBox();
+            this.newPassConfirm = new System.Windows.Forms.TextBox();
+            this.oldPassTextBox = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.LastNameLabel = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.FirstNameLabel = new System.Windows.Forms.Label();
+            this.nameLable = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.button6 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -140,6 +156,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(11, 51);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
@@ -658,9 +675,9 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button6);
-            this.tabPage2.Controls.Add(this.comboBox4);
-            this.tabPage2.Controls.Add(this.button5);
+            this.tabPage2.Controls.Add(this.confirmR);
+            this.tabPage2.Controls.Add(this.comboBoxRemoveR);
+            this.tabPage2.Controls.Add(this.removeR);
             this.tabPage2.Controls.Add(this.submitRoom);
             this.tabPage2.Controls.Add(this.roomMaxStudents);
             this.tabPage2.Controls.Add(this.roomNumber);
@@ -678,6 +695,44 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Manage Rooms";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // confirmR
+            // 
+            this.confirmR.Location = new System.Drawing.Point(730, 2);
+            this.confirmR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.confirmR.Name = "confirmR";
+            this.confirmR.Size = new System.Drawing.Size(81, 25);
+            this.confirmR.TabIndex = 41;
+            this.confirmR.Text = "Confirm";
+            this.confirmR.UseVisualStyleBackColor = true;
+            this.confirmR.Visible = false;
+            this.confirmR.Click += new System.EventHandler(this.confirmR_Click);
+            // 
+            // comboBoxRemoveR
+            // 
+            this.comboBoxRemoveR.FormattingEnabled = true;
+            this.comboBoxRemoveR.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.comboBoxRemoveR.Location = new System.Drawing.Point(528, 3);
+            this.comboBoxRemoveR.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxRemoveR.Name = "comboBoxRemoveR";
+            this.comboBoxRemoveR.Size = new System.Drawing.Size(195, 24);
+            this.comboBoxRemoveR.TabIndex = 40;
+            this.comboBoxRemoveR.Text = "Are you sure?";
+            this.comboBoxRemoveR.Visible = false;
+            this.comboBoxRemoveR.SelectedIndexChanged += new System.EventHandler(this.comboBoxRemoveR_SelectedIndexChanged);
+            // 
+            // removeR
+            // 
+            this.removeR.Location = new System.Drawing.Point(440, 2);
+            this.removeR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.removeR.Name = "removeR";
+            this.removeR.Size = new System.Drawing.Size(81, 25);
+            this.removeR.TabIndex = 25;
+            this.removeR.Text = "Remove";
+            this.removeR.UseVisualStyleBackColor = true;
+            this.removeR.Click += new System.EventHandler(this.removeR_Click);
             // 
             // submitRoom
             // 
@@ -776,6 +831,154 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Room List:";
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.changeMyPassbutton);
+            this.tabPage4.Controls.Add(this.newPassChange);
+            this.tabPage4.Controls.Add(this.newPassConfirm);
+            this.tabPage4.Controls.Add(this.oldPassTextBox);
+            this.tabPage4.Controls.Add(this.label26);
+            this.tabPage4.Controls.Add(this.label25);
+            this.tabPage4.Controls.Add(this.label24);
+            this.tabPage4.Controls.Add(this.pictureBox1);
+            this.tabPage4.Controls.Add(this.LastNameLabel);
+            this.tabPage4.Controls.Add(this.label22);
+            this.tabPage4.Controls.Add(this.FirstNameLabel);
+            this.tabPage4.Controls.Add(this.nameLable);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(960, 427);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Account Management";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // changeMyPassbutton
+            // 
+            this.changeMyPassbutton.Location = new System.Drawing.Point(634, 295);
+            this.changeMyPassbutton.Margin = new System.Windows.Forms.Padding(4);
+            this.changeMyPassbutton.Name = "changeMyPassbutton";
+            this.changeMyPassbutton.Size = new System.Drawing.Size(196, 73);
+            this.changeMyPassbutton.TabIndex = 12;
+            this.changeMyPassbutton.Text = "Change My Password";
+            this.changeMyPassbutton.UseVisualStyleBackColor = true;
+            this.changeMyPassbutton.Click += new System.EventHandler(this.changeMyPassbutton_Click);
+            // 
+            // newPassChange
+            // 
+            this.newPassChange.Location = new System.Drawing.Point(634, 98);
+            this.newPassChange.Margin = new System.Windows.Forms.Padding(4);
+            this.newPassChange.Name = "newPassChange";
+            this.newPassChange.Size = new System.Drawing.Size(232, 22);
+            this.newPassChange.TabIndex = 11;
+            this.newPassChange.TextChanged += new System.EventHandler(this.newPassChange_TextChanged);
+            // 
+            // newPassConfirm
+            // 
+            this.newPassConfirm.Location = new System.Drawing.Point(634, 158);
+            this.newPassConfirm.Margin = new System.Windows.Forms.Padding(4);
+            this.newPassConfirm.Name = "newPassConfirm";
+            this.newPassConfirm.Size = new System.Drawing.Size(232, 22);
+            this.newPassConfirm.TabIndex = 10;
+            this.newPassConfirm.TextChanged += new System.EventHandler(this.newPassConfirm_TextChanged);
+            // 
+            // oldPassTextBox
+            // 
+            this.oldPassTextBox.Location = new System.Drawing.Point(634, 43);
+            this.oldPassTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.oldPassTextBox.Name = "oldPassTextBox";
+            this.oldPassTextBox.Size = new System.Drawing.Size(232, 22);
+            this.oldPassTextBox.TabIndex = 9;
+            this.oldPassTextBox.TextChanged += new System.EventHandler(this.oldPassTextBox_TextChanged);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label26.Location = new System.Drawing.Point(486, 39);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(140, 25);
+            this.label26.TabIndex = 8;
+            this.label26.Text = "Old Password:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label25.Location = new System.Drawing.Point(478, 95);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(148, 25);
+            this.label25.TabIndex = 7;
+            this.label25.Text = "New Password:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label24.Location = new System.Drawing.Point(405, 154);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(221, 25);
+            this.label24.TabIndex = 6;
+            this.label24.Text = "Confirm New Password:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(24, 108);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(344, 304);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // LastNameLabel
+            // 
+            this.LastNameLabel.AutoSize = true;
+            this.LastNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.LastNameLabel.Location = new System.Drawing.Point(160, 64);
+            this.LastNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LastNameLabel.Name = "LastNameLabel";
+            this.LastNameLabel.Size = new System.Drawing.Size(101, 25);
+            this.LastNameLabel.TabIndex = 4;
+            this.LastNameLabel.Text = "Undefined";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label22.Location = new System.Drawing.Point(19, 64);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(112, 25);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "Last Name:";
+            // 
+            // FirstNameLabel
+            // 
+            this.FirstNameLabel.AutoSize = true;
+            this.FirstNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.FirstNameLabel.Location = new System.Drawing.Point(160, 25);
+            this.FirstNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.FirstNameLabel.Name = "FirstNameLabel";
+            this.FirstNameLabel.Size = new System.Drawing.Size(101, 25);
+            this.FirstNameLabel.TabIndex = 2;
+            this.FirstNameLabel.Text = "Undefined";
+            // 
+            // nameLable
+            // 
+            this.nameLable.AutoSize = true;
+            this.nameLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.nameLable.Location = new System.Drawing.Point(19, 25);
+            this.nameLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nameLable.Name = "nameLable";
+            this.nameLable.Size = new System.Drawing.Size(112, 25);
+            this.nameLable.TabIndex = 1;
+            this.nameLable.Text = "First Name:";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -786,40 +989,6 @@
             this.label10.Size = new System.Drawing.Size(139, 25);
             this.label10.TabIndex = 23;
             this.label10.Text = "Max Students:";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(440, 2);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(81, 25);
-            this.button5.TabIndex = 25;
-            this.button5.Text = "Remove";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
-            this.comboBox4.Location = new System.Drawing.Point(528, 3);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(195, 24);
-            this.comboBox4.TabIndex = 40;
-            this.comboBox4.Text = "Are you sure?";
-            this.comboBox4.Visible = false;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(730, 2);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(81, 25);
-            this.button6.TabIndex = 41;
-            this.button6.Text = "Confirm";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // secretaryMenu
             // 
@@ -840,6 +1009,9 @@
             this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -903,8 +1075,21 @@
         private System.Windows.Forms.Button submitRoom;
         private System.Windows.Forms.TextBox roomMaxStudents;
         private System.Windows.Forms.TextBox roomNumber;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button confirmR;
+        private System.Windows.Forms.ComboBox comboBoxRemoveR;
+        private System.Windows.Forms.Button removeR;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label FirstNameLabel;
+        private System.Windows.Forms.Label nameLable;
+        private System.Windows.Forms.Label LastNameLabel;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox newPassChange;
+        private System.Windows.Forms.TextBox newPassConfirm;
+        private System.Windows.Forms.TextBox oldPassTextBox;
+        private System.Windows.Forms.Button changeMyPassbutton;
     }
 }
