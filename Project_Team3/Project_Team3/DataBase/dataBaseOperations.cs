@@ -41,6 +41,51 @@ namespace Project_Team3
             }
         }
 
+        public static bool removeCourse(int id)
+        {
+            if (!(courseExist(id)))
+            {
+                return false;
+            }
+            try
+            {
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand sqlCommand = new SqlCommand("delete from dbo.Course where COURSE_ID = '" + id + "'", con);
+                con.Open();
+                sqlCommand.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static bool removeRoom(string name)
+        {
+            if (!(roomExist(name)))
+            {
+                return false;
+            }
+            try
+            {
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand sqlCommand = new SqlCommand("delete from dbo.Room where room_number = '" + name + "'", con);
+                con.Open();
+                sqlCommand.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
         /// <summary>
         /// delete user by id
         /// </summary>
@@ -238,11 +283,11 @@ namespace Project_Team3
             }
         }
 
-        public static List<ulong> getCourseIdList()
+        public static List<int> getCourseIdList()
         {
             try
             {
-                List<ulong> idList = new List<ulong>();
+                List<int> idList = new List<int>();
                 String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
                 String query = "select * from dbo.Course";
                 SqlConnection con = new SqlConnection(str);
@@ -253,7 +298,7 @@ namespace Project_Team3
                 dbr = cmd.ExecuteReader();
                 while (dbr.Read())
                 {
-                    idList.Add(publicChecksAndOperations.convertToUlong(dbr.GetValue(0).ToString()));
+                    idList.Add(Int32.Parse(dbr.GetValue(0).ToString()));
                 }
                 con.Close();
                 return idList;
@@ -264,11 +309,11 @@ namespace Project_Team3
             }
         }
 
-        public static List<ulong> getRoomIdList()
+        public static List<string> getRoomIdList()
         {
             try
             {
-                List<ulong> idList = new List<ulong>();
+                List<string> idList = new List<string>();
                 String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
                 String query = "select * from dbo.Room";
                 SqlConnection con = new SqlConnection(str);
@@ -279,7 +324,7 @@ namespace Project_Team3
                 dbr = cmd.ExecuteReader();
                 while (dbr.Read())
                 {
-                    idList.Add(publicChecksAndOperations.convertToUlong(dbr.GetValue(0).ToString()));
+                    idList.Add(dbr.GetValue(0).ToString());
                 }
                 con.Close();
                 return idList;
@@ -649,7 +694,7 @@ namespace Project_Team3
                 sqlCommand.Parameters.AddWithValue("@ROOM_NUMBER", "" + course.getRoom());
                 sqlCommand.Parameters.AddWithValue("@COURSE_DAY", "" + course.getDay());
                 sqlCommand.Parameters.AddWithValue("@START_HOUR",""+ course.getStart());
-                sqlCommand.Parameters.AddWithValue("@END_HOUR",""+ course.getStart());
+                sqlCommand.Parameters.AddWithValue("@END_HOUR",""+ course.getEnd());
                 sqlCommand.Parameters.AddWithValue("@COURSE_SEMESTER",""+ course.getSemester());
                 sqlCommand.Parameters.AddWithValue("@Track", "");
                 sqlCommand.Parameters.AddWithValue("@Points",""+ course.getCreditPoints());
@@ -666,7 +711,7 @@ namespace Project_Team3
             }
         }
 
-        public Course getCourse(int id)
+        public static Course getCourse(int id)
         {
             try
             {
@@ -713,7 +758,7 @@ namespace Project_Team3
                 {
                     return null;
                 }
-                return new Course(ID,NAME, TEACHERID, MAXSTUDENTS, ROOM, DAY, START, END, SEMESTER, CREDITPOINTS);
+                return new Course(ID, NAME, TEACHERID, MAXSTUDENTS, ROOM, DAY, START, END, SEMESTER, CREDITPOINTS);
             }
             catch (Exception e)
             {
@@ -784,7 +829,7 @@ namespace Project_Team3
             }
         }
 
-        public bool setConstraintStatusInst(bool status)
+        public static bool setConstraintStatusInst(bool status)
         {
             return setConstraintStatusProf(status,2);
         }
@@ -795,7 +840,7 @@ namespace Project_Team3
         /// <param name="status"></param>
         /// <param name="iORp">instructor or professor</param>
         /// <returns></returns>
-        public bool setConstraintStatusProf(bool status,int iORp = 1)
+        public static bool setConstraintStatusProf(bool status,int iORp = 1)
         {
             int set_constraints = 1;
             if (status)
@@ -825,12 +870,12 @@ namespace Project_Team3
             
         }
 
-        public bool getConstraintStatusInst()
+        public static bool getConstraintStatusInst()
         {
             return getConstraintStatusProf(2);
         }
 
-        public bool getConstraintStatusProf(int id = 1)
+        public static bool getConstraintStatusProf(int id = 1)
         {
             try
             {

@@ -14,37 +14,73 @@ namespace Project_Team3.GUI
     public partial class secretaryMenu : Form
     {
 
-        dataBaseOperations db = new dataBaseOperations();
         public secretaryMenu(secretary sec)
         {
             InitializeComponent();
 
             this.Size = new System.Drawing.Size(760, 460);
 
-
+            this.sec = sec;
             
-            /*foreach (int id in cList)
+            foreach (int id in cList)
             {
-                comboBox3.Items.Add(id + " " + db.getCourse(id).getName());
-            }*/
+                string name = dataBaseOperations.getCourse(id).getName().Split('_')[0];
+                comboBox3.Items.Add(id + " " + name);
+            }
+
+            foreach (string r in rList)
+            {
+                room.Items.Add(dataBaseOperations.getRoom(r).getRoomNumber());
+                comboBoxRoom.Items.Add(dataBaseOperations.getRoom(r).getRoomNumber());
+            }
+
+            FirstNameLabel.Text = sec.getUserName;
+            LastNameLabel.Text = sec.getUserLastName;
 
         }
+        secretary sec;
+
         //Constraints tab
         string changedBoxProf;
         string changedBoxInst;
 
         //Manage Courses tab
+        //Course Info
         string changedBoxCourseList;
-        //List<int> cList = db.getCourseList();
+        List<int> cList = dataBaseOperations.getCourseIdList();
 
-        //Manage Rooms tab
+        //Add Course
+        string newCourseName;
+        int? newCourseId;
+        ulong? newCourseTeacherId;
+        string changedBoxCourseType;
+        int? newCourseMaxStudents;
+        string changedBoxRoom;
+        string changedBoxDay;
+        string changedBoxStartTime;
+        string changedBoxEndTime;
+        string changedBoxSemester;
+        float? newCourseCreditPoints;
+
+        //Add Room
         string changedBoxRoomList;
+        string newRoomName;
+        int? newRoomMaxStudents;
+
+        //Remove Room
+        string changedBoxRemoveR;
+
+        //Room info
+        List<string> rList = dataBaseOperations.getRoomIdList();
+
+        //Remove Course
+        string changedBoxRemove;
 
         private void checkConstraintStatus(object sender, EventArgs e)
         {
             bool statusProf = true, statusInst = true;
-            statusProf = db.getConstraintStatusProf();
-            statusInst = db.getConstraintStatusInst();
+            statusProf = dataBaseOperations.getConstraintStatusProf();
+            statusInst = dataBaseOperations.getConstraintStatusInst();
             string strProf = "Close", strInst = "Close";
             if (statusProf) strProf = "Open";
             if (statusInst) strInst = "Open";
@@ -61,8 +97,8 @@ namespace Project_Team3.GUI
             if (changedBoxProf == null) MessageBox.Show("Must select value first");
             else
             {
-                if (changedBoxProf == "Open") db.setConstraintStatusProf(true);
-                else db.setConstraintStatusProf(false);
+                if (changedBoxProf == "Open") dataBaseOperations.setConstraintStatusProf(true);
+                else dataBaseOperations.setConstraintStatusProf(false);
             }
             comboBox1.Text = "";
         }
@@ -77,8 +113,8 @@ namespace Project_Team3.GUI
             if (changedBoxInst == null) MessageBox.Show("Must select value first");
             else
             {
-                if (changedBoxInst == "Open") db.setConstraintStatusInst(true);
-                else db.setConstraintStatusInst(false);
+                if (changedBoxInst == "Open") dataBaseOperations.setConstraintStatusInst(true);
+                else dataBaseOperations.setConstraintStatusInst(false);
             }
             comboBox2.Text = "";
         }
@@ -96,17 +132,19 @@ namespace Project_Team3.GUI
                 string info = "undefined";
                 string[] words = changedBoxCourseList.Split();
                 int id = Int32.Parse(words[0]);
-                Course select;
-                //Course select = getCourse(id);
-                /*
+                Course select = dataBaseOperations.getCourse(id);
+                
                 info = "ID: ";
                 info += select.getID().ToString() + "\n";
 
                 info += "Name: ";
-                info += select.getName() + "\n";
+                info += select.getName().Split('_')[0] + "\n";
 
                 info += "Teacher ID: ";
                 info += select.getTeacherID().ToString() + "\n";
+
+                info += "Course Type: ";
+                info += select.getName().Split('_')[1] + "\n";
 
                 info += "Max Students: ";
                 info += select.getMaxStudents().ToString() + "\n";
@@ -128,19 +166,407 @@ namespace Project_Team3.GUI
 
                 info += "Credit Points: ";
                 info += select.getCreditPoints().ToString() + "\n";
-                */
+                
                 MessageBox.Show(info);
             }
         }
 
-        private void roomList(object sender, EventArgs e)
+        private void courseType_TextChanged(object sender, EventArgs e)
         {
-            changedBoxRoomList = comboBox4.Text;
+            changedBoxCourseType = courseType.Text;
+        }
+
+        private void addCourseName(object sender, EventArgs e)
+        {
+            newCourseName = courseName.Text;
+        }
+
+        private void courseID_TextChanged(object sender, EventArgs e)
+        {
+            int check;
+            if (Int32.TryParse(courseID.Text, out check)) newCourseId = new int?(check);
+        }
+
+        private void teacherId_TextChanged(object sender, EventArgs e)
+        {
+            int check;
+            if (Int32.TryParse(teacherId.Text, out check)) newCourseTeacherId = publicChecksAndOperations.convertToUlong(teacherId.Text);
+        }
+
+        private void maxStudents_TextChanged(object sender, EventArgs e)
+        {
+            int check;
+            if (Int32.TryParse(maxStudents.Text, out check)) newCourseMaxStudents = new int?(check);
+        }
+
+        private void room_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changedBoxRoom = room.Text;
+        }
+
+        private void day_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changedBoxDay = day.Text;
+        }
+
+        private void startTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changedBoxStartTime = startTime.Text;
+        }
+
+        private void endTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changedBoxEndTime = endTime.Text;
+        }
+
+        private void semester_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changedBoxSemester = semester.Text;
+        }
+
+        private void creditPoints_TextChanged(object sender, EventArgs e)
+        {
+            float check;
+            if (float.TryParse(creditPoints.Text, out check)) newCourseCreditPoints = new float?(check);
+        }
+
+        private void submitNewCourse_Click(object sender, EventArgs e)
+        {
+            bool isCorrect = true;
+
+            //check if all data filled correctly
+            if (newCourseName == null) { MessageBox.Show("Error: invalid name"); isCorrect = false; }
+            else if (newCourseId == null) { MessageBox.Show("Error: invalid course ID"); isCorrect = false; }
+            else if (newCourseTeacherId == null) { MessageBox.Show("Error: invalid teacher ID"); isCorrect = false; }
+            else if (changedBoxCourseType == null) { MessageBox.Show("Error: invalid course type"); isCorrect = false; }
+            else if (newCourseMaxStudents == null) { MessageBox.Show("Error: invalid max students"); isCorrect = false; }
+            else if (changedBoxRoom == null) { MessageBox.Show("Error: invalid room"); isCorrect = false; }
+            else if (changedBoxDay == null) { MessageBox.Show("Error: invalid day"); isCorrect = false; }
+            else if (changedBoxStartTime == null) { MessageBox.Show("Error: invalid start time"); isCorrect = false; }
+            else if (changedBoxEndTime == null) { MessageBox.Show("Error: invalid end time"); isCorrect = false; }
+            else if (changedBoxSemester == null) { MessageBox.Show("Error: invalid semester"); isCorrect = false; }
+            else if (newCourseCreditPoints == null) { MessageBox.Show("Error: invalid credit points"); isCorrect = false; }
+
+            if (!isCorrect) return;
+
+            //check if course already exist
+            Course isExist = dataBaseOperations.getCourse(newCourseId.Value);
+            if (isExist != null) { MessageBox.Show("Error: The current Course ID already exist"); return; }
+
+            //check if teacher exists and fits type of course
+            if (changedBoxCourseType == "Lecture")
+            {
+                List<ulong> profList = dataBaseOperations.getProfessorIdList();
+                isCorrect = false;
+                foreach (ulong value in profList)
+                {
+                    if (value == newCourseTeacherId)
+                    {
+                        isCorrect = true;
+                        break;
+                    }
+                }
+            }
+
+            else if (changedBoxCourseType == "Practice Lesson")
+            {
+                List<ulong> instList = dataBaseOperations.getInstructorIdList();
+                isCorrect = false;
+                foreach (ulong value in instList)
+                {
+                    if (value == newCourseTeacherId)
+                    {
+                        isCorrect = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!isCorrect) MessageBox.Show("Error: No such teacher");
+
+            //check for positive numbers
+            if (newCourseMaxStudents <= 0) { MessageBox.Show("Error: Max students must be a positive number"); return; }
+            if (newCourseCreditPoints<= 0) { MessageBox.Show("Error: Credit points must be a positive number"); return; }
+
+            //check if start and end set correctly
+            if (!correctStartEnd(changedBoxStartTime, changedBoxEndTime))
+            {
+                MessageBox.Show("Error: End time must be larger than start time");
+                return;
+            }
+
+            string name = newCourseName + "_" + changedBoxCourseType + "_";
+            bool found = false;
+            foreach (int id in cList)
+            {
+                if (dataBaseOperations.getCourse(id).getName().Split('_')[0] == newCourseName)
+                {
+                    if (dataBaseOperations.getCourse(id).getName().Split('_')[2] == "A") name += "B";
+                    else name += "A";
+                    found = true;
+                    continue;
+                }
+
+                if (found && dataBaseOperations.getCourse(id).getName().Split('_')[0] == newCourseName)
+                {
+                    MessageBox.Show("Error: There can only be up to 2 different times for a course");
+                }
+            }
+
+            Course course = new Course(newCourseId.Value, name, newCourseTeacherId.Value, newCourseMaxStudents.Value, changedBoxRoom, changedBoxDay,
+                Int32.Parse(changedBoxStartTime.Split(':')[0]), Int32.Parse(changedBoxEndTime.Split(':')[0]), Int32.Parse(changedBoxSemester), 
+                newCourseCreditPoints.Value);
+
+            if(!correctTimeForClass(course))
+            {
+                MessageBox.Show("Error: There already is a class at that time in that room");
+                return;
+            }
+
+            //check if max students in room is at least as large as course's
+            if (newCourseMaxStudents > dataBaseOperations.getRoom(changedBoxRoom).getMaxStudent())
+            {
+                MessageBox.Show("Error: The room's max student limit does not match the limit of the course. Must select a bigger room");
+                return;
+            }
+
+            dataBaseOperations.addCourse(course);
+            cleanFields();
+            comboBox3.Items.Add(course.getID() + " " + dataBaseOperations.getCourse(course.getID()).getName());
+            MessageBox.Show("End value: " + course.getEnd().ToString() + "\nFrom the DB: " + dataBaseOperations.getCourse(course.getID()).getEnd());
+            
+        }
+
+        private bool correctTimeForClass(Course course)
+        {
+            foreach (int c in cList)
+            {
+                Course check = dataBaseOperations.getCourse(c);
+                if (check.getDay() == course.getDay())
+                {
+                    if (!checkDifferentTime(check.getStart(),check.getEnd(),course.getStart(),course.getEnd()))
+                    {
+                        if (check.getRoom() == course.getRoom() && check.getSemester() == course.getSemester()) return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        private bool checkDifferentTime(int start1, int end1, int start2, int end2)
+        {
+            if (start2 >= start1 && start2 < end1) return false;
+            if (end2 > start1 && end2 <= end1) return false;
+            return true;
+        }
+
+        private bool correctStartEnd(string start, string end)
+        {
+            int istart, iend;
+            istart = Int32.Parse(start.Split(':')[0]);
+            iend = Int32.Parse(end.Split(':')[0]);
+            if (iend <= istart) return false;
+            return true;
+        }
+
+         private void cleanFields()
+        {
+            courseName.Text = "";
+            courseID.Text = "";
+            teacherId.Text = "";
+            courseType.Text = "";
+            maxStudents.Text = "";
+            room.Text = "";
+            day.Text = "";
+            startTime.Text = "";
+            endTime.Text = "";
+            semester.Text = "";
+            creditPoints.Text = "";
+            newCourseName = null;
+            newCourseId = null;
+            newCourseTeacherId = null;
+            newCourseMaxStudents = null;
+            newCourseCreditPoints = null;
+        }
+
+        private void remove_Click(object sender, EventArgs e)
+        {
+            comboBoxRemove.Visible = true;
+            confirm.Visible = true;
+        }
+
+        private void confirm_Click(object sender, EventArgs e)
+        {
+            if (changedBoxRemove == null) MessageBox.Show("Error: Must select Yes or No");
+            else if (changedBoxRemove == "No")
+            {
+                comboBoxRemove.Visible = false;
+                confirm.Visible = false;
+            }
+            else if (changedBoxRemove == "Yes")
+            {
+                dataBaseOperations.removeCourse(Int32.Parse(changedBoxCourseList.Split()[0]));
+                comboBox3.Items.Remove(changedBoxCourseList);
+                comboBoxRemove.Visible = false;
+                confirm.Visible = false;
+            }
+
+            else MessageBox.Show("Error: Must select Yes or No");
+        }
+
+        private void comboBoxRemove_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changedBoxRemove = comboBoxRemove.Text;
+        }
+
+        private void comboBoxRoom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changedBoxRoomList = comboBoxRoom.Text;
+        }
+
+        private void roomNumber_TextChanged(object sender, EventArgs e)
+        {
+            newRoomName = roomNumber.Text;
+        }
+
+        private void roomMaxStudents_TextChanged(object sender, EventArgs e)
+        {
+            int check;
+            if (Int32.TryParse(roomMaxStudents.Text, out check)) newRoomMaxStudents = check;
+        }
+
+        private void submitRoom_Click(object sender, EventArgs e)
+        {
+            if (newRoomMaxStudents == null || newRoomName == null)
+            {
+                MessageBox.Show("Error: Not all fields are filled correctly");
+                return;
+            }
+
+            Room r = new Room(newRoomName, newRoomMaxStudents.Value);
+            dataBaseOperations.addRoom(r);
+            room.Items.Add(r.getRoomNumber());
+            comboBoxRoom.Items.Add(r.getRoomNumber());
+            cleanRFields();
         }
 
         private void roomInfo_Click(object sender, EventArgs e)
         {
-            
+            string info;
+            Room r = dataBaseOperations.getRoom(changedBoxRoomList);
+            if (r == null)
+            {
+                MessageBox.Show("Error: Must select a room");
+                return;
+            }
+
+            info = "Room Number: ";
+            info += r.getRoomNumber() + "\n";
+
+            info += "Max Students: ";
+            info += r.getMaxStudent();
+
+            MessageBox.Show(info);
+        }
+
+        private void cleanRFields()
+        {
+            roomMaxStudents.Text = "";
+            roomNumber.Text = "";
+            newRoomMaxStudents = null;
+            newRoomName = null;
+        }
+
+        private void removeR_Click(object sender, EventArgs e)
+        {
+            foreach (int id in cList)
+            {
+                if (dataBaseOperations.getCourse(id).getRoom() == changedBoxRoomList)
+                {
+                    MessageBox.Show("Error: Unable to delete room. First remove all courses assigned to room");
+                    return;
+                }
+            }
+            comboBoxRemoveR.Visible = true;
+            confirmR.Visible = true;
+        }
+
+        private void comboBoxRemoveR_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changedBoxRemoveR = comboBoxRemoveR.Text;
+        }
+
+        private void confirmR_Click(object sender, EventArgs e)
+        {
+            if (changedBoxRemoveR == null || (changedBoxRemoveR != "Yes" && changedBoxRemoveR != "No"))
+            {
+                MessageBox.Show("Error: Must select Yes or No");
+                return;
+            }
+
+            if (changedBoxRemoveR == "No")
+            {
+                comboBoxRemoveR.Visible = false;
+                confirmR.Visible = false;
+            }
+            else
+            {
+                comboBoxRemoveR.Visible = false;
+                confirmR.Visible = false;
+                dataBaseOperations.removeRoom(changedBoxRoomList);
+                comboBoxRoom.Items.Remove(changedBoxRoomList);
+                room.Items.Remove(changedBoxRoomList);
+            }
+        }
+
+        private void oldPassTextBox_TextChanged(object sender, EventArgs e)
+        {
+            oldPassTextBox.PasswordChar = '*';
+        }
+
+        private void newPassChange_TextChanged(object sender, EventArgs e)
+        {
+            newPassChange.PasswordChar = '*';
+        }
+
+        private void newPassConfirm_TextChanged(object sender, EventArgs e)
+        {
+            newPassConfirm.PasswordChar = '*';
+        }
+
+        private void changeMyPassbutton_Click(object sender, EventArgs e)
+        {
+            if (newPassConfirm.Text == "" || newPassChange.Text == "" || oldPassTextBox.Text == "")
+            {
+                MessageBox.Show("Error: Must fill all fields");
+                return;
+            }
+
+            if (newPassChange.Text != newPassConfirm.Text)
+            {
+                MessageBox.Show("Error: Passwords doesn't match");
+                return;
+            }
+
+            if (oldPassTextBox.Text != sec.getPassword())
+            {
+                MessageBox.Show("Error: Incorrect old password");
+                return;
+            }
+
+            if (newPassChange.Text == oldPassTextBox.Text)
+            {
+                MessageBox.Show("Error: New password must be different than old password");
+                return;
+            }
+
+            dataBaseOperations db = new dataBaseOperations();
+            db.updateUserPassword(newPassChange.Text, sec.getid());
+            MessageBox.Show("Password changed succesfully");
+            oldPassTextBox.Text = "";
+            newPassChange.Text = "";
+            newPassConfirm.Text = "";
+            return;
         }
     }
 }

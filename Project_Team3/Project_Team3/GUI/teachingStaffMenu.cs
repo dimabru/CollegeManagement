@@ -385,5 +385,10 @@ namespace Project_Team3
         {
 
         }
+
+        private void oldPassTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
