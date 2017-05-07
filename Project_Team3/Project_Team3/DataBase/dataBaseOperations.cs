@@ -1053,8 +1053,7 @@ namespace Project_Team3
 
         }
 
-        public void 
-            (Boolean ConnStatus)
+        public void CloseConn(Boolean ConnStatus)
         {
             if (ConnStatus == true)
             {
