@@ -63,7 +63,7 @@ namespace Project_Team3
 
         private void associationEventsButton_Click(object sender, EventArgs e)
         {
-            using (Form_secretaryAssociationEvents associationEvents = new Form_secretaryAssociationEvents())
+            using (Form_secretaryAssociationEventsNew associationEvents = new Form_secretaryAssociationEventsNew())
             {
                 this.Hide();
                 associationEvents.ShowDialog(this);

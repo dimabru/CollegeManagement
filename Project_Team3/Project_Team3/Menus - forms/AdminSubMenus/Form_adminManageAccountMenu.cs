@@ -40,14 +40,20 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
         private void deleteStudentClick(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
-
+            using (adminRemoveStudent removeStudent = new adminRemoveStudent())
+            {
+                this.Hide();
+                removeStudent.ShowDialog(this);
+            }
         }
 
         private void deleteAssociateClick(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
-
+            using (adminRemoveAssociate removeAssociate = new adminRemoveAssociate())
+            {
+                this.Hide();
+                removeAssociate.ShowDialog(this);
+            }
         }
 
         private void BackClick(object sender, EventArgs e)

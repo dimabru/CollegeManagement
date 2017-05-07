@@ -84,6 +84,18 @@
     <Compile Include="Form_login.Designer.cs">
       <DependentUpon>Form_login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus - forms\AdminSubMenus\adminRemoveAssociate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\AdminSubMenus\adminRemoveAssociate.Designer.cs">
+      <DependentUpon>adminRemoveAssociate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus - forms\AdminSubMenus\adminRemoveStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\AdminSubMenus\adminRemoveStudent.Designer.cs">
+      <DependentUpon>adminRemoveStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menus - forms\AdminSubMenus\Form_adminAccountsMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,11 +156,17 @@
     <Compile Include="Menus - forms\Form_associateMenu.Designer.cs">
       <DependentUpon>Form_associateMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryAssociationEvents.cs">
+    <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryAssociationEventsNew.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryAssociationEvents.Designer.cs">
-      <DependentUpon>Form_secretaryAssociationEvents.cs</DependentUpon>
+    <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryAssociationEventsNew.Designer.cs">
+      <DependentUpon>Form_secretaryAssociationEventsNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryCourseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryCourseInfo.Designer.cs">
+      <DependentUpon>Form_secretaryCourseInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Menus - forms\SecretarySubMenus\Form_secretaryCourseSearch.cs">
       <SubType>Form</SubType>
@@ -227,6 +245,12 @@
     <EmbeddedResource Include="Form_login.resx">
       <DependentUpon>Form_login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\AdminSubMenus\adminRemoveAssociate.resx">
+      <DependentUpon>adminRemoveAssociate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\AdminSubMenus\adminRemoveStudent.resx">
+      <DependentUpon>adminRemoveStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\AdminSubMenus\Form_adminAccountsMenu.resx">
       <DependentUpon>Form_adminAccountsMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,8 +284,11 @@
     <EmbeddedResource Include="Menus - forms\Form_associateMenu.resx">
       <DependentUpon>Form_associateMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menus - forms\SecretarySubMenus\Form_secretaryAssociationEvents.resx">
-      <DependentUpon>Form_secretaryAssociationEvents.cs</DependentUpon>
+    <EmbeddedResource Include="Menus - forms\SecretarySubMenus\Form_secretaryAssociationEventsNew.resx">
+      <DependentUpon>Form_secretaryAssociationEventsNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\SecretarySubMenus\Form_secretaryCourseInfo.resx">
+      <DependentUpon>Form_secretaryCourseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\SecretarySubMenus\Form_secretaryCourseSearch.resx">
       <DependentUpon>Form_secretaryCourseSearch.cs</DependentUpon>
