@@ -17,7 +17,6 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
         private Student student;
         private DBconnect connection;
         private SqlCommand selectCoursesCommand;
-        private SqlCommand insertScheduleCommand;
         private SqlCommand selectSchedulesCommand;
 
         public Form_secretaryManageStudent(Student student)
@@ -70,28 +69,25 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
                                                     )
                                                     
                                                  ";
-                                                    
-            insertScheduleCommand = new SqlCommand();
-            insertScheduleCommand.CommandType = CommandType.Text;
-            insertScheduleCommand.Connection = connection.getConnection();
-            insertScheduleCommand.CommandText = "INSERT INTO Schedules VALUES(@username,@courseid)";
-            
-        }
+}
 
         private void UpdateCoursesDataGridView()
         {
             try
             {
                 DataSet ds = connection.generalCommand(selectCoursesCommand);
-                if (ds.Tables.Count > 0)
+                if (ds.Tables[0].Rows.Count > 0)
                 {
+                    noCoursesAvailableLabel.Visible = false;
+                    addCourseButton.Enabled = true;
                     coursesDataGridView.AutoGenerateColumns = true;
                     coursesDataGridView.DataSource = ds.Tables[0];
                 }
                 else
                 {
-                    MessageBox.Show("No Record Found");
-                    this.Close();
+                    noCoursesAvailableLabel.Visible = true;
+                    addCourseButton.Enabled = false;
+
                 }
             }
             catch (Exception ex)
@@ -110,9 +106,17 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
 
             DataSet ds = connection.generalCommand(selectSchedulesCommand);
 
-            if (ds.Tables[0].Rows.Count != 0) MessageBox.Show("Course overlapping with another course or event!");
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+                MessageBox.Show("Course overlapping with another course or event!");
+            }
+            else
+                try {
+                    string query = "INSERT INTO Schedules VALUES('" + student.Username + "'," +courseID +  ")";
+                    connection.executionQuery(query);
 
-            MessageBox.Show(courseID + " " + startHour + " " + endHour);
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
 
 
             return -1;
@@ -140,12 +144,14 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
 
         private void addCourseButton_Click(object sender, EventArgs e)
         {
+
             int id = Convert.ToInt32(coursesDataGridView.SelectedRows[0].Cells[0].Value);
             string day = coursesDataGridView.SelectedRows[0].Cells[5].Value.ToString();
             int startHour = Convert.ToInt32(coursesDataGridView.SelectedRows[0].Cells[6].Value);
             int endHour = Convert.ToInt32(coursesDataGridView.SelectedRows[0].Cells[7].Value);
 
             AddCourseToSchedule(startHour, endHour, id , day);
+            UpdateCoursesDataGridView();
         }
     }
 }

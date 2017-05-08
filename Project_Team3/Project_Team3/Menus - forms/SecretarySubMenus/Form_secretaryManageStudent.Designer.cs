@@ -36,6 +36,7 @@
             this.addCoursesLabel = new System.Windows.Forms.Label();
             this.coursesDataGridView = new System.Windows.Forms.DataGridView();
             this.addCourseButton = new System.Windows.Forms.Button();
+            this.noCoursesAvailableLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.coursesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,11 +124,24 @@
             this.addCourseButton.UseVisualStyleBackColor = true;
             this.addCourseButton.Click += new System.EventHandler(this.addCourseButton_Click);
             // 
+            // noCoursesAvailableLabel
+            // 
+            this.noCoursesAvailableLabel.AutoSize = true;
+            this.noCoursesAvailableLabel.Enabled = false;
+            this.noCoursesAvailableLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.noCoursesAvailableLabel.Location = new System.Drawing.Point(192, 326);
+            this.noCoursesAvailableLabel.Name = "noCoursesAvailableLabel";
+            this.noCoursesAvailableLabel.Size = new System.Drawing.Size(350, 39);
+            this.noCoursesAvailableLabel.TabIndex = 8;
+            this.noCoursesAvailableLabel.Text = "No Courses Available";
+            this.noCoursesAvailableLabel.Visible = false;
+            // 
             // Form_secretaryManageStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 517);
+            this.Controls.Add(this.noCoursesAvailableLabel);
             this.Controls.Add(this.addCourseButton);
             this.Controls.Add(this.coursesDataGridView);
             this.Controls.Add(this.addCoursesLabel);
@@ -156,5 +170,6 @@
         private System.Windows.Forms.Label addCoursesLabel;
         private System.Windows.Forms.DataGridView coursesDataGridView;
         private System.Windows.Forms.Button addCourseButton;
+        private System.Windows.Forms.Label noCoursesAvailableLabel;
     }
 }
