@@ -19,7 +19,7 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
         {
             InitializeComponent();
             Init();
-            UpdateListView();
+            UpdateGrid();
         }
         private void Init()
         {
@@ -31,7 +31,7 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
             command.CommandText = "SELECT * FROM Course";
         }
 
-        private void UpdateListView()
+        private void UpdateGrid()
         {
             try
             {

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_secretaryStudentRequests));
             this.acceptRequestButton = new System.Windows.Forms.Button();
             this.denyRequestButton = new System.Windows.Forms.Button();
-            this.detailsRequestButton = new System.Windows.Forms.Button();
             this.studentRequestsLabel = new System.Windows.Forms.Label();
             this.StudentReqGrid = new System.Windows.Forms.DataGridView();
             this.BackButton = new System.Windows.Forms.Button();
@@ -42,7 +41,7 @@
             // 
             this.acceptRequestButton.BackColor = System.Drawing.Color.MistyRose;
             this.acceptRequestButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.acceptRequestButton.Location = new System.Drawing.Point(709, 209);
+            this.acceptRequestButton.Location = new System.Drawing.Point(709, 257);
             this.acceptRequestButton.Name = "acceptRequestButton";
             this.acceptRequestButton.Size = new System.Drawing.Size(176, 37);
             this.acceptRequestButton.TabIndex = 1;
@@ -54,25 +53,13 @@
             // 
             this.denyRequestButton.BackColor = System.Drawing.Color.MistyRose;
             this.denyRequestButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.denyRequestButton.Location = new System.Drawing.Point(709, 312);
+            this.denyRequestButton.Location = new System.Drawing.Point(709, 367);
             this.denyRequestButton.Name = "denyRequestButton";
             this.denyRequestButton.Size = new System.Drawing.Size(176, 37);
             this.denyRequestButton.TabIndex = 2;
             this.denyRequestButton.Text = "Deny";
             this.denyRequestButton.UseVisualStyleBackColor = false;
             this.denyRequestButton.Click += new System.EventHandler(this.denyRequestButton_Click);
-            // 
-            // detailsRequestButton
-            // 
-            this.detailsRequestButton.BackColor = System.Drawing.Color.MistyRose;
-            this.detailsRequestButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.detailsRequestButton.Location = new System.Drawing.Point(709, 410);
-            this.detailsRequestButton.Name = "detailsRequestButton";
-            this.detailsRequestButton.Size = new System.Drawing.Size(176, 37);
-            this.detailsRequestButton.TabIndex = 3;
-            this.detailsRequestButton.Text = "Details";
-            this.detailsRequestButton.UseVisualStyleBackColor = false;
-            this.detailsRequestButton.Click += new System.EventHandler(this.detailsRequestButton_Click);
             // 
             // studentRequestsLabel
             // 
@@ -119,7 +106,6 @@
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.StudentReqGrid);
             this.Controls.Add(this.studentRequestsLabel);
-            this.Controls.Add(this.detailsRequestButton);
             this.Controls.Add(this.denyRequestButton);
             this.Controls.Add(this.acceptRequestButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -136,7 +122,6 @@
         #endregion
         private System.Windows.Forms.Button acceptRequestButton;
         private System.Windows.Forms.Button denyRequestButton;
-        private System.Windows.Forms.Button detailsRequestButton;
         private System.Windows.Forms.Label studentRequestsLabel;
         private System.Windows.Forms.DataGridView StudentReqGrid;
         private System.Windows.Forms.Button BackButton;
