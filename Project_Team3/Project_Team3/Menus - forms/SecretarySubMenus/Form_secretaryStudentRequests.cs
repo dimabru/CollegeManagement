@@ -54,11 +54,6 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
             parent.Show();
         }
 
-        private void detailsRequestButton_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Request Details not available yet");
-        }
-
         private void acceptRequestButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Accepting Request not available yet");

@@ -41,6 +41,7 @@
             this.labelHeader = new System.Windows.Forms.Label();
             this.labelMiddle = new System.Windows.Forms.Label();
             this.CoursesGrid = new System.Windows.Forms.DataGridView();
+            this.BackButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CoursesGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,11 +167,23 @@
             this.CoursesGrid.Size = new System.Drawing.Size(868, 171);
             this.CoursesGrid.TabIndex = 12;
             // 
+            // BackButton
+            // 
+            this.BackButton.Font = new System.Drawing.Font("David", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.BackButton.Location = new System.Drawing.Point(429, 504);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(132, 42);
+            this.BackButton.TabIndex = 13;
+            this.BackButton.Text = "Go Back";
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
             // Form_secretaryCourseInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(996, 570);
+            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.CoursesGrid);
             this.Controls.Add(this.labelMiddle);
             this.Controls.Add(this.labelHeader);
@@ -209,5 +222,6 @@
         private System.Windows.Forms.Label labelHeader;
         private System.Windows.Forms.Label labelMiddle;
         private System.Windows.Forms.DataGridView CoursesGrid;
+        private System.Windows.Forms.Button BackButton;
     }
 }

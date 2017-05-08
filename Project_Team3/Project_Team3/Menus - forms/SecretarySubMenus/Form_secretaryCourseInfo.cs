@@ -69,5 +69,10 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
             parent.clearSearchResults();
             parent.Show();
         }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

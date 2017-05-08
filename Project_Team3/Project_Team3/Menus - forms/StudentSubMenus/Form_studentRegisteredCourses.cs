@@ -21,7 +21,7 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
             username = un;
             InitializeComponent();
             Init();
-            UpdateListView();
+            UpdateGrid();
         }
 
         private void Init()
@@ -39,7 +39,7 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
             Form_studentMenu parent = (Form_studentMenu)this.Owner;
             parent.Show();
         }
-        private void UpdateListView()
+        private void UpdateGrid()
         {
             try
             {
@@ -59,6 +59,11 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void GoBackButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

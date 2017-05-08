@@ -21,7 +21,7 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
             username = un;
             InitializeComponent();
             Init();
-            UpdateListView();
+            UpdateGrid();
         }
         private void Init()
         {
@@ -34,7 +34,7 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
             command.Parameters.AddWithValue("username", username);
         }
 
-        private void UpdateListView()
+        private void UpdateGrid()
         {
             try
             {
