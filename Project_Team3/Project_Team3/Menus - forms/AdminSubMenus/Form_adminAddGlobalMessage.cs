@@ -30,8 +30,8 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             DBconnect db = new DBconnect();
             try
             {
-                db.addGlobalMessageToDB(message);
-                MessageBox.Show("Message added :\n"+message+"\n");
+                db.addGlobalMessageToDB(messageBody);
+                MessageBox.Show("Message added :\n"+ messageBody + "\n");
             }
             catch
             {
