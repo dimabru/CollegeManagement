@@ -20,14 +20,14 @@ namespace Project_Team3
 
 
             //TEMP: Uncomment Relevant form to check your form works  [Jonathan Leon @29.3.17]
-            //Application.Run(new Form_login());
+            Application.Run(new Form_login());
 
 
 
             Application.Run(new Form_secretaryMenu());
-            //Application.Run(new Form_associateMenu());
-            //Application.Run(new Form_studentMenu());
-            //Application.Run(new Form_adminMenu());
+            Application.Run(new Form_associateMenu());
+            Application.Run(new Form_studentMenu());
+            Application.Run(new Form_adminMenu());
         }
     }
 }
