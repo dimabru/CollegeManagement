@@ -20,7 +20,13 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
         private void addMessage_Click(object sender, EventArgs e)
         {
-            String message = this.messageInputBox.Text;
+            String messageBody = this.messageInputBox.Text;
+            if (messageBody.Length == 0)
+            {
+                MessageBox.Show("Can's send empty message !");
+                return;
+            }
+
             DBconnect db = new DBconnect();
             try
             {
