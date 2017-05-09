@@ -41,14 +41,21 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
 
         private void sendRequest_button_Click(object sender, EventArgs e)
         {
-            
+            String messageBody = messageBox.Text;
+            if (messageBody.Length == 0)
+            {
+                MessageBox.Show("Can's send empty message");
+                return;
+            }
+
             String secretaryName = secretaryChooseList.Text;
             if (secretaryName.Length == 0)
             {
                 MessageBox.Show("Not secretary choosen, can't assign to nobody");
                 return;
             }
-            String messageBody = messageBox.Text;
+
+
             DBconnect db = new DBconnect();
             try
             {
