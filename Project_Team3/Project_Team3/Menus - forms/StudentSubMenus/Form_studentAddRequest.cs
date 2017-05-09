@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,9 +14,9 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
     public partial class Form_studentAddRequest : Form
     {
 
-        private String username;
+        private string username;
 
-        public void setUsername(String username)
+        public void setUsername(string username)
         {
             this.username = username;
         }

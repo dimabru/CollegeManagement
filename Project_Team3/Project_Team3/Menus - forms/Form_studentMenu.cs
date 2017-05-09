@@ -15,7 +15,7 @@ namespace Project_Team3
     public partial class Form_studentMenu : Form
     {
         private DBconnect dbcon;
-        private String username;
+        private string username;
 
         public Form_studentMenu()
         {    
@@ -34,7 +34,7 @@ namespace Project_Team3
             textBox1.Text = ds.Tables[0].Rows[0].ItemArray[1].ToString();
         }
 
-        public void setUsername(String username)
+        public void setUsername(string username)
         {
             this.username = username;
         }
@@ -93,10 +93,7 @@ namespace Project_Team3
         private void NewRequestButton_Click(object sender, EventArgs e)
         {
 
-            this.IsMdiContainer = true;
             Form_studentAddRequest addRequest = new Form_studentAddRequest();
-
-            addRequest.MdiParent = this;
             addRequest.setUsername(username);
             addRequest.Show();
         }
