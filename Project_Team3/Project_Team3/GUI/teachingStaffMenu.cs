@@ -125,10 +125,16 @@ namespace Project_Team3
                 int location_y_s = publicChecksAndOperations.hourConvertFromStringToInt(start);
                 int location_y_e = publicChecksAndOperations.hourConvertFromStringToInt(end);
                 string name = courses_List[i];
-                tempTable.Rows[location_y_s][location_x] = courses_List[i]+ " ( " +room+ " )";
+                if ((tempTable.Rows[location_y_s][location_x] != null && !tempTable.Rows[location_y_s][location_x].Equals("System.String") && !string.IsNullOrEmpty(tempTable.Rows[location_y_s][location_x].ToString())))
+                    tempTable.Rows[location_y_s][location_x] = "Collision courses!Contact the Secretary";
+               else
+                    tempTable.Rows[location_y_s][location_x] = courses_List[i]+ " ( " +room+ " )";
                 for(int j=location_y_s+1; j<=(location_y_e); j++)
                 {
-                    tempTable.Rows[j][location_x] = name + " ( " + room + " )";
+                    if ((tempTable.Rows[j][location_x] != null && !tempTable.Rows[j][location_x].Equals("System.String") && !string.IsNullOrEmpty(tempTable.Rows[j][location_x].ToString())))
+                        tempTable.Rows[j][location_x] = "Collision courses!Contact the Secretary";
+                    else
+                        tempTable.Rows[j][location_x] = name + " ( " + room + " )";
 
                 }
             }
