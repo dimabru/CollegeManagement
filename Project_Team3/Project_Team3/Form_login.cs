@@ -36,6 +36,8 @@ namespace Project_Team3
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.Connection = db.getConnection();
+            if (username == null || username == "") { return "Enter username"; }
+            if (password == null || password == "") { return "Enter password"; }
             cmd.CommandText = "SELECT accessgroup FROM USERS WHERE USERNAME = @username and PASS = @password";
             cmd.Parameters.AddWithValue("username", Username);
             cmd.Parameters.AddWithValue("password", password);
@@ -43,11 +45,11 @@ namespace Project_Team3
             try
             {
                 DataSet ds = db.generalCommand(cmd);
-                return Regex.Replace(ds.Tables[0].Rows[0].ItemArray[0].ToString(), @"\s+", "");
+                return ds.Tables[0].Rows[0].ItemArray[0].ToString();
             }
             catch
             {
-                return "Not_exists";
+                return "Bad Username/Password!";
             }
             
         }
@@ -99,7 +101,7 @@ namespace Project_Team3
                     }
                     break;
                 default:
-                    MessageBox.Show("Wrong access group!");
+                    MessageBox.Show(getAccessGroup());
                     error = true;
                     break;
             }
