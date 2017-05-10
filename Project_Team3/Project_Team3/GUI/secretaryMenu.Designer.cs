@@ -774,11 +774,11 @@
             // 
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Navy;
+            this.label18.Font = new System.Drawing.Font("Elephant", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Blue;
             this.label18.Location = new System.Drawing.Point(12, 92);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(99, 21);
+            this.label18.Size = new System.Drawing.Size(118, 25);
             this.label18.TabIndex = 15;
             this.label18.Text = "Add Room:";
             this.label18.Click += new System.EventHandler(this.label18_Click);
@@ -799,7 +799,7 @@
             // 
             this.comboBoxRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRoom.FormattingEnabled = true;
-            this.comboBoxRoom.Location = new System.Drawing.Point(117, 19);
+            this.comboBoxRoom.Location = new System.Drawing.Point(130, 19);
             this.comboBoxRoom.Name = "comboBoxRoom";
             this.comboBoxRoom.Size = new System.Drawing.Size(164, 21);
             this.comboBoxRoom.TabIndex = 13;
@@ -808,11 +808,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Navy;
+            this.label4.Font = new System.Drawing.Font("Elephant", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Blue;
             this.label4.Location = new System.Drawing.Point(12, 17);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 21);
+            this.label4.Size = new System.Drawing.Size(119, 25);
             this.label4.TabIndex = 12;
             this.label4.Text = "Room List:";
             // 
