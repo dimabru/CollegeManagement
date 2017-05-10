@@ -123,10 +123,11 @@ namespace Project_Team3
                 int location_x = publicChecksAndOperations.convDayToInt(day);
                 int location_y_s = publicChecksAndOperations.hourConvertFromStringToInt(start);
                 int location_y_e = publicChecksAndOperations.hourConvertFromStringToInt(end);
+                string name = courses_List[i];
                 tempTable.Rows[location_y_s][location_x] = courses_List[i]+ " ( " +room+ " )";
-                for(i=location_y_s+1; i<(location_y_e- location_y_s); i++)
+                for(int j=location_y_s+1; j<=(location_y_e); j++)
                 {
-                    tempTable.Rows[i][location_x] = "Continued lecture" + " ( " + room + " )";
+                    tempTable.Rows[j][location_x] = name + " ( " + room + " )";
 
                 }
             }

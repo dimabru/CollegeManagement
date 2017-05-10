@@ -54,7 +54,7 @@ namespace Project_Team3
                     return 2;
                 case "Tuesday":
                     return 3;
-                case "Wednesday":
+                case "Wednsday":
                     return 4;
                 case "Thursday":
                     return 5;
@@ -142,39 +142,51 @@ namespace Project_Team3
             {
                 case "08:00":
                 case "800":
+                case "8":
                     return 1;
                 case "09:00":
                 case "900":
+                case "9":
                     return 2;
                 case "10:00":
                 case "1000":
+                case "10":
                     return 3;
                 case "11:00":
                 case "1100":
+                case "11":
                     return 4;
                 case "12:00":
                 case "1200":
+                case "12":
                     return 5;
                 case "13:00":
                 case "1300":
+                case "13":
                     return 6;
                 case "14:00":
                 case "1400":
+                case "14":
                     return 7;
                 case "15:00":
                 case "1500":
+                case "15":
                     return 8;
                 case "16:00":
                 case "1600":
+                case "16":
                     return 9;
                 case "17:00":
                 case "1700":
+                case "17":
                     return 10;
                 case "18:00":
                 case "1800":
+                case "18":
                     return 11;
                 case "19:00":
                 case "1900":
+                case "19":
                     return 12;
             
                 default:

@@ -492,7 +492,7 @@ namespace Project_Team3
                 int counter = 0;
                 string[] arrToReturn = { "" };
                 String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
-                String query = "select * from dbo.Course where COURSE_ID = '" + id + "'";
+                String query = "select * from dbo.Course where TEACHER_ID = '" + id + "'";
                 SqlConnection con = new SqlConnection(str);
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataReader dbr;
