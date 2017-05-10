@@ -188,7 +188,14 @@ namespace Project_Team3
                 case "1900":
                 case "19":
                     return 12;
-            
+                case "20:00":
+                case "2000":
+                case "20":
+                    return 13;
+                case "21:00":
+                case "2100":
+                case "21":
+                    return 14;
                 default:
                     return 0;
             }

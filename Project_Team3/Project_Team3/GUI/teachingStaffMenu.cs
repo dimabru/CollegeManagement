@@ -106,7 +106,8 @@ namespace Project_Team3
             tempTable.Rows.Add("17:00", typeof(string));
             tempTable.Rows.Add("18:00", typeof(string));
             tempTable.Rows.Add("19:00", typeof(string));
-            
+            tempTable.Rows.Add("20:00", typeof(string));
+            tempTable.Rows.Add("21:00", typeof(string));
             string day = "";
             string start = "";
             string end = "";
@@ -132,7 +133,7 @@ namespace Project_Team3
                 }
             }
             //define empty value in cells which dont have lecture 
-            for (int i=0; i<13; i++)
+            for (int i=0; i<15; i++)
                 for(int j=1; j<6; j++)
                 {
                     if (tempTable.Rows[i][j] == null || tempTable.Rows[i][j].Equals("System.String") || string.IsNullOrEmpty(tempTable.Rows[i][j].ToString()))
