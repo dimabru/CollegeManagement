@@ -113,7 +113,7 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
 
         private void CourseInfoButton_Click(object sender, EventArgs e)
         {
-            if (coursesResultsListBox.SelectedItem == null) { MessageBox.Show("No Student selected!"); return; }
+            if (coursesResultsListBox.SelectedItem == null) { MessageBox.Show("No Course selected!"); return; }
             selectedCourse = (Course)coursesResultsListBox.SelectedItem;
             using (Form_secretaryCourseInfo CourseInfo = new Form_secretaryCourseInfo(selectedCourse))
             {
