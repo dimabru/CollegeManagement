@@ -190,6 +190,7 @@
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Elephant", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(630, 244);
             this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
@@ -201,6 +202,7 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Elephant", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(630, 190);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
@@ -256,6 +258,7 @@
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(441, 45);
             this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
@@ -838,9 +841,10 @@
             // 
             // changeMyPassbutton
             // 
+            this.changeMyPassbutton.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changeMyPassbutton.Location = new System.Drawing.Point(502, 208);
             this.changeMyPassbutton.Name = "changeMyPassbutton";
-            this.changeMyPassbutton.Size = new System.Drawing.Size(147, 59);
+            this.changeMyPassbutton.Size = new System.Drawing.Size(170, 60);
             this.changeMyPassbutton.TabIndex = 12;
             this.changeMyPassbutton.Text = "Change My Password";
             this.changeMyPassbutton.UseVisualStyleBackColor = true;
