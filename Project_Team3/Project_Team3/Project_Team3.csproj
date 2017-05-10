@@ -215,8 +215,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />
+    <None Include="Resources\add_course.jpg" />
+    <None Include="Resources\class.jpg" />
+    <None Include="Resources\class_2.jpg" />
     <Content Include="Resources\constrains icon.jpg" />
     <None Include="Resources\constrains icon1.jpg" />
+    <None Include="Resources\constraints_s_1.jpg" />
     <Content Include="Resources\delete_user.jpg" />
     <Content Include="Resources\password.jepg.ico" />
     <Content Include="Resources\schedule.jpg" />
