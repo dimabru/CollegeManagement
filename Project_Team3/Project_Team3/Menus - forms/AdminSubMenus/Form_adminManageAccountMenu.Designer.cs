@@ -39,11 +39,11 @@
             // AddStudentAccount
             // 
             this.AddStudentAccount.BackColor = System.Drawing.Color.MistyRose;
-            this.AddStudentAccount.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.AddStudentAccount.Location = new System.Drawing.Point(41, 81);
-            this.AddStudentAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddStudentAccount.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.AddStudentAccount.Location = new System.Drawing.Point(55, 100);
+            this.AddStudentAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddStudentAccount.Name = "AddStudentAccount";
-            this.AddStudentAccount.Size = new System.Drawing.Size(176, 37);
+            this.AddStudentAccount.Size = new System.Drawing.Size(235, 51);
             this.AddStudentAccount.TabIndex = 3;
             this.AddStudentAccount.Text = "Add student account.";
             this.AddStudentAccount.UseVisualStyleBackColor = false;
@@ -53,10 +53,10 @@
             // 
             this.AddAssociateAccount.BackColor = System.Drawing.Color.MistyRose;
             this.AddAssociateAccount.Font = new System.Drawing.Font("David", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.AddAssociateAccount.Location = new System.Drawing.Point(41, 138);
-            this.AddAssociateAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddAssociateAccount.Location = new System.Drawing.Point(55, 170);
+            this.AddAssociateAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddAssociateAccount.Name = "AddAssociateAccount";
-            this.AddAssociateAccount.Size = new System.Drawing.Size(176, 37);
+            this.AddAssociateAccount.Size = new System.Drawing.Size(235, 56);
             this.AddAssociateAccount.TabIndex = 4;
             this.AddAssociateAccount.Text = "Add associate account.";
             this.AddAssociateAccount.UseVisualStyleBackColor = false;
@@ -66,10 +66,10 @@
             // 
             this.DeleteStudentAccount.BackColor = System.Drawing.Color.MistyRose;
             this.DeleteStudentAccount.Font = new System.Drawing.Font("David", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.DeleteStudentAccount.Location = new System.Drawing.Point(41, 198);
-            this.DeleteStudentAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DeleteStudentAccount.Location = new System.Drawing.Point(55, 244);
+            this.DeleteStudentAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DeleteStudentAccount.Name = "DeleteStudentAccount";
-            this.DeleteStudentAccount.Size = new System.Drawing.Size(176, 37);
+            this.DeleteStudentAccount.Size = new System.Drawing.Size(235, 55);
             this.DeleteStudentAccount.TabIndex = 5;
             this.DeleteStudentAccount.Text = "Delete student account.";
             this.DeleteStudentAccount.UseVisualStyleBackColor = false;
@@ -79,10 +79,10 @@
             // 
             this.DeleteAssociateAccount.BackColor = System.Drawing.Color.MistyRose;
             this.DeleteAssociateAccount.Font = new System.Drawing.Font("David", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.DeleteAssociateAccount.Location = new System.Drawing.Point(41, 255);
-            this.DeleteAssociateAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DeleteAssociateAccount.Location = new System.Drawing.Point(55, 314);
+            this.DeleteAssociateAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DeleteAssociateAccount.Name = "DeleteAssociateAccount";
-            this.DeleteAssociateAccount.Size = new System.Drawing.Size(176, 37);
+            this.DeleteAssociateAccount.Size = new System.Drawing.Size(235, 55);
             this.DeleteAssociateAccount.TabIndex = 6;
             this.DeleteAssociateAccount.Text = "Delete Associate account.";
             this.DeleteAssociateAccount.UseVisualStyleBackColor = false;
@@ -92,10 +92,10 @@
             // 
             this.Back.BackColor = System.Drawing.Color.MistyRose;
             this.Back.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Back.Location = new System.Drawing.Point(41, 355);
-            this.Back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Back.Location = new System.Drawing.Point(55, 437);
+            this.Back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(176, 37);
+            this.Back.Size = new System.Drawing.Size(235, 46);
             this.Back.TabIndex = 7;
             this.Back.Text = "Back to last menu.";
             this.Back.UseVisualStyleBackColor = false;
@@ -103,18 +103,18 @@
             // 
             // Form_adminManageAccountMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1012, 609);
+            this.ClientSize = new System.Drawing.Size(1349, 750);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.DeleteAssociateAccount);
             this.Controls.Add(this.DeleteStudentAccount);
             this.Controls.Add(this.AddAssociateAccount);
             this.Controls.Add(this.AddStudentAccount);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form_adminManageAccountMenu";
             this.Text = "Admin - Manage accounts";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_adminManageAccountMenu_FormClosed);

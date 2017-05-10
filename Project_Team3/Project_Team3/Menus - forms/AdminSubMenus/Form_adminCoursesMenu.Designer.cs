@@ -41,11 +41,11 @@
             // List_courses
             // 
             this.List_courses.BackColor = System.Drawing.Color.MistyRose;
-            this.List_courses.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.List_courses.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.List_courses.Location = new System.Drawing.Point(134, 157);
             this.List_courses.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.List_courses.Name = "List_courses";
-            this.List_courses.Size = new System.Drawing.Size(235, 46);
+            this.List_courses.Size = new System.Drawing.Size(235, 51);
             this.List_courses.TabIndex = 2;
             this.List_courses.Text = "List of all courses.";
             this.List_courses.UseVisualStyleBackColor = false;
@@ -54,11 +54,11 @@
             // watchInfo
             // 
             this.watchInfo.BackColor = System.Drawing.Color.MistyRose;
-            this.watchInfo.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.watchInfo.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.watchInfo.Location = new System.Drawing.Point(134, 233);
             this.watchInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.watchInfo.Name = "watchInfo";
-            this.watchInfo.Size = new System.Drawing.Size(235, 46);
+            this.watchInfo.Size = new System.Drawing.Size(235, 53);
             this.watchInfo.TabIndex = 3;
             this.watchInfo.Text = "Watch course\'s info.";
             this.watchInfo.UseVisualStyleBackColor = false;
@@ -71,7 +71,7 @@
             this.recieveAmount.Location = new System.Drawing.Point(134, 309);
             this.recieveAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.recieveAmount.Name = "recieveAmount";
-            this.recieveAmount.Size = new System.Drawing.Size(235, 46);
+            this.recieveAmount.Size = new System.Drawing.Size(235, 54);
             this.recieveAmount.TabIndex = 4;
             this.recieveAmount.Text = "Receive amount of courses.";
             this.recieveAmount.UseVisualStyleBackColor = false;
@@ -94,7 +94,7 @@
             // 
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid.Location = new System.Drawing.Point(433, 119);
-            this.dataGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGrid.Margin = new System.Windows.Forms.Padding(4);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.Size = new System.Drawing.Size(755, 422);
             this.dataGrid.TabIndex = 6;
@@ -106,7 +106,7 @@
             // 
             this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox.Location = new System.Drawing.Point(153, 51);
-            this.textBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox.Margin = new System.Windows.Forms.Padding(4);
             this.textBox.Name = "textBox";
             this.textBox.Size = new System.Drawing.Size(1013, 30);
             this.textBox.TabIndex = 7;

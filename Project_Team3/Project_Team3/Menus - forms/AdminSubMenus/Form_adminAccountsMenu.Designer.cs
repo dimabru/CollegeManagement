@@ -42,11 +42,11 @@
             // watchStudents
             // 
             this.watchStudents.BackColor = System.Drawing.Color.MistyRose;
-            this.watchStudents.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.watchStudents.Location = new System.Drawing.Point(92, 113);
-            this.watchStudents.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.watchStudents.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.watchStudents.Location = new System.Drawing.Point(123, 139);
+            this.watchStudents.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.watchStudents.Name = "watchStudents";
-            this.watchStudents.Size = new System.Drawing.Size(176, 37);
+            this.watchStudents.Size = new System.Drawing.Size(235, 46);
             this.watchStudents.TabIndex = 1;
             this.watchStudents.Text = "Watch student\'s info.";
             this.watchStudents.UseVisualStyleBackColor = false;
@@ -55,11 +55,11 @@
             // watchAssociate
             // 
             this.watchAssociate.BackColor = System.Drawing.Color.MistyRose;
-            this.watchAssociate.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.watchAssociate.Location = new System.Drawing.Point(92, 172);
-            this.watchAssociate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.watchAssociate.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.watchAssociate.Location = new System.Drawing.Point(123, 212);
+            this.watchAssociate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.watchAssociate.Name = "watchAssociate";
-            this.watchAssociate.Size = new System.Drawing.Size(176, 37);
+            this.watchAssociate.Size = new System.Drawing.Size(235, 57);
             this.watchAssociate.TabIndex = 2;
             this.watchAssociate.Text = "Watch associate\'s info.";
             this.watchAssociate.UseVisualStyleBackColor = false;
@@ -69,10 +69,10 @@
             // 
             this.getStudentsNumberButton.BackColor = System.Drawing.Color.MistyRose;
             this.getStudentsNumberButton.Font = new System.Drawing.Font("David", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.getStudentsNumberButton.Location = new System.Drawing.Point(92, 232);
-            this.getStudentsNumberButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.getStudentsNumberButton.Location = new System.Drawing.Point(123, 286);
+            this.getStudentsNumberButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.getStudentsNumberButton.Name = "getStudentsNumberButton";
-            this.getStudentsNumberButton.Size = new System.Drawing.Size(176, 37);
+            this.getStudentsNumberButton.Size = new System.Drawing.Size(235, 57);
             this.getStudentsNumberButton.TabIndex = 3;
             this.getStudentsNumberButton.Text = "Recieve amount of students.";
             this.getStudentsNumberButton.UseVisualStyleBackColor = false;
@@ -82,10 +82,10 @@
             // 
             this.getAssociatesNumber.BackColor = System.Drawing.Color.MistyRose;
             this.getAssociatesNumber.Font = new System.Drawing.Font("David", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.getAssociatesNumber.Location = new System.Drawing.Point(92, 290);
-            this.getAssociatesNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.getAssociatesNumber.Location = new System.Drawing.Point(123, 357);
+            this.getAssociatesNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.getAssociatesNumber.Name = "getAssociatesNumber";
-            this.getAssociatesNumber.Size = new System.Drawing.Size(176, 37);
+            this.getAssociatesNumber.Size = new System.Drawing.Size(235, 56);
             this.getAssociatesNumber.TabIndex = 4;
             this.getAssociatesNumber.Text = "Recieve amount of associates.";
             this.getAssociatesNumber.UseVisualStyleBackColor = false;
@@ -95,10 +95,10 @@
             // 
             this.Back.BackColor = System.Drawing.Color.MistyRose;
             this.Back.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Back.Location = new System.Drawing.Point(92, 400);
-            this.Back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Back.Location = new System.Drawing.Point(123, 492);
+            this.Back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(176, 37);
+            this.Back.Size = new System.Drawing.Size(235, 46);
             this.Back.TabIndex = 5;
             this.Back.Text = "Back to last menu.";
             this.Back.UseVisualStyleBackColor = false;
@@ -107,28 +107,30 @@
             // textBox
             // 
             this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox.Location = new System.Drawing.Point(106, 17);
+            this.textBox.Location = new System.Drawing.Point(141, 21);
+            this.textBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(760, 26);
+            this.textBox.Size = new System.Drawing.Size(1012, 30);
             this.textBox.TabIndex = 6;
             // 
             // dataGrid
             // 
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid.Location = new System.Drawing.Point(340, 62);
+            this.dataGrid.Location = new System.Drawing.Point(453, 76);
+            this.dataGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGrid.Name = "dataGrid";
-            this.dataGrid.Size = new System.Drawing.Size(563, 462);
+            this.dataGrid.Size = new System.Drawing.Size(751, 569);
             this.dataGrid.TabIndex = 7;
             this.dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellContentClick);
             this.dataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellDoubleClick);
             // 
             // Form_adminAccountsMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1012, 609);
+            this.ClientSize = new System.Drawing.Size(1349, 750);
             this.Controls.Add(this.dataGrid);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.Back);
@@ -137,7 +139,7 @@
             this.Controls.Add(this.watchAssociate);
             this.Controls.Add(this.watchStudents);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form_adminAccountsMenu";
             this.Text = "Admin\'s accounts menu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_adminAccountsMenu_FormClosed);
