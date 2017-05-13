@@ -71,7 +71,7 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
                                                  ";
 }
 
-        private void UpdateCoursesDataGridView()
+        public void UpdateCoursesDataGridView()
         {
             try
             {

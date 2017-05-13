@@ -40,6 +40,7 @@
             this.Semester = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Header_label = new System.Windows.Forms.Label();
             this.GoBackButton = new System.Windows.Forms.Button();
+            this.removeCourseButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CoursesReport
@@ -58,7 +59,9 @@
             this.CoursesReport.ForeColor = System.Drawing.SystemColors.WindowText;
             this.CoursesReport.FullRowSelect = true;
             this.CoursesReport.GridLines = true;
-            this.CoursesReport.Location = new System.Drawing.Point(131, 117);
+            this.CoursesReport.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.CoursesReport.Location = new System.Drawing.Point(12, 106);
+            this.CoursesReport.MultiSelect = false;
             this.CoursesReport.Name = "CoursesReport";
             this.CoursesReport.Size = new System.Drawing.Size(734, 351);
             this.CoursesReport.TabIndex = 0;
@@ -113,7 +116,7 @@
             this.Header_label.Enabled = false;
             this.Header_label.Font = new System.Drawing.Font("David", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.Header_label.ForeColor = System.Drawing.Color.Black;
-            this.Header_label.Location = new System.Drawing.Point(378, 56);
+            this.Header_label.Location = new System.Drawing.Point(12, 36);
             this.Header_label.Name = "Header_label";
             this.Header_label.Size = new System.Drawing.Size(205, 27);
             this.Header_label.TabIndex = 1;
@@ -130,11 +133,23 @@
             this.GoBackButton.UseVisualStyleBackColor = true;
             this.GoBackButton.Click += new System.EventHandler(this.GoBackClick);
             // 
+            // removeCourseButton
+            // 
+            this.removeCourseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.removeCourseButton.Location = new System.Drawing.Point(790, 220);
+            this.removeCourseButton.Name = "removeCourseButton";
+            this.removeCourseButton.Size = new System.Drawing.Size(114, 42);
+            this.removeCourseButton.TabIndex = 3;
+            this.removeCourseButton.Text = "Remove Course";
+            this.removeCourseButton.UseVisualStyleBackColor = true;
+            this.removeCourseButton.Click += new System.EventHandler(this.removeCourseButton_Click);
+            // 
             // Form_secretaryStudentCoursesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(996, 570);
+            this.Controls.Add(this.removeCourseButton);
             this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.Header_label);
             this.Controls.Add(this.CoursesReport);
@@ -161,5 +176,6 @@
         private System.Windows.Forms.ColumnHeader Num;
         private System.Windows.Forms.Label Header_label;
         private System.Windows.Forms.Button GoBackButton;
+        private System.Windows.Forms.Button removeCourseButton;
     }
 }

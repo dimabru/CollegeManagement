@@ -44,6 +44,7 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
             int counter = 1;
             try
             {
+                removeCourseButton.Enabled = true;
                 foreach (DataRow course in ds.Tables[0].Rows)
                 {
                     ListViewItem lv = new ListViewItem(counter.ToString());
@@ -56,18 +57,43 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+                removeCourseButton.Enabled = false;
             }
+        }
+
+        private void removeStudentFromCourse(string courseID)
+        {
+            string query = @"DELETE FROM Schedules
+                            WHERE   Course_ID="
+                            + courseID +
+                            @" AND   Student_UN='"
+                            + student.Username+@"'";
+            MessageBox.Show(query);
+            connection.executionQuery(query);
+
+            UpdateListView();
+
         }
 
         private void Form_secretaryStudentCoursesReport_FormClosed(object sender, FormClosedEventArgs e)
         {
             Form_secretaryManageStudent parent = (Form_secretaryManageStudent)this.Owner;
+            parent.UpdateCoursesDataGridView();
             parent.Show();
         }
 
         private void GoBackClick(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void removeCourseButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string courseID = CoursesReport.SelectedItems[0].SubItems[1].Text;
+                removeStudentFromCourse(courseID);
+            }catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 }
