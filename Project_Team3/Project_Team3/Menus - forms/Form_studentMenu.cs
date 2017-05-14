@@ -109,7 +109,11 @@ namespace Project_Team3
         ///
         private void AssociationInformationButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            using (Form_studentWatchEvents studentWatchEvents = new Form_studentWatchEvents())
+            {
+                this.Hide();
+                studentWatchEvents.ShowDialog(this);
+            }
         }
 
         private void RegisterEventsButton_Click(object sender, EventArgs e)
@@ -128,7 +132,6 @@ namespace Project_Team3
 
         private void MandatoryCoursesListButton_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("UNDER CONSTRUCTION");
             using (Form_studentRequiredCourses studentReqCourses = new Form_studentRequiredCourses(username))
             {
                 this.Hide();
