@@ -37,9 +37,6 @@
             this.addNewRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.associationInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registerToAssociationEventsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.unregisterAssociationEventsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coursesMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listOfMandatoryCoursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.watchMyCoursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -121,35 +118,10 @@
             // 
             // studentRequestsToolStripMenuItem
             // 
-            this.studentRequestsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.associationInformationToolStripMenuItem,
-            this.registerToAssociationEventsToolStripMenuItem,
-            this.unregisterAssociationEventsToolStripMenuItem});
             this.studentRequestsToolStripMenuItem.Name = "studentRequestsToolStripMenuItem";
             this.studentRequestsToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
             this.studentRequestsToolStripMenuItem.Text = "Association Menu";
             this.studentRequestsToolStripMenuItem.Click += new System.EventHandler(this.studentRequestsToolStripMenuItem_Click);
-            // 
-            // associationInformationToolStripMenuItem
-            // 
-            this.associationInformationToolStripMenuItem.Name = "associationInformationToolStripMenuItem";
-            this.associationInformationToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.associationInformationToolStripMenuItem.Text = "Association information";
-            this.associationInformationToolStripMenuItem.Click += new System.EventHandler(this.AssociationInformationButton_Click);
-            // 
-            // registerToAssociationEventsToolStripMenuItem
-            // 
-            this.registerToAssociationEventsToolStripMenuItem.Name = "registerToAssociationEventsToolStripMenuItem";
-            this.registerToAssociationEventsToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.registerToAssociationEventsToolStripMenuItem.Text = "Register to association events";
-            this.registerToAssociationEventsToolStripMenuItem.Click += new System.EventHandler(this.RegisterEventsButton_Click);
-            // 
-            // unregisterAssociationEventsToolStripMenuItem
-            // 
-            this.unregisterAssociationEventsToolStripMenuItem.Name = "unregisterAssociationEventsToolStripMenuItem";
-            this.unregisterAssociationEventsToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.unregisterAssociationEventsToolStripMenuItem.Text = "Unregister association events";
-            this.unregisterAssociationEventsToolStripMenuItem.Click += new System.EventHandler(this.UnregisterEventsButton_Click);
             // 
             // coursesMenuToolStripMenuItem
             // 
@@ -281,9 +253,6 @@
         private System.Windows.Forms.ToolStripMenuItem myRequestsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem studentRequestsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem coursesMenuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem associationInformationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registerToAssociationEventsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem unregisterAssociationEventsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listOfMandatoryCoursesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem watchMyCoursesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeCourseTimeToolStripMenuItem;

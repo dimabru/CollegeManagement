@@ -80,12 +80,6 @@ namespace Project_Team3
             this.Close();
         }
 
-        private void studentRequestsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         /// 
         /// REQUEST MENU
         /// 
@@ -107,23 +101,13 @@ namespace Project_Team3
         ///    ASSSOCIATION MENU
         ///
         ///
-        private void AssociationInformationButton_Click(object sender, EventArgs e)
+        private void studentRequestsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (Form_studentWatchEvents studentWatchEvents = new Form_studentWatchEvents())
+            using (Form_studentWatchEvents studentWatchEvents = new Form_studentWatchEvents(username))
             {
                 this.Hide();
                 studentWatchEvents.ShowDialog(this);
             }
-        }
-
-        private void RegisterEventsButton_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("UNDER CONSTRUCTION");
-        }
-
-        private void UnregisterEventsButton_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("UNDER CONSTRUCTION");
         }
 
         ///
