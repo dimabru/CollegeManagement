@@ -35,14 +35,6 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
         private void retrieveData()
         {
 
-            // rename columns default names in datagrid
-            dataGrid.Columns[0].HeaderText = "Request message";
-            dataGrid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGrid.Columns[1].HeaderText = "Request status";
-            dataGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGrid.Columns[2].HeaderText = "Assigned to secretary";
-            dataGrid.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-
             try
             {
                 dataGrid.DataSource = null;
@@ -50,6 +42,15 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
                 dataSet = db.LoadTableByFreeQuerry("select messagebody, StatusOFRequest, Assignedto from StudentRequests where StudentUsername = '" + username + "'");
                 dataGrid.ReadOnly = true;
                 dataGrid.DataSource = dataSet.Tables[0];
+
+
+                // rename columns default names in datagrid
+                dataGrid.Columns[0].HeaderText = "Request message";
+                dataGrid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGrid.Columns[1].HeaderText = "Request status";
+                dataGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGrid.Columns[2].HeaderText = "Assigned to secretary";
+                dataGrid.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             }
             catch (Exception)
             {

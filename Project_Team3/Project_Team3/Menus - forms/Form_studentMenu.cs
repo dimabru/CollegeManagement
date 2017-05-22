@@ -41,7 +41,7 @@ namespace Project_Team3
 
         private void Form_studentMenu_Load(object sender, EventArgs e)
         {
-           
+            studentRequestResponsed();
         }
 
 
@@ -144,6 +144,35 @@ namespace Project_Team3
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        // checks if there at least one students request that have status R_Allowed or R_denied, if there are new 
+        // responces found, rename them to Allowed or Denied
+        private void studentRequestResponsed()
+        {
+            DBconnect db = new DBconnect();
+                string query = "select COUNT(*) from StudentRequests  WHERE StudentUsername = '" + username + "' AND StatusOFRequest IN ('R_Allowed','R_Denied')";
+                using (SqlCommand sqlCommand = new SqlCommand(query, db.getConnection()))
+                {
+                    db.OpenConn();
+
+                    int userCount = (int)sqlCommand.ExecuteScalar();
+                    if (userCount > 0)
+                    {
+                        MessageBox.Show("You received responce to one or more of your student request\nCheck them in \" Student requests -> My requests\"");
+                        removeRequestsPopup(db);
+                    }
+                }
+            }
+
+
+        private void removeRequestsPopup(DBconnect db) {
+            try
+            {
+                db.executionQuery("UPDATE studentrequests SET STATUSOFREQUEST = 'Allowed' WHERE STATUSOFREQUEST='R_Allowed' and STUDENTUSERNAME='" + username + "'");
+                db.executionQuery("UPDATE studentrequests SET STATUSOFREQUEST = 'Denied' WHERE STATUSOFREQUEST='R_Denied' and STUDENTUSERNAME='" + username + "'");
+            }
+            catch (Exception ex) { }
         }
     }
 }
