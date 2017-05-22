@@ -240,6 +240,12 @@
     <Compile Include="Menus - forms\StudentSubMenus\Form_studentRequiredCourses.Designer.cs">
       <DependentUpon>Form_studentRequiredCourses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus - forms\StudentSubMenus\Form_studentViewRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\StudentSubMenus\Form_studentViewRequests.Designer.cs">
+      <DependentUpon>Form_studentViewRequests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menus - forms\StudentSubMenus\Form_studentWatchEvents.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\StudentSubMenus\Form_studentRequiredCourses.resx">
       <DependentUpon>Form_studentRequiredCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\StudentSubMenus\Form_studentViewRequests.resx">
+      <DependentUpon>Form_studentViewRequests.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\StudentSubMenus\Form_studentWatchEvents.resx">
       <DependentUpon>Form_studentWatchEvents.cs</DependentUpon>
