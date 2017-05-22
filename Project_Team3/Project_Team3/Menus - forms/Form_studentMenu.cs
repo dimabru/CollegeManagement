@@ -95,7 +95,11 @@ namespace Project_Team3
 
         private void ExistingRequestsButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            Form_studentViewRequests studentRequests = new Form_studentViewRequests();
+            studentRequests.setUsername(username);
+            studentRequests.Show();
+
+
         }
 
         ///    ASSSOCIATION MENU

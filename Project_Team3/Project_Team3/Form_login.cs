@@ -21,7 +21,6 @@ namespace Project_Team3
             {
                 return username;
             }
-
             set
             {
                 username = value;
@@ -132,7 +131,7 @@ namespace Project_Team3
             else
             {
                 // Console app
-                System.Environment.Exit(1);
+                System.Environment.Exit(0);
             }
         }
 
@@ -147,7 +146,7 @@ namespace Project_Team3
             else
             {
                 // Console app
-                System.Environment.Exit(1);
+                System.Environment.Exit(0);
             }
         }
 

@@ -168,5 +168,20 @@ namespace Project_Team3
                 return false;
             }
         }
+
+        public DataSet LoadTableByFreeQuerry(string querry)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.CommandText = querry;
+
+            SqlDataAdapter sda = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+            sda.SelectCommand = cmd;
+            sda.Fill(ds, "Conn_DB");
+
+            return ds;
+        }
     }
 }
