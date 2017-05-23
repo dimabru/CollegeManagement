@@ -57,7 +57,7 @@
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(124, 75);
+            this.labelName.Location = new System.Drawing.Point(49, 146);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(35, 13);
             this.labelName.TabIndex = 1;
@@ -66,7 +66,7 @@
             // labelTeacherID
             // 
             this.labelTeacherID.AutoSize = true;
-            this.labelTeacherID.Location = new System.Drawing.Point(209, 75);
+            this.labelTeacherID.Location = new System.Drawing.Point(248, 75);
             this.labelTeacherID.Name = "labelTeacherID";
             this.labelTeacherID.Size = new System.Drawing.Size(35, 13);
             this.labelTeacherID.TabIndex = 2;
@@ -75,7 +75,7 @@
             // labelMaxStudents
             // 
             this.labelMaxStudents.AutoSize = true;
-            this.labelMaxStudents.Location = new System.Drawing.Point(298, 75);
+            this.labelMaxStudents.Location = new System.Drawing.Point(248, 146);
             this.labelMaxStudents.Name = "labelMaxStudents";
             this.labelMaxStudents.Size = new System.Drawing.Size(35, 13);
             this.labelMaxStudents.TabIndex = 3;
@@ -84,7 +84,7 @@
             // labelRoom
             // 
             this.labelRoom.AutoSize = true;
-            this.labelRoom.Location = new System.Drawing.Point(388, 75);
+            this.labelRoom.Location = new System.Drawing.Point(468, 75);
             this.labelRoom.Name = "labelRoom";
             this.labelRoom.Size = new System.Drawing.Size(35, 13);
             this.labelRoom.TabIndex = 4;
@@ -93,7 +93,7 @@
             // labelDay
             // 
             this.labelDay.AutoSize = true;
-            this.labelDay.Location = new System.Drawing.Point(482, 75);
+            this.labelDay.Location = new System.Drawing.Point(468, 146);
             this.labelDay.Name = "labelDay";
             this.labelDay.Size = new System.Drawing.Size(35, 13);
             this.labelDay.TabIndex = 5;
@@ -102,7 +102,7 @@
             // labelStart_H
             // 
             this.labelStart_H.AutoSize = true;
-            this.labelStart_H.Location = new System.Drawing.Point(571, 75);
+            this.labelStart_H.Location = new System.Drawing.Point(665, 75);
             this.labelStart_H.Name = "labelStart_H";
             this.labelStart_H.Size = new System.Drawing.Size(35, 13);
             this.labelStart_H.TabIndex = 6;
@@ -111,7 +111,7 @@
             // labelEnd_H
             // 
             this.labelEnd_H.AutoSize = true;
-            this.labelEnd_H.Location = new System.Drawing.Point(655, 75);
+            this.labelEnd_H.Location = new System.Drawing.Point(665, 146);
             this.labelEnd_H.Name = "labelEnd_H";
             this.labelEnd_H.Size = new System.Drawing.Size(35, 13);
             this.labelEnd_H.TabIndex = 7;
@@ -120,7 +120,7 @@
             // labelSemester
             // 
             this.labelSemester.AutoSize = true;
-            this.labelSemester.Location = new System.Drawing.Point(748, 75);
+            this.labelSemester.Location = new System.Drawing.Point(858, 75);
             this.labelSemester.Name = "labelSemester";
             this.labelSemester.Size = new System.Drawing.Size(35, 13);
             this.labelSemester.TabIndex = 8;
@@ -129,7 +129,7 @@
             // labelTrack
             // 
             this.labelTrack.AutoSize = true;
-            this.labelTrack.Location = new System.Drawing.Point(848, 75);
+            this.labelTrack.Location = new System.Drawing.Point(858, 146);
             this.labelTrack.Name = "labelTrack";
             this.labelTrack.Size = new System.Drawing.Size(35, 13);
             this.labelTrack.TabIndex = 9;
