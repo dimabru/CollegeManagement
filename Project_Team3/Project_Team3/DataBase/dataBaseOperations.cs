@@ -906,6 +906,61 @@ namespace Project_Team3
             }
         }
 
+
+        public static ulong getIdByMail(string mail)
+        {
+            try
+            {
+                string to_return = "";
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from dbo.Users where MAIL = '" + mail + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+
+                while (dbr.Read())
+                {
+                    to_return = dbr.GetValue(0).ToString();
+                }
+                con.Close();
+                return publicChecksAndOperations.convertToUlong(to_return);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+
+        public static Boolean facebookUserExist(string mail, string userType)
+        {
+            try
+            {
+                String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                String query = "select * from Users where MAIL = '" + mail + "'and ACCESSGROUP = '" + userType + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+                //int count = 0;
+                while (dbr.Read())
+                {
+                    con.Close();
+                    return true;
+                }
+                con.Close();
+                return false;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        
+
         public Boolean userExist(String password, ulong id,String userType)
         {
             try

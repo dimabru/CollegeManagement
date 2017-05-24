@@ -14,10 +14,8 @@ namespace Project_Team3
     public partial class firstMenu : Form
     {
         
-        public firstMenu()
-        {
+        public firstMenu(){
             InitializeComponent();
-            
         }
 
         private void firstMenu_Load(object sender, EventArgs e)

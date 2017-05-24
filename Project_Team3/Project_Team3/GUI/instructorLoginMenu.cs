@@ -64,7 +64,6 @@ namespace Project_Team3
 
                         this.Hide();
                         instrfMen.ShowDialog();
-
                     }
                     else
                     {
@@ -133,6 +132,7 @@ namespace Project_Team3
         {
            
         }
+
         private void facebookLoginButton(object sender, EventArgs e)
         {
             facebook();
@@ -143,7 +143,27 @@ namespace Project_Team3
         {
             Application.EnableVisualStyles();
             g = new GetTheMail();
-            MessageBox.Show(g.getMail());
+            string mail = g.getMail();
+            if (dataBaseOperations.facebookUserExist(mail, "instructor") )
+            {
+
+                //In perception i thing that its importent to pass 
+                //user object for the next managing form
+                //plese do it in all other form  
+                ulong i = dataBaseOperations.getIdByMail(mail);
+                //here i create new inst obj
+                instructor inst = new instructor(dataBaseOperations.getIdByMail(mail));
+                //and then i pass it to the next form 
+                //i'll catch it in the next form constractor
+                teachingStaffMenu instrfMen = new teachingStaffMenu(inst);
+
+                this.Hide();
+                instrfMen.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("the user not exist");
+            }
             g.logout();
         }
     }
