@@ -12,6 +12,8 @@ namespace Project_Team3
 {
     public partial class instructorLoginMenu : Form
     {
+        private GetTheMail g;
+
         public instructorLoginMenu()
         {
             InitializeComponent();
@@ -130,6 +132,19 @@ namespace Project_Team3
         private void instructorLoginMenu_Load(object sender, EventArgs e)
         {
            
+        }
+        private void facebookLoginButton(object sender, EventArgs e)
+        {
+            facebook();
+        }
+
+        [STAThread]
+        public void facebook()
+        {
+            Application.EnableVisualStyles();
+            g = new GetTheMail();
+            MessageBox.Show(g.getMail());
+            g.logout();
         }
     }
 }

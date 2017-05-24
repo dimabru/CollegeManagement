@@ -55,6 +55,10 @@
       <HintPath>..\packages\CircularProgressBar.2.5.6298.4486\lib\net35-client\CircularProgressBar.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facebook.7.0.6\lib\net45\Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -74,6 +78,21 @@
   <ItemGroup>
     <Compile Include="Courses\Course.cs" />
     <Compile Include="Courses\Room.cs" />
+    <Compile Include="facebook\Analyze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="facebook\Analyze.designer.cs" />
+    <Compile Include="facebook\FacebookLoginDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="facebook\FacebookLoginDialog.designer.cs" />
+    <Compile Include="facebook\FB_Analyze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="facebook\FB_Analyze.designer.cs" />
+    <Compile Include="facebook\GetTheMail.cs" />
+    <Compile Include="facebook\MiniJson.cs" />
+    <Compile Include="facebook\Program.cs" />
     <Compile Include="GUI\adminMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +159,9 @@
     <Compile Include="DataBase\dataBaseOperations.cs" />
     <Compile Include="Users\techingStaffConstraints.cs" />
     <Compile Include="Users\user.cs" />
+    <EmbeddedResource Include="facebook\Analyze.resx" />
+    <EmbeddedResource Include="facebook\FacebookLoginDialog.resx" />
+    <EmbeddedResource Include="facebook\FB_Analyze.resx" />
     <EmbeddedResource Include="GUI\adminLoginMenu.resx">
       <DependentUpon>adminLoginMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +244,7 @@
     <None Include="Resources\constrains icon1.jpg" />
     <None Include="Resources\constraints_s_1.jpg" />
     <Content Include="Resources\delete_user.jpg" />
+    <None Include="Resources\loginWithFacebook.png" />
     <Content Include="Resources\password.jepg.ico" />
     <Content Include="Resources\schedule.jpg" />
     <Content Include="Resources\users.jpg" />

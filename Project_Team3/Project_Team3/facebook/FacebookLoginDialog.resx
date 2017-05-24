@@ -117,32 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="add_course" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_course.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="constraints_s_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\constraints_s_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="constrains icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\constrains icon1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\x.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="v" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\v.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="secretary" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\secretary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="class_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\class_2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="class" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\class.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="loginWithFacebook" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loginWithFacebook.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

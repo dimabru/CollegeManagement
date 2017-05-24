@@ -253,7 +253,7 @@ namespace Project_Team3
             }
             catch (Exception e)
             {
-                throw;
+                throw e;
             }
         }
 
@@ -612,7 +612,7 @@ namespace Project_Team3
             }
             catch (Exception e)
             {
-                throw;
+                throw e;
             }
 
         }
@@ -668,7 +668,7 @@ namespace Project_Team3
             }
             catch (Exception e)
             {
-                throw;
+                throw e;
             }
 
         }

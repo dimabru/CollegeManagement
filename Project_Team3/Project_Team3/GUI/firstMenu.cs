@@ -13,14 +13,15 @@ namespace Project_Team3
 {
     public partial class firstMenu : Form
     {
+        
         public firstMenu()
         {
             InitializeComponent();
+            
         }
 
         private void firstMenu_Load(object sender, EventArgs e)
         {
-
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
