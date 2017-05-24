@@ -28,28 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_studentMenu));
             this.LogoutStudent = new System.Windows.Forms.Button();
             this.eventLog1 = new System.Diagnostics.EventLog();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.associationMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.myRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.studentRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.coursesMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listOfMandatoryCoursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.watchMyCoursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeCourseTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.sunday_box = new System.Windows.Forms.ListBox();
-            this.monday_box = new System.Windows.Forms.ListBox();
-            this.tuesday_box = new System.Windows.Forms.ListBox();
-            this.wednesday_box = new System.Windows.Forms.ListBox();
-            this.thursday_box = new System.Windows.Forms.ListBox();
-            this.friday_box = new System.Windows.Forms.ListBox();
+            this.AddNewReqbutton = new System.Windows.Forms.Button();
+            this.WatchReqbutton = new System.Windows.Forms.Button();
+            this.AssociationMenubutton = new System.Windows.Forms.Button();
+            this.WatchCoursesbutton = new System.Windows.Forms.Button();
+            this.MandatoryCoursesbutton = new System.Windows.Forms.Button();
+            this.ChangeCourseTimebutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
-            this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,10 +46,9 @@
             // 
             this.LogoutStudent.BackColor = System.Drawing.Color.MistyRose;
             this.LogoutStudent.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.LogoutStudent.Location = new System.Drawing.Point(867, 26);
-            this.LogoutStudent.Margin = new System.Windows.Forms.Padding(2);
+            this.LogoutStudent.Location = new System.Drawing.Point(599, 800);
             this.LogoutStudent.Name = "LogoutStudent";
-            this.LogoutStudent.Size = new System.Drawing.Size(145, 43);
+            this.LogoutStudent.Size = new System.Drawing.Size(259, 75);
             this.LogoutStudent.TabIndex = 0;
             this.LogoutStudent.Text = "Logout";
             this.LogoutStudent.UseVisualStyleBackColor = false;
@@ -73,169 +61,103 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox1.Location = new System.Drawing.Point(0, 26);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Location = new System.Drawing.Point(0, 1);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(863, 43);
+            this.textBox1.Size = new System.Drawing.Size(1292, 64);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "Future global message";
-            // 
-            // menuStrip
-            // 
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.associationMenuToolStripMenuItem,
-            this.studentRequestsToolStripMenuItem,
-            this.coursesMenuToolStripMenuItem});
-            this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1012, 24);
-            this.menuStrip.TabIndex = 7;
-            this.menuStrip.Text = "StudentMenuStrip";
-            // 
-            // associationMenuToolStripMenuItem
-            // 
-            this.associationMenuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewRequestToolStripMenuItem,
-            this.myRequestsToolStripMenuItem});
-            this.associationMenuToolStripMenuItem.Name = "associationMenuToolStripMenuItem";
-            this.associationMenuToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
-            this.associationMenuToolStripMenuItem.Text = "Student Requests";
-            // 
-            // addNewRequestToolStripMenuItem
-            // 
-            this.addNewRequestToolStripMenuItem.Name = "addNewRequestToolStripMenuItem";
-            this.addNewRequestToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.addNewRequestToolStripMenuItem.Text = "Add new Request";
-            this.addNewRequestToolStripMenuItem.Click += new System.EventHandler(this.NewRequestButton_Click);
-            // 
-            // myRequestsToolStripMenuItem
-            // 
-            this.myRequestsToolStripMenuItem.Name = "myRequestsToolStripMenuItem";
-            this.myRequestsToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.myRequestsToolStripMenuItem.Text = "My requests";
-            this.myRequestsToolStripMenuItem.Click += new System.EventHandler(this.ExistingRequestsButton_Click);
-            // 
-            // studentRequestsToolStripMenuItem
-            // 
-            this.studentRequestsToolStripMenuItem.Name = "studentRequestsToolStripMenuItem";
-            this.studentRequestsToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
-            this.studentRequestsToolStripMenuItem.Text = "Association Menu";
-            this.studentRequestsToolStripMenuItem.Click += new System.EventHandler(this.studentRequestsToolStripMenuItem_Click);
-            // 
-            // coursesMenuToolStripMenuItem
-            // 
-            this.coursesMenuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listOfMandatoryCoursesToolStripMenuItem,
-            this.watchMyCoursesToolStripMenuItem,
-            this.changeCourseTimeToolStripMenuItem});
-            this.coursesMenuToolStripMenuItem.Name = "coursesMenuToolStripMenuItem";
-            this.coursesMenuToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
-            this.coursesMenuToolStripMenuItem.Text = "Courses Menu";
-            // 
-            // listOfMandatoryCoursesToolStripMenuItem
-            // 
-            this.listOfMandatoryCoursesToolStripMenuItem.Name = "listOfMandatoryCoursesToolStripMenuItem";
-            this.listOfMandatoryCoursesToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.listOfMandatoryCoursesToolStripMenuItem.Text = "List of mandatory courses";
-            this.listOfMandatoryCoursesToolStripMenuItem.Click += new System.EventHandler(this.MandatoryCoursesListButton_Click);
-            // 
-            // watchMyCoursesToolStripMenuItem
-            // 
-            this.watchMyCoursesToolStripMenuItem.Name = "watchMyCoursesToolStripMenuItem";
-            this.watchMyCoursesToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.watchMyCoursesToolStripMenuItem.Text = "Watch my courses";
-            this.watchMyCoursesToolStripMenuItem.Click += new System.EventHandler(this.WatchCoursesButton_Click);
-            // 
-            // changeCourseTimeToolStripMenuItem
-            // 
-            this.changeCourseTimeToolStripMenuItem.Name = "changeCourseTimeToolStripMenuItem";
-            this.changeCourseTimeToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.changeCourseTimeToolStripMenuItem.Text = "Change course time";
-            this.changeCourseTimeToolStripMenuItem.Click += new System.EventHandler(this.ChangeCourseTimeButton_Click);
             // 
             // fileSystemWatcher1
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
-            // sunday_box
+            // AddNewReqbutton
             // 
-            this.sunday_box.FormattingEnabled = true;
-            this.sunday_box.Items.AddRange(new object[] {
-            "8:00 - 12:00 - חדווא 1"});
-            this.sunday_box.Location = new System.Drawing.Point(61, 106);
-            this.sunday_box.Name = "sunday_box";
-            this.sunday_box.Size = new System.Drawing.Size(156, 498);
-            this.sunday_box.TabIndex = 8;
+            this.AddNewReqbutton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold);
+            this.AddNewReqbutton.Location = new System.Drawing.Point(599, 572);
+            this.AddNewReqbutton.Name = "AddNewReqbutton";
+            this.AddNewReqbutton.Size = new System.Drawing.Size(259, 74);
+            this.AddNewReqbutton.TabIndex = 8;
+            this.AddNewReqbutton.Text = "Add New Request";
+            this.AddNewReqbutton.UseVisualStyleBackColor = true;
+            this.AddNewReqbutton.Click += new System.EventHandler(this.AddNewReqbutton_Click);
             // 
-            // monday_box
+            // WatchReqbutton
             // 
-            this.monday_box.FormattingEnabled = true;
-            this.monday_box.Location = new System.Drawing.Point(224, 106);
-            this.monday_box.Name = "monday_box";
-            this.monday_box.Size = new System.Drawing.Size(152, 498);
-            this.monday_box.TabIndex = 9;
+            this.WatchReqbutton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold);
+            this.WatchReqbutton.Location = new System.Drawing.Point(599, 687);
+            this.WatchReqbutton.Name = "WatchReqbutton";
+            this.WatchReqbutton.Size = new System.Drawing.Size(259, 65);
+            this.WatchReqbutton.TabIndex = 9;
+            this.WatchReqbutton.Text = "Watch My Requests";
+            this.WatchReqbutton.UseVisualStyleBackColor = true;
+            this.WatchReqbutton.Click += new System.EventHandler(this.WatchReqbutton_Click);
             // 
-            // tuesday_box
+            // AssociationMenubutton
             // 
-            this.tuesday_box.FormattingEnabled = true;
-            this.tuesday_box.Location = new System.Drawing.Point(383, 106);
-            this.tuesday_box.Name = "tuesday_box";
-            this.tuesday_box.Size = new System.Drawing.Size(154, 498);
-            this.tuesday_box.TabIndex = 10;
+            this.AssociationMenubutton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold);
+            this.AssociationMenubutton.Location = new System.Drawing.Point(599, 452);
+            this.AssociationMenubutton.Name = "AssociationMenubutton";
+            this.AssociationMenubutton.Size = new System.Drawing.Size(259, 78);
+            this.AssociationMenubutton.TabIndex = 10;
+            this.AssociationMenubutton.Text = "Association Menu";
+            this.AssociationMenubutton.UseVisualStyleBackColor = true;
+            this.AssociationMenubutton.Click += new System.EventHandler(this.AssociationMenubutton_Click_1);
             // 
-            // wednesday_box
+            // WatchCoursesbutton
             // 
-            this.wednesday_box.FormattingEnabled = true;
-            this.wednesday_box.Location = new System.Drawing.Point(542, 106);
-            this.wednesday_box.Name = "wednesday_box";
-            this.wednesday_box.Size = new System.Drawing.Size(151, 498);
-            this.wednesday_box.TabIndex = 11;
+            this.WatchCoursesbutton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold);
+            this.WatchCoursesbutton.Location = new System.Drawing.Point(599, 113);
+            this.WatchCoursesbutton.Name = "WatchCoursesbutton";
+            this.WatchCoursesbutton.Size = new System.Drawing.Size(259, 72);
+            this.WatchCoursesbutton.TabIndex = 11;
+            this.WatchCoursesbutton.Text = "Watch My Courses";
+            this.WatchCoursesbutton.UseVisualStyleBackColor = true;
+            this.WatchCoursesbutton.Click += new System.EventHandler(this.WatchCoursesbutton_Click_1);
             // 
-            // thursday_box
+            // MandatoryCoursesbutton
             // 
-            this.thursday_box.FormattingEnabled = true;
-            this.thursday_box.Location = new System.Drawing.Point(699, 106);
-            this.thursday_box.Name = "thursday_box";
-            this.thursday_box.Size = new System.Drawing.Size(151, 498);
-            this.thursday_box.TabIndex = 12;
+            this.MandatoryCoursesbutton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold);
+            this.MandatoryCoursesbutton.Location = new System.Drawing.Point(599, 232);
+            this.MandatoryCoursesbutton.Name = "MandatoryCoursesbutton";
+            this.MandatoryCoursesbutton.Size = new System.Drawing.Size(259, 74);
+            this.MandatoryCoursesbutton.TabIndex = 12;
+            this.MandatoryCoursesbutton.Text = "Watch Mandatory Courses";
+            this.MandatoryCoursesbutton.UseVisualStyleBackColor = true;
+            this.MandatoryCoursesbutton.Click += new System.EventHandler(this.MandatoryCoursesbutton_Click);
             // 
-            // friday_box
+            // ChangeCourseTimebutton
             // 
-            this.friday_box.FormattingEnabled = true;
-            this.friday_box.Location = new System.Drawing.Point(856, 106);
-            this.friday_box.Name = "friday_box";
-            this.friday_box.Size = new System.Drawing.Size(156, 498);
-            this.friday_box.TabIndex = 13;
+            this.ChangeCourseTimebutton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold);
+            this.ChangeCourseTimebutton.Location = new System.Drawing.Point(599, 349);
+            this.ChangeCourseTimebutton.Name = "ChangeCourseTimebutton";
+            this.ChangeCourseTimebutton.Size = new System.Drawing.Size(259, 64);
+            this.ChangeCourseTimebutton.TabIndex = 13;
+            this.ChangeCourseTimebutton.Text = "Change Course Time";
+            this.ChangeCourseTimebutton.UseVisualStyleBackColor = true;
+            this.ChangeCourseTimebutton.Click += new System.EventHandler(this.ChangeCourseTimebutton_Click_1);
             // 
             // Form_studentMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1012, 609);
-            this.Controls.Add(this.friday_box);
-            this.Controls.Add(this.thursday_box);
-            this.Controls.Add(this.wednesday_box);
-            this.Controls.Add(this.tuesday_box);
-            this.Controls.Add(this.monday_box);
-            this.Controls.Add(this.sunday_box);
+            this.ClientSize = new System.Drawing.Size(1494, 877);
+            this.Controls.Add(this.ChangeCourseTimebutton);
+            this.Controls.Add(this.MandatoryCoursesbutton);
+            this.Controls.Add(this.WatchCoursesbutton);
+            this.Controls.Add(this.AssociationMenubutton);
+            this.Controls.Add(this.WatchReqbutton);
+            this.Controls.Add(this.AddNewReqbutton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.LogoutStudent);
-            this.Controls.Add(this.menuStrip);
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_studentMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Menu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_studentMenu_FormClosed);
             this.Load += new System.EventHandler(this.Form_studentMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -247,21 +169,12 @@
         private System.Windows.Forms.Button LogoutStudent;
         private System.Diagnostics.EventLog eventLog1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem associationMenuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addNewRequestToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem myRequestsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem studentRequestsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem coursesMenuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listOfMandatoryCoursesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem watchMyCoursesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changeCourseTimeToolStripMenuItem;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
-        private System.Windows.Forms.ListBox friday_box;
-        private System.Windows.Forms.ListBox thursday_box;
-        private System.Windows.Forms.ListBox wednesday_box;
-        private System.Windows.Forms.ListBox tuesday_box;
-        private System.Windows.Forms.ListBox monday_box;
-        private System.Windows.Forms.ListBox sunday_box;
+        private System.Windows.Forms.Button ChangeCourseTimebutton;
+        private System.Windows.Forms.Button MandatoryCoursesbutton;
+        private System.Windows.Forms.Button WatchCoursesbutton;
+        private System.Windows.Forms.Button AssociationMenubutton;
+        private System.Windows.Forms.Button WatchReqbutton;
+        private System.Windows.Forms.Button AddNewReqbutton;
     }
 }

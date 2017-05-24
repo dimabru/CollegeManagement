@@ -44,106 +44,15 @@ namespace Project_Team3
             studentRequestResponsed();
         }
 
-
-
         private void Form_studentMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             Form_login parent = (Form_login)this.Owner;
             parent.Show();
         }
 
-        private void AssociationMenuButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void StudentRequestButton_Click(object sender, EventArgs e)
-        {
-            this.IsMdiContainer = true;
-            using (Form_studentAddRequest studentRequestMenu = new Form_studentAddRequest())
-            {
-                this.Hide();
-
-                studentRequestMenu.MdiParent = this;
-                studentRequestMenu.setUsername(username);
-                studentRequestMenu.Show();
-            }
-        }
-
-        private void CoursesMenuButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void LogoutStudent_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        /// 
-        /// REQUEST MENU
-        /// 
-
-        private void NewRequestButton_Click(object sender, EventArgs e)
-        {
-
-            Form_studentAddRequest addRequest = new Form_studentAddRequest();
-            addRequest.setUsername(username);
-            addRequest.Show();
-        }
-
-
-        private void ExistingRequestsButton_Click(object sender, EventArgs e)
-        {
-            Form_studentViewRequests studentRequests = new Form_studentViewRequests();
-            studentRequests.setUsername(username);
-            studentRequests.Show();
-
-
-        }
-
-        ///    ASSSOCIATION MENU
-        ///
-        ///
-        private void studentRequestsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (Form_studentWatchEvents studentWatchEvents = new Form_studentWatchEvents(username))
-            {
-                this.Hide();
-                studentWatchEvents.ShowDialog(this);
-            }
-        }
-
-        ///
-        ///     COURSES MENU
-        ///
-
-        private void MandatoryCoursesListButton_Click(object sender, EventArgs e)
-        {
-            using (Form_studentRequiredCourses studentReqCourses = new Form_studentRequiredCourses(username))
-            {
-                this.Hide();
-                studentReqCourses.ShowDialog(this);
-            }
-        }
-
-        private void WatchCoursesButton_Click(object sender, EventArgs e)
-        {
-            using (Form_studentRegisteredCourses studentRegCourses = new Form_studentRegisteredCourses(username))
-            {
-                this.Hide();
-                studentRegCourses.ShowDialog(this);
-            }
-        }
-
-        private void ChangeCourseTimeButton_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("UNDER CONSTRUCTION");
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         // checks if there at least one students request that have status R_Allowed or R_denied, if there are new 
@@ -165,7 +74,6 @@ namespace Project_Team3
                 }
             }
 
-
         private void removeRequestsPopup(DBconnect db) {
             try
             {
@@ -173,6 +81,59 @@ namespace Project_Team3
                 db.executionQuery("UPDATE studentrequests SET STATUSOFREQUEST = 'Denied' WHERE STATUSOFREQUEST='R_Denied' and STUDENTUSERNAME='" + username + "'");
             }
             catch (Exception ex) { }
+        }
+
+        ///
+        ///     COURSES MENU
+        ///
+        private void WatchCoursesbutton_Click_1(object sender, EventArgs e)
+        {
+            using (Form_studentRegisteredCourses studentRegCourses = new Form_studentRegisteredCourses(username))
+            {
+                this.Hide();
+                studentRegCourses.ShowDialog(this);
+            }
+        }
+
+        private void MandatoryCoursesbutton_Click(object sender, EventArgs e)
+        {
+            using (Form_studentRequiredCourses studentReqCourses = new Form_studentRequiredCourses(username))
+            {
+                this.Hide();
+                studentReqCourses.ShowDialog(this);
+            }
+        }
+
+        private void ChangeCourseTimebutton_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("UNDER CONSTRUCTION");
+        }
+        ///
+        ///    ASSSOCIATION MENU
+        ///
+        private void AssociationMenubutton_Click_1(object sender, EventArgs e)
+        {
+            using (Form_studentWatchEvents studentWatchEvents = new Form_studentWatchEvents(username))
+            {
+                this.Hide();
+                studentWatchEvents.ShowDialog(this);
+            }
+        }
+        /// 
+        /// REQUEST MENU
+        ///
+        private void AddNewReqbutton_Click(object sender, EventArgs e)
+        {
+            Form_studentAddRequest addRequest = new Form_studentAddRequest();
+            addRequest.setUsername(username);
+            addRequest.Show();
+        }
+
+        private void WatchReqbutton_Click(object sender, EventArgs e)
+        {
+            Form_studentViewRequests studentRequests = new Form_studentViewRequests();
+            studentRequests.setUsername(username);
+            studentRequests.Show();
         }
     }
 }
