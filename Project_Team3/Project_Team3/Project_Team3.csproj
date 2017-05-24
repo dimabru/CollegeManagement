@@ -157,6 +157,7 @@
       <DependentUpon>secretaryLoginMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase\dataBaseOperations.cs" />
+    <Compile Include="Users\Staff.cs" />
     <Compile Include="Users\techingStaffConstraints.cs" />
     <Compile Include="Users\user.cs" />
     <EmbeddedResource Include="facebook\Analyze.resx" />
