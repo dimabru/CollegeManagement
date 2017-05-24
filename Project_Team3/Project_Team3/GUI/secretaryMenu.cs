@@ -61,8 +61,8 @@ namespace Project_Team3.GUI
         string changedBoxEndTime;
         string changedBoxSemester;
         float? newCourseCreditPoints;
-        bool newCourseMandatory;
-        bool newCourseMandatoryPresence;
+        bool changedBoxMandatory;
+        bool changedBoxMandatoryPresence;
 
         //Add Room
         string changedBoxRoomList;
@@ -168,6 +168,14 @@ namespace Project_Team3.GUI
 
                 info += "Credit Points: ";
                 info += select.getCreditPoints().ToString() + "\n";
+
+                info += "Mandatory Course: ";
+                if (select.getIsMandatory()) info += "Yes" + "\n";
+                else info += "No" + "\n";
+
+                info += "Mandatory Presence: ";
+                if (select.getMandatoryPresence()) info += "Yes" + "\n";
+                else info += "No" + "\n";
                 
                 MessageBox.Show(info);
             }
@@ -248,6 +256,8 @@ namespace Project_Team3.GUI
             else if (changedBoxEndTime == null) { MessageBox.Show("Error: invalid end time"); isCorrect = false; }
             else if (changedBoxSemester == null) { MessageBox.Show("Error: invalid semester"); isCorrect = false; }
             else if (newCourseCreditPoints == null) { MessageBox.Show("Error: invalid credit points"); isCorrect = false; }
+            else if (mandatoryCourse.Text == "") { MessageBox.Show("Error: Select mandatory or not"); isCorrect = false; }
+            else if (mandatoryPresence.Text == "") { MessageBox.Show("Error: Select mandatory presence or not"); isCorrect = false; }
 
             if (!isCorrect) return;
 
@@ -317,7 +327,7 @@ namespace Project_Team3.GUI
 
             Course course = new Course(newCourseId.Value, name, newCourseTeacherId.Value, newCourseMaxStudents.Value, changedBoxRoom, changedBoxDay,
                 Int32.Parse(changedBoxStartTime.Split(':')[0]), Int32.Parse(changedBoxEndTime.Split(':')[0]), Int32.Parse(changedBoxSemester), 
-                newCourseCreditPoints.Value);
+                newCourseCreditPoints.Value, changedBoxMandatory, changedBoxMandatoryPresence);
 
             if(!correctTimeForClass(course))
             {
@@ -569,6 +579,20 @@ namespace Project_Team3.GUI
             newPassChange.Text = "";
             newPassConfirm.Text = "";
             return;
+        }
+
+        private void mandatoryCourse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (mandatoryCourse.Text == "") return;
+            if (mandatoryCourse.Text == "Yes") changedBoxMandatory = true;
+            else changedBoxMandatory = false;
+        }
+
+        private void mandatoryPresence_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (mandatoryPresence.Text == "") return;
+            if (mandatoryPresence.Text == "Yes") changedBoxMandatoryPresence = true;
+            else changedBoxMandatoryPresence = false;
         }
     }
 }

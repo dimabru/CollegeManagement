@@ -31,7 +31,7 @@ namespace Project_Team3.Courses
         public Course(int ID, string NAME, ulong TEACHERID, int MAXSTUDENTS, string ROOM, string DAY, int START, int END, int SEMESTER, float CREDITPOINTS, bool ISMANDATORY, bool MANDATORYPRESENCE)
         {
             id = ID;
-            name = NAME;
+            name = NAME; 
             teacherID = TEACHERID;
             maxStudents = MAXSTUDENTS;
             room = ROOM;

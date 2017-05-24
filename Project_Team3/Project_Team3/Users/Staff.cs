@@ -12,6 +12,7 @@ namespace Project_Team3.Users
         string firstName;
         string lastName;
         int id;
+        
 
         public Staff(int ID, string FIRSTNAME, string LASTNAME)
         {
