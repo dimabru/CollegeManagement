@@ -346,7 +346,7 @@ namespace Project_Team3.GUI
                 {
                     if (!checkDifferentTime(check.getStart(),check.getEnd(),course.getStart(),course.getEnd()))
                     {
-                        if (check.getRoom() == course.getRoom() && check.getSemester() == course.getSemester()) return false;
+                        if (check.getRoom() == course.getRoom()) return false;
                     }
                 }
             }
@@ -567,28 +567,6 @@ namespace Project_Team3.GUI
             newPassChange.Text = "";
             newPassConfirm.Text = "";
             return;
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-            this.Close();
-
         }
     }
 }
