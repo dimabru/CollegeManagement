@@ -12,6 +12,8 @@ namespace Project_Team3
 {
     public partial class professorLoginMenu : Form
     {
+        private GetTheMail g;
+
         public professorLoginMenu()
         {
             InitializeComponent();
@@ -142,5 +144,39 @@ namespace Project_Team3
         {
 
         }
+
+        private void facebookLoginButton(object sender, EventArgs e)
+        {
+            facebook();
+        }
+
+        [STAThread]
+        public void facebook()
+        {
+            Application.EnableVisualStyles();
+            g = new GetTheMail();
+            string mail = g.getMail();
+            if (dataBaseOperations.facebookUserExist(mail, "Professor"))
+            {
+                //In perception i thing that its importent to pass 
+                //user object for the next managing form
+                //plese do it in all other form  
+                ulong i = dataBaseOperations.getIdByMail(mail);
+                //here i create new professor obj
+                professor prof = new professor(dataBaseOperations.getIdByMail(mail));
+                //and then i pass it to the next form 
+                //i'll catch it in the next form constractor
+                teachingStaffMenu instrfMen = new teachingStaffMenu(prof);
+
+                this.Hide();
+                instrfMen.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("the user not exist");
+            }
+            g.logout();
+        }
+
     }
 }

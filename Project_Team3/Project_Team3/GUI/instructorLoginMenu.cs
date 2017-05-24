@@ -132,6 +132,7 @@ namespace Project_Team3
         {
            
         }
+
         private void facebookLoginButton(object sender, EventArgs e)
         {
             facebook();
@@ -151,7 +152,7 @@ namespace Project_Team3
                 //plese do it in all other form  
                 ulong i = dataBaseOperations.getIdByMail(mail);
                 //here i create new inst obj
-                professor inst = new professor(dataBaseOperations.getIdByMail(mail));
+                instructor inst = new instructor(dataBaseOperations.getIdByMail(mail));
                 //and then i pass it to the next form 
                 //i'll catch it in the next form constractor
                 teachingStaffMenu instrfMen = new teachingStaffMenu(inst);

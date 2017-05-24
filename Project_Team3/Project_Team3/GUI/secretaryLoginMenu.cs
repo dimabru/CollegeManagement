@@ -15,6 +15,8 @@ namespace Project_Team3
 {
     public partial class secretaryLoginMenu : Form
     {
+        private GetTheMail g;
+
         public secretaryLoginMenu()
         {
             InitializeComponent();
@@ -139,5 +141,42 @@ namespace Project_Team3
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            facebook();
+        }
+
+
+        [STAThread]
+        public void facebook()
+        {
+            Application.EnableVisualStyles();
+            g = new GetTheMail();
+            string mail = g.getMail();
+
+            if (dataBaseOperations.facebookUserExist(mail, "Secretary"))
+            {
+
+                //In perception i thing that its importent to pass 
+                //user object for the next managing form
+                //plese do it in all other form  
+                ulong i = dataBaseOperations.getIdByMail(mail);
+                //here i create new secretary obj
+                secretary sec = new secretary(dataBaseOperations.getIdByMail(mail));
+                //and then i pass it to the next form 
+                //i'll catch it in the next form constractor
+                secretaryMenu instrfMen = new secretaryMenu(sec);
+
+                this.Hide();
+                instrfMen.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("the user not exist");
+            }
+            g.logout();
+        }
+
     }
 }
