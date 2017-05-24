@@ -633,7 +633,7 @@ namespace Project_Team3
                 //you can see here other option to convert https://msdn.microsoft.com/en-us/library/2wfez910(v=vs.110).aspx
                 sqlCommand.Parameters.AddWithValue("@room_number", "" + room.getRoomNumber());
                 sqlCommand.Parameters.AddWithValue("@max_student", "" + room.getMaxStudent());
-
+                
                 con.Open();
                 sqlCommand.ExecuteNonQuery();
                 con.Close();
@@ -675,6 +675,8 @@ namespace Project_Team3
 
         public static bool addCourse(Course course)
         {
+            int course_mandatory = 1;
+            int mandatory_presence = 1;
             try
             {
                 if (courseExist(course.getID()))
@@ -684,6 +686,14 @@ namespace Project_Team3
                 String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
                 SqlConnection con = new SqlConnection(str);
                 SqlCommand sqlCommand = new SqlCommand("INSERT INTO dbo.Course(COURSE_ID,COURSE_NAME,TEACHER_ID,MAX_STUDENTS,ROOM_NUMBER,COURSE_DAY,START_HOUR,END_HOUR,COURSE_SEMESTER,Track,Points) VALUES(@COURSE_ID,@COURSE_NAME,@TEACHER_ID,@MAX_STUDENTS,@ROOM_NUMBER,@COURSE_DAY,@START_HOUR,@END_HOUR,@COURSE_SEMESTER,@Track,@Points)", con);
+                if(course.getIsMandatory()==false)
+                {
+                    course_mandatory = 0;
+                }
+                if (course.getMandatoryPresence() == false)
+                {
+                    mandatory_presence = 0;
+                }
 
                 //the "" + ulong ment to fit the data base type;
                 //you can see here other option to convert https://msdn.microsoft.com/en-us/library/2wfez910(v=vs.110).aspx
@@ -698,7 +708,8 @@ namespace Project_Team3
                 sqlCommand.Parameters.AddWithValue("@COURSE_SEMESTER",""+ course.getSemester());
                 sqlCommand.Parameters.AddWithValue("@Track", "");
                 sqlCommand.Parameters.AddWithValue("@Points",""+ course.getCreditPoints());
-
+                sqlCommand.Parameters.AddWithValue("@IS_MANDATORY", "" + course_mandatory);
+                sqlCommand.Parameters.AddWithValue("@MANDATORY_PRESENCE", "" + mandatory_presence);
                 con.Open();
                 sqlCommand.ExecuteNonQuery();
                 con.Close();
@@ -725,7 +736,12 @@ namespace Project_Team3
                 int END = 0;
                 int SEMESTER = 0;
                 float CREDITPOINTS = 0;
-                
+                int mandatory=0;
+                int mandatory_presence=0;
+                bool MANDATORY_B = false;
+                bool MANDATORY_PRESENCE_B = false;
+
+
                 String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
                 String query = "select * from dbo.Course where COURSE_ID = '" + id + "'";
                 SqlConnection con = new SqlConnection(str);
@@ -747,18 +763,30 @@ namespace Project_Team3
                         END = (int)dbr.GetValue(7);
                         SEMESTER = (int)dbr.GetValue(8);
                         string check = dbr.GetValue(10).ToString();
-                        if(check != "")
+                        if (check != "")
                         {
                             CREDITPOINTS = float.Parse(check);
                         }
+                        mandatory = (int)dbr.GetValue(11);
+                        if (mandatory == 1)
+                        {
+                            MANDATORY_B = true;
+                        }
+                        mandatory_presence = (int)dbr.GetValue(12);
+                        if (mandatory_presence == 1)
+                        {
+                            MANDATORY_PRESENCE_B = true;
+                        }
+
+
                     }
                 }
                 con.Close();
-                if(NAME == "" && TEACHERID == 0 && MAXSTUDENTS == 0 && ROOM == "" && DAY == "" && START == 0 && END == 0 && SEMESTER == 0 && CREDITPOINTS == 0)
+                if(NAME == "" && TEACHERID == 0 && MAXSTUDENTS == 0 && ROOM == "" && DAY == "" && START == 0 && END == 0 && SEMESTER == 0 && CREDITPOINTS == 0 && !MANDATORY_B && !MANDATORY_PRESENCE_B)
                 {
                     return null;
                 }
-                return new Course(ID, NAME, TEACHERID, MAXSTUDENTS, ROOM, DAY, START, END, SEMESTER, CREDITPOINTS);
+                return new Course(ID, NAME, TEACHERID, MAXSTUDENTS, ROOM, DAY, START, END, SEMESTER, CREDITPOINTS,MANDATORY_B,MANDATORY_PRESENCE_B);
             }
             catch (Exception e)
             {

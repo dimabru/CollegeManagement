@@ -61,6 +61,8 @@ namespace Project_Team3.GUI
         string changedBoxEndTime;
         string changedBoxSemester;
         float? newCourseCreditPoints;
+        bool newCourseMandatory;
+        bool newCourseMandatoryPresence;
 
         //Add Room
         string changedBoxRoomList;
