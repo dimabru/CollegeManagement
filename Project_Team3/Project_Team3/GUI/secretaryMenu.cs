@@ -790,5 +790,112 @@ namespace Project_Team3.GUI
                 }
             }
         }
+
+        private void profSchedule_Click(object sender, EventArgs e)
+        {
+            if (comboBoxProfList.Text == "")
+            {
+                MessageBox.Show("Please select a professor to view schedule");
+                return;
+            }
+            buildSchedule("Professor");
+        }
+
+        private void instSchedule_Click(object sender, EventArgs e)
+        {
+            if (comboBoxInstList.Text == "")
+            {
+                MessageBox.Show("Please select an instructor to view schedule");
+                return;
+            }
+            buildSchedule("Instructor");
+        }
+
+        public void buildSchedule(string type)
+        {
+            ulong id;
+            List<string> courseList;
+            dataBaseOperations dataOp = new dataBaseOperations();
+
+            if (type == "Professor")
+            {
+                id = UInt64.Parse(comboBoxProfList.Text.Split()[comboBoxProfList.Text.Split().Length - 1]);
+                professor prof = new professor(id);
+                courseList = prof.getCoursesList();
+            }
+            else
+            {
+                id = UInt64.Parse(comboBoxInstList.Text.Split()[comboBoxInstList.Text.Split().Length - 1]);
+                instructor inst = new instructor(id);
+                courseList = inst.getCoursesList();
+            }
+
+            //build DataTable 
+            DataTable tempTable = new DataTable();
+            tempTable.Columns.Add(" ", typeof(string));
+            tempTable.Columns.Add("Sunday", typeof(string));
+            tempTable.Columns.Add("Monday", typeof(string));
+            tempTable.Columns.Add("Tuesday", typeof(string));
+            tempTable.Columns.Add("Wednesday", typeof(string));
+            tempTable.Columns.Add("Thursday", typeof(string));
+            tempTable.Columns.Add("Friday", typeof(string));
+            tempTable.Rows.Add("07:00", typeof(string));
+            tempTable.Rows.Add("08:00", typeof(string));
+            tempTable.Rows.Add("09:00", typeof(string));
+            tempTable.Rows.Add("10:00", typeof(string));
+            tempTable.Rows.Add("11:00", typeof(string));
+            tempTable.Rows.Add("12:00", typeof(string));
+            tempTable.Rows.Add("13:00", typeof(string));
+            tempTable.Rows.Add("14:00", typeof(string));
+            tempTable.Rows.Add("15:00", typeof(string));
+            tempTable.Rows.Add("16:00", typeof(string));
+            tempTable.Rows.Add("17:00", typeof(string));
+            tempTable.Rows.Add("18:00", typeof(string));
+            tempTable.Rows.Add("19:00", typeof(string));
+            tempTable.Rows.Add("20:00", typeof(string));
+            tempTable.Rows.Add("21:00", typeof(string));
+            string day = "";
+            string start = "";
+            string end = "";
+            string room = "";
+
+            //enter lectures to DataTable
+            for (int i = 0; i < courseList.Count; i++)
+            {
+                //get the attributes of the lecture from DB
+                day = dataOp.getAttrByName(courseList[i], 5);
+                start = dataOp.getAttrByName(courseList[i], 6);
+                end = dataOp.getAttrByName(courseList[i], 7);
+                room = dataOp.getAttrByName(courseList[i], 4);
+                //convert to location in DataTable
+                int location_x = publicChecksAndOperations.convDayToInt(day);
+                int location_y_s = publicChecksAndOperations.hourConvertFromStringToInt(start);
+                int location_y_e = publicChecksAndOperations.hourConvertFromStringToInt(end);
+                string name = courseList[i];
+                if ((tempTable.Rows[location_y_s][location_x] != null && !tempTable.Rows[location_y_s][location_x].Equals("System.String") && !string.IsNullOrEmpty(tempTable.Rows[location_y_s][location_x].ToString())))
+                    tempTable.Rows[location_y_s][location_x] = "Collision courses!Contact the Secretary";
+                else
+                    tempTable.Rows[location_y_s][location_x] = courseList[i] + " ( " + room + " )";
+                for (int j = location_y_s + 1; j <= (location_y_e); j++)
+                {
+                    if ((tempTable.Rows[j][location_x] != null && !tempTable.Rows[j][location_x].Equals("System.String") && !string.IsNullOrEmpty(tempTable.Rows[j][location_x].ToString())))
+                        tempTable.Rows[j][location_x] = "Collision courses!Contact the Secretary";
+                    else
+                        tempTable.Rows[j][location_x] = name + " ( " + room + " )";
+
+                }
+            }
+            //define empty value in cells which dont have lecture 
+            for (int i = 0; i < 15; i++)
+                for (int j = 1; j < 6; j++)
+                {
+                    if (tempTable.Rows[i][j] == null || tempTable.Rows[i][j].Equals("System.String") || string.IsNullOrEmpty(tempTable.Rows[i][j].ToString()))
+
+                        tempTable.Rows[i][j] = " ";
+                }
+
+            dataGridSchedule.DataSource = tempTable;
+            dataGridSchedule.RowHeadersVisible = false;
+        }
     }
 }

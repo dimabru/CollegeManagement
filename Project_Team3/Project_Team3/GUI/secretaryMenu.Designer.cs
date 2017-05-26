@@ -116,8 +116,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.profInfo = new System.Windows.Forms.Button();
             this.instInfo = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.profSchedule = new System.Windows.Forms.Button();
+            this.instSchedule = new System.Windows.Forms.Button();
+            this.dataGridSchedule = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -129,6 +130,7 @@
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSchedule)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1126,8 +1128,9 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.button7);
-            this.tabPage5.Controls.Add(this.button6);
+            this.tabPage5.Controls.Add(this.dataGridSchedule);
+            this.tabPage5.Controls.Add(this.instSchedule);
+            this.tabPage5.Controls.Add(this.profSchedule);
             this.tabPage5.Controls.Add(this.instInfo);
             this.tabPage5.Controls.Add(this.profInfo);
             this.tabPage5.Controls.Add(this.comboBoxInstList);
@@ -1146,7 +1149,7 @@
             // 
             this.comboBoxInstList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxInstList.FormattingEnabled = true;
-            this.comboBoxInstList.Location = new System.Drawing.Point(402, 198);
+            this.comboBoxInstList.Location = new System.Drawing.Point(141, 43);
             this.comboBoxInstList.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxInstList.Name = "comboBoxInstList";
             this.comboBoxInstList.Size = new System.Drawing.Size(217, 24);
@@ -1156,7 +1159,7 @@
             // 
             this.comboBoxProfList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxProfList.FormattingEnabled = true;
-            this.comboBoxProfList.Location = new System.Drawing.Point(402, 120);
+            this.comboBoxProfList.Location = new System.Drawing.Point(141, 4);
             this.comboBoxProfList.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxProfList.Name = "comboBoxProfList";
             this.comboBoxProfList.Size = new System.Drawing.Size(217, 24);
@@ -1166,7 +1169,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label28.Location = new System.Drawing.Point(261, 194);
+            this.label28.Location = new System.Drawing.Point(10, 39);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(133, 25);
@@ -1177,7 +1180,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label27.Location = new System.Drawing.Point(258, 119);
+            this.label27.Location = new System.Drawing.Point(7, 3);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(136, 25);
@@ -1198,7 +1201,7 @@
             // profInfo
             // 
             this.profInfo.Font = new System.Drawing.Font("Elephant", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profInfo.Location = new System.Drawing.Point(682, 120);
+            this.profInfo.Location = new System.Drawing.Point(365, 2);
             this.profInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.profInfo.Name = "profInfo";
             this.profInfo.Size = new System.Drawing.Size(101, 25);
@@ -1210,7 +1213,7 @@
             // instInfo
             // 
             this.instInfo.Font = new System.Drawing.Font("Elephant", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.instInfo.Location = new System.Drawing.Point(682, 198);
+            this.instInfo.Location = new System.Drawing.Point(365, 42);
             this.instInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.instInfo.Name = "instInfo";
             this.instInfo.Size = new System.Drawing.Size(101, 25);
@@ -1219,27 +1222,41 @@
             this.instInfo.UseVisualStyleBackColor = true;
             this.instInfo.Click += new System.EventHandler(this.instInfo_Click);
             // 
-            // button6
+            // profSchedule
             // 
-            this.button6.Font = new System.Drawing.Font("Elephant", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(818, 119);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(151, 25);
-            this.button6.TabIndex = 18;
-            this.button6.Text = "Show Schedule";
-            this.button6.UseVisualStyleBackColor = true;
+            this.profSchedule.Font = new System.Drawing.Font("Elephant", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profSchedule.Location = new System.Drawing.Point(482, 2);
+            this.profSchedule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.profSchedule.Name = "profSchedule";
+            this.profSchedule.Size = new System.Drawing.Size(151, 25);
+            this.profSchedule.TabIndex = 18;
+            this.profSchedule.Text = "Show Schedule";
+            this.profSchedule.UseVisualStyleBackColor = true;
+            this.profSchedule.Click += new System.EventHandler(this.profSchedule_Click);
             // 
-            // button7
+            // instSchedule
             // 
-            this.button7.Font = new System.Drawing.Font("Elephant", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(818, 198);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(151, 25);
-            this.button7.TabIndex = 19;
-            this.button7.Text = "Show Schedule";
-            this.button7.UseVisualStyleBackColor = true;
+            this.instSchedule.Font = new System.Drawing.Font("Elephant", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.instSchedule.Location = new System.Drawing.Point(482, 42);
+            this.instSchedule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.instSchedule.Name = "instSchedule";
+            this.instSchedule.Size = new System.Drawing.Size(151, 25);
+            this.instSchedule.TabIndex = 19;
+            this.instSchedule.Text = "Show Schedule";
+            this.instSchedule.UseVisualStyleBackColor = true;
+            this.instSchedule.Click += new System.EventHandler(this.instSchedule_Click);
+            // 
+            // dataGridSchedule
+            // 
+            this.dataGridSchedule.AllowUserToAddRows = false;
+            this.dataGridSchedule.AllowUserToDeleteRows = false;
+            this.dataGridSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridSchedule.Location = new System.Drawing.Point(63, 88);
+            this.dataGridSchedule.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridSchedule.Name = "dataGridSchedule";
+            this.dataGridSchedule.ReadOnly = true;
+            this.dataGridSchedule.Size = new System.Drawing.Size(937, 434);
+            this.dataGridSchedule.TabIndex = 20;
             // 
             // secretaryMenu
             // 
@@ -1270,6 +1287,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSchedule)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1364,7 +1382,8 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Button instInfo;
         private System.Windows.Forms.Button profInfo;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button instSchedule;
+        private System.Windows.Forms.Button profSchedule;
+        private System.Windows.Forms.DataGridView dataGridSchedule;
     }
 }
