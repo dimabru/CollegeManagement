@@ -13,14 +13,19 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
 {
     public partial class Form_secretaryStudentRequests : Form
     {
+
         DBconnect connection;
         SqlCommand command;
+
         public Form_secretaryStudentRequests()
         {
             InitializeComponent();
             Init();
             UpdateGrid();
         }
+
+
+
         private void Init()
         {
             connection = new DBconnect();
@@ -30,6 +35,7 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
             connection = new DBconnect();
             command.CommandText = "SELECT * FROM StudentRequests";
         }
+
 
         private void UpdateGrid()
         {
@@ -48,20 +54,42 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
             }
         }
 
+
+        private void updateRequest(string status, string requestID)
+        {
+            
+            string query = "UPDATE StudentRequests SET StatusOFRequest ='" + status + "' WHERE ID = " + requestID;
+            Console.Out.WriteLine(query);
+            connection.executionQuery(query);
+            UpdateGrid();
+        }
+
+
+
         private void Form_secretaryStudentRequests_FormClosed(object sender, FormClosedEventArgs e)
         {
             Form_secretaryMenu parent = (Form_secretaryMenu)this.Owner;
             parent.Show();
         }
 
+
+        private string getSelectedRequestID()
+        {
+            return StudentReqGrid.SelectedCells[0].Value.ToString();
+        }
+
+
         private void acceptRequestButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Accepting Request not available yet");
+            string ID = getSelectedRequestID();
+            updateRequest("R_Allowed", ID);
         }
+
 
         private void denyRequestButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Denying Request not available yet");
+            string ID = getSelectedRequestID();
+            updateRequest("R_Denied", ID);
 
         }
 

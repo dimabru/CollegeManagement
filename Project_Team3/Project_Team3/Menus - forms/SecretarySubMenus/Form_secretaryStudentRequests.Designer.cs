@@ -81,6 +81,7 @@
             this.StudentReqGrid.MultiSelect = false;
             this.StudentReqGrid.Name = "StudentReqGrid";
             this.StudentReqGrid.ReadOnly = true;
+            this.StudentReqGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.StudentReqGrid.Size = new System.Drawing.Size(609, 302);
             this.StudentReqGrid.TabIndex = 5;
             // 
