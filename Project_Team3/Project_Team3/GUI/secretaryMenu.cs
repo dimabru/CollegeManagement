@@ -1,4 +1,5 @@
 ﻿using Project_Team3.Courses;
+using Project_Team3.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,7 @@ namespace Project_Team3.GUI
             this.Size = new System.Drawing.Size(760, 460);
 
             this.sec = sec;
-            
+
             foreach (int id in cList)
             {
                 string name = dataBaseOperations.getCourse(id).getName().Split('_')[0];
@@ -32,6 +33,17 @@ namespace Project_Team3.GUI
             {
                 room.Items.Add(dataBaseOperations.getRoom(r).getRoomNumber());
                 comboBoxRoom.Items.Add(dataBaseOperations.getRoom(r).getRoomNumber());
+            }
+
+            createStaffList();
+            foreach (Staff prof in profList)
+            {
+                comboBoxProfList.Items.Add(prof.getFirstName() + " " + prof.getLastName() + " " + prof.getId());
+            }
+
+            foreach (Staff inst in instList)
+            {
+                comboBoxInstList.Items.Add(inst.getFirstName() + " " + inst.getLastName() + " " + inst.getId());
             }
 
             FirstNameLabel.Text = sec.getUserName;
@@ -77,6 +89,30 @@ namespace Project_Team3.GUI
 
         //Remove Course
         string changedBoxRemove;
+
+        //Teaching staff info
+        List<Staff> profList;
+        List<Staff> instList;
+
+        public void createStaffList()
+        {
+            List<ulong> profID = dataBaseOperations.getProfessorIdList();
+            List<ulong> instID = dataBaseOperations.getInstructorIdList();
+
+            dataBaseOperations db = new dataBaseOperations();
+            profList = new List<Staff>();
+            instList = new List<Staff>();
+
+            foreach (ulong id in profID)
+            {
+                profList.Add(new Staff(id, db.getUserNameById(id), db.getUserLastNameById(id), "Professor"));    
+            }
+
+            foreach (ulong id in instID)
+            {
+                instList.Add(new Staff(id, db.getUserNameById(id), db.getUserLastNameById(id), "Instructor"));
+            }
+        }
 
         private void checkConstraintStatus(object sender, EventArgs e)
         {
@@ -158,10 +194,10 @@ namespace Project_Team3.GUI
                 info += select.getDay() + "\n";
 
                 info += "Start Time: ";
-                info += select.getStart().ToString() + "\n";
+                info += select.getStart().ToString() + ":00\n";
 
                 info += "End Time: ";
-                info += select.getEnd().ToString() + "\n";
+                info += select.getEnd().ToString() + ":00\n";
 
                 info += "Semester: ";
                 info += select.getSemester().ToString() + "\n";
@@ -342,10 +378,80 @@ namespace Project_Team3.GUI
                 return;
             }
 
+            if (courseType.Text == "Lecture")
+            {
+                foreach (Staff prof in profList)
+                {
+                    if (prof.getId().ToString() == teacherId.Text)
+                    {
+                        int start = Int32.Parse(startTime.Text.Split(':')[0]);
+                        int end = Int32.Parse(endTime.Text.Split(':')[0]);
+                        int DAY = publicChecksAndOperations.convDayToInt(day.Text);
+
+                        foreach (techingStaffConstraints c in CreateConstraintList(prof.getId()))
+                        {
+                            if (c.getDay == DAY)
+                            {
+                                if (start >= c.getStart && start < c.getEnds)
+                                {
+                                    MessageBox.Show("Cannot set a lesson on this time due to teacher's constraints.\nPlease check contraints before setting up a course");
+                                    return;
+                                }
+                                if (end <= c.getEnds && end > c.getStart)
+                                {
+                                    MessageBox.Show("Cannot set a lesson on this time due to teacher's constraints.\nPlease check contraints before setting up a course");
+                                    return;
+                                }
+                                if (start < c.getStart && end > c.getEnds)
+                                {
+                                    MessageBox.Show("Cannot set a lesson on this time due to teacher's constraints.\nPlease check contraints before setting up a course");
+                                    return;
+                                }
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                foreach (Staff inst in instList)
+                {
+                    if (inst.getId().ToString() == teacherId.Text)
+                    {
+                        int start = Int32.Parse(startTime.Text.Split(':')[0]);
+                        int end = Int32.Parse(endTime.Text.Split(':')[0]);
+                        int DAY = publicChecksAndOperations.convDayToInt(day.Text);
+
+                        foreach (techingStaffConstraints c in CreateConstraintList(inst.getId()))
+                        {
+                            if (c.getDay == DAY)
+                            {
+                                if (start >= c.getStart && start < c.getEnds)
+                                {
+                                    MessageBox.Show("Cannot set a lesson on this time due to teacher's constraints.\nPlease check contraints before setting up a course");
+                                    return;
+                                }
+                                if (end <= c.getEnds && end > c.getStart)
+                                {
+                                    MessageBox.Show("Cannot set a lesson on this time due to teacher's constraints.\nPlease check contraints before setting up a course");
+                                    return;
+                                }
+                                if (start < c.getStart && end > c.getEnds)
+                                {
+                                    MessageBox.Show("Cannot set a lesson on this time due to teacher's constraints.\nPlease check contraints before setting up a course");
+                                    return;
+                                }
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+
             dataBaseOperations.addCourse(course);
             cleanFields();
-            comboBox3.Items.Add(course.getID() + " " + dataBaseOperations.getCourse(course.getID()).getName());
-            MessageBox.Show("End value: " + course.getEnd().ToString() + "\nFrom the DB: " + dataBaseOperations.getCourse(course.getID()).getEnd());
+            comboBox3.Items.Add(course.getID() + " " + course.getName().Split('_')[0]);
             
         }
 
@@ -583,16 +689,106 @@ namespace Project_Team3.GUI
 
         private void mandatoryCourse_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (mandatoryCourse.Text == "") return;
             if (mandatoryCourse.Text == "Yes") changedBoxMandatory = true;
             else changedBoxMandatory = false;
         }
 
         private void mandatoryPresence_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (mandatoryPresence.Text == "") return;
             if (mandatoryPresence.Text == "Yes") changedBoxMandatoryPresence = true;
             else changedBoxMandatoryPresence = false;
+        }
+
+        private void profInfo_Click(object sender, EventArgs e)
+        {
+            if (comboBoxProfList.Text == "") MessageBox.Show("Please select a professor to view information");
+            else
+            {
+                ulong id = UInt64.Parse(comboBoxProfList.Text.Split()[comboBoxProfList.Text.Split().Length-1]);
+                foreach (Staff prof in profList)
+                {
+                    if (prof.getId() == id)
+                    {
+                        string info;
+                        List<techingStaffConstraints> constList = CreateConstraintList(id);
+
+                        info = "First Name: ";
+                        info += prof.getFirstName();
+                        info += "\nLast Name: ";
+                        info += prof.getLastName();
+                        info += "\nID: ";
+                        info += prof.getId();
+
+                        if (constList.Count != 0)
+                        {
+                            info += "\n\nList of Constraints:\n";
+
+                            foreach (techingStaffConstraints c in constList)
+                            {
+                                info += "Start: " + c.getStart + ":00 End: " + c.getEnds + ":00\n";
+                                info += publicChecksAndOperations.dayConvert(c.getDay) + "\n\n";
+                            }
+                        }
+                        MessageBox.Show(info);
+                        break;
+                    }
+                }
+            }
+        }
+
+        public List<techingStaffConstraints> CreateConstraintList(ulong id)
+        {
+            List<techingStaffConstraints> constList = new List<techingStaffConstraints>();
+            dataBaseOperations db = new dataBaseOperations();
+            int[] cList = db.getConstraints(id);
+            db.CloseConn(true);
+
+            if (cList.Length > 1)
+            {
+                for (int i = 0; i < cList.Length; i += 4)
+                {
+                    constList.Add(new techingStaffConstraints(cList[i + 1], cList[i + 2], cList[i + 3]));
+                }
+            }
+
+            return constList;
+        }
+
+        private void instInfo_Click(object sender, EventArgs e)
+        {
+            if (comboBoxInstList.Text == "") MessageBox.Show("Please select an instructor to view information");
+            else
+            {
+                ulong id = UInt64.Parse(comboBoxInstList.Text.Split()[comboBoxInstList.Text.Split().Length - 1]);
+                foreach (Staff inst in instList)
+                {
+                    if (inst.getId() == id)
+                    {
+                        string info;
+                        List<techingStaffConstraints> constList = CreateConstraintList(id);
+
+                        info = "First Name: ";
+                        info += inst.getFirstName();
+                        info += "\nLast Name: ";
+                        info += inst.getLastName();
+                        info += "\nID: ";
+                        info += inst.getId();
+
+                        if (constList.Count != 0)
+                        {
+                            info += "\n\nList of Constraints:\n";
+
+                            foreach (techingStaffConstraints c in constList)
+                            {
+                                info += "Start: " + c.getStart + ":00 End: " + c.getEnds + ":00\n";
+                                info += publicChecksAndOperations.dayConvert(c.getDay) + "\n\n";
+                            }
+                        }
+                        MessageBox.Show(info);
+                        break;
+                    }
+                }
+            }
         }
     }
 }

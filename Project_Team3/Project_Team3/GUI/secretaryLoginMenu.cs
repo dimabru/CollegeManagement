@@ -94,13 +94,15 @@ namespace Project_Team3
                     if (check_user_instance.userExist(textBox2.Text, id, "Secretary"))
                     {
                         //hide this panel to show the other;
+
                         label3.Hide();
 
                         this.Hide();
                         secretary sec = new secretary(id);
+
                         secretaryMenu secMenu = new secretaryMenu(sec);
                         secMenu.ShowDialog();
-                            
+
                     }
                     else
                     {

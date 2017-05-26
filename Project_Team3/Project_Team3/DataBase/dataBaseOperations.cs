@@ -685,7 +685,7 @@ namespace Project_Team3
                 }
                 String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
                 SqlConnection con = new SqlConnection(str);
-                SqlCommand sqlCommand = new SqlCommand("INSERT INTO dbo.Course(COURSE_ID,COURSE_NAME,TEACHER_ID,MAX_STUDENTS,ROOM_NUMBER,COURSE_DAY,START_HOUR,END_HOUR,COURSE_SEMESTER,Track,Points) VALUES(@COURSE_ID,@COURSE_NAME,@TEACHER_ID,@MAX_STUDENTS,@ROOM_NUMBER,@COURSE_DAY,@START_HOUR,@END_HOUR,@COURSE_SEMESTER,@Track,@Points)", con);
+                SqlCommand sqlCommand = new SqlCommand("INSERT INTO dbo.Course(COURSE_ID,COURSE_NAME,TEACHER_ID,MAX_STUDENTS,ROOM_NUMBER,COURSE_DAY,START_HOUR,END_HOUR,COURSE_SEMESTER,IS_MANDATORY,MANDATORY_PRESENCE,Track,Points) VALUES(@COURSE_ID,@COURSE_NAME,@TEACHER_ID,@MAX_STUDENTS,@ROOM_NUMBER,@COURSE_DAY,@START_HOUR,@END_HOUR,@COURSE_SEMESTER,@IS_MANDATORY,@MANDATORY_PRESENCE,@Track,@Points)", con);
                 if(course.getIsMandatory()==false)
                 {
                     course_mandatory = 0;
@@ -767,12 +767,12 @@ namespace Project_Team3
                         {
                             CREDITPOINTS = float.Parse(check);
                         }
-                        mandatory = (int)dbr.GetValue(11);
+                        if (dbr.GetValue(11).ToString() != "") mandatory = (int)dbr.GetValue(11);
                         if (mandatory == 1)
                         {
                             MANDATORY_B = true;
                         }
-                        mandatory_presence = (int)dbr.GetValue(12);
+                        if (dbr.GetValue(12).ToString() != "") mandatory_presence = (int)dbr.GetValue(12);
                         if (mandatory_presence == 1)
                         {
                             MANDATORY_PRESENCE_B = true;

@@ -108,7 +108,16 @@
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.nameLable = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.comboBoxInstList = new System.Windows.Forms.ComboBox();
+            this.comboBoxProfList = new System.Windows.Forms.ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.profInfo = new System.Windows.Forms.Button();
+            this.instInfo = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -119,6 +128,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -130,7 +140,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1127, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1116, 28);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -168,6 +178,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(11, 50);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
@@ -1113,6 +1124,66 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.button7);
+            this.tabPage5.Controls.Add(this.button6);
+            this.tabPage5.Controls.Add(this.instInfo);
+            this.tabPage5.Controls.Add(this.profInfo);
+            this.tabPage5.Controls.Add(this.comboBoxInstList);
+            this.tabPage5.Controls.Add(this.comboBoxProfList);
+            this.tabPage5.Controls.Add(this.label28);
+            this.tabPage5.Controls.Add(this.label27);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1093, 551);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Teaching Staff Info";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxInstList
+            // 
+            this.comboBoxInstList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxInstList.FormattingEnabled = true;
+            this.comboBoxInstList.Location = new System.Drawing.Point(402, 198);
+            this.comboBoxInstList.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxInstList.Name = "comboBoxInstList";
+            this.comboBoxInstList.Size = new System.Drawing.Size(217, 24);
+            this.comboBoxInstList.TabIndex = 15;
+            // 
+            // comboBoxProfList
+            // 
+            this.comboBoxProfList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProfList.FormattingEnabled = true;
+            this.comboBoxProfList.Location = new System.Drawing.Point(402, 120);
+            this.comboBoxProfList.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxProfList.Name = "comboBoxProfList";
+            this.comboBoxProfList.Size = new System.Drawing.Size(217, 24);
+            this.comboBoxProfList.TabIndex = 14;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label28.Location = new System.Drawing.Point(261, 194);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(133, 25);
+            this.label28.TabIndex = 3;
+            this.label28.Text = "Instructor List:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label27.Location = new System.Drawing.Point(258, 119);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(136, 25);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "Professor List:";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -1124,11 +1195,58 @@
             this.label10.TabIndex = 23;
             this.label10.Text = "Max Students:";
             // 
+            // profInfo
+            // 
+            this.profInfo.Font = new System.Drawing.Font("Elephant", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profInfo.Location = new System.Drawing.Point(682, 120);
+            this.profInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.profInfo.Name = "profInfo";
+            this.profInfo.Size = new System.Drawing.Size(101, 25);
+            this.profInfo.TabIndex = 16;
+            this.profInfo.Text = "Get Info";
+            this.profInfo.UseVisualStyleBackColor = true;
+            this.profInfo.Click += new System.EventHandler(this.profInfo_Click);
+            // 
+            // instInfo
+            // 
+            this.instInfo.Font = new System.Drawing.Font("Elephant", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.instInfo.Location = new System.Drawing.Point(682, 198);
+            this.instInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.instInfo.Name = "instInfo";
+            this.instInfo.Size = new System.Drawing.Size(101, 25);
+            this.instInfo.TabIndex = 17;
+            this.instInfo.Text = "Get Info";
+            this.instInfo.UseVisualStyleBackColor = true;
+            this.instInfo.Click += new System.EventHandler(this.instInfo_Click);
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Elephant", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(818, 119);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(151, 25);
+            this.button6.TabIndex = 18;
+            this.button6.Text = "Show Schedule";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Elephant", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(818, 198);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(151, 25);
+            this.button7.TabIndex = 19;
+            this.button7.Text = "Show Schedule";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
             // secretaryMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1127, 644);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1116, 633);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label10);
@@ -1150,6 +1268,8 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1237,5 +1357,14 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ComboBox mandatoryCourse;
         private System.Windows.Forms.ComboBox mandatoryPresence;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.ComboBox comboBoxInstList;
+        private System.Windows.Forms.ComboBox comboBoxProfList;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button instInfo;
+        private System.Windows.Forms.Button profInfo;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button6;
     }
 }

@@ -11,21 +11,36 @@ namespace Project_Team3.Users
 
         string firstName;
         string lastName;
-        int id;
-        
+        string type;
+        ulong id;
+        List <techingStaffConstraints> constList;
 
-        public Staff(int ID, string FIRSTNAME, string LASTNAME)
+        public Staff(ulong ID, string FIRSTNAME, string LASTNAME, string TYPE)
         {
             id = ID;
             firstName = FIRSTNAME;
             lastName = LASTNAME;
+            type = TYPE;
+
+            if (type == "Professor")
+            {
+                professor prof = new professor(id);
+                constList = prof.getConstraintsList();
+            }
+            else
+            {
+                instructor inst = new instructor(id);
+                constList = inst.getConstraintsList();
+            }
         }
 
         public string getFirstName() { return firstName; }
 
         public string getLastName() { return lastName; }
 
-        public int getId() { return id; }
+        public ulong getId() { return id; }
+
+        public string getType() { return type; }
 
     }
 }
