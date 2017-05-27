@@ -228,6 +228,12 @@
     <Compile Include="Menus - forms\Form_studentMenu.Designer.cs">
       <DependentUpon>Form_studentMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus - forms\StudentSubMenus\Form_studentChangeCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\StudentSubMenus\Form_studentChangeCourse.Designer.cs">
+      <DependentUpon>Form_studentChangeCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menus - forms\StudentSubMenus\Form_studentRegisteredCourses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\Form_studentMenu.resx">
       <DependentUpon>Form_studentMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\StudentSubMenus\Form_studentChangeCourse.resx">
+      <DependentUpon>Form_studentChangeCourse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\StudentSubMenus\Form_studentRegisteredCourses.resx">
       <DependentUpon>Form_studentRegisteredCourses.cs</DependentUpon>
