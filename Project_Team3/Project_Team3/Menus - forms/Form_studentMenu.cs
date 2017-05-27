@@ -106,7 +106,13 @@ namespace Project_Team3
 
         private void ChangeCourseTimebutton_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            using (Form_studentChangeCourse studentChangeCourseTime = new Form_studentChangeCourse())
+            {
+                this.Hide();
+                studentChangeCourseTime.Username = username;
+                studentChangeCourseTime.ShowDialog(this);
+
+            }
         }
         ///
         ///    ASSSOCIATION MENU
