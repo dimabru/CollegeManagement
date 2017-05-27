@@ -68,7 +68,7 @@ namespace Project_Team3
                 {
                     //if lable 3 pop in previous case;
                     label3.Hide();
-                    MessageBox.Show("there was a problam with the conection");
+                    MessageBox.Show("there was a problam with the conection\n");
                 }
             }
             else if (textBox1.Text == "")

@@ -111,11 +111,11 @@ namespace Project_Team3
                         MessageBox.Show("the username or password is incorrect");
                     }
                 }
-                catch
+                catch (Exception exc)
                 {
                     //if lable 3 pop in previous case;
                     label3.Hide();
-                    MessageBox.Show("there was a problam with the conection");
+                    MessageBox.Show("there was a problam with the conection\n"+exc);
                 }
             }
             else if (textBox1.Text == "")

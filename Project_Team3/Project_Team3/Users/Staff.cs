@@ -14,6 +14,7 @@ namespace Project_Team3.Users
         string type;
         ulong id;
         List <techingStaffConstraints> constList;
+        bool isPublished;
 
         public Staff(ulong ID, string FIRSTNAME, string LASTNAME, string TYPE)
         {
@@ -32,6 +33,8 @@ namespace Project_Team3.Users
                 instructor inst = new instructor(id);
                 constList = inst.getConstraintsList();
             }
+
+            isPublished = new dataBaseOperations().getPublishedSched(id);
         }
 
         public string getFirstName() { return firstName; }
@@ -41,6 +44,10 @@ namespace Project_Team3.Users
         public ulong getId() { return id; }
 
         public string getType() { return type; }
+
+        public bool getIsPublished() { return isPublished; }
+
+        public void publishSched() { isPublished = true; }
 
     }
 }

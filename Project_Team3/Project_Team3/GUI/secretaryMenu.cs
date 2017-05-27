@@ -388,6 +388,11 @@ namespace Project_Team3.GUI
                         int end = Int32.Parse(endTime.Text.Split(':')[0]);
                         int DAY = publicChecksAndOperations.convDayToInt(day.Text);
 
+                        if (prof.getIsPublished())
+                        {
+                            MessageBox.Show("The schedule is already published for this teacher. Can't add more courses");
+                            return;
+                        }
                         foreach (techingStaffConstraints c in CreateConstraintList(prof.getId()))
                         {
                             if (c.getDay == DAY)
@@ -422,6 +427,12 @@ namespace Project_Team3.GUI
                         int start = Int32.Parse(startTime.Text.Split(':')[0]);
                         int end = Int32.Parse(endTime.Text.Split(':')[0]);
                         int DAY = publicChecksAndOperations.convDayToInt(day.Text);
+
+                        if (inst.getIsPublished())
+                        {
+                            MessageBox.Show("The schedule is already published for this teacher. Can't add more courses");
+                            return;
+                        }
 
                         foreach (techingStaffConstraints c in CreateConstraintList(inst.getId()))
                         {
@@ -896,6 +907,36 @@ namespace Project_Team3.GUI
 
             dataGridSchedule.DataSource = tempTable;
             dataGridSchedule.RowHeadersVisible = false;
+        }
+
+        private void publishSchedProf_Click(object sender, EventArgs e)
+        {
+            if (comboBoxProfList.Text == "")
+            {
+                MessageBox.Show("Please select a professor from the list");
+                return;
+            }
+            new dataBaseOperations().publishSched(UInt64.Parse(comboBoxProfList.Text.Split()[comboBoxProfList.Text.Split().Length-1]));
+            foreach (Staff prof in profList)
+            {
+                if (prof.getId() == UInt64.Parse(comboBoxProfList.Text.Split()[comboBoxProfList.Text.Split().Length - 1])) prof.publishSched();
+            }
+            MessageBox.Show("Schedule published succesfully");
+        }
+
+        private void publishSchedInst_Click(object sender, EventArgs e)
+        {
+            if (comboBoxInstList.Text == "")
+            {
+                MessageBox.Show("Please select an instructor from the list");
+                return;
+            }
+            new dataBaseOperations().publishSched(UInt64.Parse(comboBoxInstList.Text.Split()[comboBoxInstList.Text.Split().Length - 1]));
+            foreach (Staff inst in instList)
+            {
+                if (inst.getId() == UInt64.Parse(comboBoxInstList.Text.Split()[comboBoxInstList.Text.Split().Length - 1])) inst.publishSched();
+            }
+            MessageBox.Show("Schedule published succesfully");
         }
     }
 }

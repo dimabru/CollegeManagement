@@ -121,7 +121,7 @@ namespace Project_Team3
         /// <param name="start"></param>
         /// <param name="ends"></param>
         /// <param name="day"></param>
-        public void setConstraints(ulong toInsert,int start, int ends, int day)
+        public void setConstraints(ulong toInsert, int start, int ends, int day)
         {
             try
             {
@@ -131,15 +131,15 @@ namespace Project_Team3
 
                 //the "" + ulong ment to fit the data base type;
                 //you can see here other option to convert https://msdn.microsoft.com/en-us/library/2wfez910(v=vs.110).aspx
-                sqlCommand.Parameters.AddWithValue("@Id", ""+toInsert);
-                sqlCommand.Parameters.AddWithValue("@start",""+start);
-                sqlCommand.Parameters.AddWithValue("@ends",""+ends);
-                sqlCommand.Parameters.AddWithValue("@day",""+ day);
+                sqlCommand.Parameters.AddWithValue("@Id", "" + toInsert);
+                sqlCommand.Parameters.AddWithValue("@start", "" + start);
+                sqlCommand.Parameters.AddWithValue("@ends", "" + ends);
+                sqlCommand.Parameters.AddWithValue("@day", "" + day);
                 con.Open();
                 sqlCommand.ExecuteNonQuery();
             }
 
-            catch 
+            catch
             {
                 throw;
             }
@@ -157,7 +157,7 @@ namespace Project_Team3
         /// <param name="lastName"></param>
         /// <param name="pass"></param>
         /// <param name="accessGroup"></param>
-        public void setNewUser(ulong id, string name, string lastName ,string pass, string accessGroup)
+        public void setNewUser(ulong id, string name, string lastName, string pass, string accessGroup)
         {
             try
             {
@@ -173,7 +173,7 @@ namespace Project_Team3
                 sqlCommand.Parameters.AddWithValue("@ACCESSGROUP", "" + accessGroup);
                 sqlCommand.Parameters.AddWithValue("@UNAME", "" + name);
                 sqlCommand.Parameters.AddWithValue("@SNAME", "" + lastName);
-                
+
                 con.Open();
                 sqlCommand.ExecuteNonQuery();
             }
@@ -205,7 +205,7 @@ namespace Project_Team3
             try
             {
                 int counter = 0;
-                int[] arrToReturn = {0};
+                int[] arrToReturn = { 0 };
                 String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
                 String query = "select * from dbo.constraints where Id = '" + id + "'";
                 SqlConnection con = new SqlConnection(str);
@@ -215,7 +215,7 @@ namespace Project_Team3
                 dbr = cmd.ExecuteReader();
                 while (dbr.Read())
                 {
-                    for (int i = 0;i < 4; i++)
+                    for (int i = 0; i < 4; i++)
                     {
                         // Resize the array.
                         Array.Resize(ref arrToReturn, counter + 1);
@@ -633,7 +633,7 @@ namespace Project_Team3
                 //you can see here other option to convert https://msdn.microsoft.com/en-us/library/2wfez910(v=vs.110).aspx
                 sqlCommand.Parameters.AddWithValue("@room_number", "" + room.getRoomNumber());
                 sqlCommand.Parameters.AddWithValue("@max_student", "" + room.getMaxStudent());
-                
+
                 con.Open();
                 sqlCommand.ExecuteNonQuery();
                 con.Close();
@@ -686,7 +686,7 @@ namespace Project_Team3
                 String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
                 SqlConnection con = new SqlConnection(str);
                 SqlCommand sqlCommand = new SqlCommand("INSERT INTO dbo.Course(COURSE_ID,COURSE_NAME,TEACHER_ID,MAX_STUDENTS,ROOM_NUMBER,COURSE_DAY,START_HOUR,END_HOUR,COURSE_SEMESTER,IS_MANDATORY,MANDATORY_PRESENCE,Track,Points) VALUES(@COURSE_ID,@COURSE_NAME,@TEACHER_ID,@MAX_STUDENTS,@ROOM_NUMBER,@COURSE_DAY,@START_HOUR,@END_HOUR,@COURSE_SEMESTER,@IS_MANDATORY,@MANDATORY_PRESENCE,@Track,@Points)", con);
-                if(course.getIsMandatory()==false)
+                if (course.getIsMandatory() == false)
                 {
                     course_mandatory = 0;
                 }
@@ -697,17 +697,17 @@ namespace Project_Team3
 
                 //the "" + ulong ment to fit the data base type;
                 //you can see here other option to convert https://msdn.microsoft.com/en-us/library/2wfez910(v=vs.110).aspx
-                sqlCommand.Parameters.AddWithValue("@COURSE_ID",""+ course.getID());
+                sqlCommand.Parameters.AddWithValue("@COURSE_ID", "" + course.getID());
                 sqlCommand.Parameters.AddWithValue("@COURSE_NAME", "" + course.getName());
-                sqlCommand.Parameters.AddWithValue("@TEACHER_ID",""+ course.getTeacherID());
-                sqlCommand.Parameters.AddWithValue("@MAX_STUDENTS",""+ course.getMaxStudents());
+                sqlCommand.Parameters.AddWithValue("@TEACHER_ID", "" + course.getTeacherID());
+                sqlCommand.Parameters.AddWithValue("@MAX_STUDENTS", "" + course.getMaxStudents());
                 sqlCommand.Parameters.AddWithValue("@ROOM_NUMBER", "" + course.getRoom());
                 sqlCommand.Parameters.AddWithValue("@COURSE_DAY", "" + course.getDay());
-                sqlCommand.Parameters.AddWithValue("@START_HOUR",""+ course.getStart());
-                sqlCommand.Parameters.AddWithValue("@END_HOUR",""+ course.getEnd());
-                sqlCommand.Parameters.AddWithValue("@COURSE_SEMESTER",""+ course.getSemester());
+                sqlCommand.Parameters.AddWithValue("@START_HOUR", "" + course.getStart());
+                sqlCommand.Parameters.AddWithValue("@END_HOUR", "" + course.getEnd());
+                sqlCommand.Parameters.AddWithValue("@COURSE_SEMESTER", "" + course.getSemester());
                 sqlCommand.Parameters.AddWithValue("@Track", "");
-                sqlCommand.Parameters.AddWithValue("@Points",""+ course.getCreditPoints());
+                sqlCommand.Parameters.AddWithValue("@Points", "" + course.getCreditPoints());
                 sqlCommand.Parameters.AddWithValue("@IS_MANDATORY", "" + course_mandatory);
                 sqlCommand.Parameters.AddWithValue("@MANDATORY_PRESENCE", "" + mandatory_presence);
                 con.Open();
@@ -736,8 +736,8 @@ namespace Project_Team3
                 int END = 0;
                 int SEMESTER = 0;
                 float CREDITPOINTS = 0;
-                int mandatory=0;
-                int mandatory_presence=0;
+                int mandatory = 0;
+                int mandatory_presence = 0;
                 bool MANDATORY_B = false;
                 bool MANDATORY_PRESENCE_B = false;
 
@@ -782,18 +782,18 @@ namespace Project_Team3
                     }
                 }
                 con.Close();
-                if(NAME == "" && TEACHERID == 0 && MAXSTUDENTS == 0 && ROOM == "" && DAY == "" && START == 0 && END == 0 && SEMESTER == 0 && CREDITPOINTS == 0 && !MANDATORY_B && !MANDATORY_PRESENCE_B)
+                if (NAME == "" && TEACHERID == 0 && MAXSTUDENTS == 0 && ROOM == "" && DAY == "" && START == 0 && END == 0 && SEMESTER == 0 && CREDITPOINTS == 0 && !MANDATORY_B && !MANDATORY_PRESENCE_B)
                 {
                     return null;
                 }
-                return new Course(ID, NAME, TEACHERID, MAXSTUDENTS, ROOM, DAY, START, END, SEMESTER, CREDITPOINTS,MANDATORY_B,MANDATORY_PRESENCE_B);
+                return new Course(ID, NAME, TEACHERID, MAXSTUDENTS, ROOM, DAY, START, END, SEMESTER, CREDITPOINTS, MANDATORY_B, MANDATORY_PRESENCE_B);
             }
             catch (Exception e)
             {
                 throw e;
             }
         }
-        
+
         /// <summary>
         /// return how many users in this access group
         /// </summary>
@@ -813,9 +813,9 @@ namespace Project_Team3
                 dbr = cmd.ExecuteReader();
                 //int count = 0;
                 while (dbr.Read())
-                    {
-                        counter++;
-                    }
+                {
+                    counter++;
+                }
                 con.Close();
                 return counter;
             }
@@ -859,16 +859,16 @@ namespace Project_Team3
 
         public static bool setConstraintStatusInst(bool status)
         {
-            return setConstraintStatusProf(status,2);
+            return setConstraintStatusProf(status, 2);
         }
-        
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="status"></param>
         /// <param name="iORp">instructor or professor</param>
         /// <returns></returns>
-        public static bool setConstraintStatusProf(bool status,int iORp = 1)
+        public static bool setConstraintStatusProf(bool status, int iORp = 1)
         {
             int set_constraints = 1;
             if (status)
@@ -883,7 +883,7 @@ namespace Project_Team3
             try
             {
                 string str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
-                string query = "UPDATE dbo.GLOBAL_OPERATION SET ENTER_CONSTRAINTS = " + set_constraints  + "WHERE ID = " + iORp;
+                string query = "UPDATE dbo.GLOBAL_OPERATION SET ENTER_CONSTRAINTS = " + set_constraints + "WHERE ID = " + iORp;
                 SqlConnection con = new SqlConnection(str);
                 SqlCommand sqlCommand = new SqlCommand(query, con);
                 con.Open();
@@ -895,7 +895,7 @@ namespace Project_Team3
             {
                 return false;
             }
-            
+
         }
 
         public static bool getConstraintStatusInst()
@@ -918,12 +918,12 @@ namespace Project_Team3
                 while (dbr.Read())
                 {
                     int w = (int)dbr.GetValue(1);
-                    if(w == 1)
+                    if (w == 1)
                     {
                         con.Close();
                         return true;
                     }
-                    
+
                 }
                 con.Close();
                 return false;
@@ -987,14 +987,14 @@ namespace Project_Team3
                 throw e;
             }
         }
-        
 
-        public Boolean userExist(String password, ulong id,String userType)
+
+        public Boolean userExist(String password, ulong id, String userType)
         {
             try
             {
                 String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
-                String query = "select * from Users where ID = '" + id +  "'and ACCESSGROUP = '" + userType + "'and PASS = '" + password + "'";
+                String query = "select * from Users where ID = '" + id + "'and ACCESSGROUP = '" + userType + "'and PASS = '" + password + "'";
                 SqlConnection con = new SqlConnection(str);
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataReader dbr;
@@ -1014,7 +1014,7 @@ namespace Project_Team3
                 con.Close();
                 throw;
             }
-            
+
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////
@@ -1095,7 +1095,7 @@ namespace Project_Team3
         /// <param name="userType"></param>
         /// <returns></returns>
 
-        public Boolean signPerson(String Name,String password,int id,String userType)
+        public Boolean signPerson(String Name, String password, int id, String userType)
         {
             try
             {
@@ -1126,10 +1126,10 @@ namespace Project_Team3
         {
             try
             {
-                con.Open();                
+                con.Open();
                 return true;
             }
-            catch 
+            catch
             {
                 return false;
             }
@@ -1146,7 +1146,66 @@ namespace Project_Team3
         }
 
         public SqlConnection getConnection() { return con; }
-    }
 
+        public bool getPublishedSched(ulong id)
+        {
+            try
+            {
+                bool returnValue = false;
+                string str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                string query = "select * from dbo.Users where Id = '" + id + "'";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader dbr;
+                con.Open();
+                dbr = cmd.ExecuteReader();
+                while (dbr.Read())
+                {
+                    if (id.Equals(dbr.GetValue(0)))
+                    {
+                        if (dbr.GetValue(7) != null)
+                        {
+                            MessageBox.Show("Check");
+
+                            if ((int)dbr.GetValue(7) == 1) returnValue = true;
+                        }
+                    }
+                }
+                con.Close();
+                return returnValue;
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void publishSched(ulong id)
+        {
+            try
+            {
+                string str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
+                string query = "UPDATE dbo.Users SET PUBLISHEDSCHED = " + 1 + "WHERE ID = " + id;
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+    }
 
 }
