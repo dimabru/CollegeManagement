@@ -28,6 +28,7 @@ namespace Project_Team3
         {
             InitializeComponent();
 
+            labelNoSched.Hide();
             //learn more about downcasting here http://stackoverflow.com/questions/1524197/downcast-and-upcast
 
             if (someUser is professor)
@@ -60,8 +61,9 @@ namespace Project_Team3
             //hide constraints panel;
             panel1.Hide();
 
-            //build schedule
-            build_schedule(someUser);
+            //build schedule if the schedule is published by the secretary
+            if (new dataBaseOperations().getPublishedSched(someUser.getid())) build_schedule(someUser);
+            else labelNoSched.Show();
         }
 
         //build schedule to professor or instructor
@@ -400,6 +402,11 @@ namespace Project_Team3
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
