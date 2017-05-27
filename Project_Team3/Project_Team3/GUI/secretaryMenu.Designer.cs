@@ -109,6 +109,8 @@
             this.nameLable = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.publishSchedInst = new System.Windows.Forms.Button();
+            this.publishSchedProf = new System.Windows.Forms.Button();
             this.dataGridSchedule = new System.Windows.Forms.DataGridView();
             this.instSchedule = new System.Windows.Forms.Button();
             this.profSchedule = new System.Windows.Forms.Button();
@@ -119,8 +121,6 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.publishSchedProf = new System.Windows.Forms.Button();
-            this.publishSchedInst = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1149,6 +1149,30 @@
             this.tabPage5.Text = "Teaching Staff Info";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // publishSchedInst
+            // 
+            this.publishSchedInst.Font = new System.Drawing.Font("Elephant", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.publishSchedInst.Location = new System.Drawing.Point(651, 42);
+            this.publishSchedInst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.publishSchedInst.Name = "publishSchedInst";
+            this.publishSchedInst.Size = new System.Drawing.Size(191, 25);
+            this.publishSchedInst.TabIndex = 22;
+            this.publishSchedInst.Text = "Publish Schedule";
+            this.publishSchedInst.UseVisualStyleBackColor = true;
+            this.publishSchedInst.Click += new System.EventHandler(this.publishSchedInst_Click);
+            // 
+            // publishSchedProf
+            // 
+            this.publishSchedProf.Font = new System.Drawing.Font("Elephant", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.publishSchedProf.Location = new System.Drawing.Point(651, 2);
+            this.publishSchedProf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.publishSchedProf.Name = "publishSchedProf";
+            this.publishSchedProf.Size = new System.Drawing.Size(191, 25);
+            this.publishSchedProf.TabIndex = 21;
+            this.publishSchedProf.Text = "Publish Schedule";
+            this.publishSchedProf.UseVisualStyleBackColor = true;
+            this.publishSchedProf.Click += new System.EventHandler(this.publishSchedProf_Click);
+            // 
             // dataGridSchedule
             // 
             this.dataGridSchedule.AllowUserToAddRows = false;
@@ -1228,6 +1252,7 @@
             this.comboBoxProfList.Name = "comboBoxProfList";
             this.comboBoxProfList.Size = new System.Drawing.Size(217, 24);
             this.comboBoxProfList.TabIndex = 14;
+            this.comboBoxProfList.SelectedIndexChanged += new System.EventHandler(this.comboBoxProfList_SelectedIndexChanged);
             // 
             // label28
             // 
@@ -1261,30 +1286,6 @@
             this.label10.Size = new System.Drawing.Size(139, 25);
             this.label10.TabIndex = 23;
             this.label10.Text = "Max Students:";
-            // 
-            // publishSchedProf
-            // 
-            this.publishSchedProf.Font = new System.Drawing.Font("Elephant", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.publishSchedProf.Location = new System.Drawing.Point(651, 2);
-            this.publishSchedProf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.publishSchedProf.Name = "publishSchedProf";
-            this.publishSchedProf.Size = new System.Drawing.Size(191, 25);
-            this.publishSchedProf.TabIndex = 21;
-            this.publishSchedProf.Text = "Publish Schedule";
-            this.publishSchedProf.UseVisualStyleBackColor = true;
-            this.publishSchedProf.Click += new System.EventHandler(this.publishSchedProf_Click);
-            // 
-            // publishSchedInst
-            // 
-            this.publishSchedInst.Font = new System.Drawing.Font("Elephant", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.publishSchedInst.Location = new System.Drawing.Point(651, 42);
-            this.publishSchedInst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.publishSchedInst.Name = "publishSchedInst";
-            this.publishSchedInst.Size = new System.Drawing.Size(191, 25);
-            this.publishSchedInst.TabIndex = 22;
-            this.publishSchedInst.Text = "Publish Schedule";
-            this.publishSchedInst.UseVisualStyleBackColor = true;
-            this.publishSchedInst.Click += new System.EventHandler(this.publishSchedInst_Click);
             // 
             // secretaryMenu
             // 

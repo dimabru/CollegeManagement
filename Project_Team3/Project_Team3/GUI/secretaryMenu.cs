@@ -938,5 +938,10 @@ namespace Project_Team3.GUI
             }
             MessageBox.Show("Schedule published succesfully");
         }
+
+        private void comboBoxProfList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
