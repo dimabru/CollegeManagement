@@ -14,6 +14,7 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
     public partial class Form_studentChangeCourse : Form
     {
         string username;
+        DBconnect connection;
 
         public Form_studentChangeCourse()
         {
@@ -47,20 +48,20 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
         private void LoadDataToGrid()
         {
 
-            DBconnect connection = new DBconnect();
+            connection = new DBconnect();
 
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.Text;
             command.Connection = connection.getConnection();
             connection = new DBconnect();
-            command.CommandText = "SELECT Course.COURSE_NAME,course.room_number,course.course_day,course.start_hour,course.end_hour FROM Course,Student WHERE Course.COURSE_SEMESTER = Student.semester AND student.USERNAME = @username";
+            command.CommandText = "SELECT Course.COURSE_NAME,course.room_number,course.course_day,course.start_hour,course.end_hour FROM Course WHERE Course.COURSE_SEMESTER = (SELECT student.semester FROM student where student.username = @username)";
             command.Parameters.AddWithValue("username", Username);
             try
             {
                 DataSet ds = connection.generalCommand(command);
                 if (ds.Tables.Count > 0)
                 {
-                    showCoursesGrid.AutoGenerateColumns = true;    
+                    showCoursesGrid.AutoGenerateColumns = true;
                     showCoursesGrid.DataSource = ds.Tables[0];
                     showCoursesGrid.Columns[0].HeaderText = "Course";
                     showCoursesGrid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -84,11 +85,25 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
 
             }
         }
-            
+
 
         private void Form_studentChangeCourse_Load(object sender, EventArgs e)
         {
             LoadDataToGrid();
         }
+
+        private void request_change_Click(object sender, EventArgs e)
+        {
+            string course_name = showCoursesGrid[0, showCoursesGrid.CurrentRow.Index].Value.ToString();
+            string startH = showCoursesGrid[3, showCoursesGrid.CurrentRow.Index].Value.ToString(); ;
+            string endH = showCoursesGrid[4, showCoursesGrid.CurrentRow.Index].Value.ToString();
+            string messageBody = "Please change my signup to course " + course_name+" from hour "+startH+" till "+endH;
+            MessageBox.Show("Your request to : \n"+messageBody+"\n\nBeen sended to processing");
+            string querry = "insert into StudentRequests values('" + username + "', '" + messageBody + "','New request','All secretaries')";
+            connection.executionQuery(querry);
+
+        }
+
+
     }
 }

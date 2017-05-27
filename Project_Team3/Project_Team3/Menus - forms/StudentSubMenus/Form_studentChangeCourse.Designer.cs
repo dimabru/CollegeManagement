@@ -61,6 +61,7 @@
             this.request_change.TabIndex = 2;
             this.request_change.Text = "Ask to change";
             this.request_change.UseVisualStyleBackColor = true;
+            this.request_change.Click += new System.EventHandler(this.request_change_Click);
             // 
             // header_label
             // 
