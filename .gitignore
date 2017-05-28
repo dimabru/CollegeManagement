@@ -243,3 +243,4 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/Project_Team3/Project_Team3/Properties/DataSources/DBconnect.datasource
