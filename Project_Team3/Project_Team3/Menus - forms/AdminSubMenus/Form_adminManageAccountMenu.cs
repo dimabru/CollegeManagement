@@ -30,11 +30,11 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
         private void addAssociateClick(object sender, EventArgs e)
         {
-            /*using (Form_adminAddAssociate addAssociate = new Form_adminAddAssociate())
+            using (Form_adminAddAssociate addAssociate = new Form_adminAddAssociate())
             {
                 this.Hide();
                 addAssociate.ShowDialog(this);
-            }*/
+            }
 
         }
 
