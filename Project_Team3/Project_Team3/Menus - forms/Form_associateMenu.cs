@@ -51,8 +51,7 @@ namespace Project_Team3.Menus___forms
 
         private void defineNewEventButton_Click(object sender, EventArgs e)
         {
-            using (Form_associateDefineNewEvent defineNewEvent = new Form_associateDefineNewEvent())
-            {
+            using (Form_associateDefineNewEvent defineNewEvent = new Form_associateDefineNewEvent()){
                 this.Hide();
                 defineNewEvent.ShowDialog(this);
             }
