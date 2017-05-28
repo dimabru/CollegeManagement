@@ -328,6 +328,7 @@
     </Compile>
     <Compile Include="Menus - forms\StudentSubMenus\Form_studentWatchEvents.Designer.cs">
       <DependentUpon>Form_studentWatchEvents.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
