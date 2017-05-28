@@ -440,6 +440,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\StudentSubMenus\Form_studentWatchEvents.resx">
       <DependentUpon>Form_studentWatchEvents.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Users\secretary.cs" />
     <Compile Include="GUI\secretaryLoginMenu.cs">
       <SubType>Form</SubType>
