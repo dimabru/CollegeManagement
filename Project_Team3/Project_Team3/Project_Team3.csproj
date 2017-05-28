@@ -316,7 +316,6 @@
       <DependentUpon>teachingStaffMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="GeneralChecks\publicChecksAndOperations.cs" />
-    <Compile Include="DataBase\DBconnect.cs" />
     <Compile Include="GUI\firstMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,6 +323,7 @@
       <DependentUpon>firstMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Menus - forms\StudentSubMenus\Form_studentWatchEvents.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
@@ -498,7 +498,6 @@
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\DBconnect.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
