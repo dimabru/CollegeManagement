@@ -323,6 +323,7 @@
       <DependentUpon>firstMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Menus - forms\StudentSubMenus\Form_studentWatchEvents.cs">
+    </Compile>
     <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
