@@ -269,6 +269,7 @@
     </Compile>
     <Compile Include="Menus - forms\StudentSubMenus\Form_studentViewRequests.Designer.cs">
       <DependentUpon>Form_studentViewRequests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Courses\Course.cs" />
     <Compile Include="Courses\Room.cs" />
     <Compile Include="facebook\Analyze.cs">
