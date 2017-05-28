@@ -35,6 +35,7 @@
             this.defineNewEventButton = new System.Windows.Forms.Button();
             this.viewAllEventsButton = new System.Windows.Forms.Button();
             this.associationEventsGrid = new System.Windows.Forms.DataGridView();
+            this.removeEventButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.associationEventsGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,11 +84,20 @@
             this.associationEventsGrid.Name = "associationEventsGrid";
             this.associationEventsGrid.RowTemplate.Height = 24;
             // 
+            // removeEventButton
+            // 
+            this.removeEventButton.BackColor = System.Drawing.Color.MistyRose;
+            resources.ApplyResources(this.removeEventButton, "removeEventButton");
+            this.removeEventButton.Name = "removeEventButton";
+            this.removeEventButton.UseVisualStyleBackColor = false;
+            this.removeEventButton.Click += new System.EventHandler(this.removeEventButton_Click);
+            // 
             // Form_associateMenu
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.Controls.Add(this.removeEventButton);
             this.Controls.Add(this.associationEventsGrid);
             this.Controls.Add(this.viewAllEventsButton);
             this.Controls.Add(this.defineNewEventButton);
@@ -112,5 +122,6 @@
         private System.Windows.Forms.Button defineNewEventButton;
         private System.Windows.Forms.Button viewAllEventsButton;
         private System.Windows.Forms.DataGridView associationEventsGrid;
+        private System.Windows.Forms.Button removeEventButton;
     }
 }

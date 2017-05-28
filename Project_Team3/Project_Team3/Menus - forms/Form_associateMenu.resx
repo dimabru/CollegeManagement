@@ -148,7 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;logoutButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="globalMessageLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -178,7 +178,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;globalMessageLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="viewWeeklyPlanButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>David, 13.8pt, style=Bold</value>
@@ -208,7 +208,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;viewWeeklyPlanButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="defineNewEventButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>David, 13.8pt, style=Bold</value>
@@ -238,13 +238,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;defineNewEventButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="viewAllEventsButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>David, 13.8pt, style=Bold</value>
   </data>
   <data name="viewAllEventsButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 357</value>
+    <value>90, 419</value>
   </data>
   <data name="viewAllEventsButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -268,7 +268,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;viewAllEventsButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="associationEventsGrid.Location" type="System.Drawing.Point, System.Drawing">
     <value>358, 213</value>
@@ -289,6 +289,39 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;associationEventsGrid.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="removeEventButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>David, 13.8pt, style=Bold</value>
+  </data>
+  <data name="removeEventButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="removeEventButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 362</value>
+  </data>
+  <data name="removeEventButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="removeEventButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 46</value>
+  </data>
+  <data name="removeEventButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="removeEventButton.Text" xml:space="preserve">
+    <value>Remove an event</value>
+  </data>
+  <data name="&gt;&gt;removeEventButton.Name" xml:space="preserve">
+    <value>removeEventButton</value>
+  </data>
+  <data name="&gt;&gt;removeEventButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;removeEventButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;removeEventButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

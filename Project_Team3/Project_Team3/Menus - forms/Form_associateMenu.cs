@@ -46,7 +46,7 @@ namespace Project_Team3.Menus___forms
 
         private void viewWeeklyPlanButton_Click(object sender, EventArgs e)
         {
-            retreiveData();
+            retrieveData();
         }
 
         private void defineNewEventButton_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace Project_Team3.Menus___forms
 
         }
 
-        private void retreiveData()
+        private void retrieveData()
         {
             dbcon.OpenConn();
 
@@ -85,7 +85,7 @@ namespace Project_Team3.Menus___forms
 
         private void viewAllEventsButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Not Available");
+            retrieveData();
         }
 
 
@@ -103,6 +103,15 @@ namespace Project_Team3.Menus___forms
         {
             Form_login parent = (Form_login)this.Owner;
             parent.Show();
+        }
+
+        private void removeEventButton_Click(object sender, EventArgs e)
+        {
+            using (Form removeEvent = new Form_associateRemoveEvent())
+            {
+                this.Hide();
+                removeEvent.ShowDialog(this);
+            }
         }
     }
 }

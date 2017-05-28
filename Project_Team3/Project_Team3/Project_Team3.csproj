@@ -144,6 +144,12 @@
     <Compile Include="Menus - forms\AssociateSubMenus\Form_associateDefineNewEvent.Designer.cs">
       <DependentUpon>Form_associateDefineNewEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus - forms\AssociateSubMenus\Form_associateRemoveEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus - forms\AssociateSubMenus\Form_associateRemoveEvent.Designer.cs">
+      <DependentUpon>Form_associateRemoveEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menus - forms\Form_adminMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\AssociateSubMenus\Form_associateDefineNewEvent.resx">
       <DependentUpon>Form_associateDefineNewEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus - forms\AssociateSubMenus\Form_associateRemoveEvent.resx">
+      <DependentUpon>Form_associateRemoveEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus - forms\Form_adminMenu.resx">
       <DependentUpon>Form_adminMenu.cs</DependentUpon>
