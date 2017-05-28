@@ -58,7 +58,7 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
             var dataAdapter = new SqlDataAdapter("select EVENT_ID, EVENT_NAME from Event", db.ConnectionStringGet());
             var commandBuilder = new SqlCommandBuilder(dataAdapter);
             var ds = new DataSet();
-            //try to fill sataset with query result
+            //try to fill dataset with query result
             try
             {
                 dataAdapter.Fill(ds);

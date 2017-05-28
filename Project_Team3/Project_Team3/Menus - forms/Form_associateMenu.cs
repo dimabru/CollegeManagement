@@ -15,6 +15,7 @@ namespace Project_Team3.Menus___forms
     public partial class Form_associateMenu : Form
     {
         private DBconnect dbcon;
+        private DataSet allEvents;
 
         public Form_associateMenu()
         {
@@ -45,7 +46,7 @@ namespace Project_Team3.Menus___forms
 
         private void viewWeeklyPlanButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Not Available");
+            retreiveData();
         }
 
         private void defineNewEventButton_Click(object sender, EventArgs e)
@@ -56,6 +57,31 @@ namespace Project_Team3.Menus___forms
                 defineNewEvent.ShowDialog(this);
             }
 
+        }
+
+        private void retreiveData()
+        {
+            dbcon.OpenConn();
+
+            //create data adapter
+            var dataAdapter = new SqlDataAdapter("select EVENT_DAY, EVENT_START, EVENT_END, EVENT_ID, EVENT_NAME, EVENT_DESC from Event", dbcon.ConnectionStringGet());
+            var commandBuilder = new SqlCommandBuilder(dataAdapter);
+            var ds = new DataSet();
+            //try to fill dataset with query result
+            try
+            {
+                dataAdapter.Fill(ds);
+                associationEventsGrid.ReadOnly = true;
+                associationEventsGrid.DataSource = ds.Tables[0];
+                allEvents = ds;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Query not returned any data");
+            }
+
+            ds.Tables[0].DefaultView.Sort = "EVENT_DAY ASC";
+            dbcon.CloseConn(dbcon.ConnStatus());
         }
 
         private void viewAllEventsButton_Click(object sender, EventArgs e)

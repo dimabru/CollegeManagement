@@ -34,9 +34,8 @@
             this.viewWeeklyPlanButton = new System.Windows.Forms.Button();
             this.defineNewEventButton = new System.Windows.Forms.Button();
             this.viewAllEventsButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.associationEventsGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.associationEventsGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // logoutButton
@@ -77,28 +76,19 @@
             this.viewAllEventsButton.UseVisualStyleBackColor = false;
             this.viewAllEventsButton.Click += new System.EventHandler(this.viewAllEventsButton_Click);
             // 
-            // pictureBox1
+            // associationEventsGrid
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.MistyRose;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.BackColor = System.Drawing.Color.MistyRose;
-            this.label1.Name = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.associationEventsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.associationEventsGrid, "associationEventsGrid");
+            this.associationEventsGrid.Name = "associationEventsGrid";
+            this.associationEventsGrid.RowTemplate.Height = 24;
             // 
             // Form_associateMenu
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.associationEventsGrid);
             this.Controls.Add(this.viewAllEventsButton);
             this.Controls.Add(this.defineNewEventButton);
             this.Controls.Add(this.viewWeeklyPlanButton);
@@ -108,7 +98,7 @@
             this.Name = "Form_associateMenu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_associateMenu_FormClosed);
             this.Load += new System.EventHandler(this.Form_associateMenu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.associationEventsGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,7 +111,6 @@
         private System.Windows.Forms.Button viewWeeklyPlanButton;
         private System.Windows.Forms.Button defineNewEventButton;
         private System.Windows.Forms.Button viewAllEventsButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView associationEventsGrid;
     }
 }
