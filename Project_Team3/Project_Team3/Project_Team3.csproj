@@ -51,6 +51,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.5.6298.4486, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.5.6298.4486\lib\net35-client\CircularProgressBar.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facebook.7.0.6\lib\net45\Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -62,19 +70,122 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.5.6298.3372, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.5.6298.3372\lib\net35-client\WinFormAnimation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBconnect.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Courses\Course.cs" />
+    <Compile Include="Courses\Room.cs" />
+    <Compile Include="facebook\Analyze.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="facebook\Analyze.designer.cs" />
+    <Compile Include="facebook\FacebookLoginDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="facebook\FacebookLoginDialog.designer.cs" />
+    <Compile Include="facebook\FB_Analyze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="facebook\FB_Analyze.designer.cs" />
+    <Compile Include="facebook\GetTheMail.cs" />
+    <Compile Include="facebook\MiniJson.cs" />
+    <Compile Include="facebook\Program.cs" />
+    <Compile Include="GUI\adminMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\adminMenu.Designer.cs">
+      <DependentUpon>adminMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\secretaryMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\secretaryMenu.Designer.cs">
+      <DependentUpon>secretaryMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\admin.cs" />
+    <Compile Include="GUI\adminLoginMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\adminLoginMenu.Designer.cs">
+      <DependentUpon>adminLoginMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\enums.cs" />
+    <Compile Include="Users\instructor.cs" />
+    <Compile Include="Users\professor.cs" />
+    <Compile Include="GUI\teachingStaffMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\teachingStaffMenu.Designer.cs">
+      <DependentUpon>teachingStaffMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralChecks\publicChecksAndOperations.cs" />
+    <Compile Include="DataBase\DBconnect.cs" />
+    <Compile Include="GUI\firstMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\firstMenu.Designer.cs">
+      <DependentUpon>firstMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\instructorLoginMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\instructorLoginMenu.Designer.cs">
+      <DependentUpon>instructorLoginMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\professorLoginMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\professorLoginMenu.Designer.cs">
+      <DependentUpon>professorLoginMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <Compile Include="Users\secretary.cs" />
+    <Compile Include="GUI\secretaryLoginMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\secretaryLoginMenu.Designer.cs">
+      <DependentUpon>secretaryLoginMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\dataBaseOperations.cs" />
+    <Compile Include="Users\Staff.cs" />
+    <Compile Include="Users\techingStaffConstraints.cs" />
+    <Compile Include="Users\user.cs" />
+    <EmbeddedResource Include="facebook\Analyze.resx" />
+    <EmbeddedResource Include="facebook\FacebookLoginDialog.resx" />
+    <EmbeddedResource Include="facebook\FB_Analyze.resx" />
+    <EmbeddedResource Include="GUI\adminLoginMenu.resx">
+      <DependentUpon>adminLoginMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\adminMenu.resx">
+      <DependentUpon>adminMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\firstMenu.resx">
+      <DependentUpon>firstMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\instructorLoginMenu.resx">
+      <DependentUpon>instructorLoginMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\professorLoginMenu.resx">
+      <DependentUpon>professorLoginMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\secretaryMenu.resx">
+      <DependentUpon>secretaryMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\teachingStaffMenu.resx">
+      <DependentUpon>teachingStaffMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,7 +195,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="GUI\secretaryLoginMenu.resx">
+      <DependentUpon>secretaryLoginMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -110,6 +227,31 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\secretary.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\v.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="readme.txt" />
+    <None Include="Resources\add_course.jpg" />
+    <None Include="Resources\class.jpg" />
+    <None Include="Resources\class_2.jpg" />
+    <Content Include="Resources\constrains icon.jpg" />
+    <None Include="Resources\constrains icon1.jpg" />
+    <None Include="Resources\constraints_s_1.jpg" />
+    <Content Include="Resources\delete_user.jpg" />
+    <None Include="Resources\loginWithFacebook.png" />
+    <Content Include="Resources\password.jepg.ico" />
+    <Content Include="Resources\schedule.jpg" />
+    <Content Include="Resources\users.jpg" />
+    <Content Include="Resources\user_add.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="'$(SQLDBExtensionsRefPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="'$(SQLDBExtensionsRefPath)' == ''" />

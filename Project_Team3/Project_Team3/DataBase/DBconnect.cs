@@ -35,7 +35,7 @@ namespace Project_Team3
 
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Can not open connection ! ");
                 return false;
@@ -52,6 +52,7 @@ namespace Project_Team3
 
         }
 
+        public SqlConnection getConnection() { return con; }
       
     }
 }
