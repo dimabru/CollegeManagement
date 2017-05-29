@@ -143,9 +143,10 @@
         private System.Windows.Forms.Label LabelHeader;
         
 
-        // export fields for unittesting
+        // methods for unit tests
         public System.Windows.Forms.TextBox getUsername() { return this.userNameBox; }
         public System.Windows.Forms.TextBox getPassword() { return this.passwordBox; }
+        public bool setDBConnection(DBconnect db) { if (db != null) { this.db = db; return true; } else return false; }
     }
 }
 

@@ -74,15 +74,28 @@ namespace UnitTestsProject
         #endregion
 
         [TestMethod]
-        public void TestMethod1()
+        public void StudentLoginCheck()
         {
+            loginForm.setDBConnection(new DBconnect());
             // input exists data for student
             username.Text = "alex";
             password.Text = "alex";
 
-            string result = Convert.ToString(loginObject.Invoke("getAccessGroup", clickParamaters));
+            // check correct fields filling
+            Assert.AreEqual("alex", username.Text);
+            Assert.AreEqual("alex", password.Text);
+
+            // check correct status
+            var result= loginObject.Invoke("getAccessGroup");
             Assert.AreEqual("Student", result);
 
+            // input incorrect data for student
+            username.Text = "testuser";
+            password.Text = "testpassword";
+
+            // check correct status
+            result = loginObject.Invoke("getAccessGroup");
+            Assert.AreEqual("Bad Username/Password!", result);
         }
     }
 }

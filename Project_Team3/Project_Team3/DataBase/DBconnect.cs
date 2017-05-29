@@ -5,7 +5,7 @@ using System.Data;
 using Project_Team3.Classes;
 namespace Project_Team3
 {
-    class DBconnect
+    public class DBconnect
     {
 
         private string connetionString = "Server=tcp:sce2017b.database.windows.net,1433;Initial Catalog=Project3DB;Persist Security Info=False;User ID=sceproject;Password=2017Sce2017;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
