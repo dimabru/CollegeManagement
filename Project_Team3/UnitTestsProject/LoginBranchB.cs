@@ -98,5 +98,31 @@ namespace UnitTestsProject
             Assert.AreEqual("Bad Username/Password!", result);
 
         }
+
+        [TestMethod]
+        public void AssociateLoginCheck()
+        {
+            loginForm.setDBConnection(new DBconnect());
+            // input exists data for student
+            username.Text = "johnny";
+            password.Text = "johnny";
+
+            // check correct fields filling
+            Assert.AreEqual("johnny", username.Text);
+            Assert.AreEqual("johnny", password.Text);
+
+            // check correct status
+            var result = loginObject.Invoke("getAccessGroup");
+            Assert.AreEqual("Associate", result);
+
+            // input incorrect data for student
+            username.Text = "testuser";
+            password.Text = "testpassword";
+
+            // check correct status
+            result = loginObject.Invoke("getAccessGroup");
+            Assert.AreEqual("Bad Username/Password!", result);
+
+        }
     }
 }
