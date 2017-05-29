@@ -44,8 +44,15 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
                 MessageBox.Show("Unsuccessfull convertion attempt string ID to Int or ID field is empty!");
                 return;
             }
+            bool usernameExists = funcs.ifUserInDatabase(username);
+            if (usernameExists)
+                MessageBox.Show("User with username " + username + " already exists");
 
-            bool userExists = funcs.ifUserInDatabase(username) || funcs.ifUserIDinDatabase(id_int);
+            bool userIdExists = funcs.ifUserIDinDatabase(id_int);
+            if (userIdExists)
+                MessageBox.Show("User with id " + id_int + " already exists");
+
+            bool userExists = usernameExists || userIdExists;
 
             if (userExists == false )
             {

@@ -65,8 +65,29 @@ namespace UnitTestsProject
         public void CheckUserIDExists()
         {
             FunctionsForAllProgram funcs = new FunctionsForAllProgram();
-            bool IDExists = funcs.ifUserIDinDatabase(123);
+
+            // existing user
+            bool IDExists = funcs.ifUserIDinDatabase(3233);
             Assert.IsTrue(IDExists);
+
+            // not existing user
+            IDExists = funcs.ifUserIDinDatabase(99999);
+            Assert.IsFalse(IDExists);
+        }
+
+
+        [TestMethod]
+        public void CheckUsernameExists()
+        {
+            FunctionsForAllProgram funcs = new FunctionsForAllProgram();
+
+            // existing user
+            bool IDExists = funcs.ifUserInDatabase("roni");
+            Assert.IsTrue(IDExists);
+
+            // not existing user
+            IDExists = funcs.ifUserInDatabase("Dudu Aharon");
+            Assert.IsFalse(IDExists);
         }
     }
 }

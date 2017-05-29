@@ -29,7 +29,7 @@ namespace Project_Team3.Classes
             db.CloseConn(db.ConnStatus());
             try
             {
-                MessageBox.Show("User with this username already exists, and it's ID : "+ds.Tables[0].Rows[0].ItemArray[0].ToString());
+               string user = ds.Tables[0].Rows[0].ItemArray[0].ToString();
                 status = true;
 
             }
@@ -60,7 +60,7 @@ namespace Project_Team3.Classes
             db.CloseConn(db.ConnStatus());
             try
             {
-                MessageBox.Show("User with this id already exists, and it's username : " + ds.Tables[0].Rows[0].ItemArray[0].ToString());
+               string user = ds.Tables[0].Rows[0].ItemArray[0].ToString();
                 status = true;
 
             }
