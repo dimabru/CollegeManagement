@@ -163,5 +163,6 @@
 
         // unit tests
         public System.Windows.Forms.TextBox getTextBox() { return textBox; }
+        public System.Windows.Forms.DataGridView getDataGrid() { return dataGrid; }
     }
 }

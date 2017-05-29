@@ -13,13 +13,21 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 {
     public partial class Form_adminAccountsMenu : Form
     {
-
+        DataSet ds;
         private int studentsInSystem = -1;
         public int StudentsInSystem
         {
             get
             {
                 return studentsInSystem;
+            }
+        }
+
+        public DataSet Ds
+        {
+            get
+            {
+                return ds;
             }
         }
 
@@ -39,13 +47,13 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             //create data adapter
             var dataAdapter = new SqlDataAdapter("select USers.ID,Users.username,Users.Pass,Users.UName,Users.SName,Student.Semester from Users join Student on Users.username = Student.username", db.ConnectionStringGet());
             var commandBuilder = new SqlCommandBuilder(dataAdapter);
-            var ds = new DataSet();
+           ds = new DataSet();
             //try to fill sataset with query result
             try
             {
                 dataAdapter.Fill(ds);
                 dataGrid.ReadOnly = true;
-                dataGrid.DataSource = ds.Tables[0];
+                dataGrid.DataSource = Ds.Tables[0];
             }
             catch (Exception)
             {
