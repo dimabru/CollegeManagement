@@ -6,6 +6,8 @@ using Project_Team3;
 using Project_Team3.Menus___forms;
 using Project_Team3.Menus___forms.AssociateSubMenus;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace UnitTestsProject
 {
@@ -17,12 +19,14 @@ namespace UnitTestsProject
     {
         Form_associateDefineNewEvent defineNewEventForm;
         PrivateObject defineNewEventObject;
+        DBconnect testConnection;
         Object[] clickParamaters;
         TextBox eventName;
         RichTextBox eventDescription;
         DateTimePicker eventStartTime;
         DateTimePicker eventEndTime;
-
+        ListBox dayPicker;
+        
         public AssociateAddEventTests()
         {
             //
@@ -37,6 +41,7 @@ namespace UnitTestsProject
             eventDescription = defineNewEventForm.getEventDescription();
             eventStartTime = defineNewEventForm.getStartTime();
             eventEndTime = defineNewEventForm.getEndTime();
+            testConnection = new DBconnect();
         }
 
         private TestContext testContextInstance;
@@ -97,6 +102,25 @@ namespace UnitTestsProject
 
             Assert.AreEqual(eventName.Text, "");
             Assert.AreEqual(eventDescription.Text, "");
+        }
+
+        [TestMethod]
+        public void checkAddEvent()
+        {
+            //TODO Asserts regarding failure (Fields are empty, time etc..)
+            eventName.Text = "testName";
+            eventDescription.Text = "testDescription";
+            dayPicker.SetSelected(0, true); //Selecting sunday
+
+            defineNewEventObject.Invoke("createEventButton_Click", clickParamaters);
+
+            //Checking Event was added:
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM Event WHERE EVENT_NAME = 'testName' AND EVENT_DESC = 'testDescription";
+            cmd.CommandType = CommandType.Text;
+
+            DataSet ds = testConnection.generalCommand(cmd);
         }
     }
 }
