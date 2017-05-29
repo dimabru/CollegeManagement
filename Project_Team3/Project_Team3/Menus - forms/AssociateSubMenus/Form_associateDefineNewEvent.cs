@@ -40,6 +40,9 @@ using System.Data.SqlClient;
             int startHour = startTimePicker.Value.Hour ,endHour = endTimePicker.Value.Hour;
             string day = dayPickerListBox.Text, eventName = eventNameTextBox.Text, eventDescription = eventDescriptionRichTextBox.Text;
 
+            if (eventName ==  "" || eventDescription == "" ) return;
+            
+
             DBconnect db = new DBconnect();
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;

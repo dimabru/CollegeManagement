@@ -128,5 +128,30 @@ namespace UnitTestsProject
             testConnection.executionQuery("DELETE FROM Event WHERE EVENT_NAME = 'testName' AND EVENT_DESC = 'testDescription'");
 
         }
+
+        [TestMethod]
+        public void checkAddBadEvent()
+        {
+            dayPicker.SetSelected(0, true); //Selecting sunday
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM Event WHERE EVENT_NAME = '' OR EVENT_DESC = ''";
+            cmd.CommandType = CommandType.Text;
+
+            //Event with no name
+            eventName.Text = "";
+            eventDescription.Text = "testDescription";
+
+            defineNewEventObject.Invoke("createEventButton_Click", clickParamaters);
+
+            //Event with no description
+            eventName.Text = "testName";
+            eventDescription.Text = "";
+
+
+            defineNewEventObject.Invoke("createEventButton_Click", clickParamaters);
+
+            DataSet ds = testConnection.generalCommand(cmd);
+            Assert.AreEqual(0, ds.Tables[0].Rows.Count);
+        }
     }
 }
