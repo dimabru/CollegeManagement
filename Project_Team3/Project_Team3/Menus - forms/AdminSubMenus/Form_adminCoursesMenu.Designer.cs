@@ -145,5 +145,7 @@
         private System.Windows.Forms.Button Back;
         private System.Windows.Forms.DataGridView dataGrid;
         private System.Windows.Forms.TextBox textBox;
+
+        public System.Windows.Forms.TextBox getCoursesBox() { return textBox; }
     }
 }

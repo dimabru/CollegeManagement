@@ -159,5 +159,9 @@
         private System.Windows.Forms.Button Back;
         private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.DataGridView dataGrid;
+
+
+        // unit tests
+        public System.Windows.Forms.TextBox getTextBox() { return textBox; }
     }
 }
