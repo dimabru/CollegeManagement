@@ -2,6 +2,10 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Project_Team3.Menus___forms.SecretarySubMenus;
+using System.Windows.Forms;
+using Project_Team3;
+
 
 namespace UnitTestsProject
 {
@@ -11,11 +15,16 @@ namespace UnitTestsProject
     [TestClass]
     public class SecretarySearchCourses_B_Tests
     {
+
+        Form_secretaryCourseSearch courseSearchForm;
+        PrivateObject courseSearchObject;
+        ListBox resultsBox;
+
         public SecretarySearchCourses_B_Tests()
         {
-            //
-            // TODO: Add constructor logic here
-            //
+            courseSearchForm = new Form_secretaryCourseSearch();
+            courseSearchObject = new PrivateObject(courseSearchForm);
+            resultsBox = courseSearchForm.getCoursesResults();
         }
 
         private TestContext testContextInstance;
@@ -59,11 +68,48 @@ namespace UnitTestsProject
         #endregion
 
         [TestMethod]
-        public void TestMethod1()
+        public void checkInvalidID()
         {
-            //
-            // TODO: Add test logic here
-            //
+
+            Object[] paramsArray = new Object[1];
+            paramsArray[0] = "Test";
+
+            //ID can be represented only by numbers:
+            string onlyNumbersMessage = (string) courseSearchObject.Invoke("searchByID", paramsArray);
+            Assert.AreEqual("ID Can be represented only by numbers", onlyNumbersMessage);
+
+            //ID can not be empty:
+            paramsArray[0] = "";
+            string notEmptyMessage = (string)courseSearchObject.Invoke("searchByID", paramsArray);
+            Assert.AreEqual("ID Cannot be empty", notEmptyMessage);
+
         }
+
+        [TestMethod]
+        public void checkInvalidName()
+        {
+            Object[] paramsArray = new Object[1];
+            paramsArray[0] = "";
+            //Course Name cannot be empty:
+            bool retVal = (bool)courseSearchObject.Invoke("searchByName", paramsArray);
+            Assert.IsFalse(retVal);
+        }
+
+        [TestMethod]
+        public void checkCoursesUpdated()
+        {
+            Object[] searchParam = new Object[1];
+            searchParam[0] = "test";
+
+            DBconnect dbCon = new DBconnect();
+
+            dbCon.executionQuery("INSERT INTO Course VALUES(7357,'test',73,73,73,3,7,73,7,'test',7,0,0)");
+
+            courseSearchObject.Invoke("searchByName", searchParam);
+            Assert.AreEqual(1, resultsBox.Items.Count);
+            dbCon.executionQuery("DELETE FROM Course WHERE COURSE_NAME='test'");
+
+        }
+
     }
 }
