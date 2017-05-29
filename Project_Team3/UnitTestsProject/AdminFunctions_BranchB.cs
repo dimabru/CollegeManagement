@@ -100,6 +100,8 @@ namespace UnitTestsProject
             adminObject.Invoke("watchStudents_Click", clickParamaters);
             DataSet dataSetMock = adminForm.Ds;
 
+            Assert.IsNotNull(dataSetMock);  //check not null dataset
+
             int id = Convert.ToInt32(dataSetMock.Tables[0].Rows[0][0]);
             string username = dataSetMock.Tables[0].Rows[0][1].ToString();
             string password = dataSetMock.Tables[0].Rows[0][2].ToString();
@@ -114,6 +116,26 @@ namespace UnitTestsProject
             Assert.AreEqual(" ", secondName);
             Assert.AreEqual(1, semester);
         }
-        
+
+        [TestMethod]
+        public void viewCourseInformation()
+        {
+            Form_adminCoursesMenu adminCourse = new Form_adminCoursesMenu();
+            adminObject = new PrivateObject(adminCourse);
+            adminObject.Invoke("ListCoursesClick", clickParamaters);
+            DataSet dataSetMock = adminCourse.CoursesSet;
+
+
+            Assert.IsNotNull(dataSetMock);  //check not null dataset
+
+            int id = Convert.ToInt32(dataSetMock.Tables[0].Rows[1][0]);
+            string courseName = dataSetMock.Tables[0].Rows[1][1].ToString();
+            string room = dataSetMock.Tables[0].Rows[1][4].ToString();
+
+            Assert.AreEqual(12, id);
+            Assert.AreEqual("Algorithms 1_Lecture_A", courseName);
+            Assert.AreEqual("tg172", room);
+
+        }
     }
 }

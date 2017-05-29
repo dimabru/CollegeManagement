@@ -14,7 +14,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
     public partial class Form_adminCoursesMenu : Form
     {
         private int coursesAmount;
-        private DataSet allCourses;
+        private DataSet allCoursesSet;
 
         public int CoursesAmount
         {
@@ -22,6 +22,11 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             {
                 return coursesAmount;
             }
+        }
+
+        public DataSet CoursesSet
+        {
+            get {    return allCoursesSet;     }
         }
 
         public Form_adminCoursesMenu()
@@ -45,7 +50,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
                 dataAdapter.Fill(ds);
                 dataGrid.ReadOnly = true;
                 dataGrid.DataSource = ds.Tables[0];
-                allCourses = ds;
+                allCoursesSet = ds;
             }
             catch (Exception)
             {
