@@ -216,5 +216,13 @@
         private System.Windows.Forms.Label endLabel;
         private System.Windows.Forms.ListBox dayPickerListBox;
         private System.Windows.Forms.Button back;
+
+
+        public System.Windows.Forms.TextBox getEventName() { return this.eventNameTextBox; }
+        public System.Windows.Forms.RichTextBox getEventDescription() { return this.eventDescriptionRichTextBox; }
+        public System.Windows.Forms.DateTimePicker getStartTime() { return this.startTimePicker; }
+        public System.Windows.Forms.DateTimePicker getEndTime() { return this.endTimePicker; }
+
+
     }
 }
