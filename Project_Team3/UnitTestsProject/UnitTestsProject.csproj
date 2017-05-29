@@ -53,6 +53,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AdminFunctions_BranchB.cs" />
     <Compile Include="AssociateAddEventTests.cs" />
     <Compile Include="LoginBranchB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
