@@ -37,6 +37,8 @@
             this.LabelHeader = new System.Windows.Forms.Label();
             this.ManagementButton = new System.Windows.Forms.RadioButton();
             this.StudentButton = new System.Windows.Forms.RadioButton();
+            this.facebookButton = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.facebookButton)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -89,10 +91,10 @@
             this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button2.Location = new System.Drawing.Point(512, 155);
+            this.button2.Location = new System.Drawing.Point(456, 144);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 32);
+            this.button2.Size = new System.Drawing.Size(204, 42);
             this.button2.TabIndex = 3;
             this.button2.Text = "Login";
             this.button2.UseVisualStyleBackColor = false;
@@ -133,6 +135,17 @@
             this.StudentButton.Text = "Student Management";
             this.StudentButton.UseVisualStyleBackColor = true;
             // 
+            // facebookButton
+            // 
+            this.facebookButton.Image = global::Project_Team3.Properties.Resources.loginWithFacebook;
+            this.facebookButton.Location = new System.Drawing.Point(456, 191);
+            this.facebookButton.Name = "facebookButton";
+            this.facebookButton.Size = new System.Drawing.Size(204, 44);
+            this.facebookButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.facebookButton.TabIndex = 9;
+            this.facebookButton.TabStop = false;
+            this.facebookButton.Click += new System.EventHandler(this.facebookButton_Click);
+            // 
             // Form_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,6 +153,7 @@
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(686, 247);
+            this.Controls.Add(this.facebookButton);
             this.Controls.Add(this.StudentButton);
             this.Controls.Add(this.ManagementButton);
             this.Controls.Add(this.LabelHeader);
@@ -156,6 +170,7 @@
             this.Text = "Schedule System : Login";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_login_FormClosed);
             this.Load += new System.EventHandler(this.Form_login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.facebookButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,6 +192,7 @@
 
         private System.Windows.Forms.RadioButton ManagementButton;
         private System.Windows.Forms.RadioButton StudentButton;
+        private System.Windows.Forms.PictureBox facebookButton;
     }
 }
 

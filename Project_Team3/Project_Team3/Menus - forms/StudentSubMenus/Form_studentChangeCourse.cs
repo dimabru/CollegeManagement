@@ -80,7 +80,7 @@ namespace Project_Team3.Menus___forms.StudentSubMenus
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

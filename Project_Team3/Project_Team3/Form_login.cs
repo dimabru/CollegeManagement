@@ -15,6 +15,7 @@ namespace Project_Team3
         private string username;
         private string password;
         private ulong id;
+        private GetTheMail facebook_mail;
         publicChecksAndOperations checkIfUserExit = new publicChecksAndOperations();
         public string Username
         {
@@ -66,6 +67,11 @@ namespace Project_Team3
 
         private void loginButton_click(object sender, EventArgs e)
         {
+            login();
+        }
+
+        private void login()
+        {
             db = new DBconnect();
             db.OpenConn();
             Boolean error = false;
@@ -79,7 +85,7 @@ namespace Project_Team3
                         {
                             this.Hide();
                             adMenu.ShowDialog(this);
-                        }  
+                        }
                     }
                     else if (StudentButton.Checked)
                     {
@@ -181,7 +187,6 @@ namespace Project_Team3
 
             db.CloseConn(db.ConnStatus());
         }
-
         private void Form_login_Load(object sender, EventArgs e)
         {
 
@@ -239,6 +244,40 @@ namespace Project_Team3
                     button2.PerformClick();
                 }
             }
+        }
+
+        private void facebookButton_Click(object sender, EventArgs e)
+        {
+            facebook();
+        }
+        [STAThread]
+        public void facebook()
+        {
+            Application.EnableVisualStyles();
+            facebook_mail = new GetTheMail();
+            string mail = facebook_mail.getMail();
+
+            try
+            { 
+                id = dataBaseOperations.getIdByMail(mail);
+                if (db.ConnStatus() == false)
+                    db.OpenConn();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = db.getConnection();
+                cmd.CommandText = "SELECT username, password FROM USERS WHERE id = @id";
+                cmd.Parameters.AddWithValue("id", id);
+                DataSet ds = db.generalCommand(cmd);
+                username = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                password = ds.Tables[0].Rows[0].ItemArray[1].ToString();
+                db.CloseConn(db.ConnStatus());
+                login();
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("the user not exist");
+            }
+            facebook_mail.logout();
         }
     }
 }

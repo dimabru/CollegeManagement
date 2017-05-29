@@ -102,7 +102,6 @@
         #endregion
 
         private System.Windows.Forms.Button backButton;
-        private System.Windows.Forms.Button associateList;
         private System.Windows.Forms.Label instructonLabel;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button assocLst;

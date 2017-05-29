@@ -80,7 +80,7 @@ namespace Project_Team3
                 db.executionQuery("UPDATE studentrequests SET STATUSOFREQUEST = 'Allowed' WHERE STATUSOFREQUEST='R_Allowed' and STUDENTUSERNAME='" + username + "'");
                 db.executionQuery("UPDATE studentrequests SET STATUSOFREQUEST = 'Denied' WHERE STATUSOFREQUEST='R_Denied' and STUDENTUSERNAME='" + username + "'");
             }
-            catch (Exception ex) { }
+            catch (Exception) { }
         }
 
         ///

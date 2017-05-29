@@ -65,7 +65,7 @@ namespace Project_Team3
             dynamic result1 = _fb.Get("me?fields=id,name,email");
             return result1.email;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return "there was a problem";
             }
