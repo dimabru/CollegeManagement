@@ -41,6 +41,7 @@ namespace UnitTestsProject
             eventDescription = defineNewEventForm.getEventDescription();
             eventStartTime = defineNewEventForm.getStartTime();
             eventEndTime = defineNewEventForm.getEndTime();
+            dayPicker = defineNewEventForm.getDayPicker();
             testConnection = new DBconnect();
         }
 
@@ -117,10 +118,15 @@ namespace UnitTestsProject
             //Checking Event was added:
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT * FROM Event WHERE EVENT_NAME = 'testName' AND EVENT_DESC = 'testDescription";
+            cmd.CommandText = "SELECT * FROM Event WHERE EVENT_NAME = 'testName' AND EVENT_DESC = 'testDescription'";
             cmd.CommandType = CommandType.Text;
 
             DataSet ds = testConnection.generalCommand(cmd);
+
+            Assert.AreEqual(1, ds.Tables[0].Rows.Count);
+
+            testConnection.executionQuery("DELETE FROM Event WHERE EVENT_NAME = 'testName' AND EVENT_DESC = 'testDescription'");
+
         }
     }
 }

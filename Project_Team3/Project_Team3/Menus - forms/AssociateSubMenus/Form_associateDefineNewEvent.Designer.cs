@@ -222,7 +222,7 @@
         public System.Windows.Forms.RichTextBox getEventDescription() { return this.eventDescriptionRichTextBox; }
         public System.Windows.Forms.DateTimePicker getStartTime() { return this.startTimePicker; }
         public System.Windows.Forms.DateTimePicker getEndTime() { return this.endTimePicker; }
-
+        public System.Windows.Forms.ListBox getDayPicker() { return this.dayPickerListBox; }
 
     }
 }
