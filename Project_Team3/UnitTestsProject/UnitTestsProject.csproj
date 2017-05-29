@@ -57,6 +57,7 @@
     <Compile Include="AdminFunctions_BranchB.cs" />
     <Compile Include="AssociateAddEventTests.cs" />
     <Compile Include="LoginBranchB.cs" />
+    <Compile Include="Non_Interactive_System_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecretarySearchCourses_B_Tests.cs" />
   </ItemGroup>
