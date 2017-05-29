@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using Project_Team3.Menus___forms;
-
+using Project_Team3.GUI;
 
 namespace Project_Team3
 {
@@ -14,7 +14,8 @@ namespace Project_Team3
         private DBconnect db;
         private string username;
         private string password;
-
+        private ulong id;
+        publicChecksAndOperations checkIfUserExit = new publicChecksAndOperations();
         public string Username
         {
             get
@@ -71,33 +72,97 @@ namespace Project_Team3
             switch (getAccessGroup())
             {
                 case "Admin":
-                    using (Form_adminMenu admin_menu = new Form_adminMenu())
+                    if (ManagementButton.Checked)
                     {
-                        this.Hide();
-                        admin_menu.ShowDialog(this);
+                        getID();
+                        using (adminMenu adMenu = new adminMenu(new admin(id)))
+                        {
+                            this.Hide();
+                            adMenu.ShowDialog(this);
+                        }  
                     }
+                    else if (StudentButton.Checked)
+                    {
+                        using (Form_adminMenu admin_menu = new Form_adminMenu())
+                        {
+                            this.Hide();
+                            admin_menu.ShowDialog(this);
+                        }
+                    }
+                    else
+                        MessageBox.Show("You must choose a button!");
                     break;
                 case "Student":
-                    using (Form_studentMenu student_menu = new Form_studentMenu())
+                    if (StudentButton.Checked)
                     {
-                        student_menu.setUsername(Username);
-                        this.Hide();
-                        student_menu.ShowDialog(this);
+                        using (Form_studentMenu student_menu = new Form_studentMenu())
+                        {
+                            student_menu.setUsername(Username);
+                            this.Hide();
+                            student_menu.ShowDialog(this);
+                        }
                     }
+                    else
+                        MessageBox.Show("You must choose your right type!");
                     break;
                 case "Associate":
-                    using (Form_associateMenu associate_menu = new Form_associateMenu())
+                    if (StudentButton.Checked)
                     {
-                        this.Hide();
-                        associate_menu.ShowDialog(this);
+                        using (Form_associateMenu associate_menu = new Form_associateMenu())
+                        {
+                            this.Hide();
+                            associate_menu.ShowDialog(this);
+                        }
                     }
+                    else
+                        MessageBox.Show("You must choose your right type!");
                     break;
                 case "Secretary":
-                    using (Form_secretaryMenu secretary_menu = new Form_secretaryMenu())
+                    if (ManagementButton.Checked)
                     {
-                        this.Hide();
-                        secretary_menu.ShowDialog(this);
+                        getID();
+                        using (secretaryMenu secMenu = new secretaryMenu(new secretary(id)))
+                        {
+                            this.Hide();
+                            secMenu.ShowDialog(this);
+                        }
                     }
+                    else if (StudentButton.Checked)
+                    {
+                        using (Form_adminMenu admin_menu = new Form_adminMenu())
+                        {
+                            this.Hide();
+                            admin_menu.ShowDialog(this);
+                        }
+                    }
+                    else
+                        MessageBox.Show("You must choose a button!");
+                    break;
+                case "instructor":
+                    if (ManagementButton.Checked)
+                    {
+                        getID();
+                        using (teachingStaffMenu instrfMen = new teachingStaffMenu(new professor(id)))
+                        {
+                            this.Hide();
+                            instrfMen.ShowDialog(this);
+                        }
+                    }
+                    else
+                        MessageBox.Show("You must choose your right type!");
+                    break;
+                case "Professor":
+                    if (ManagementButton.Checked)
+                    {
+                        getID();
+                        using (teachingStaffMenu porfMen = new teachingStaffMenu(new professor(id)))
+                        {
+                            this.Hide();
+                            porfMen.ShowDialog(this);
+                        }
+                    }
+                    else
+                        MessageBox.Show("You must choose your right type!");
                     break;
                 default:
                     MessageBox.Show(getAccessGroup());
@@ -110,6 +175,8 @@ namespace Project_Team3
                 this.BringToFront();
                 this.userNameBox.Clear();
                 this.passwordBox.Clear();
+                this.ManagementButton.Checked = false;
+                this.StudentButton.Checked = false;
             }
 
             db.CloseConn(db.ConnStatus());
@@ -149,7 +216,20 @@ namespace Project_Team3
                 System.Environment.Exit(0);
             }
         }
-
+        private void getID()
+        {
+            if (db.ConnStatus() == false)
+                db.OpenConn();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = db.getConnection();
+            cmd.CommandText = "SELECT id FROM USERS WHERE USERNAME = @username and PASS = @password";
+            cmd.Parameters.AddWithValue("username", Username);
+            cmd.Parameters.AddWithValue("password", password);
+            DataSet ds = db.generalCommand(cmd);
+            id = Convert.ToUInt32(ds.Tables[0].Rows[0].ItemArray[0]);
+            db.CloseConn(db.ConnStatus());
+        }
         private void passwordBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)

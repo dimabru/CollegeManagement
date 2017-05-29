@@ -325,14 +325,8 @@
     <Compile Include="Menus - forms\StudentSubMenus\Form_studentWatchEvents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Menus - forms\StudentSubMenus\Form_studentWatchEvents.Designer.cs">
       <DependentUpon>Form_studentWatchEvents.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\instructorLoginMenu.cs">
       <SubType>Form</SubType>
@@ -467,9 +461,6 @@
     <EmbeddedResource Include="GUI\firstMenu.resx">
       <DependentUpon>firstMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\instructorLoginMenu.resx">
       <DependentUpon>instructorLoginMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -495,8 +486,6 @@
     <EmbeddedResource Include="GUI\secretaryLoginMenu.resx">
       <DependentUpon>secretaryLoginMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

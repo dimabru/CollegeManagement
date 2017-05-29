@@ -35,18 +35,20 @@
             this.passwordBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.LabelHeader = new System.Windows.Forms.Label();
+            this.ManagementButton = new System.Windows.Forms.RadioButton();
+            this.StudentButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("David", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label1.Location = new System.Drawing.Point(287, 63);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 27);
+            this.label1.Size = new System.Drawing.Size(169, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "User Name:";
             // 
@@ -63,12 +65,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("David", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label2.Location = new System.Drawing.Point(287, 109);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 27);
+            this.label2.Size = new System.Drawing.Size(151, 31);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password:";
             // 
@@ -85,7 +87,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Font = new System.Drawing.Font("David", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.button2.Location = new System.Drawing.Point(512, 155);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
@@ -100,13 +102,36 @@
             // 
             this.LabelHeader.AutoSize = true;
             this.LabelHeader.BackColor = System.Drawing.Color.Transparent;
-            this.LabelHeader.Font = new System.Drawing.Font("David", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelHeader.ForeColor = System.Drawing.Color.Black;
             this.LabelHeader.Location = new System.Drawing.Point(278, 9);
             this.LabelHeader.Name = "LabelHeader";
-            this.LabelHeader.Size = new System.Drawing.Size(413, 37);
+            this.LabelHeader.Size = new System.Drawing.Size(463, 44);
             this.LabelHeader.TabIndex = 6;
             this.LabelHeader.Text = "Welcome ! Please login :";
+            // 
+            // ManagementButton
+            // 
+            this.ManagementButton.AutoSize = true;
+            this.ManagementButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.ManagementButton.Location = new System.Drawing.Point(286, 191);
+            this.ManagementButton.Name = "ManagementButton";
+            this.ManagementButton.Size = new System.Drawing.Size(112, 17);
+            this.ManagementButton.TabIndex = 7;
+            this.ManagementButton.TabStop = true;
+            this.ManagementButton.Text = "Staff Management";
+            this.ManagementButton.UseVisualStyleBackColor = false;
+            // 
+            // StudentButton
+            // 
+            this.StudentButton.AutoSize = true;
+            this.StudentButton.Location = new System.Drawing.Point(286, 218);
+            this.StudentButton.Name = "StudentButton";
+            this.StudentButton.Size = new System.Drawing.Size(127, 17);
+            this.StudentButton.TabIndex = 8;
+            this.StudentButton.TabStop = true;
+            this.StudentButton.Text = "Student Management";
+            this.StudentButton.UseVisualStyleBackColor = true;
             // 
             // Form_login
             // 
@@ -115,6 +140,8 @@
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(686, 247);
+            this.Controls.Add(this.StudentButton);
+            this.Controls.Add(this.ManagementButton);
             this.Controls.Add(this.LabelHeader);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.passwordBox);
@@ -147,6 +174,9 @@
         public System.Windows.Forms.TextBox getUsername() { return this.userNameBox; }
         public System.Windows.Forms.TextBox getPassword() { return this.passwordBox; }
         public bool setDBConnection(DBconnect db) { if (db != null) { this.db = db; return true; } else return false; }
+
+        private System.Windows.Forms.RadioButton ManagementButton;
+        private System.Windows.Forms.RadioButton StudentButton;
     }
 }
 

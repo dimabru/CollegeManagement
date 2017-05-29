@@ -7,27 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-
 
 namespace Project_Team3
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-
-        private DBconnect db;
-
-        public Form1()
+        public Login()
         {
             InitializeComponent();
-
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            db = new DBconnect();
-            db.OpenConn();
         }
     }
 }
