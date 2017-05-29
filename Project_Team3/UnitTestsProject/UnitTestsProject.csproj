@@ -60,6 +60,7 @@
     <Compile Include="Non_Interactive_System_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecretarySearchCourses_B_Tests.cs" />
+    <Compile Include="Secretary_student_request.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Project_Team3\Project_Team3.csproj">
