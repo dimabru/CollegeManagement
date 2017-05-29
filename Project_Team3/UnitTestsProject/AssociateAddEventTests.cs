@@ -101,8 +101,8 @@ namespace UnitTestsProject
             defineNewEventObject.Invoke("clearNameButton_Click",clickParamaters);
             defineNewEventObject.Invoke("clearDescription_Click", clickParamaters);
 
-            Assert.AreEqual(eventName.Text, "");
-            Assert.AreEqual(eventDescription.Text, "");
+            Assert.AreEqual("",eventName.Text );
+            Assert.AreEqual("",eventDescription.Text);
         }
 
         [TestMethod]
@@ -153,5 +153,6 @@ namespace UnitTestsProject
             DataSet ds = testConnection.generalCommand(cmd);
             Assert.AreEqual(0, ds.Tables[0].Rows.Count);
         }
+
     }
 }

@@ -21,6 +21,7 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
         {
             InitializeComponent();
             connection = new DBconnect();
+            command = new SqlCommand();
         }
 
         private void Form_secretaryCourseSearch_FormClosed(object sender, FormClosedEventArgs e)
@@ -55,52 +56,57 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
             }
         }
 
-        private void searchByName(string name)
+        private bool searchByName(string name)
         {
-            //TODO DRISHA
+            if (name == "") return false;
             command.CommandText = "SELECT * FROM Course WHERE Course.Course_Name = @name";
             command.Parameters.AddWithValue("name", name);
 
             DataSet ds = connection.generalCommand(command);
             updateResults(ds);
+
+            return true;
         }
 
-        private void searchByID(string id)
+        private string searchByID(string id)
         {
-            //TODO DRISHA
+            if (id == "") return "ID Cannot be empty";
+
+            try
+            {
+                Convert.ToInt32(id);
+            }
+            catch (Exception)
+            {
+                return "ID Can be represented only by numbers";
+            }
+
             command.CommandText = "SELECT * FROM Course WHERE Course.Course_ID = @id";
             command.Parameters.AddWithValue("id", id);
 
             DataSet ds = connection.generalCommand(command);
             updateResults(ds);
 
+            return "Success";
+
         }
 
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            command = new SqlCommand();
             command.CommandType = CommandType.Text;
             command.Connection = connection.getConnection();
 
             if (courseNameRadio.Checked)
             {
-                searchByName(courseValueTextBox.Text);
+                if (!searchByName(courseValueTextBox.Text)) MessageBox.Show("Name cannot be empty!");
             }
             else
             {
                 //TODO DRISHA
-                try
-                {
-                    Convert.ToInt32(courseValueTextBox.Text);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    return;
-                }
-
-                searchByID(courseValueTextBox.Text);
+               
+                string message = searchByID(courseValueTextBox.Text);
+                if (message != "Success") MessageBox.Show(message);
 
             }
             courseValueTextBox.Text = "";
