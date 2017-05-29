@@ -21,12 +21,10 @@ namespace UnitTestsProject
 
         public AdminFunctions_BranchB()
         {
-            adminForm = new Form_adminAccountsMenu();
-            adminObject = new PrivateObject(adminForm);
             clickParamaters = new Object[2];
             clickParamaters[0] = this;
             clickParamaters[1] = new EventArgs();
-            topTextBox = adminForm.getTextBox();
+
 
         }
 
@@ -70,26 +68,31 @@ namespace UnitTestsProject
         //
         #endregion
 
+        // check amount of students
         [TestMethod]
         public void AmountOfStudents()
         {
+            adminForm = new Form_adminAccountsMenu();
+            adminObject = new PrivateObject(adminForm);
             adminObject.Invoke("getStudentsNumber_Click", clickParamaters);
-            string boxMessage = topTextBox.Text;
-            string expectedText = "There are total of 5 Students in system";
-            Assert.AreEqual(expectedText, boxMessage);
+
+            int expectedAtLeast = 5;
+            int receivedValue = adminForm.StudentsInSystem;
+            Assert.IsTrue(expectedAtLeast <= receivedValue);   // chack that at least 9 courses (actually to writing test time)
+            Assert.IsTrue(0 <= receivedValue);   // chack that not negative number
         }
 
-
+        //check amount of cources
         [TestMethod]
         public void AmountOfCourses()
         {
             Form_adminCoursesMenu CoursesForm = new Form_adminCoursesMenu();
             PrivateObject courseFormObj = new PrivateObject(CoursesForm);
-            topTextBox = CoursesForm.getCoursesBox();
             courseFormObj.Invoke("recieveAmountClick", clickParamaters);
-            string boxMessage = topTextBox.Text;
-            string expectedText = "There are total of 9 courses in system";
-            Assert.AreEqual(expectedText, boxMessage);
+            int amountOfCources = CoursesForm.CoursesAmount;    // getter for private field
+            int expectedAmountAtLeast = 9;
+            Assert.IsTrue(expectedAmountAtLeast <= amountOfCources);   // chack that at least 9 courses (actually to writing test time)
+            Assert.IsTrue(0 <= amountOfCources);   // chack that not negative number
         }
     }
 }

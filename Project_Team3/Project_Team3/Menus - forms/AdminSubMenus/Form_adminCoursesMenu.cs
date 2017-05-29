@@ -13,8 +13,16 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 {
     public partial class Form_adminCoursesMenu : Form
     {
-
+        private int coursesAmount;
         private DataSet allCourses;
+
+        public int CoursesAmount
+        {
+            get
+            {
+                return coursesAmount;
+            }
+        }
 
         public Form_adminCoursesMenu()
         {
@@ -71,11 +79,11 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             try
             {
                 dataAdapter.Fill(ds);
-                int Courses_amount = Convert.ToInt32(ds.Tables[0].Rows[0].ItemArray[0].ToString());
+                coursesAmount = Convert.ToInt32(ds.Tables[0].Rows[0].ItemArray[0].ToString());
 
                 //print result in textBox
 
-                textBox.Text += "There are total of " + Courses_amount.ToString() + " courses in system";
+                textBox.Text += "There are total of " + coursesAmount.ToString() + " courses in system";
             }
             catch (Exception)
             {
@@ -83,7 +91,6 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             }
 
             db.CloseConn(db.ConnStatus());      // close connection
-
 
 
         }

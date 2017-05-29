@@ -13,6 +13,16 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 {
     public partial class Form_adminAccountsMenu : Form
     {
+
+        private int studentsInSystem = -1;
+        public int StudentsInSystem
+        {
+            get
+            {
+                return studentsInSystem;
+            }
+        }
+
         public Form_adminAccountsMenu()
         {
             InitializeComponent();
@@ -68,11 +78,11 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             try
             {
                 dataAdapter.Fill(ds);
-                int Courses_amount = Convert.ToInt32(ds.Tables[0].Rows[0].ItemArray[0].ToString());
+                studentsInSystem = Convert.ToInt32(ds.Tables[0].Rows[0].ItemArray[0].ToString());
 
                 //print result in textBox
 
-                textBox.Text += "There are total of " + Courses_amount.ToString() + " Students in system";
+                textBox.Text += "There are total of " + studentsInSystem.ToString() + " Students in system";
             }
             catch (Exception)
             {
