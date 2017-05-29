@@ -73,6 +73,7 @@ namespace UnitTestsProject
         //
         #endregion
 
+        // test student login
         [TestMethod]
         public void StudentLoginCheck()
         {
@@ -100,6 +101,7 @@ namespace UnitTestsProject
 
         }
 
+        // test associate login
         [TestMethod]
         public void AssociateLoginCheck()
         {
@@ -119,6 +121,7 @@ namespace UnitTestsProject
 
         }
 
+        // test secretary login
         [TestMethod]
         public void SecretaryLoginCheck()
         {
@@ -138,5 +141,23 @@ namespace UnitTestsProject
 
         }
 
+        // test admin login
+        [TestMethod]
+        public void AdminLoginCheck()
+        {
+            loginForm.setDBConnection(new DBconnect());
+            // input exists data for student
+            username.Text = "Liran";
+            password.Text = "Liran";
+
+            // check correct fields filling
+            Assert.AreEqual("Liran", username.Text);
+            Assert.AreEqual("Liran", password.Text);
+
+            // check correct status
+            var result = loginObject.Invoke("getAccessGroup");
+            Assert.AreEqual("Admin", result);
+
+        }
     }
 }
