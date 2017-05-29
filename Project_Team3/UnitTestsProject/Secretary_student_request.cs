@@ -2,6 +2,9 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Project_Team3.Menus___forms.SecretarySubMenus;
+using Project_Team3;
+using System.Data;
 
 namespace UnitTestsProject
 {
@@ -11,11 +14,12 @@ namespace UnitTestsProject
     [TestClass]
     public class Secretary_student_request
     {
+        Object[] clickParamaters;
         public Secretary_student_request()
         {
-            //
-            // TODO: Add constructor logic here
-            //
+            clickParamaters = new Object[2];
+            clickParamaters[0] = this;
+            clickParamaters[1] = new EventArgs();
         }
 
         private TestContext testContextInstance;
@@ -59,11 +63,107 @@ namespace UnitTestsProject
         #endregion
 
         [TestMethod]
-        public void TestMethod1()
+        public void SecretaryAcceptsRequest()
         {
-            //
-            // TODO: Add test logic here
-            //
+            Form_secretaryStudentRequests secretaryForm = new Form_secretaryStudentRequests();
+            PrivateObject secretaryPrivateObject = new PrivateObject(secretaryForm);
+            DBconnect db = new DBconnect();
+            db.OpenConn();
+            //create new request
+            db.executionQuery("insert into studentrequests values('alex', 'unittest','test status','isabele')");
+            DataSet ds = new DataSet();
+            ds = db.LoadTableByFreeQuerry("select * from studentrequests where MESSAGEBODY='unittest'");
+            Assert.IsNotNull(ds);
+
+            string requestID = ds.Tables[0].Rows[0][0].ToString();
+
+            string requestFromStrudent = ds.Tables[0].Rows[0][1].ToString();
+            string expectedRequestFromStrudent = "alex";
+            Assert.AreEqual(requestFromStrudent, expectedRequestFromStrudent);
+
+            string messagebody = ds.Tables[0].Rows[0][2].ToString();
+            string expectedMessageBody = "unittest";
+            Assert.AreEqual(messagebody, expectedMessageBody);
+
+            string requestStatus = ds.Tables[0].Rows[0][3].ToString();
+            string expectedRequestStatus = "test status";
+            Assert.AreEqual(requestStatus, expectedRequestStatus);
+
+            String[] args = new String[2];
+            string expectedNewStatus = "R_Allowed";
+            args[0] = "R_Allowed";
+            args[1] = requestID;
+
+            secretaryPrivateObject.Invoke("updateRequest", args);
+
+            ds = db.LoadTableByFreeQuerry("select * from studentRequests where MESSAGEBODY='unittest' and ID="+ requestID);
+            Assert.IsNotNull(ds);
+
+            string newStatus = ds.Tables[0].Rows[0][3].ToString();
+
+            try { Assert.AreEqual(expectedNewStatus, newStatus); }
+            finally{
+                db.executionQuery("delete from StudentRequests where MESSAGEBODY='unittest'");              //remove created request
+                db.CloseConn(db.ConnStatus());
+            }
+
+
+
+            
+
+        }
+
+
+        [TestMethod]
+        public void SecretaryDeniesRequest()
+        {
+            Form_secretaryStudentRequests secretaryForm = new Form_secretaryStudentRequests();
+            PrivateObject secretaryPrivateObject = new PrivateObject(secretaryForm);
+            DBconnect db = new DBconnect();
+            db.OpenConn();
+            //create new request
+            db.executionQuery("insert into studentrequests values('alex', 'unittest','test status','isabele')");
+            DataSet ds = new DataSet();
+            ds = db.LoadTableByFreeQuerry("select * from studentrequests where MESSAGEBODY='unittest'");
+            Assert.IsNotNull(ds);
+
+            string requestID = ds.Tables[0].Rows[0][0].ToString();
+
+            string requestFromStrudent = ds.Tables[0].Rows[0][1].ToString();
+            string expectedRequestFromStrudent = "alex";
+            Assert.AreEqual(requestFromStrudent, expectedRequestFromStrudent);
+
+            string messagebody = ds.Tables[0].Rows[0][2].ToString();
+            string expectedMessageBody = "unittest";
+            Assert.AreEqual(messagebody, expectedMessageBody);
+
+            string requestStatus = ds.Tables[0].Rows[0][3].ToString();
+            string expectedRequestStatus = "test status";
+            Assert.AreEqual(requestStatus, expectedRequestStatus);
+
+            String[] args = new String[2];
+            string expectedNewStatus = "R_Denied";
+            args[0] = "R_Denied";
+            args[1] = requestID;
+
+            secretaryPrivateObject.Invoke("updateRequest", args);
+
+            ds = db.LoadTableByFreeQuerry("select * from studentRequests where MESSAGEBODY='unittest' and ID=" + requestID);
+            Assert.IsNotNull(ds);
+
+            string newStatus = ds.Tables[0].Rows[0][3].ToString();
+
+            try { Assert.AreEqual(expectedNewStatus, newStatus); }
+            finally
+            {
+                db.executionQuery("delete from StudentRequests where MESSAGEBODY='unittest'");              //remove created request
+                db.CloseConn(db.ConnStatus());
+            }
+
+
+
+
+
         }
     }
 }

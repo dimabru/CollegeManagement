@@ -158,5 +158,11 @@
         private System.Windows.Forms.ListBox coursesResultsListBox;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button CourseInfoButton;
+
+        public System.Windows.Forms.RadioButton getCourseRadio() { return this.courseIDRadio; }
+        public System.Windows.Forms.RadioButton getCourseNameRadio() { return this.courseNameRadio; }
+        public System.Windows.Forms.TextBox getValueTextBox() { return this.courseValueTextBox; }
+        public System.Windows.Forms.ListBox getCoursesResults() { return this.coursesResultsListBox; }
+
     }
 }
