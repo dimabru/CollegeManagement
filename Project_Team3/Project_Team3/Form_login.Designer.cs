@@ -141,6 +141,11 @@
         private System.Windows.Forms.TextBox passwordBox;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label LabelHeader;
+        
+
+        // export fields for unittesting
+        public System.Windows.Forms.TextBox getUsername() { return this.userNameBox; }
+        public System.Windows.Forms.TextBox getPassword() { return this.passwordBox; }
     }
 }
 

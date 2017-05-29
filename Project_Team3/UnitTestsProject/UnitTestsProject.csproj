@@ -54,6 +54,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AssociateAddEventTests.cs" />
+    <Compile Include="LoginBranchB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
