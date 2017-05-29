@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Project_Team3.Classes
 {
-    class FunctionsForAllProgram
+    public class FunctionsForAllProgram
     {
 
         public bool ifUserInDatabase(String username)

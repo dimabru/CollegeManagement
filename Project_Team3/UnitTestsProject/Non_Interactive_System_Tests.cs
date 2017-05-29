@@ -2,6 +2,8 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Project_Team3.Classes;
+using System.Windows.Forms;
 
 namespace UnitTestsProject
 {
@@ -11,6 +13,7 @@ namespace UnitTestsProject
     [TestClass]
     public class Non_Interactive_System_Tests
     {
+
         public Non_Interactive_System_Tests()
         {
             //
@@ -59,11 +62,11 @@ namespace UnitTestsProject
         #endregion
 
         [TestMethod]
-        public void TestMethod1()
+        public void CheckUserIDExists()
         {
-            //
-            // TODO: Add test logic here
-            //
+            FunctionsForAllProgram funcs = new FunctionsForAllProgram();
+            bool IDExists = funcs.ifUserIDinDatabase(123);
+            Assert.IsTrue(IDExists);
         }
     }
 }
