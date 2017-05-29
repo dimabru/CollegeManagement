@@ -96,6 +96,7 @@ namespace UnitTestsProject
             // check correct status
             result = loginObject.Invoke("getAccessGroup");
             Assert.AreEqual("Bad Username/Password!", result);
+
         }
     }
 }
