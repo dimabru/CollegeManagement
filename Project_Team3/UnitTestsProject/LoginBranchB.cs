@@ -89,7 +89,8 @@ namespace UnitTestsProject
             var result= loginObject.Invoke("getAccessGroup");
             Assert.AreEqual("Student", result);
 
-            // input incorrect data for student
+            /////////////////////////////////////
+            // input incorrect data for all users
             username.Text = "testuser";
             password.Text = "testpassword";
 
@@ -115,14 +116,27 @@ namespace UnitTestsProject
             var result = loginObject.Invoke("getAccessGroup");
             Assert.AreEqual("Associate", result);
 
-            // input incorrect data for student
-            username.Text = "testuser";
-            password.Text = "testpassword";
-
-            // check correct status
-            result = loginObject.Invoke("getAccessGroup");
-            Assert.AreEqual("Bad Username/Password!", result);
 
         }
+
+        [TestMethod]
+        public void SecretaryLoginCheck()
+        {
+            loginForm.setDBConnection(new DBconnect());
+            // input exists data for student
+            username.Text = "isabele";
+            password.Text = "isabeme";
+
+            // check correct fields filling
+            Assert.AreEqual("isabele", username.Text);
+            Assert.AreEqual("isabeme", password.Text);
+
+            // check correct status
+            var result = loginObject.Invoke("getAccessGroup");
+            Assert.AreEqual("Secretary", result);
+
+
+        }
+
     }
 }
