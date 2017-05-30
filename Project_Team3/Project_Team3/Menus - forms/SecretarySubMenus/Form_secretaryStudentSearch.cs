@@ -22,7 +22,7 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
         {
             InitializeComponent();
             connection = new DBconnect();
-
+            command = new SqlCommand();
         }
 
         private void Form_secretaryStudentSearch_FormClosed(object sender, FormClosedEventArgs e)
@@ -39,7 +39,6 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
 
         private void updateResults(DataSet ds)
         {
-            //TODO DRISHA
             clearSearchResults();
             try
             {
@@ -55,24 +54,37 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
             }
         }
 
-        private void searchByName(string name)
+        private bool searchByName(string name)
         {
-            //TODO DRISHA
+            if (name == "") return false;
+
             command.CommandText = "SELECT Users.ID, Users.username, Users.UName, Users.SName, Users.pass, Student.Semester from Users JOIN Student ON Users.username = Student.username WHERE Users.UName = @name ";
             command.Parameters.AddWithValue("name", name);
             DataSet ds = connection.generalCommand(command);
             updateResults(ds);
+            return true;
         }
 
-        private void searchByID(string id)
+        private string searchByID(string id)
         {
-            //TODO DRISHA
+            if (id == "") return "ID Cannot be empty";
+
+            try
+            {
+                Convert.ToInt32(id);
+            }
+            catch (Exception)
+            {
+                return "ID Can be represented only by numbers";
+            }
+
             command.CommandText = "SELECT Users.ID, Users.username, Users.UName, Users.SName, Users.pass, Student.Semester from Users JOIN Student ON Users.username = Student.username WHERE Users.id = @id ";
             command.Parameters.AddWithValue("id", id);
 
             DataSet ds = connection.generalCommand(command);
             updateResults(ds);
 
+            return "Success";
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -84,22 +96,12 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
 
             if (nameRadioButton.Checked)
             {
-                searchByName(searchValueTextBox.Text);
+                if(!searchByName(searchValueTextBox.Text)) MessageBox.Show("Name cannot be empty!");
             }
             else
             {
-                //TODO DRISHA
-                try
-                {
-                    Convert.ToInt32(searchValueTextBox.Text);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    return;
-                }
-
-                searchByID(searchValueTextBox.Text);
+                string message = searchByID(searchValueTextBox.Text);
+                if (message != "Success") MessageBox.Show(message);
                 
             }
             searchValueTextBox.Text = "";

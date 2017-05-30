@@ -159,5 +159,8 @@
         private System.Windows.Forms.ListBox studentsResultListBox;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button manageCourseButton;
+
+
+        public System.Windows.Forms.ListBox getStudentsResults() { return this.studentsResultListBox; }
     }
 }

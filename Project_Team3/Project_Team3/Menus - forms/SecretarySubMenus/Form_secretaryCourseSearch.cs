@@ -102,9 +102,7 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
                 if (!searchByName(courseValueTextBox.Text)) MessageBox.Show("Name cannot be empty!");
             }
             else
-            {
-                //TODO DRISHA
-               
+            {               
                 string message = searchByID(courseValueTextBox.Text);
                 if (message != "Success") MessageBox.Show(message);
 
