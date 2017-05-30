@@ -44,7 +44,7 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
             {
                 foreach (DataRow student in ds.Tables[0].Rows)
                 {
-                    Student currentStudent = new Student(student[0].ToString(), student[1].ToString(), student[2].ToString(), student[3].ToString(), student[4].ToString(), Convert.ToInt32(student[5]));
+                    Student currentStudent = new Student(student[0].ToString(), student[1].ToString(), student[2].ToString(), student[3].ToString(), student[4].ToString(), Convert.ToInt32(student[5]), null);
                     studentsResultListBox.Items.Add(currentStudent);
                 }
             }

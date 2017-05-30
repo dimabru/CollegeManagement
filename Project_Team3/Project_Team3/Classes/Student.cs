@@ -9,7 +9,7 @@ namespace Project_Team3.Classes
     public class Student : User
     {
         private int semester;
-        public Student(String id, String username, String name, String surename, String password,int semester): base(id, username, name, surename, password)
+        public Student(String id, String username, String name, String surename, String password,int semester, string mail): base(id, username, name, surename, password, mail)
         {   
             Semester = semester;
         }

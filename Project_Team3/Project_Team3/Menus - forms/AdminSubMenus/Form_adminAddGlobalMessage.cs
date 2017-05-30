@@ -39,10 +39,6 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             }
         }
         // Task 53
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Form_adminAddGlobalMessage_Load(object sender, EventArgs e)
         {

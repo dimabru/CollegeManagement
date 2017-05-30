@@ -42,6 +42,8 @@
             this.password_box = new System.Windows.Forms.TextBox();
             this.semester_box = new System.Windows.Forms.TextBox();
             this.generalLabel = new System.Windows.Forms.Label();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.email_Box = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // addStudentToDatabase
@@ -49,7 +51,7 @@
             this.addStudentToDatabase.Location = new System.Drawing.Point(170, 407);
             this.addStudentToDatabase.Name = "addStudentToDatabase";
             this.addStudentToDatabase.Size = new System.Drawing.Size(117, 23);
-            this.addStudentToDatabase.TabIndex = 7;
+            this.addStudentToDatabase.TabIndex = 8;
             this.addStudentToDatabase.Text = "Add To database";
             this.addStudentToDatabase.UseVisualStyleBackColor = true;
             this.addStudentToDatabase.Click += new System.EventHandler(this.addStudentToDatabase_Click);
@@ -120,7 +122,7 @@
             this.idLabel.Location = new System.Drawing.Point(16, 78);
             this.idLabel.Name = "idLabel";
             this.idLabel.Size = new System.Drawing.Size(24, 13);
-            this.idLabel.TabIndex = 8;
+            this.idLabel.TabIndex = 9;
             this.idLabel.Text = "ID :";
             // 
             // id_box
@@ -162,11 +164,29 @@
             this.generalLabel.Text = "Fill all bellow fields to add new student to College";
             this.generalLabel.Click += new System.EventHandler(this.label1_Click);
             // 
+            // emailLabel
+            // 
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Location = new System.Drawing.Point(19, 344);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(86, 13);
+            this.emailLabel.TabIndex = 14;
+            this.emailLabel.Text = "Email(facebook):";
+            // 
+            // email_Box
+            // 
+            this.email_Box.Location = new System.Drawing.Point(122, 344);
+            this.email_Box.Name = "email_Box";
+            this.email_Box.Size = new System.Drawing.Size(319, 20);
+            this.email_Box.TabIndex = 7;
+            // 
             // Form_adminAddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(453, 442);
+            this.Controls.Add(this.email_Box);
+            this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.generalLabel);
             this.Controls.Add(this.semester_box);
             this.Controls.Add(this.password_box);
@@ -183,6 +203,7 @@
             this.Controls.Add(this.addStudentToDatabase);
             this.Name = "Form_adminAddStudent";
             this.Text = "Add Student to College from Admin menu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_adminAddStudent_FormClosed);
             this.Load += new System.EventHandler(this.Form_adminAddStudent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -205,5 +226,7 @@
         private System.Windows.Forms.TextBox password_box;
         private System.Windows.Forms.TextBox semester_box;
         private System.Windows.Forms.Label generalLabel;
+        private System.Windows.Forms.Label emailLabel;
+        private System.Windows.Forms.TextBox email_Box;
     }
 }

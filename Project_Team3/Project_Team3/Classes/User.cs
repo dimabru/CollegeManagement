@@ -9,15 +9,16 @@ namespace Project_Team3.Classes
     public class User
     {
 
-        private String username, name, surename, password,ID;
+        private String username, name, surename, password,ID, Email;
 
-        public User(String ID, String username, String name, String surename, String password)
+        public User(String ID, String username, String name, String surename, String password, String mail)
         {
             Username = username;
             Name = name;
             Surename = surename;
             Password = password;
             ID_setters = ID;
+            Email = mail;
 
         }
         public string Username
@@ -30,6 +31,18 @@ namespace Project_Team3.Classes
             set
             {
                 username = value;
+            }
+        }
+        public string email
+        {
+            get
+            {
+                return Email;
+            }
+
+            set
+            {
+                Email = value;
             }
         }
 

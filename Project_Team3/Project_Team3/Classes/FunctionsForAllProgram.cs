@@ -37,10 +37,34 @@ namespace Project_Team3.Classes
             {
                 status = false;
             }
-
-
             return status;
+        }
+        public bool ifEmailInDatabase(String email)
+        {
+            bool status = false;
+            DBconnect db;
+            db = new DBconnect();
+            db.OpenConn();
 
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = db.getConnection();
+            cmd.CommandText = "SELECT ID FROM USERS WHERE mail = @email";
+            cmd.Parameters.AddWithValue("email", email);
+            DataSet ds = db.generalCommand(cmd);
+
+            db.CloseConn(db.ConnStatus());
+            try
+            {
+                string user = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                status = true;
+
+            }
+            catch (System.IndexOutOfRangeException)
+            {
+                status = false;
+            }
+            return status;
         }
 
         public bool ifUserIDinDatabase(int id)

@@ -40,6 +40,8 @@
             this.username_box = new System.Windows.Forms.TextBox();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.addStudentToDatabase = new System.Windows.Forms.Button();
+            this.email_label = new System.Windows.Forms.Label();
+            this.email_Box = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // generalLabel
@@ -148,16 +150,34 @@
             this.addStudentToDatabase.Location = new System.Drawing.Point(218, 417);
             this.addStudentToDatabase.Name = "addStudentToDatabase";
             this.addStudentToDatabase.Size = new System.Drawing.Size(117, 23);
-            this.addStudentToDatabase.TabIndex = 25;
+            this.addStudentToDatabase.TabIndex = 29;
             this.addStudentToDatabase.Text = "Add To database";
             this.addStudentToDatabase.UseVisualStyleBackColor = true;
             this.addStudentToDatabase.Click += new System.EventHandler(this.addStudentToDatabase_Click);
+            // 
+            // email_label
+            // 
+            this.email_label.AutoSize = true;
+            this.email_label.Location = new System.Drawing.Point(27, 299);
+            this.email_label.Name = "email_label";
+            this.email_label.Size = new System.Drawing.Size(35, 13);
+            this.email_label.TabIndex = 28;
+            this.email_label.Text = "Email:";
+            // 
+            // email_Box
+            // 
+            this.email_Box.Location = new System.Drawing.Point(125, 299);
+            this.email_Box.Name = "email_Box";
+            this.email_Box.Size = new System.Drawing.Size(319, 20);
+            this.email_Box.TabIndex = 25;
             // 
             // Form_adminAddAssociate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 466);
+            this.Controls.Add(this.email_Box);
+            this.Controls.Add(this.email_label);
             this.Controls.Add(this.generalLabel);
             this.Controls.Add(this.password_box);
             this.Controls.Add(this.secondName_box);
@@ -172,6 +192,7 @@
             this.Controls.Add(this.addStudentToDatabase);
             this.Name = "Form_adminAddAssociate";
             this.Text = "Add new Associate member ";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_adminAddAssociate_FormClosed);
             this.Load += new System.EventHandler(this.Form_adminAddAssociate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -192,5 +213,7 @@
         private System.Windows.Forms.TextBox username_box;
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Button addStudentToDatabase;
+        private System.Windows.Forms.Label email_label;
+        private System.Windows.Forms.TextBox email_Box;
     }
 }

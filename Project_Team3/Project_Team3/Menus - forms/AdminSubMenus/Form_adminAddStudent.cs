@@ -71,8 +71,14 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
                 {
                     semester = 1;
                 }
-
-                newStudent = new Classes.Student(id, username, Name, surename, password, semester);
+                string email = this.email_Box.Text;
+                bool emailExists = funcs.ifEmailInDatabase(email);
+                if (emailExists)
+                {
+                    MessageBox.Show("User with email " + email + " already exists");
+                    return;
+                }
+                newStudent = new Classes.Student(id, username, Name, surename, password, semester, email);
                 DBconnect db = new DBconnect();
                 try
                 {
@@ -128,7 +134,18 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
                 MessageBox.Show("Semester field can not be empty!");
                 return false;
             }
+            if (string.IsNullOrWhiteSpace(email_Box.Text))
+            {
+                MessageBox.Show("Email field can not be empty!");
+                return false;
+            }
             return true;
+        }
+
+        private void Form_adminAddStudent_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form_adminManageAccountMenu parent = (Form_adminManageAccountMenu)this.Owner;
+            parent.Show();
         }
     }
 }

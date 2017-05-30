@@ -126,7 +126,7 @@ namespace Project_Team3
 
         public bool addStudentToDB(Student student)
         {
-            String queryUsers = "insert into Users values(" + student.ID_setters + ",'" + student.Username + "','" + student.Password + "','Student','" + student.Name + "','" + student.Surename + "')";
+            String queryUsers = "insert into Users values(" + student.ID_setters + ",'" + student.Username + "','" + student.Password + "','Student','" + student.Name + "','" + student.Surename +  "','" + student.email + "',NULL)";
             String queryStudents = "insert into Student values('" + student.Username + "'," + student.Semester+")";
 
             try
@@ -143,7 +143,7 @@ namespace Project_Team3
 
         public bool addUserToDB(User user)
         {
-            String queryUsers = "insert into Users values(" + user.ID_setters + ",'" + user.Username + "','" + user.Password + "','Associate','" + user.Name + "','" + user.Surename + "')";
+            String queryUsers = "insert into Users values(" + user.ID_setters + ",'" + user.Username + "','" + user.Password + "','Associate','" + user.Name + "','" + user.Surename + "','" + user.email + "',NULL)";
 
             try
             {

@@ -43,10 +43,10 @@
             // 
             this.idRadioButton.AutoSize = true;
             this.idRadioButton.BackColor = System.Drawing.Color.Transparent;
-            this.idRadioButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.idRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.idRadioButton.Location = new System.Drawing.Point(418, 147);
             this.idRadioButton.Name = "idRadioButton";
-            this.idRadioButton.Size = new System.Drawing.Size(48, 23);
+            this.idRadioButton.Size = new System.Drawing.Size(47, 28);
             this.idRadioButton.TabIndex = 0;
             this.idRadioButton.TabStop = true;
             this.idRadioButton.Text = "ID";
@@ -56,10 +56,10 @@
             // 
             this.nameRadioButton.AutoSize = true;
             this.nameRadioButton.BackColor = System.Drawing.Color.Transparent;
-            this.nameRadioButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.nameRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.nameRadioButton.Location = new System.Drawing.Point(505, 147);
             this.nameRadioButton.Name = "nameRadioButton";
-            this.nameRadioButton.Size = new System.Drawing.Size(75, 23);
+            this.nameRadioButton.Size = new System.Drawing.Size(83, 28);
             this.nameRadioButton.TabIndex = 1;
             this.nameRadioButton.TabStop = true;
             this.nameRadioButton.Text = "Name";
@@ -69,28 +69,28 @@
             // 
             this.searchByLabel.AutoSize = true;
             this.searchByLabel.BackColor = System.Drawing.Color.Transparent;
-            this.searchByLabel.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.searchByLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.searchByLabel.Location = new System.Drawing.Point(440, 115);
             this.searchByLabel.Name = "searchByLabel";
-            this.searchByLabel.Size = new System.Drawing.Size(99, 19);
+            this.searchByLabel.Size = new System.Drawing.Size(111, 24);
             this.searchByLabel.TabIndex = 2;
             this.searchByLabel.Text = "Search By:";
             // 
             // searchValueTextBox
             // 
-            this.searchValueTextBox.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.searchValueTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.searchValueTextBox.Location = new System.Drawing.Point(433, 184);
             this.searchValueTextBox.Name = "searchValueTextBox";
-            this.searchValueTextBox.Size = new System.Drawing.Size(100, 26);
+            this.searchValueTextBox.Size = new System.Drawing.Size(100, 28);
             this.searchValueTextBox.TabIndex = 3;
             // 
             // searchButton
             // 
             this.searchButton.BackColor = System.Drawing.Color.MistyRose;
-            this.searchButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.searchButton.Location = new System.Drawing.Point(433, 228);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(100, 24);
+            this.searchButton.Size = new System.Drawing.Size(100, 37);
             this.searchButton.TabIndex = 4;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = false;

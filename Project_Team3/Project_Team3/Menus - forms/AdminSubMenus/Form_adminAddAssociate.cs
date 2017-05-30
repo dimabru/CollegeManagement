@@ -109,9 +109,16 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             bool userExists = funcs.ifUserInDatabase(username) || funcs.ifUserIDinDatabase(id_int);
             if (userExists == false)
             {
+                string email = this.email_Box.Text;
+                bool emailExists = funcs.ifEmailInDatabase(email);
+                if (emailExists)
+                {
+                    MessageBox.Show("User with email " + email + " already exists");
+                    return;
+                }
                 String Name = this.firstname_box.Text, surename = this.secondName_box.Text, password = this.password_box.Text;
 
-                newAssociate = new User(id, username, Name, surename, password);
+                newAssociate = new User(id, username, Name, surename, password, email);
                 DBconnect db = new DBconnect();
                 try
                 {
@@ -158,7 +165,18 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
                 MessageBox.Show("Password field can not be empty!");
                 return false;
             }
+            if (string.IsNullOrWhiteSpace(email_Box.Text))
+            {
+                MessageBox.Show("Email field can not be empty!");
+                return false;
+            }
             return true;
+        }
+
+        private void Form_adminAddAssociate_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form_adminManageAccountMenu parent = (Form_adminManageAccountMenu)this.Owner;
+            parent.Show();
         }
     }
 }

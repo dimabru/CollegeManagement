@@ -42,10 +42,10 @@ namespace Project_Team3
             // logoutButton
             // 
             this.logoutButton.BackColor = System.Drawing.Color.MistyRose;
-            this.logoutButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutButton.Location = new System.Drawing.Point(394, 379);
+            this.logoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutButton.Location = new System.Drawing.Point(377, 379);
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(176, 37);
+            this.logoutButton.Size = new System.Drawing.Size(211, 37);
             this.logoutButton.TabIndex = 0;
             this.logoutButton.Text = "Log out";
             this.logoutButton.UseVisualStyleBackColor = false;
@@ -64,10 +64,10 @@ namespace Project_Team3
             // coursesReportButton
             // 
             this.coursesReportButton.BackColor = System.Drawing.Color.MistyRose;
-            this.coursesReportButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.coursesReportButton.Location = new System.Drawing.Point(394, 143);
+            this.coursesReportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coursesReportButton.Location = new System.Drawing.Point(377, 143);
             this.coursesReportButton.Name = "coursesReportButton";
-            this.coursesReportButton.Size = new System.Drawing.Size(176, 37);
+            this.coursesReportButton.Size = new System.Drawing.Size(211, 37);
             this.coursesReportButton.TabIndex = 3;
             this.coursesReportButton.Text = "Courses Report";
             this.coursesReportButton.UseVisualStyleBackColor = false;
@@ -76,10 +76,10 @@ namespace Project_Team3
             // studentSearchButton
             // 
             this.studentSearchButton.BackColor = System.Drawing.Color.MistyRose;
-            this.studentSearchButton.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentSearchButton.Location = new System.Drawing.Point(394, 187);
+            this.studentSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentSearchButton.Location = new System.Drawing.Point(377, 187);
             this.studentSearchButton.Name = "studentSearchButton";
-            this.studentSearchButton.Size = new System.Drawing.Size(176, 37);
+            this.studentSearchButton.Size = new System.Drawing.Size(211, 37);
             this.studentSearchButton.TabIndex = 4;
             this.studentSearchButton.Text = "Search for a Student";
             this.studentSearchButton.UseVisualStyleBackColor = false;
@@ -88,10 +88,10 @@ namespace Project_Team3
             // searchCourseButton
             // 
             this.searchCourseButton.BackColor = System.Drawing.Color.MistyRose;
-            this.searchCourseButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchCourseButton.Location = new System.Drawing.Point(394, 275);
+            this.searchCourseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchCourseButton.Location = new System.Drawing.Point(377, 275);
             this.searchCourseButton.Name = "searchCourseButton";
-            this.searchCourseButton.Size = new System.Drawing.Size(176, 37);
+            this.searchCourseButton.Size = new System.Drawing.Size(211, 37);
             this.searchCourseButton.TabIndex = 5;
             this.searchCourseButton.Text = "Search for a course";
             this.searchCourseButton.UseVisualStyleBackColor = false;
@@ -100,10 +100,10 @@ namespace Project_Team3
             // studentRequestsButton
             // 
             this.studentRequestsButton.BackColor = System.Drawing.Color.MistyRose;
-            this.studentRequestsButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentRequestsButton.Location = new System.Drawing.Point(394, 99);
+            this.studentRequestsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentRequestsButton.Location = new System.Drawing.Point(377, 99);
             this.studentRequestsButton.Name = "studentRequestsButton";
-            this.studentRequestsButton.Size = new System.Drawing.Size(176, 37);
+            this.studentRequestsButton.Size = new System.Drawing.Size(211, 38);
             this.studentRequestsButton.TabIndex = 6;
             this.studentRequestsButton.Text = "Student Requests";
             this.studentRequestsButton.UseVisualStyleBackColor = false;
@@ -112,10 +112,10 @@ namespace Project_Team3
             // associationEventsButton
             // 
             this.associationEventsButton.BackColor = System.Drawing.Color.MistyRose;
-            this.associationEventsButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.associationEventsButton.Location = new System.Drawing.Point(394, 231);
+            this.associationEventsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.associationEventsButton.Location = new System.Drawing.Point(377, 231);
             this.associationEventsButton.Name = "associationEventsButton";
-            this.associationEventsButton.Size = new System.Drawing.Size(176, 37);
+            this.associationEventsButton.Size = new System.Drawing.Size(211, 37);
             this.associationEventsButton.TabIndex = 7;
             this.associationEventsButton.Text = "Association Events";
             this.associationEventsButton.UseVisualStyleBackColor = false;
