@@ -135,10 +135,10 @@ namespace Project_Team3
                     }
                     else if (StudentButton.Checked)
                     {
-                        using (Form_adminMenu admin_menu = new Form_adminMenu())
+                        using (Form_secretaryMenu secretary_menu = new Form_secretaryMenu())
                         {
                             this.Hide();
-                            admin_menu.ShowDialog(this);
+                            secretary_menu.ShowDialog(this);
                         }
                     }
                     else
