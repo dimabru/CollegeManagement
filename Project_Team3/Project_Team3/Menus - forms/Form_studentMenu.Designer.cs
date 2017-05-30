@@ -47,7 +47,7 @@
             this.LogoutStudent.BackColor = System.Drawing.Color.MistyRose;
             this.LogoutStudent.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.LogoutStudent.Location = new System.Drawing.Point(399, 520);
-            this.LogoutStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LogoutStudent.Margin = new System.Windows.Forms.Padding(2);
             this.LogoutStudent.Name = "LogoutStudent";
             this.LogoutStudent.Size = new System.Drawing.Size(173, 49);
             this.LogoutStudent.TabIndex = 0;
@@ -63,7 +63,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBox1.Location = new System.Drawing.Point(0, 1);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(863, 43);
@@ -79,7 +79,7 @@
             // 
             this.AddNewReqbutton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold);
             this.AddNewReqbutton.Location = new System.Drawing.Point(399, 372);
-            this.AddNewReqbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddNewReqbutton.Margin = new System.Windows.Forms.Padding(2);
             this.AddNewReqbutton.Name = "AddNewReqbutton";
             this.AddNewReqbutton.Size = new System.Drawing.Size(173, 48);
             this.AddNewReqbutton.TabIndex = 8;
@@ -91,7 +91,7 @@
             // 
             this.WatchReqbutton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold);
             this.WatchReqbutton.Location = new System.Drawing.Point(386, 447);
-            this.WatchReqbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WatchReqbutton.Margin = new System.Windows.Forms.Padding(2);
             this.WatchReqbutton.Name = "WatchReqbutton";
             this.WatchReqbutton.Size = new System.Drawing.Size(202, 42);
             this.WatchReqbutton.TabIndex = 9;
@@ -103,7 +103,7 @@
             // 
             this.AssociationMenubutton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold);
             this.AssociationMenubutton.Location = new System.Drawing.Point(399, 294);
-            this.AssociationMenubutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AssociationMenubutton.Margin = new System.Windows.Forms.Padding(2);
             this.AssociationMenubutton.Name = "AssociationMenubutton";
             this.AssociationMenubutton.Size = new System.Drawing.Size(173, 51);
             this.AssociationMenubutton.TabIndex = 10;
@@ -115,7 +115,7 @@
             // 
             this.WatchCoursesbutton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold);
             this.WatchCoursesbutton.Location = new System.Drawing.Point(399, 73);
-            this.WatchCoursesbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WatchCoursesbutton.Margin = new System.Windows.Forms.Padding(2);
             this.WatchCoursesbutton.Name = "WatchCoursesbutton";
             this.WatchCoursesbutton.Size = new System.Drawing.Size(173, 47);
             this.WatchCoursesbutton.TabIndex = 11;
@@ -127,7 +127,7 @@
             // 
             this.MandatoryCoursesbutton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold);
             this.MandatoryCoursesbutton.Location = new System.Drawing.Point(399, 151);
-            this.MandatoryCoursesbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MandatoryCoursesbutton.Margin = new System.Windows.Forms.Padding(2);
             this.MandatoryCoursesbutton.Name = "MandatoryCoursesbutton";
             this.MandatoryCoursesbutton.Size = new System.Drawing.Size(173, 48);
             this.MandatoryCoursesbutton.TabIndex = 12;
@@ -139,7 +139,7 @@
             // 
             this.ChangeCourseTimebutton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold);
             this.ChangeCourseTimebutton.Location = new System.Drawing.Point(399, 227);
-            this.ChangeCourseTimebutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ChangeCourseTimebutton.Margin = new System.Windows.Forms.Padding(2);
             this.ChangeCourseTimebutton.Name = "ChangeCourseTimebutton";
             this.ChangeCourseTimebutton.Size = new System.Drawing.Size(173, 42);
             this.ChangeCourseTimebutton.TabIndex = 13;
@@ -151,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 476);
+            this.ClientSize = new System.Drawing.Size(865, 585);
             this.Controls.Add(this.ChangeCourseTimebutton);
             this.Controls.Add(this.MandatoryCoursesbutton);
             this.Controls.Add(this.WatchCoursesbutton);
@@ -160,7 +160,7 @@
             this.Controls.Add(this.AddNewReqbutton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.LogoutStudent);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_studentMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Menu";
