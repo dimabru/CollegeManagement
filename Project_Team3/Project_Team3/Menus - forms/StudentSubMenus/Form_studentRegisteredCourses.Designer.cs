@@ -57,7 +57,7 @@
             // 
             // GoBackButton
             // 
-            this.GoBackButton.Font = new System.Drawing.Font("David", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.GoBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.GoBackButton.Location = new System.Drawing.Point(415, 475);
             this.GoBackButton.Name = "GoBackButton";
             this.GoBackButton.Size = new System.Drawing.Size(157, 56);
@@ -69,10 +69,10 @@
             // Header_label
             // 
             this.Header_label.AutoSize = true;
-            this.Header_label.Font = new System.Drawing.Font("David", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Header_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.Header_label.Location = new System.Drawing.Point(365, 52);
             this.Header_label.Name = "Header_label";
-            this.Header_label.Size = new System.Drawing.Size(246, 27);
+            this.Header_label.Size = new System.Drawing.Size(282, 31);
             this.Header_label.TabIndex = 2;
             this.Header_label.Text = "Registered Courses:";
             // 
@@ -85,6 +85,7 @@
             this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.CoursesGridView);
             this.Name = "Form_studentRegisteredCourses";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registered Courses";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_studentRegisteredCourses_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.CoursesGridView)).EndInit();

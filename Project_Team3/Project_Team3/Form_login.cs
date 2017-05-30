@@ -11,7 +11,7 @@ namespace Project_Team3
 
     public partial class Form_login : Form
     {
-        private DBconnect db;
+        private DBconnect db = new DBconnect();
         private string username;
         private string password;
         private ulong id;
@@ -72,7 +72,6 @@ namespace Project_Team3
 
         private void login()
         {
-            db = new DBconnect();
             db.OpenConn();
             Boolean error = false;
             switch (getAccessGroup())
@@ -256,28 +255,30 @@ namespace Project_Team3
             Application.EnableVisualStyles();
             facebook_mail = new GetTheMail();
             string mail = facebook_mail.getMail();
-
             try
-            { 
+            {
                 id = dataBaseOperations.getIdByMail(mail);
                 if (db.ConnStatus() == false)
                     db.OpenConn();
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = db.getConnection();
-                cmd.CommandText = "SELECT username, password FROM USERS WHERE id = @id";
-                cmd.Parameters.AddWithValue("id", id);
+                cmd.CommandText = "SELECT username, pass FROM USERS WHERE id = @id";
+                cmd.Parameters.AddWithValue("id", Convert.ToInt16(id));
                 DataSet ds = db.generalCommand(cmd);
                 username = ds.Tables[0].Rows[0].ItemArray[0].ToString();
                 password = ds.Tables[0].Rows[0].ItemArray[1].ToString();
                 db.CloseConn(db.ConnStatus());
                 login();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("the user not exist");
             }
-            facebook_mail.logout();
+            finally
+            {
+                facebook_mail.logout();
+            }
         }
     }
 }
