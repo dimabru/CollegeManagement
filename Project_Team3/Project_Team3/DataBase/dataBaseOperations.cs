@@ -9,7 +9,7 @@ using Project_Team3.Courses;
 
 namespace Project_Team3
 {
-    class dataBaseOperations
+    public class dataBaseOperations
     {
         private string connetionString = null;
         private SqlConnection con;

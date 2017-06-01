@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_Team3.Courses
 {
-    class Room
+    public class Room
     {
         string roomNumber;
         int maxStudent;

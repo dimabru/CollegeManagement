@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_Team3.Courses
 {
-    class Course
+    public class Course
     {
 
         int id;
