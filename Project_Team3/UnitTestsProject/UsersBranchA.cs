@@ -2,6 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Project_Team3;
 
 namespace UnitTestsProject
 {
@@ -14,6 +15,7 @@ namespace UnitTestsProject
         
         public UsersBranchA()
         {
+            admin ad = new admin();
             //
             // TODO: Add constructor logic here
             //

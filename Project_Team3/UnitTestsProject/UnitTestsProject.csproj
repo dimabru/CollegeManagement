@@ -63,6 +63,8 @@
     <Compile Include="SecretarySearchStudents.cs" />
     <Compile Include="Secretary_student_request.cs" />
     <Compile Include="LoginBranchA.cs" />
+    <Compile Include="DBconnectTests.cs" />
+    <Compile Include="RoomsTests.cs" />
     <Compile Include="UsersBranchA.cs" />
   </ItemGroup>
   <ItemGroup>

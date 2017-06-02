@@ -102,7 +102,7 @@ namespace UnitTestsProject
     {
         dataBaseOperations DB = new dataBaseOperations();
         int id = 123456789;
-        string name = "test", lastName = "test", password = "test", userType;
+        string name = "test", password = "test", userType;
 
         //Professor signin_9
         [TestMethod]
@@ -147,7 +147,7 @@ namespace UnitTestsProject
         dataBaseOperations DB = new dataBaseOperations();
         String userType;
 
-        //Professor connect_9
+        //Professor connect_13
         [TestMethod]
         public void connectWithProfessor()
         {
@@ -158,7 +158,7 @@ namespace UnitTestsProject
             DB.deleteUser(id);
         }
 
-        //Instructor connect_10
+        //Instructor connect_14
         [TestMethod]
         public void connectWithInstructor()
         {
@@ -169,7 +169,7 @@ namespace UnitTestsProject
             DB.deleteUser(id);
         }
 
-        //Administrator connect_11
+        //Administrator connect_15
         [TestMethod]
         public void connectWithAdmin()
         {
@@ -180,7 +180,7 @@ namespace UnitTestsProject
             DB.deleteUser(id);
         }
 
-        //Secretary connect_12
+        //Secretary connect_16
         [TestMethod]
         public void connectWithSecretary()
         {

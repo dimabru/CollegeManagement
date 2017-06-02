@@ -42,12 +42,14 @@ namespace Project_Team3
                 return false;
             return true;
         }
-        public void CloseConn(Boolean ConnStatus)
+        public Boolean CloseConn(Boolean ConnStatus)
         {
             if (ConnStatus == true)
             {
                 con.Close();
+                return true;
             }
+            return false;
         }
 
         public SqlConnection getConnection() { return con; }
