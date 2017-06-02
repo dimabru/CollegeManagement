@@ -26,7 +26,7 @@ namespace Project_Team3
         /// <param name="name"></param>
         /// <param name="password"></param>
         /// <param name="accessGroup"></param>
-        public admin(ulong id, string username, string name, string password, string accessGroup):base(id,name,password)
+        public admin(ulong id, string username, string name, string password, string accessGroup) : base(id, name, password)
         {
 
         }
@@ -35,7 +35,7 @@ namespace Project_Team3
         /// constructor
         /// </summary>
         /// <param name="id"></param>
-        public admin(ulong id):base(id)
+        public admin(ulong id) : base(id)
         {
 
         }
@@ -44,11 +44,12 @@ namespace Project_Team3
         /// delete user by his id
         /// </summary>
         /// <param name="id"></param>
-        public void deleteUserById(ulong id)
+        public Boolean deleteUserById(ulong id)
         {
             try
             {
                 dbo.deleteUser(id);
+                return true;
             }
             catch (Exception ex)
             {
@@ -76,7 +77,7 @@ namespace Project_Team3
         /// <param name="accessGroup"></param>
         public void set_new_user(ulong id, string name, string lastName, string pass, string accessGroup)
         {
-            dbo.setNewUser(id,name,lastName,pass,accessGroup);
+            dbo.setNewUser(id, name, lastName, pass, accessGroup);
         }
 
         /// <summary>

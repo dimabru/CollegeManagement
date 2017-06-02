@@ -63,6 +63,7 @@
     <Compile Include="SecretarySearchStudents.cs" />
     <Compile Include="Secretary_student_request.cs" />
     <Compile Include="LoginBranchA.cs" />
+    <Compile Include="UsersBranchA.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Project_Team3\Project_Team3.csproj">
