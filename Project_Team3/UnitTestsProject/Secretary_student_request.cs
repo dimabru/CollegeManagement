@@ -70,7 +70,7 @@ namespace UnitTestsProject
             DBconnect db = new DBconnect();
             db.OpenConn();
             //create new request
-            db.executionQuery("insert into studentrequests values('alex', 'unittest','test status','isabele')");
+            db.executionQuery("insert into studentrequests values('alex', 'unittest','R_Allowed','isabele')");
             DataSet ds = new DataSet();
             ds = db.LoadTableByFreeQuerry("select * from studentrequests where MESSAGEBODY='unittest'");
             Assert.IsNotNull(ds);
@@ -86,7 +86,7 @@ namespace UnitTestsProject
             Assert.AreEqual(messagebody, expectedMessageBody);
 
             string requestStatus = ds.Tables[0].Rows[0][3].ToString();
-            string expectedRequestStatus = "test status";
+            string expectedRequestStatus = "R_Allowed";
             Assert.AreEqual(requestStatus, expectedRequestStatus);
 
             String[] args = new String[2];
@@ -122,7 +122,7 @@ namespace UnitTestsProject
             DBconnect db = new DBconnect();
             db.OpenConn();
             //create new request
-            db.executionQuery("insert into studentrequests values('alex', 'unittest','test status','isabele')");
+            db.executionQuery("insert into studentrequests values('alex', 'unittest','R_Denied','isabele')");
             DataSet ds = new DataSet();
             ds = db.LoadTableByFreeQuerry("select * from studentrequests where MESSAGEBODY='unittest'");
             Assert.IsNotNull(ds);
@@ -138,7 +138,7 @@ namespace UnitTestsProject
             Assert.AreEqual(messagebody, expectedMessageBody);
 
             string requestStatus = ds.Tables[0].Rows[0][3].ToString();
-            string expectedRequestStatus = "test status";
+            string expectedRequestStatus = "R_Denied";
             Assert.AreEqual(requestStatus, expectedRequestStatus);
 
             String[] args = new String[2];
