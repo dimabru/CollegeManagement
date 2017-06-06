@@ -33,7 +33,7 @@ namespace Project_Team3.Menus___forms.SecretarySubMenus
             command.CommandType = CommandType.Text;
             command.Connection = connection.getConnection();
             connection = new DBconnect();
-            command.CommandText = "SELECT * FROM StudentRequests";
+            command.CommandText = "SELECT * FROM StudentRequests WHERE StatusOFRequest='New request'";
         }
 
 
