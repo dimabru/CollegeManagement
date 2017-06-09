@@ -81,6 +81,7 @@
             this.passwordBox.Location = new System.Drawing.Point(456, 114);
             this.passwordBox.Margin = new System.Windows.Forms.Padding(2);
             this.passwordBox.Name = "passwordBox";
+            this.passwordBox.PasswordChar = '*';
             this.passwordBox.Size = new System.Drawing.Size(204, 20);
             this.passwordBox.TabIndex = 2;
             this.passwordBox.TextChanged += new System.EventHandler(this.password_Text);
