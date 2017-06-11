@@ -30,7 +30,12 @@ namespace Project_Team3
         /// </summary>
         public int getDay { get { return day; } }
 
-
+        /// <summary>
+        /// set constraints
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="ends"></param>
+        /// <param name="day"></param>
         public techingStaffConstraints(int start, int ends, int day)
         {
             this.setStart(start);
@@ -41,16 +46,28 @@ namespace Project_Team3
         //this setters are not made properly by ruls but its works
         //you can refactor it if you want
         
+        /// <summary>
+        /// start time
+        /// </summary>
+        /// <param name="toSet"></param>
         public void setStart(int toSet)
         {
             this.start = toSet;
         }
 
+        /// <summary>
+        /// end time
+        /// </summary>
+        /// <param name="toSet"></param>
         public void setEnds(int toSet)
         {
             this.ends = toSet;
         }
 
+        /// <summary>
+        /// day in week
+        /// </summary>
+        /// <param name="toSet"></param>
         public void setDay(int toSet)
         {
             this.day = toSet;

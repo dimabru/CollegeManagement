@@ -13,6 +13,9 @@ namespace Project_Team3
     {
         dataBaseOperations dbo = new dataBaseOperations();
 
+        /// <summary>
+        /// default constructor
+        /// </summary>
         public admin()
         {
 

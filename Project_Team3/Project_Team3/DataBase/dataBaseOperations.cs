@@ -41,6 +41,11 @@ namespace Project_Team3
             }
         }
 
+        /// <summary>
+        /// romove a single course from our system
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static bool removeCourse(int id)
         {
             if (!(courseExist(id)))
@@ -162,7 +167,7 @@ namespace Project_Team3
         /// <param name="lastName"></param>
         /// <param name="pass"></param>
         /// <param name="accessGroup"></param>
-        public void setNewUser(ulong id, string name, string lastName, string pass, string accessGroup,string user_name)
+        public void setNewUser(ulong id, string name, string lastName, string pass, string accessGroup, string user_name)
         {
             try
             {
@@ -788,8 +793,6 @@ namespace Project_Team3
                 int mandatory_presence = 0;
                 bool MANDATORY_B = false;
                 bool MANDATORY_PRESENCE_B = false;
-
-
                 String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
                 String query = "select * from dbo.Course where COURSE_ID = '" + id + "'";
                 SqlConnection con = new SqlConnection(str);
@@ -825,8 +828,6 @@ namespace Project_Team3
                         {
                             MANDATORY_PRESENCE_B = true;
                         }
-
-
                     }
                 }
                 con.Close();
@@ -1132,7 +1133,6 @@ namespace Project_Team3
 
         /// <summary>
         /// get a list of courses, by typing id from the system
-        /// 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -1169,7 +1169,7 @@ namespace Project_Team3
 
 
         /// <summary>
-        /// /////////////////////////////////////////////////////////////////////////////////////////
+        /// sign in a single person, to our system
         /// </summary>
         /// <param name="Name"></param>
         /// <param name="password"></param>
@@ -1190,7 +1190,7 @@ namespace Project_Team3
         }
 
         /// <summary>
-        /// 
+        /// initialize our data base connection
         /// </summary>
         public dataBaseOperations() // ctor
         {
@@ -1208,7 +1208,7 @@ namespace Project_Team3
         }
 
         /// <summary>
-        /// 
+        /// open connection to our data base
         /// </summary>
         /// <returns></returns>
         public Boolean OpenConn()
@@ -1226,7 +1226,7 @@ namespace Project_Team3
         }
 
         /// <summary>
-        /// 
+        /// check the connection to our data base
         /// </summary>
         /// <param name="ConnStatus"></param>
         public void CloseConn(Boolean ConnStatus)
@@ -1239,13 +1239,13 @@ namespace Project_Team3
         }
 
         /// <summary>
-        /// 
+        /// get our connection
         /// </summary>
         /// <returns></returns>
         public SqlConnection getConnection() { return con; }
 
         /// <summary>
-        /// 
+        /// get published schedule
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -1287,7 +1287,7 @@ namespace Project_Team3
         }
 
         /// <summary>
-        /// 
+        /// publish schedule
         /// </summary>
         /// <param name="id"></param>
         public void publishSched(ulong id)
@@ -1311,7 +1311,5 @@ namespace Project_Team3
                 con.Close();
             }
         }
-
     }
-
 }

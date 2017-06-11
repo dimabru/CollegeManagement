@@ -37,16 +37,40 @@ namespace Project_Team3.Users
             isPublished = new dataBaseOperations().getPublishedSched(id);
         }
 
+        /// <summary>
+        /// get the first name
+        /// </summary>
+        /// <returns></returns>
         public string getFirstName() { return firstName; }
 
+        /// <summary>
+        /// get the last name
+        /// </summary>
+        /// <returns></returns>
         public string getLastName() { return lastName; }
 
+        /// <summary>
+        /// get the id
+        /// </summary>
+        /// <returns></returns>
         public ulong getId() { return id; }
 
+        /// <summary>
+        /// get the type
+        /// </summary>
+        /// <returns></returns>
         public string getType() { return type; }
 
+        /// <summary>
+        /// get if is published
+        /// </summary>
+        /// <returns></returns>
         public bool getIsPublished() { return isPublished; }
 
+        /// <summary>
+        /// set that schedule is published
+        /// </summary>
+        /// <returns></returns>
         public void publishSched() { isPublished = true; }
 
     }

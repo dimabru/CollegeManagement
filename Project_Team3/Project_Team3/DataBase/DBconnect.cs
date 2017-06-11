@@ -12,7 +12,7 @@ namespace Project_Team3
         private SqlConnection con;
 
         /// <summary>
-        /// 
+        /// initialize the connection to our data base
         /// </summary>
         public DBconnect() // ctor
         {
@@ -20,13 +20,13 @@ namespace Project_Team3
         }
 
         /// <summary>
-        /// 
+        /// get the connection toString()
         /// </summary>
         /// <returns></returns>
         public string ConnectionStringGet() { return connetionString; }
 
         /// <summary>
-        /// 
+        /// new connection to our system, with our string connection
         /// </summary>
         public void initializeConnection()
         {
@@ -34,7 +34,7 @@ namespace Project_Team3
         }
 
         /// <summary>
-        /// 
+        /// open our connection
         /// </summary>
         /// <returns></returns>
         public Boolean OpenConn()
@@ -52,7 +52,7 @@ namespace Project_Team3
         }
 
         /// <summary>
-        /// 
+        /// check connection status
         /// </summary>
         /// <returns></returns>
         public Boolean ConnStatus()
@@ -63,7 +63,7 @@ namespace Project_Team3
         }
 
         /// <summary>
-        /// 
+        /// close our connection
         /// </summary>
         /// <param name="ConnStatus"></param>
         /// <returns></returns>
@@ -78,13 +78,13 @@ namespace Project_Team3
         }
 
         /// <summary>
-        /// 
+        /// get our connection
         /// </summary>
         /// <returns></returns>
         public SqlConnection getConnection() { return con; }
 
         /// <summary>
-        /// 
+        /// load all our tabels
         /// </summary>
         /// <param name="tableName"></param>
         /// <returns></returns>
@@ -104,7 +104,7 @@ namespace Project_Team3
         }
 
         /// <summary>
-        /// 
+        /// load  a table with rule that we send
         /// </summary>
         /// <param name="tableName"></param>
         /// <param name="where"></param>
@@ -125,7 +125,7 @@ namespace Project_Team3
         }
 
         /// <summary>
-        /// 
+        /// new genenral command
         /// </summary>
         /// <param name="cmd"></param>
         /// <returns></returns>
@@ -148,7 +148,7 @@ namespace Project_Team3
         }
 
         /// <summary>
-        /// 
+        /// do and execution to query
         /// </summary>
         /// <param name="query"></param>
         /// <returns></returns>
@@ -175,7 +175,7 @@ namespace Project_Team3
         }
 
         /// <summary>
-        /// 
+        /// add a sing student to our system
         /// </summary>
         /// <param name="student"></param>
         /// <returns></returns>
@@ -197,7 +197,7 @@ namespace Project_Team3
         }
 
         /// <summary>
-        /// 
+        /// add a single user to our system
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
@@ -217,7 +217,7 @@ namespace Project_Team3
         }
 
         /// <summary>
-        /// 
+        /// add global massage to our system
         /// </summary>
         /// <param name="message"></param>
         /// <returns></returns>
@@ -237,7 +237,7 @@ namespace Project_Team3
         }
 
         /// <summary>
-        /// 
+        /// load a table by free query
         /// </summary>
         /// <param name="querry"></param>
         /// <returns></returns>
