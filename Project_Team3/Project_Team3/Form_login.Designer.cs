@@ -105,13 +105,13 @@
             // 
             this.LabelHeader.AutoSize = true;
             this.LabelHeader.BackColor = System.Drawing.Color.Transparent;
-            this.LabelHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelHeader.ForeColor = System.Drawing.Color.Black;
-            this.LabelHeader.Location = new System.Drawing.Point(278, 9);
+            this.LabelHeader.Location = new System.Drawing.Point(274, 9);
             this.LabelHeader.Name = "LabelHeader";
-            this.LabelHeader.Size = new System.Drawing.Size(463, 44);
+            this.LabelHeader.Size = new System.Drawing.Size(401, 39);
             this.LabelHeader.TabIndex = 6;
-            this.LabelHeader.Text = "Welcome ! Please login :";
+            this.LabelHeader.Text = "Welcome ! Please login";
             // 
             // ManagementButton
             // 
