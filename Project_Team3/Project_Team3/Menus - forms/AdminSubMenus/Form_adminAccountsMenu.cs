@@ -15,11 +15,21 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
     {
         DataSet ds;
         private int studentsInSystem = -1;
+        private int associatesInSystem = -1;
+
         public int StudentsInSystem
         {
             get
             {
                 return studentsInSystem;
+            }
+        }
+
+        public int AssociatesInSystem
+        {
+            get
+            {
+                return associatesInSystem;
             }
         }
 
@@ -65,7 +75,29 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
         private void watchAssociates_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            ////
+            //// Print all associates in system
+            ////
+
+            DBconnect db = new DBconnect();
+            db.OpenConn();
+            //create data adapter
+            var dataAdapter = new SqlDataAdapter("SELECT * from Users WHERE ACCESSGROUP='Associate'", db.ConnectionStringGet());
+            var commandBuilder = new SqlCommandBuilder(dataAdapter);
+            ds = new DataSet();
+            //try to fill sataset with query result
+            try
+            {
+                dataAdapter.Fill(ds);
+                dataGrid.ReadOnly = true;
+                dataGrid.DataSource = Ds.Tables[0];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Query not returned any data");
+            }
+
+            db.CloseConn(db.ConnStatus());      // close connection
         }
 
 
@@ -77,7 +109,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
             ////
             //// Print amount to Text box
             ////
-            //create data adapter, count amount of courses in system
+            //create data adapter, count amount of students in system
             var dataAdapter = new SqlDataAdapter("select count(username) from Student", db.ConnectionStringGet());
             var commandBuilder = new SqlCommandBuilder(dataAdapter);
             var ds = new DataSet();
@@ -90,7 +122,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
                 //print result in textBox
 
-                textBox.Text += "There are total of " + studentsInSystem.ToString() + " Students in system";
+                textBox.Text = "There are total of " + studentsInSystem.ToString() + " Students in system";
             }
             catch (Exception)
             {
@@ -122,7 +154,52 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
         private void getAssociatesNumberClick(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            DBconnect db = new DBconnect();
+            db.OpenConn();
+
+            ////
+            //// Print amount to Text box
+            ////
+            //create data adapter, count amount of associates in system
+            var dataAdapter = new SqlDataAdapter("SELECT count(*) from Users WHERE ACCESSGROUP='Associate'", db.ConnectionStringGet());
+            var commandBuilder = new SqlCommandBuilder(dataAdapter);
+            var ds = new DataSet();
+
+            //try to fill dataset with query result
+            try
+            {
+                dataAdapter.Fill(ds);
+                associatesInSystem = Convert.ToInt32(ds.Tables[0].Rows[0].ItemArray[0].ToString());
+
+                //print result in textBox
+
+                textBox.Text = "There are total of " + associatesInSystem.ToString() + " Associates in system";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There is problem with your querry, check it!");
+            }
+
+            ////
+            //// Print all associates in system
+            ////
+            //create data adapter
+            dataAdapter = new SqlDataAdapter("SELECT * from Users WHERE ACCESSGROUP='Associate'", db.ConnectionStringGet());
+            commandBuilder = new SqlCommandBuilder(dataAdapter);
+            var ds2 = new DataSet();
+            //try to fill sataset with query result
+            try
+            {
+                dataAdapter.Fill(ds2);
+                dataGrid.ReadOnly = true;
+                dataGrid.DataSource = ds2.Tables[0];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Query not returned any data");
+            }
+
+            db.CloseConn(db.ConnStatus());      // close connection
         }
 
 

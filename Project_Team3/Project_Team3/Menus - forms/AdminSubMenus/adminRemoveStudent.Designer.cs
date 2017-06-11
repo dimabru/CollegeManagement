@@ -33,11 +33,13 @@
             this.removeStudent = new System.Windows.Forms.Button();
             this.studentList = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
+            this.studentDataGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(170, 107);
+            this.textBox1.Location = new System.Drawing.Point(82, 154);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(181, 22);
             this.textBox1.TabIndex = 0;
@@ -45,7 +47,7 @@
             // instructonLabel
             // 
             this.instructonLabel.AutoSize = true;
-            this.instructonLabel.Location = new System.Drawing.Point(114, 66);
+            this.instructonLabel.Location = new System.Drawing.Point(26, 113);
             this.instructonLabel.Name = "instructonLabel";
             this.instructonLabel.Size = new System.Drawing.Size(301, 17);
             this.instructonLabel.TabIndex = 1;
@@ -53,7 +55,7 @@
             // 
             // removeStudent
             // 
-            this.removeStudent.Location = new System.Drawing.Point(197, 158);
+            this.removeStudent.Location = new System.Drawing.Point(109, 205);
             this.removeStudent.Name = "removeStudent";
             this.removeStudent.Size = new System.Drawing.Size(129, 40);
             this.removeStudent.TabIndex = 2;
@@ -63,7 +65,7 @@
             // 
             // studentList
             // 
-            this.studentList.Location = new System.Drawing.Point(197, 204);
+            this.studentList.Location = new System.Drawing.Point(109, 251);
             this.studentList.Name = "studentList";
             this.studentList.Size = new System.Drawing.Size(129, 41);
             this.studentList.TabIndex = 3;
@@ -73,7 +75,7 @@
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(197, 251);
+            this.backButton.Location = new System.Drawing.Point(109, 298);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(129, 36);
             this.backButton.TabIndex = 4;
@@ -81,11 +83,21 @@
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+            // studentDataGrid
+            // 
+            this.studentDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.studentDataGrid.Location = new System.Drawing.Point(333, 113);
+            this.studentDataGrid.Name = "studentDataGrid";
+            this.studentDataGrid.RowTemplate.Height = 24;
+            this.studentDataGrid.Size = new System.Drawing.Size(424, 290);
+            this.studentDataGrid.TabIndex = 5;
+            // 
             // adminRemoveStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 515);
+            this.ClientSize = new System.Drawing.Size(769, 515);
+            this.Controls.Add(this.studentDataGrid);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.studentList);
             this.Controls.Add(this.removeStudent);
@@ -94,6 +106,7 @@
             this.Name = "adminRemoveStudent";
             this.Text = "adminRemoveStudent";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.adminRemoveStudent_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.studentDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,5 +119,6 @@
         private System.Windows.Forms.Button removeStudent;
         private System.Windows.Forms.Button studentList;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.DataGridView studentDataGrid;
     }
 }

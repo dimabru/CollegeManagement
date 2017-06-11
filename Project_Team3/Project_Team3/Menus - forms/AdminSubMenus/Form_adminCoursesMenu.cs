@@ -64,7 +64,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
         private void watchInfoClick(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            MessageBox.Show("To see course's details, click on the desired course name.\n");
         }
 
 

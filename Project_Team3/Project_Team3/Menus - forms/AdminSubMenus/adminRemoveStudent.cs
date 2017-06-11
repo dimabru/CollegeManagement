@@ -8,14 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Project_Team3.Menus___forms.AssociateSubMenus;
 
 namespace Project_Team3.Menus___forms.AdminSubMenus
 {
+
     public partial class adminRemoveStudent : Form
     {
+        private DBconnect dbcon;
+        private DataSet students;
+
         public adminRemoveStudent()
         {
             InitializeComponent();
+            dbcon = new DBconnect();
         }
 
         private void removeStudent_Click(object sender, EventArgs e)
@@ -68,13 +74,39 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
         private void studentList_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            retrieveData();
         }
 
         private void adminRemoveStudent_FormClosed(object sender, FormClosedEventArgs e)
         {
             Form_adminManageAccountMenu parent = (Form_adminManageAccountMenu)this.Owner;
             parent.Show();
+        }
+
+        private void retrieveData()
+        {
+            dbcon.OpenConn();
+
+            //create data adapter
+            var dataAdapter = new SqlDataAdapter("select ID, USERNAME, ACCESSGROUP, MAIL from Users WHERE ACCESSGROUP='Student'", dbcon.ConnectionStringGet());
+            var commandBuilder = new SqlCommandBuilder(dataAdapter);
+            var ds = new DataSet();
+            //try to fill dataset with query result
+            try
+            {
+                dataAdapter.Fill(ds);
+                studentDataGrid.ReadOnly = true;
+                studentDataGrid.DataSource = ds.Tables[0];
+                students = ds;
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Query not returned any data");
+            }
+
+            ds.Tables[0].DefaultView.Sort = "ID ASC";
+            dbcon.CloseConn(dbcon.ConnStatus());
         }
     }
 }

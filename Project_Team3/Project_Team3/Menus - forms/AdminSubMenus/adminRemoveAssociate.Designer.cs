@@ -33,11 +33,13 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.assocLst = new System.Windows.Forms.Button();
             this.removeAssoc = new System.Windows.Forms.Button();
+            this.associatesDataGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.associatesDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(204, 287);
+            this.backButton.Location = new System.Drawing.Point(123, 287);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(129, 36);
             this.backButton.TabIndex = 9;
@@ -48,7 +50,7 @@
             // instructonLabel
             // 
             this.instructonLabel.AutoSize = true;
-            this.instructonLabel.Location = new System.Drawing.Point(121, 102);
+            this.instructonLabel.Location = new System.Drawing.Point(40, 102);
             this.instructonLabel.Name = "instructonLabel";
             this.instructonLabel.Size = new System.Drawing.Size(314, 17);
             this.instructonLabel.TabIndex = 6;
@@ -56,14 +58,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(177, 143);
+            this.textBox1.Location = new System.Drawing.Point(96, 143);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(181, 22);
             this.textBox1.TabIndex = 5;
             // 
             // assocLst
             // 
-            this.assocLst.Location = new System.Drawing.Point(204, 241);
+            this.assocLst.Location = new System.Drawing.Point(123, 241);
             this.assocLst.Name = "assocLst";
             this.assocLst.Size = new System.Drawing.Size(129, 36);
             this.assocLst.TabIndex = 10;
@@ -73,7 +75,7 @@
             // 
             // removeAssoc
             // 
-            this.removeAssoc.Location = new System.Drawing.Point(192, 190);
+            this.removeAssoc.Location = new System.Drawing.Point(111, 190);
             this.removeAssoc.Name = "removeAssoc";
             this.removeAssoc.Size = new System.Drawing.Size(154, 34);
             this.removeAssoc.TabIndex = 11;
@@ -81,11 +83,21 @@
             this.removeAssoc.UseVisualStyleBackColor = true;
             this.removeAssoc.Click += new System.EventHandler(this.removeAssoc_Click);
             // 
+            // associatesDataGrid
+            // 
+            this.associatesDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.associatesDataGrid.Location = new System.Drawing.Point(360, 102);
+            this.associatesDataGrid.Name = "associatesDataGrid";
+            this.associatesDataGrid.RowTemplate.Height = 24;
+            this.associatesDataGrid.Size = new System.Drawing.Size(467, 267);
+            this.associatesDataGrid.TabIndex = 12;
+            // 
             // adminRemoveAssociate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 519);
+            this.ClientSize = new System.Drawing.Size(864, 519);
+            this.Controls.Add(this.associatesDataGrid);
             this.Controls.Add(this.removeAssoc);
             this.Controls.Add(this.assocLst);
             this.Controls.Add(this.backButton);
@@ -94,6 +106,7 @@
             this.Name = "adminRemoveAssociate";
             this.Text = "adminRemoveAssociate";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.adminRemoveAssociate_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.associatesDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,5 +119,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button assocLst;
         private System.Windows.Forms.Button removeAssoc;
+        private System.Windows.Forms.DataGridView associatesDataGrid;
     }
 }

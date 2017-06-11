@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Project_Team3.Menus___forms.AssociateSubMenus;
+using System.Data.SqlClient;
 
 namespace Project_Team3.Menus___forms.AdminSubMenus
 {
     public partial class adminRemoveAssociate : Form
     {
+
+        private DBconnect dbcon;
+        private DataSet associates;
+
         public adminRemoveAssociate()
         {
             InitializeComponent();
+            dbcon = new DBconnect();
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -30,7 +37,7 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
         private void assocLst_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("UNDER CONSTRUCTION");
+            retrieveData();
         }
 
         private void removeAssoc_Click(object sender, EventArgs e)
@@ -75,5 +82,32 @@ namespace Project_Team3.Menus___forms.AdminSubMenus
 
             return true;
         }
+
+        private void retrieveData()
+        {
+            dbcon.OpenConn();
+
+            //create data adapter
+            var dataAdapter = new SqlDataAdapter("select ID, USERNAME, ACCESSGROUP, MAIL from Users WHERE ACCESSGROUP='Associate'", dbcon.ConnectionStringGet());
+            var commandBuilder = new SqlCommandBuilder(dataAdapter);
+            var ds = new DataSet();
+            //try to fill dataset with query result
+            try
+            {
+                dataAdapter.Fill(ds);
+                associatesDataGrid.ReadOnly = true;
+                associatesDataGrid.DataSource = ds.Tables[0];
+                associates = ds;
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Query not returned any data");
+            }
+
+            ds.Tables[0].DefaultView.Sort = "ID ASC";
+            dbcon.CloseConn(dbcon.ConnStatus());
+        }
     }
+
 }
