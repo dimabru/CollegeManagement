@@ -330,7 +330,11 @@ namespace Project_Team3.GUI
                 }
             }
 
-            if (!isCorrect) MessageBox.Show("Error: No such teacher");
+            if (!isCorrect)
+            {
+                MessageBox.Show("Error: No such teacher");
+                return;
+            }
 
             //check for positive numbers
             if (newCourseMaxStudents <= 0) { MessageBox.Show("Error: Max students must be a positive number"); return; }
