@@ -18,7 +18,7 @@ namespace Project_Team3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new firstMenu());
+           // Application.Run(new firstMenu());
             Application.Run(new Form_login());
         }
     }

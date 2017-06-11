@@ -256,7 +256,7 @@
     <value>4</value>
   </data>
   <data name="viewAllEventsButton.Text" xml:space="preserve">
-    <value>View All Events</value>
+    <value>Refresh All Events</value>
   </data>
   <data name="&gt;&gt;viewAllEventsButton.Name" xml:space="preserve">
     <value>viewAllEventsButton</value>
