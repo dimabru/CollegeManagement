@@ -330,7 +330,11 @@ namespace Project_Team3.GUI
                 }
             }
 
-            if (!isCorrect) MessageBox.Show("Error: No such teacher");
+            if (!isCorrect)
+            {
+                MessageBox.Show("Error: No such teacher");
+                return;
+            }
 
             //check for positive numbers
             if (newCourseMaxStudents <= 0) { MessageBox.Show("Error: Max students must be a positive number"); return; }
@@ -572,10 +576,12 @@ namespace Project_Team3.GUI
                 return;
             }
 
-            Room r = new Room(newRoomName, newRoomMaxStudents.Value);
-            dataBaseOperations.addRoom(r);
-            room.Items.Add(r.getRoomNumber());
-            comboBoxRoom.Items.Add(r.getRoomNumber());
+            Room r = new Room(newRoomName.ToLower(), newRoomMaxStudents.Value);
+            if (dataBaseOperations.addRoom(r))
+            {
+                room.Items.Add(r.getRoomNumber());
+                comboBoxRoom.Items.Add(r.getRoomNumber());
+            }
             cleanRFields();
         }
 
@@ -638,6 +644,7 @@ namespace Project_Team3.GUI
                 comboBoxRemoveR.Visible = false;
                 confirmR.Visible = false;
             }
+
             else
             {
                 comboBoxRemoveR.Visible = false;

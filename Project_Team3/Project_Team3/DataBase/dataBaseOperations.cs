@@ -661,6 +661,7 @@ namespace Project_Team3
             {
                 if (roomExist(room.getRoomNumber()))
                 {
+                    MessageBox.Show("Room already exists");
                     return false;
                 }
                 String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
@@ -1263,12 +1264,10 @@ namespace Project_Team3
                 dbr = cmd.ExecuteReader();
                 while (dbr.Read())
                 {
-                    if (id.Equals(dbr.GetValue(0)))
+                    if (Int32.Parse(id.ToString()) == (int)dbr.GetValue(0))
                     {
                         if (dbr.GetValue(7) != null)
                         {
-                            MessageBox.Show("Check");
-
                             if ((int)dbr.GetValue(7) == 1) returnValue = true;
                         }
                     }
@@ -1278,7 +1277,7 @@ namespace Project_Team3
             }
             catch
             {
-                throw;
+                return false;
             }
             finally
             {
