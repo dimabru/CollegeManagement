@@ -64,6 +64,8 @@ namespace Project_Team3
             //build schedule if the schedule is published by the secretary
             if (new dataBaseOperations().getPublishedSched(someUser.getid())) build_schedule(someUser);
             else labelNoSched.Show();
+
+            watch_your_constraints(null, null);
         }
 
         //build schedule to professor or instructor
@@ -236,11 +238,13 @@ namespace Project_Team3
             {
                 inst.deleteAllConstraints();
             }
+            watch_your_constraints(sender,e);
         }
 
         private void addConstraintsButton(object sender, EventArgs e)
         {
             panel1.Show();
+            watch_your_constraints(sender, e);
         }
 
         private void label1_Click(object sender, EventArgs e)

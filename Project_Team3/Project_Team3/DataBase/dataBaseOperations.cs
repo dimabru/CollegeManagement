@@ -162,7 +162,7 @@ namespace Project_Team3
         /// <param name="lastName"></param>
         /// <param name="pass"></param>
         /// <param name="accessGroup"></param>
-        public void setNewUser(ulong id, string name, string lastName, string pass, string accessGroup)
+        public void setNewUser(ulong id, string name, string lastName, string pass, string accessGroup,string user_name)
         {
             try
             {
@@ -176,7 +176,7 @@ namespace Project_Team3
                 sqlCommand.Parameters.AddWithValue("@USERNAME", "" + name);
                 sqlCommand.Parameters.AddWithValue("@PASS", "" + pass);
                 sqlCommand.Parameters.AddWithValue("@ACCESSGROUP", "" + accessGroup);
-                sqlCommand.Parameters.AddWithValue("@UNAME", "" + name);
+                sqlCommand.Parameters.AddWithValue("@UNAME", "" + user_name);
                 sqlCommand.Parameters.AddWithValue("@SNAME", "" + lastName);
 
                 con.Open();

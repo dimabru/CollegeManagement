@@ -75,9 +75,9 @@ namespace Project_Team3
         /// <param name="lastName"></param>
         /// <param name="pass"></param>
         /// <param name="accessGroup"></param>
-        public void set_new_user(ulong id, string name, string lastName, string pass, string accessGroup)
+        public void set_new_user(ulong id, string name, string lastName, string pass, string accessGroup,string user_name)
         {
-            dbo.setNewUser(id, name, lastName, pass, accessGroup);
+            dbo.setNewUser(id, name, lastName, pass, accessGroup, user_name);
         }
 
         /// <summary>

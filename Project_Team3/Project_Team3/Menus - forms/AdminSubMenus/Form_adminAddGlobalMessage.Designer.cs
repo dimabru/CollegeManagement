@@ -72,7 +72,7 @@
             // returnButton
             // 
             this.returnButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.returnButton.Location = new System.Drawing.Point(396, 228);
+            this.returnButton.Location = new System.Drawing.Point(234, 389);
             this.returnButton.Name = "returnButton";
             this.returnButton.Size = new System.Drawing.Size(147, 23);
             this.returnButton.TabIndex = 3;
@@ -84,7 +84,7 @@
             // 
             this.removeMessageLabel.AutoSize = true;
             this.removeMessageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.removeMessageLabel.Location = new System.Drawing.Point(34, 275);
+            this.removeMessageLabel.Location = new System.Drawing.Point(30, 226);
             this.removeMessageLabel.Name = "removeMessageLabel";
             this.removeMessageLabel.Size = new System.Drawing.Size(369, 20);
             this.removeMessageLabel.TabIndex = 4;
@@ -92,7 +92,7 @@
             // 
             // globalMessageId_box
             // 
-            this.globalMessageId_box.Location = new System.Drawing.Point(130, 307);
+            this.globalMessageId_box.Location = new System.Drawing.Point(126, 258);
             this.globalMessageId_box.Name = "globalMessageId_box";
             this.globalMessageId_box.Size = new System.Drawing.Size(100, 20);
             this.globalMessageId_box.TabIndex = 5;
@@ -101,7 +101,7 @@
             // 
             this.messageId_label.AutoSize = true;
             this.messageId_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.messageId_label.Location = new System.Drawing.Point(38, 310);
+            this.messageId_label.Location = new System.Drawing.Point(34, 261);
             this.messageId_label.Name = "messageId_label";
             this.messageId_label.Size = new System.Drawing.Size(90, 16);
             this.messageId_label.TabIndex = 6;
@@ -109,7 +109,7 @@
             // 
             // deleteMessageButton
             // 
-            this.deleteMessageButton.Location = new System.Drawing.Point(261, 305);
+            this.deleteMessageButton.Location = new System.Drawing.Point(257, 256);
             this.deleteMessageButton.Name = "deleteMessageButton";
             this.deleteMessageButton.Size = new System.Drawing.Size(113, 23);
             this.deleteMessageButton.TabIndex = 7;
@@ -119,7 +119,7 @@
             // 
             // showAllMessages_button
             // 
-            this.showAllMessages_button.Location = new System.Drawing.Point(348, 382);
+            this.showAllMessages_button.Location = new System.Drawing.Point(344, 333);
             this.showAllMessages_button.Name = "showAllMessages_button";
             this.showAllMessages_button.Size = new System.Drawing.Size(110, 23);
             this.showAllMessages_button.TabIndex = 8;
@@ -132,7 +132,7 @@
             this.helpLabel.AutoSize = true;
             this.helpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.helpLabel.ForeColor = System.Drawing.Color.Green;
-            this.helpLabel.Location = new System.Drawing.Point(34, 387);
+            this.helpLabel.Location = new System.Drawing.Point(30, 338);
             this.helpLabel.Name = "helpLabel";
             this.helpLabel.Size = new System.Drawing.Size(272, 16);
             this.helpLabel.TabIndex = 9;

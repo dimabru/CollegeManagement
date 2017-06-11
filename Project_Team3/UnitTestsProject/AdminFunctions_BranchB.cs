@@ -87,7 +87,7 @@ namespace UnitTestsProject
             PrivateObject courseFormObj = new PrivateObject(CoursesForm);
             courseFormObj.Invoke("recieveAmountClick", clickParamaters);
             int amountOfCources = CoursesForm.CoursesAmount;    // getter for private field
-            int expectedAmountAtLeast = 9;
+            int expectedAmountAtLeast = 4;
             Assert.IsTrue(expectedAmountAtLeast <= amountOfCources);   // chack that at least 9 courses (actually to writing test time)
             Assert.IsTrue(0 <= amountOfCources);   // chack that not negative number
         }

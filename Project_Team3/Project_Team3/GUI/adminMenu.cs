@@ -221,9 +221,14 @@ namespace Project_Team3.GUI
 
         private void button_add_new_user_Click(object sender, EventArgs e)
         {
-            if(textBox_first_name.Text == "" || textBox_id.Text == "" || textBox_last_name.Text == "" || textBox_password.Text == "")
+            if(textBox_first_name.Text == "" || textBox_id.Text == "" || textBox_last_name.Text == "" || textBox_password.Text == "" || add_user_user_name.Text == "")
             {
                 MessageBox.Show("you have to fill all fields");
+                return;
+            }
+
+            if(dbo.userExist(textBox_password.Text,publicChecksAndOperations.convertToUlong(textBox_id.Text), comboBox_access_group.Text)){
+                MessageBox.Show("user already exist");
                 return;
             }
 
@@ -232,8 +237,9 @@ namespace Project_Team3.GUI
             string id = textBox_id.Text;
             string password = textBox_password.Text;
             string accessGroup = comboBox_access_group.Text;
+            string user_name = add_user_user_name.Text;
 
-            ad.set_new_user(publicChecksAndOperations.convertToUlong(id), name, lname, password, accessGroup);
+            ad.set_new_user(publicChecksAndOperations.convertToUlong(id), name, lname, password, accessGroup, user_name);
             MessageBox.Show("the user was successfully created");
 
 
@@ -242,6 +248,21 @@ namespace Project_Team3.GUI
             textBox_last_name.Text = "";
             textBox_password.Text = "";
             comboBox_access_group.Text = "";
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_last_name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void add_user_user_name_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
