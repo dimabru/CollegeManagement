@@ -79,6 +79,8 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button2 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.add_user_user_name = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -352,12 +354,14 @@
             this.tabPage3.Controls.Add(this.pictureBox1);
             this.tabPage3.Controls.Add(this.button_add_new_user);
             this.tabPage3.Controls.Add(this.textBox_password);
+            this.tabPage3.Controls.Add(this.add_user_user_name);
             this.tabPage3.Controls.Add(this.textBox_last_name);
             this.tabPage3.Controls.Add(this.textBox_id);
             this.tabPage3.Controls.Add(this.textBox_first_name);
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.comboBox_access_group);
             this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.label5);
             this.tabPage3.Controls.Add(this.label1);
@@ -391,17 +395,18 @@
             // 
             // textBox_password
             // 
-            this.textBox_password.Location = new System.Drawing.Point(45, 173);
+            this.textBox_password.Location = new System.Drawing.Point(44, 218);
             this.textBox_password.Name = "textBox_password";
             this.textBox_password.Size = new System.Drawing.Size(189, 20);
             this.textBox_password.TabIndex = 9;
             // 
             // textBox_last_name
             // 
-            this.textBox_last_name.Location = new System.Drawing.Point(45, 127);
+            this.textBox_last_name.Location = new System.Drawing.Point(46, 126);
             this.textBox_last_name.Name = "textBox_last_name";
             this.textBox_last_name.Size = new System.Drawing.Size(189, 20);
             this.textBox_last_name.TabIndex = 9;
+            this.textBox_last_name.TextChanged += new System.EventHandler(this.textBox_last_name_TextChanged);
             // 
             // textBox_id
             // 
@@ -421,7 +426,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label3.Location = new System.Drawing.Point(41, 196);
+            this.label3.Location = new System.Drawing.Point(40, 241);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 20);
             this.label3.TabIndex = 8;
@@ -430,7 +435,7 @@
             // comboBox_access_group
             // 
             this.comboBox_access_group.FormattingEnabled = true;
-            this.comboBox_access_group.Location = new System.Drawing.Point(45, 219);
+            this.comboBox_access_group.Location = new System.Drawing.Point(44, 264);
             this.comboBox_access_group.Name = "comboBox_access_group";
             this.comboBox_access_group.Size = new System.Drawing.Size(189, 21);
             this.comboBox_access_group.TabIndex = 0;
@@ -439,7 +444,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label8.Location = new System.Drawing.Point(41, 150);
+            this.label8.Location = new System.Drawing.Point(40, 195);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(81, 20);
             this.label8.TabIndex = 8;
@@ -449,7 +454,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label2.Location = new System.Drawing.Point(41, 104);
+            this.label2.Location = new System.Drawing.Point(42, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 20);
             this.label2.TabIndex = 8;
@@ -597,6 +602,25 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label9.Location = new System.Drawing.Point(42, 149);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(88, 20);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "user name:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // add_user_user_name
+            // 
+            this.add_user_user_name.Location = new System.Drawing.Point(46, 172);
+            this.add_user_user_name.Name = "add_user_user_name";
+            this.add_user_user_name.Size = new System.Drawing.Size(189, 20);
+            this.add_user_user_name.TabIndex = 9;
+            this.add_user_user_name.TextChanged += new System.EventHandler(this.add_user_user_name_TextChanged);
+            // 
             // adminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -680,5 +704,7 @@
         private System.Windows.Forms.Button button_refresh_user_details;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox add_user_user_name;
+        private System.Windows.Forms.Label label9;
     }
 }
