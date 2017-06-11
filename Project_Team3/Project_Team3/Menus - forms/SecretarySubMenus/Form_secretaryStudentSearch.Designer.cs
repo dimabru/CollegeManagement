@@ -43,10 +43,11 @@
             // 
             this.idRadioButton.AutoSize = true;
             this.idRadioButton.BackColor = System.Drawing.Color.Transparent;
-            this.idRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.idRadioButton.Location = new System.Drawing.Point(418, 147);
+            this.idRadioButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.idRadioButton.Location = new System.Drawing.Point(557, 181);
+            this.idRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.idRadioButton.Name = "idRadioButton";
-            this.idRadioButton.Size = new System.Drawing.Size(47, 28);
+            this.idRadioButton.Size = new System.Drawing.Size(57, 28);
             this.idRadioButton.TabIndex = 0;
             this.idRadioButton.TabStop = true;
             this.idRadioButton.Text = "ID";
@@ -56,10 +57,11 @@
             // 
             this.nameRadioButton.AutoSize = true;
             this.nameRadioButton.BackColor = System.Drawing.Color.Transparent;
-            this.nameRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.nameRadioButton.Location = new System.Drawing.Point(505, 147);
+            this.nameRadioButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.nameRadioButton.Location = new System.Drawing.Point(673, 181);
+            this.nameRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nameRadioButton.Name = "nameRadioButton";
-            this.nameRadioButton.Size = new System.Drawing.Size(83, 28);
+            this.nameRadioButton.Size = new System.Drawing.Size(91, 28);
             this.nameRadioButton.TabIndex = 1;
             this.nameRadioButton.TabStop = true;
             this.nameRadioButton.Text = "Name";
@@ -69,28 +71,31 @@
             // 
             this.searchByLabel.AutoSize = true;
             this.searchByLabel.BackColor = System.Drawing.Color.Transparent;
-            this.searchByLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.searchByLabel.Location = new System.Drawing.Point(440, 115);
+            this.searchByLabel.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.searchByLabel.Location = new System.Drawing.Point(587, 142);
+            this.searchByLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.searchByLabel.Name = "searchByLabel";
-            this.searchByLabel.Size = new System.Drawing.Size(111, 24);
+            this.searchByLabel.Size = new System.Drawing.Size(123, 24);
             this.searchByLabel.TabIndex = 2;
             this.searchByLabel.Text = "Search By:";
             // 
             // searchValueTextBox
             // 
-            this.searchValueTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.searchValueTextBox.Location = new System.Drawing.Point(433, 184);
+            this.searchValueTextBox.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.searchValueTextBox.Location = new System.Drawing.Point(577, 226);
+            this.searchValueTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.searchValueTextBox.Name = "searchValueTextBox";
-            this.searchValueTextBox.Size = new System.Drawing.Size(100, 28);
+            this.searchValueTextBox.Size = new System.Drawing.Size(132, 30);
             this.searchValueTextBox.TabIndex = 3;
             // 
             // searchButton
             // 
             this.searchButton.BackColor = System.Drawing.Color.MistyRose;
-            this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.searchButton.Location = new System.Drawing.Point(433, 228);
+            this.searchButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchButton.Location = new System.Drawing.Point(577, 281);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(100, 37);
+            this.searchButton.Size = new System.Drawing.Size(133, 46);
             this.searchButton.TabIndex = 4;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = false;
@@ -99,38 +104,46 @@
             // studentsResultListBox
             // 
             this.studentsResultListBox.FormattingEnabled = true;
-            this.studentsResultListBox.Location = new System.Drawing.Point(419, 360);
+            this.studentsResultListBox.ItemHeight = 16;
+            this.studentsResultListBox.Location = new System.Drawing.Point(559, 443);
+            this.studentsResultListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.studentsResultListBox.Name = "studentsResultListBox";
-            this.studentsResultListBox.Size = new System.Drawing.Size(120, 95);
+            this.studentsResultListBox.Size = new System.Drawing.Size(159, 116);
             this.studentsResultListBox.TabIndex = 6;
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(419, 518);
+            this.backButton.BackColor = System.Drawing.Color.MistyRose;
+            this.backButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backButton.Location = new System.Drawing.Point(559, 638);
+            this.backButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(125, 23);
+            this.backButton.Size = new System.Drawing.Size(167, 47);
             this.backButton.TabIndex = 7;
             this.backButton.Text = "Back";
-            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // manageCourseButton
             // 
-            this.manageCourseButton.Location = new System.Drawing.Point(572, 390);
+            this.manageCourseButton.BackColor = System.Drawing.Color.MistyRose;
+            this.manageCourseButton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageCourseButton.Location = new System.Drawing.Point(763, 480);
+            this.manageCourseButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.manageCourseButton.Name = "manageCourseButton";
-            this.manageCourseButton.Size = new System.Drawing.Size(112, 33);
+            this.manageCourseButton.Size = new System.Drawing.Size(149, 65);
             this.manageCourseButton.TabIndex = 8;
             this.manageCourseButton.Text = "Manage Courses";
-            this.manageCourseButton.UseVisualStyleBackColor = true;
+            this.manageCourseButton.UseVisualStyleBackColor = false;
             this.manageCourseButton.Click += new System.EventHandler(this.manageCourseButton_Click);
             // 
             // Form_secretaryStudentSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1012, 609);
+            this.ClientSize = new System.Drawing.Size(1349, 750);
             this.Controls.Add(this.manageCourseButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.studentsResultListBox);
@@ -140,6 +153,7 @@
             this.Controls.Add(this.nameRadioButton);
             this.Controls.Add(this.idRadioButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form_secretaryStudentSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Search";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_adminSeeAllGlobalMessages));
             this.viewAllMessages_grid = new System.Windows.Forms.DataGridView();
             this.refreshBotton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.viewAllMessages_grid)).BeginInit();
@@ -39,30 +40,38 @@
             this.viewAllMessages_grid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.viewAllMessages_grid.BackgroundColor = System.Drawing.SystemColors.Info;
             this.viewAllMessages_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.viewAllMessages_grid.Location = new System.Drawing.Point(13, 13);
+            this.viewAllMessages_grid.Location = new System.Drawing.Point(90, 139);
+            this.viewAllMessages_grid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.viewAllMessages_grid.Name = "viewAllMessages_grid";
-            this.viewAllMessages_grid.Size = new System.Drawing.Size(814, 269);
+            this.viewAllMessages_grid.Size = new System.Drawing.Size(1085, 331);
             this.viewAllMessages_grid.TabIndex = 0;
             this.viewAllMessages_grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewAllMessages_grid_CellContentClick);
             // 
             // refreshBotton
             // 
-            this.refreshBotton.Location = new System.Drawing.Point(13, 301);
+            this.refreshBotton.BackColor = System.Drawing.Color.MistyRose;
+            this.refreshBotton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.refreshBotton.Location = new System.Drawing.Point(90, 493);
+            this.refreshBotton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.refreshBotton.Name = "refreshBotton";
-            this.refreshBotton.Size = new System.Drawing.Size(75, 23);
+            this.refreshBotton.Size = new System.Drawing.Size(165, 40);
             this.refreshBotton.TabIndex = 1;
             this.refreshBotton.Text = "Refresh List";
-            this.refreshBotton.UseVisualStyleBackColor = true;
+            this.refreshBotton.UseVisualStyleBackColor = false;
             this.refreshBotton.Click += new System.EventHandler(this.refreshBotton_Click);
             // 
             // Form_adminSeeAllGlobalMessages
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 338);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1331, 703);
             this.Controls.Add(this.refreshBotton);
             this.Controls.Add(this.viewAllMessages_grid);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form_adminSeeAllGlobalMessages";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "All global messages in system";
             this.Load += new System.EventHandler(this.Form_adminSeeAllGlobalMessages_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewAllMessages_grid)).EndInit();

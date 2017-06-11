@@ -39,63 +39,75 @@
             // messageLAbel
             // 
             this.messageLAbel.AutoSize = true;
-            this.messageLAbel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.messageLAbel.Location = new System.Drawing.Point(13, 22);
+            this.messageLAbel.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messageLAbel.Location = new System.Drawing.Point(149, 137);
+            this.messageLAbel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.messageLAbel.Name = "messageLAbel";
-            this.messageLAbel.Size = new System.Drawing.Size(235, 24);
+            this.messageLAbel.Size = new System.Drawing.Size(258, 24);
             this.messageLAbel.TabIndex = 0;
             this.messageLAbel.Text = "Send new student request ";
             // 
             // messageBox
             // 
             this.messageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.messageBox.Location = new System.Drawing.Point(17, 78);
+            this.messageBox.Location = new System.Drawing.Point(155, 206);
+            this.messageBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.messageBox.Multiline = true;
             this.messageBox.Name = "messageBox";
-            this.messageBox.Size = new System.Drawing.Size(699, 187);
+            this.messageBox.Size = new System.Drawing.Size(931, 229);
             this.messageBox.TabIndex = 1;
             // 
             // secretaryChooseList
             // 
             this.secretaryChooseList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.secretaryChooseList.FormattingEnabled = true;
-            this.secretaryChooseList.Location = new System.Drawing.Point(115, 286);
+            this.secretaryChooseList.Location = new System.Drawing.Point(285, 462);
+            this.secretaryChooseList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.secretaryChooseList.Name = "secretaryChooseList";
-            this.secretaryChooseList.Size = new System.Drawing.Size(218, 21);
+            this.secretaryChooseList.Size = new System.Drawing.Size(289, 24);
             this.secretaryChooseList.TabIndex = 2;
             this.secretaryChooseList.SelectedIndexChanged += new System.EventHandler(this.secretaryChooseList_SelectedIndexChanged);
             // 
             // secretaryChooseLabel
             // 
             this.secretaryChooseLabel.AutoSize = true;
-            this.secretaryChooseLabel.Location = new System.Drawing.Point(12, 289);
+            this.secretaryChooseLabel.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.secretaryChooseLabel.Location = new System.Drawing.Point(101, 463);
+            this.secretaryChooseLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.secretaryChooseLabel.Name = "secretaryChooseLabel";
-            this.secretaryChooseLabel.Size = new System.Drawing.Size(95, 13);
+            this.secretaryChooseLabel.Size = new System.Drawing.Size(159, 20);
             this.secretaryChooseLabel.TabIndex = 3;
             this.secretaryChooseLabel.Text = "Choose secretary :";
             // 
             // sendRequest_button
             // 
-            this.sendRequest_button.Location = new System.Drawing.Point(614, 287);
+            this.sendRequest_button.BackColor = System.Drawing.Color.MistyRose;
+            this.sendRequest_button.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.sendRequest_button.Location = new System.Drawing.Point(875, 462);
+            this.sendRequest_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sendRequest_button.Name = "sendRequest_button";
-            this.sendRequest_button.Size = new System.Drawing.Size(102, 23);
+            this.sendRequest_button.Size = new System.Drawing.Size(211, 50);
             this.sendRequest_button.TabIndex = 4;
             this.sendRequest_button.Text = "Send request";
-            this.sendRequest_button.UseVisualStyleBackColor = true;
+            this.sendRequest_button.UseVisualStyleBackColor = false;
             this.sendRequest_button.Click += new System.EventHandler(this.sendRequest_button_Click);
             // 
             // Form_studentAddRequest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 349);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1331, 703);
             this.Controls.Add(this.sendRequest_button);
             this.Controls.Add(this.secretaryChooseLabel);
             this.Controls.Add(this.secretaryChooseList);
             this.Controls.Add(this.messageBox);
             this.Controls.Add(this.messageLAbel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form_studentAddRequest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Schedule System : Add new student request";
             this.Load += new System.EventHandler(this.Form_studentAddRequest_Load);
             this.ResumeLayout(false);

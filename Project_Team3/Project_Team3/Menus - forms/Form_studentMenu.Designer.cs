@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_studentMenu));
             this.LogoutStudent = new System.Windows.Forms.Button();
             this.eventLog1 = new System.Diagnostics.EventLog();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -45,11 +46,11 @@
             // LogoutStudent
             // 
             this.LogoutStudent.BackColor = System.Drawing.Color.MistyRose;
-            this.LogoutStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.LogoutStudent.Location = new System.Drawing.Point(365, 500);
-            this.LogoutStudent.Margin = new System.Windows.Forms.Padding(2);
+            this.LogoutStudent.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.LogoutStudent.Location = new System.Drawing.Point(487, 615);
+            this.LogoutStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LogoutStudent.Name = "LogoutStudent";
-            this.LogoutStudent.Size = new System.Drawing.Size(280, 50);
+            this.LogoutStudent.Size = new System.Drawing.Size(373, 62);
             this.LogoutStudent.TabIndex = 0;
             this.LogoutStudent.Text = "Logout";
             this.LogoutStudent.UseVisualStyleBackColor = false;
@@ -63,10 +64,10 @@
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBox1.Location = new System.Drawing.Point(0, 1);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(863, 43);
+            this.textBox1.Size = new System.Drawing.Size(1149, 52);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "Future global message";
             // 
@@ -77,81 +78,89 @@
             // 
             // AddNewReqbutton
             // 
-            this.AddNewReqbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold);
-            this.AddNewReqbutton.Location = new System.Drawing.Point(365, 359);
-            this.AddNewReqbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddNewReqbutton.BackColor = System.Drawing.Color.MistyRose;
+            this.AddNewReqbutton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.AddNewReqbutton.Location = new System.Drawing.Point(487, 442);
+            this.AddNewReqbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddNewReqbutton.Name = "AddNewReqbutton";
-            this.AddNewReqbutton.Size = new System.Drawing.Size(280, 50);
+            this.AddNewReqbutton.Size = new System.Drawing.Size(373, 62);
             this.AddNewReqbutton.TabIndex = 8;
             this.AddNewReqbutton.Text = "Add New Request";
-            this.AddNewReqbutton.UseVisualStyleBackColor = true;
+            this.AddNewReqbutton.UseVisualStyleBackColor = false;
             this.AddNewReqbutton.Click += new System.EventHandler(this.AddNewReqbutton_Click);
             // 
             // WatchReqbutton
             // 
-            this.WatchReqbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold);
-            this.WatchReqbutton.Location = new System.Drawing.Point(365, 431);
-            this.WatchReqbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.WatchReqbutton.BackColor = System.Drawing.Color.MistyRose;
+            this.WatchReqbutton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.WatchReqbutton.Location = new System.Drawing.Point(487, 530);
+            this.WatchReqbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WatchReqbutton.Name = "WatchReqbutton";
-            this.WatchReqbutton.Size = new System.Drawing.Size(280, 50);
+            this.WatchReqbutton.Size = new System.Drawing.Size(373, 62);
             this.WatchReqbutton.TabIndex = 9;
             this.WatchReqbutton.Text = "Watch My Requests";
-            this.WatchReqbutton.UseVisualStyleBackColor = true;
+            this.WatchReqbutton.UseVisualStyleBackColor = false;
             this.WatchReqbutton.Click += new System.EventHandler(this.WatchReqbutton_Click);
             // 
             // AssociationMenubutton
             // 
-            this.AssociationMenubutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold);
-            this.AssociationMenubutton.Location = new System.Drawing.Point(365, 287);
-            this.AssociationMenubutton.Margin = new System.Windows.Forms.Padding(2);
+            this.AssociationMenubutton.BackColor = System.Drawing.Color.MistyRose;
+            this.AssociationMenubutton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.AssociationMenubutton.Location = new System.Drawing.Point(487, 353);
+            this.AssociationMenubutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AssociationMenubutton.Name = "AssociationMenubutton";
-            this.AssociationMenubutton.Size = new System.Drawing.Size(280, 50);
+            this.AssociationMenubutton.Size = new System.Drawing.Size(373, 62);
             this.AssociationMenubutton.TabIndex = 10;
             this.AssociationMenubutton.Text = "Association Menu";
-            this.AssociationMenubutton.UseVisualStyleBackColor = true;
+            this.AssociationMenubutton.UseVisualStyleBackColor = false;
             this.AssociationMenubutton.Click += new System.EventHandler(this.AssociationMenubutton_Click_1);
             // 
             // WatchCoursesbutton
             // 
-            this.WatchCoursesbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold);
-            this.WatchCoursesbutton.Location = new System.Drawing.Point(365, 75);
-            this.WatchCoursesbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.WatchCoursesbutton.BackColor = System.Drawing.Color.MistyRose;
+            this.WatchCoursesbutton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.WatchCoursesbutton.Location = new System.Drawing.Point(487, 92);
+            this.WatchCoursesbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WatchCoursesbutton.Name = "WatchCoursesbutton";
-            this.WatchCoursesbutton.Size = new System.Drawing.Size(280, 50);
+            this.WatchCoursesbutton.Size = new System.Drawing.Size(373, 62);
             this.WatchCoursesbutton.TabIndex = 11;
             this.WatchCoursesbutton.Text = "Watch My Courses";
-            this.WatchCoursesbutton.UseVisualStyleBackColor = true;
+            this.WatchCoursesbutton.UseVisualStyleBackColor = false;
             this.WatchCoursesbutton.Click += new System.EventHandler(this.WatchCoursesbutton_Click_1);
             // 
             // MandatoryCoursesbutton
             // 
-            this.MandatoryCoursesbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold);
-            this.MandatoryCoursesbutton.Location = new System.Drawing.Point(365, 148);
-            this.MandatoryCoursesbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.MandatoryCoursesbutton.BackColor = System.Drawing.Color.MistyRose;
+            this.MandatoryCoursesbutton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.MandatoryCoursesbutton.Location = new System.Drawing.Point(487, 182);
+            this.MandatoryCoursesbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MandatoryCoursesbutton.Name = "MandatoryCoursesbutton";
-            this.MandatoryCoursesbutton.Size = new System.Drawing.Size(280, 50);
+            this.MandatoryCoursesbutton.Size = new System.Drawing.Size(373, 62);
             this.MandatoryCoursesbutton.TabIndex = 12;
             this.MandatoryCoursesbutton.Text = "Watch Mandatory Courses";
-            this.MandatoryCoursesbutton.UseVisualStyleBackColor = true;
+            this.MandatoryCoursesbutton.UseVisualStyleBackColor = false;
             this.MandatoryCoursesbutton.Click += new System.EventHandler(this.MandatoryCoursesbutton_Click);
             // 
             // ChangeCourseTimebutton
             // 
-            this.ChangeCourseTimebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold);
-            this.ChangeCourseTimebutton.Location = new System.Drawing.Point(365, 220);
-            this.ChangeCourseTimebutton.Margin = new System.Windows.Forms.Padding(2);
+            this.ChangeCourseTimebutton.BackColor = System.Drawing.Color.MistyRose;
+            this.ChangeCourseTimebutton.Font = new System.Drawing.Font("David", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.ChangeCourseTimebutton.Location = new System.Drawing.Point(487, 271);
+            this.ChangeCourseTimebutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ChangeCourseTimebutton.Name = "ChangeCourseTimebutton";
-            this.ChangeCourseTimebutton.Size = new System.Drawing.Size(280, 50);
+            this.ChangeCourseTimebutton.Size = new System.Drawing.Size(373, 62);
             this.ChangeCourseTimebutton.TabIndex = 13;
             this.ChangeCourseTimebutton.Text = "Change Course Time";
-            this.ChangeCourseTimebutton.UseVisualStyleBackColor = true;
+            this.ChangeCourseTimebutton.UseVisualStyleBackColor = false;
             this.ChangeCourseTimebutton.Click += new System.EventHandler(this.ChangeCourseTimebutton_Click_1);
             // 
             // Form_studentMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(996, 570);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1331, 703);
             this.Controls.Add(this.ChangeCourseTimebutton);
             this.Controls.Add(this.MandatoryCoursesbutton);
             this.Controls.Add(this.WatchCoursesbutton);
@@ -160,7 +169,8 @@
             this.Controls.Add(this.AddNewReqbutton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.LogoutStudent);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form_studentMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Menu";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_adminAddStudent));
             this.addStudentToDatabase = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.username_box = new System.Windows.Forms.TextBox();
@@ -48,118 +49,146 @@
             // 
             // addStudentToDatabase
             // 
-            this.addStudentToDatabase.Location = new System.Drawing.Point(170, 407);
+            this.addStudentToDatabase.BackColor = System.Drawing.Color.MistyRose;
+            this.addStudentToDatabase.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.addStudentToDatabase.Location = new System.Drawing.Point(554, 592);
+            this.addStudentToDatabase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addStudentToDatabase.Name = "addStudentToDatabase";
-            this.addStudentToDatabase.Size = new System.Drawing.Size(117, 23);
+            this.addStudentToDatabase.Size = new System.Drawing.Size(214, 42);
             this.addStudentToDatabase.TabIndex = 8;
             this.addStudentToDatabase.Text = "Add To database";
-            this.addStudentToDatabase.UseVisualStyleBackColor = true;
+            this.addStudentToDatabase.UseVisualStyleBackColor = false;
             this.addStudentToDatabase.Click += new System.EventHandler(this.addStudentToDatabase_Click);
             // 
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(16, 119);
+            this.usernameLabel.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.usernameLabel.Location = new System.Drawing.Point(348, 237);
+            this.usernameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(61, 13);
+            this.usernameLabel.Size = new System.Drawing.Size(103, 20);
             this.usernameLabel.TabIndex = 1;
             this.usernameLabel.Text = "Username :";
             // 
             // username_box
             // 
-            this.username_box.Location = new System.Drawing.Point(122, 116);
+            this.username_box.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.username_box.Location = new System.Drawing.Point(490, 234);
+            this.username_box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.username_box.Name = "username_box";
-            this.username_box.Size = new System.Drawing.Size(319, 20);
+            this.username_box.Size = new System.Drawing.Size(424, 27);
             this.username_box.TabIndex = 2;
             this.username_box.TextChanged += new System.EventHandler(this.username_box_TextChanged);
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(16, 164);
+            this.nameLabel.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.nameLabel.Location = new System.Drawing.Point(348, 293);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(63, 13);
+            this.nameLabel.Size = new System.Drawing.Size(111, 20);
             this.nameLabel.TabIndex = 3;
             this.nameLabel.Text = "First Name :";
             // 
             // surenameLabel
             // 
             this.surenameLabel.AutoSize = true;
-            this.surenameLabel.Location = new System.Drawing.Point(16, 207);
+            this.surenameLabel.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.surenameLabel.Location = new System.Drawing.Point(339, 346);
+            this.surenameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.surenameLabel.Name = "surenameLabel";
-            this.surenameLabel.Size = new System.Drawing.Size(81, 13);
+            this.surenameLabel.Size = new System.Drawing.Size(132, 20);
             this.surenameLabel.TabIndex = 4;
             this.surenameLabel.Text = "Second Name :";
             // 
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(16, 246);
+            this.passwordLabel.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.passwordLabel.Location = new System.Drawing.Point(348, 394);
+            this.passwordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(59, 13);
+            this.passwordLabel.Size = new System.Drawing.Size(98, 20);
             this.passwordLabel.TabIndex = 5;
             this.passwordLabel.Text = "Password :";
             // 
             // semesterLabel
             // 
             this.semesterLabel.AutoSize = true;
-            this.semesterLabel.Location = new System.Drawing.Point(16, 297);
+            this.semesterLabel.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.semesterLabel.Location = new System.Drawing.Point(348, 457);
+            this.semesterLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.semesterLabel.Name = "semesterLabel";
-            this.semesterLabel.Size = new System.Drawing.Size(57, 13);
+            this.semesterLabel.Size = new System.Drawing.Size(96, 20);
             this.semesterLabel.TabIndex = 6;
             this.semesterLabel.Text = "Semester :";
             // 
             // firstname_box
             // 
-            this.firstname_box.Location = new System.Drawing.Point(122, 156);
+            this.firstname_box.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.firstname_box.Location = new System.Drawing.Point(490, 283);
+            this.firstname_box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.firstname_box.Name = "firstname_box";
-            this.firstname_box.Size = new System.Drawing.Size(319, 20);
+            this.firstname_box.Size = new System.Drawing.Size(424, 27);
             this.firstname_box.TabIndex = 3;
             // 
             // idLabel
             // 
             this.idLabel.AutoSize = true;
-            this.idLabel.Location = new System.Drawing.Point(16, 78);
+            this.idLabel.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.idLabel.Location = new System.Drawing.Point(348, 187);
+            this.idLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.idLabel.Name = "idLabel";
-            this.idLabel.Size = new System.Drawing.Size(24, 13);
+            this.idLabel.Size = new System.Drawing.Size(42, 20);
             this.idLabel.TabIndex = 9;
             this.idLabel.Text = "ID :";
             // 
             // id_box
             // 
-            this.id_box.Location = new System.Drawing.Point(122, 78);
+            this.id_box.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.id_box.Location = new System.Drawing.Point(490, 187);
+            this.id_box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.id_box.Name = "id_box";
-            this.id_box.Size = new System.Drawing.Size(319, 20);
+            this.id_box.Size = new System.Drawing.Size(424, 27);
             this.id_box.TabIndex = 1;
             // 
             // secondName_box
             // 
-            this.secondName_box.Location = new System.Drawing.Point(122, 199);
+            this.secondName_box.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.secondName_box.Location = new System.Drawing.Point(490, 336);
+            this.secondName_box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.secondName_box.Name = "secondName_box";
-            this.secondName_box.Size = new System.Drawing.Size(319, 20);
+            this.secondName_box.Size = new System.Drawing.Size(424, 27);
             this.secondName_box.TabIndex = 4;
             // 
             // password_box
             // 
-            this.password_box.Location = new System.Drawing.Point(122, 246);
+            this.password_box.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.password_box.Location = new System.Drawing.Point(490, 394);
+            this.password_box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.password_box.Name = "password_box";
-            this.password_box.Size = new System.Drawing.Size(319, 20);
+            this.password_box.Size = new System.Drawing.Size(424, 27);
             this.password_box.TabIndex = 5;
             // 
             // semester_box
             // 
-            this.semester_box.Location = new System.Drawing.Point(122, 297);
+            this.semester_box.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.semester_box.Location = new System.Drawing.Point(490, 457);
+            this.semester_box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.semester_box.Name = "semester_box";
-            this.semester_box.Size = new System.Drawing.Size(319, 20);
+            this.semester_box.Size = new System.Drawing.Size(424, 27);
             this.semester_box.TabIndex = 6;
             // 
             // generalLabel
             // 
             this.generalLabel.AutoSize = true;
-            this.generalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.generalLabel.Location = new System.Drawing.Point(22, 18);
+            this.generalLabel.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.generalLabel.Location = new System.Drawing.Point(356, 113);
+            this.generalLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.generalLabel.Name = "generalLabel";
-            this.generalLabel.Size = new System.Drawing.Size(419, 24);
+            this.generalLabel.Size = new System.Drawing.Size(412, 20);
             this.generalLabel.TabIndex = 13;
             this.generalLabel.Text = "Fill all bellow fields to add new student to College";
             this.generalLabel.Click += new System.EventHandler(this.label1_Click);
@@ -167,24 +196,30 @@
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
-            this.emailLabel.Location = new System.Drawing.Point(19, 344);
+            this.emailLabel.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.emailLabel.Location = new System.Drawing.Point(322, 515);
+            this.emailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(86, 13);
+            this.emailLabel.Size = new System.Drawing.Size(150, 20);
             this.emailLabel.TabIndex = 14;
             this.emailLabel.Text = "Email(facebook):";
             // 
             // email_Box
             // 
-            this.email_Box.Location = new System.Drawing.Point(122, 344);
+            this.email_Box.Font = new System.Drawing.Font("David", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.email_Box.Location = new System.Drawing.Point(490, 514);
+            this.email_Box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.email_Box.Name = "email_Box";
-            this.email_Box.Size = new System.Drawing.Size(319, 20);
+            this.email_Box.Size = new System.Drawing.Size(424, 27);
             this.email_Box.TabIndex = 7;
             // 
             // Form_adminAddStudent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(453, 442);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1331, 703);
             this.Controls.Add(this.email_Box);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.generalLabel);
@@ -201,7 +236,9 @@
             this.Controls.Add(this.username_box);
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.addStudentToDatabase);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form_adminAddStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Student to College from Admin menu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_adminAddStudent_FormClosed);
             this.Load += new System.EventHandler(this.Form_adminAddStudent_Load);
