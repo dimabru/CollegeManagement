@@ -227,6 +227,11 @@ namespace Project_Team3.GUI
                 return;
             }
 
+            if(dbo.userExist(textBox_password.Text,publicChecksAndOperations.convertToUlong(textBox_id.Text), comboBox_access_group.Text)){
+                MessageBox.Show("user already exist");
+                return;
+            }
+
             string name = textBox_first_name.Text;
             string lname = textBox_last_name.Text;
             string id = textBox_id.Text;
