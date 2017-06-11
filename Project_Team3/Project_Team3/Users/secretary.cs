@@ -11,9 +11,7 @@ namespace Project_Team3
     {
         public secretary(ulong id) : base(id)
         {
-            
+
         }
-
-
     }
 }

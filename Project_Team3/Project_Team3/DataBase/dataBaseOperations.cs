@@ -41,6 +41,11 @@ namespace Project_Team3
             }
         }
 
+        /// <summary>
+        /// romove a single course from our system
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static bool removeCourse(int id)
         {
             if (!(courseExist(id)))
@@ -63,6 +68,11 @@ namespace Project_Team3
             }
         }
 
+        /// <summary>
+        /// remove a single room from our system
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public static bool removeRoom(string name)
         {
             if (!(roomExist(name)))
@@ -157,7 +167,7 @@ namespace Project_Team3
         /// <param name="lastName"></param>
         /// <param name="pass"></param>
         /// <param name="accessGroup"></param>
-        public void setNewUser(ulong id, string name, string lastName, string pass, string accessGroup,string user_name)
+        public void setNewUser(ulong id, string name, string lastName, string pass, string accessGroup, string user_name)
         {
             try
             {
@@ -230,7 +240,10 @@ namespace Project_Team3
                 throw;
             }
         }
-
+        /// <summary>
+        /// return a list of professors, sort by id's,
+        /// </summary>
+        /// <returns></returns>
         public static List<ulong> getProfessorIdList()
         {
             try
@@ -257,6 +270,10 @@ namespace Project_Team3
             }
         }
 
+        /// <summary>
+        /// return a list of instructors, sort by id's, from our system
+        /// </summary>
+        /// <returns></returns>
         public static List<ulong> getInstructorIdList()
         {
             try
@@ -283,6 +300,10 @@ namespace Project_Team3
             }
         }
 
+        /// <summary>
+        /// return a list of courses, sort by id's, from our system
+        /// </summary>
+        /// <returns></returns>
         public static List<int> getCourseIdList()
         {
             try
@@ -309,6 +330,10 @@ namespace Project_Team3
             }
         }
 
+        /// <summary>
+        /// return a list of rooms, from our system
+        /// </summary>
+        /// <returns></returns>
         public static List<string> getRoomIdList()
         {
             try
@@ -554,7 +579,11 @@ namespace Project_Team3
             }
         }
 
-
+        /// <summary>
+        /// get for us a room from the system, if exist
+        /// </summary>
+        /// <param name="room"></param>
+        /// <returns></returns>
         public static Room getRoom(string room)
         {
             try
@@ -590,6 +619,11 @@ namespace Project_Team3
             }
         }
 
+        /// <summary>
+        /// check if a single room is exist in our system
+        /// </summary>
+        /// <param name="Rname"></param>
+        /// <returns></returns>
         public static bool roomExist(string Rname)
         {
             try
@@ -616,13 +650,18 @@ namespace Project_Team3
             }
 
         }
-
+        /// <summary>
+        /// add a room to the system
+        /// </summary>
+        /// <param name="room"></param>
+        /// <returns></returns>
         public static bool addRoom(Room room)
         {
             try
             {
                 if (roomExist(room.getRoomNumber()))
                 {
+                    MessageBox.Show("Room already exists");
                     return false;
                 }
                 String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
@@ -646,6 +685,11 @@ namespace Project_Team3
             }
         }
 
+        /// <summary>
+        /// check if a single course exist in our system, by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static Boolean courseExist(int id)
         {
             try
@@ -673,6 +717,11 @@ namespace Project_Team3
 
         }
 
+        /// <summary>
+        /// add a course to the system
+        /// </summary>
+        /// <param name="course"></param>
+        /// <returns></returns>
         public static bool addCourse(Course course)
         {
             int course_mandatory = 1;
@@ -722,6 +771,11 @@ namespace Project_Team3
             }
         }
 
+        /// <summary>
+        /// return a single course, from our system
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static Course getCourse(int id)
         {
             try
@@ -740,8 +794,6 @@ namespace Project_Team3
                 int mandatory_presence = 0;
                 bool MANDATORY_B = false;
                 bool MANDATORY_PRESENCE_B = false;
-
-
                 String str = "server=tcp:sce2017b.database.windows.net;database=Project3DB;UID=sceproject;password=2017Sce2017";
                 String query = "select * from dbo.Course where COURSE_ID = '" + id + "'";
                 SqlConnection con = new SqlConnection(str);
@@ -777,8 +829,6 @@ namespace Project_Team3
                         {
                             MANDATORY_PRESENCE_B = true;
                         }
-
-
                     }
                 }
                 con.Close();
@@ -857,13 +907,18 @@ namespace Project_Team3
             }
         }
 
+        /// <summary>
+        /// change the status of the instructor constraint option, by sending a status to the system
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
         public static bool setConstraintStatusInst(bool status)
         {
             return setConstraintStatusProf(status, 2);
         }
 
         /// <summary>
-        /// 
+        /// change the status of the professor constraint option, by sending a status to the system
         /// </summary>
         /// <param name="status"></param>
         /// <param name="iORp">instructor or professor</param>
@@ -898,11 +953,20 @@ namespace Project_Team3
 
         }
 
+        /// <summary>
+        /// return the status of the instructor constraint option, from the system
+        /// </summary>
+        /// <returns></returns>
         public static bool getConstraintStatusInst()
         {
             return getConstraintStatusProf(2);
         }
 
+        /// <summary>
+        /// return the status of the professor constraint option, from the system
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static bool getConstraintStatusProf(int id = 1)
         {
             try
@@ -934,7 +998,11 @@ namespace Project_Team3
             }
         }
 
-
+        /// <summary>
+        /// return the id, by sending a mail to the system
+        /// </summary>
+        /// <param name="mail"></param>
+        /// <returns></returns>
         public static ulong getIdByMail(string mail)
         {
             try
@@ -961,7 +1029,12 @@ namespace Project_Team3
             }
         }
 
-
+        /// <summary>
+        /// check if the user already exist in the facebook system, by sending mail and userType to the system
+        /// </summary>
+        /// <param name="mail"></param>
+        /// <param name="userType"></param>
+        /// <returns></returns>
         public static Boolean facebookUserExist(string mail, string userType)
         {
             try
@@ -988,7 +1061,13 @@ namespace Project_Team3
             }
         }
 
-
+        /// <summary>
+        /// check if the user already exist in the system, by sending password and userType to the system
+        /// </summary>
+        /// <param name="password"></param>
+        /// <param name="id"></param>
+        /// <param name="userType"></param>
+        /// <returns></returns>
         public Boolean userExist(String password, ulong id, String userType)
         {
             try
@@ -1017,7 +1096,6 @@ namespace Project_Team3
 
         }
 
-        ///////////////////////////////////////////////////////////////////////////////////////
         /// <summary>//change the summary- reut
         /// return the day of the course according id
         /// </summary>
@@ -1054,6 +1132,11 @@ namespace Project_Team3
             }
         }
 
+        /// <summary>
+        /// get a list of courses, by typing id from the system
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public int[] getnumofCourses(ulong id)
         {
             try
@@ -1087,7 +1170,7 @@ namespace Project_Team3
 
 
         /// <summary>
-        /// /////////////////////////////////////////////////////////////////////////////////////////
+        /// sign in a single person, to our system
         /// </summary>
         /// <param name="Name"></param>
         /// <param name="password"></param>
@@ -1107,6 +1190,9 @@ namespace Project_Team3
             }
         }
 
+        /// <summary>
+        /// initialize our data base connection
+        /// </summary>
         public dataBaseOperations() // ctor
         {
             initialize_Data_Base_Connection();
@@ -1122,6 +1208,10 @@ namespace Project_Team3
             con = new SqlConnection(connetionString);
         }
 
+        /// <summary>
+        /// open connection to our data base
+        /// </summary>
+        /// <returns></returns>
         public Boolean OpenConn()
         {
             try
@@ -1136,6 +1226,10 @@ namespace Project_Team3
 
         }
 
+        /// <summary>
+        /// check the connection to our data base
+        /// </summary>
+        /// <param name="ConnStatus"></param>
         public void CloseConn(Boolean ConnStatus)
         {
             if (ConnStatus == true)
@@ -1145,8 +1239,17 @@ namespace Project_Team3
 
         }
 
+        /// <summary>
+        /// get our connection
+        /// </summary>
+        /// <returns></returns>
         public SqlConnection getConnection() { return con; }
 
+        /// <summary>
+        /// get published schedule
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool getPublishedSched(ulong id)
         {
             try
@@ -1161,12 +1264,10 @@ namespace Project_Team3
                 dbr = cmd.ExecuteReader();
                 while (dbr.Read())
                 {
-                    if (id.Equals(dbr.GetValue(0)))
+                    if (Int32.Parse(id.ToString()) == (int)dbr.GetValue(0))
                     {
                         if (dbr.GetValue(7) != null)
                         {
-                            MessageBox.Show("Check");
-
                             if ((int)dbr.GetValue(7) == 1) returnValue = true;
                         }
                     }
@@ -1176,7 +1277,7 @@ namespace Project_Team3
             }
             catch
             {
-                throw;
+                return false;
             }
             finally
             {
@@ -1184,6 +1285,10 @@ namespace Project_Team3
             }
         }
 
+        /// <summary>
+        /// publish schedule
+        /// </summary>
+        /// <param name="id"></param>
         public void publishSched(ulong id)
         {
             try
@@ -1205,7 +1310,5 @@ namespace Project_Team3
                 con.Close();
             }
         }
-
     }
-
 }
