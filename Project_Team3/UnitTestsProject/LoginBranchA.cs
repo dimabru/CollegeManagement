@@ -143,7 +143,7 @@ namespace UnitTestsProject
     public class ConectionBranchA
     {
         ulong id = 123456789;
-        string name = "test", lastName = "test", pass = "test", accessGroup;
+        string name = "test", lastName = "test", pass = "test", accessGroup, user_name = "test";
         dataBaseOperations DB = new dataBaseOperations();
         String userType;
 
@@ -153,7 +153,7 @@ namespace UnitTestsProject
         {
             accessGroup = "Professor";
             userType = "Professor";
-            DB.setNewUser(id, name, lastName, pass, accessGroup);
+            DB.setNewUser(id, name, lastName, pass, accessGroup, user_name);
             Assert.IsTrue(DB.userExist(pass, id, userType));
             DB.deleteUser(id);
         }
@@ -164,7 +164,7 @@ namespace UnitTestsProject
         {
             accessGroup = "Instructor";
             userType = "Instructor";
-            DB.setNewUser(id, name, lastName, pass, accessGroup);
+            DB.setNewUser(id, name, lastName, pass, accessGroup, user_name);
             Assert.IsTrue(DB.userExist(pass, id, userType));
             DB.deleteUser(id);
         }
@@ -175,7 +175,7 @@ namespace UnitTestsProject
         {
             accessGroup = "Admin";
             userType = "Admin";
-            DB.setNewUser(id, name, lastName, pass, accessGroup);
+            DB.setNewUser(id, name, lastName, pass, accessGroup, user_name);
             Assert.IsTrue(DB.userExist(pass, id, userType));
             DB.deleteUser(id);
         }
@@ -186,7 +186,7 @@ namespace UnitTestsProject
         {
             accessGroup = "Secretary";
             userType = "Secretary";
-            DB.setNewUser(id, name, lastName, pass, accessGroup);
+            DB.setNewUser(id, name, lastName, pass, accessGroup, user_name);
             Assert.IsTrue(DB.userExist(pass, id, userType));
             DB.deleteUser(id);
         }
