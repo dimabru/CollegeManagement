@@ -270,12 +270,31 @@ namespace Project_Team3
         private void enter_constraints_to_user_and_database(object sender, EventArgs e)
         {
             //learn more about trim here: https://msdn.microsoft.com/en-us/library/kxbw3kwc(v=vs.110).aspx
-
+            
             if (comboBox1.Text == "" || comboBox2.Text == "" || comboBox3.Text == "")
             {
                 MessageBox.Show("you have to enter constraint");
                 panel1.Hide();
                 return;
+            }
+
+            if (userType.Professor == theUserWeGot)
+            {
+                if (!dataBaseOperations.getConstraintStatusProf())
+                {
+                    MessageBox.Show("Constraint status is closed. Please advice a secretary to open");
+                    panel1.Hide();
+                    return;
+                }
+            }
+            else
+            {
+                if (!dataBaseOperations.getConstraintStatusInst())
+                {
+                    MessageBox.Show("Constraint status is closed. Please advice a secretary to open");
+                    panel1.Hide();
+                    return;
+                }
             }
 
             int conv1 = publicChecksAndOperations.convDayToInt(comboBox1.Text);

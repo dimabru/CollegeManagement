@@ -108,7 +108,7 @@
             // 
             this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox.Location = new System.Drawing.Point(141, 21);
-            this.textBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox.Margin = new System.Windows.Forms.Padding(4);
             this.textBox.Name = "textBox";
             this.textBox.Size = new System.Drawing.Size(1012, 30);
             this.textBox.TabIndex = 6;
@@ -117,7 +117,7 @@
             // 
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid.Location = new System.Drawing.Point(453, 76);
-            this.dataGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGrid.Margin = new System.Windows.Forms.Padding(4);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.Size = new System.Drawing.Size(751, 569);
             this.dataGrid.TabIndex = 7;
@@ -141,6 +141,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form_adminAccountsMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin\'s accounts menu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_adminAccountsMenu_FormClosed);
             this.Load += new System.EventHandler(this.Form_adminAccountsMenu_Load);
